@@ -218,6 +218,7 @@ def render_episode(ex, index_keywords):
     body_paras, _ = wrap_body(ex.get("body_paragraphs", []), ex.get("entities", []))
     meta = " · ".join([f"{ex.get('published_date','')}"] + ex.get("hosts", []))
     p = []
+    p.append('<p class="crumb"><a href="../index.html">← 위키 홈</a> · <a href="../keywords/index.html">키워드 인덱스</a></p>')
     p.append(f'<p class="ep-cat">AI Frontier 위키 · {escape(ex.get("category") or "")}</p>')
     p.append(f'<p class="ep-meta"><span class="epn">EP {ep}</span> {escape(meta)}</p>')
     p.append(f"<h1>{escape(ex['title'])}</h1>")
