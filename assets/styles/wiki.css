@@ -4,7 +4,7 @@
   --border:#e5e3da; --border-strong:#d3d1c7; --border-stronger:#b4b2a9;
   --accent:#185fa5; --accent-bg:#e6f1fb; --accent-border:#85b7eb;
   --success-bg:#e1f5ee; --success-fg:#085041;
-  --hl-bg:#faeeda; --hl-fg:#633806; --hl-cur-bg:#fac775; --hl-cur-fg:#412402; --hl-cur-outline:#ba7517;
+  /* keyword focus uses accent tokens; no highlight fill (easier on the eyes) */
   --c-concept-bg:#e1f5ee; --c-concept-fg:#085041;
   --c-person-bg:#faece7; --c-person-fg:#712b13;
   --c-model-bg:#eeedfe; --c-model-fg:#3c3489;
@@ -61,9 +61,9 @@ h2{font-size:17px; font-weight:600; margin:1.6rem 0 .6rem;}
 .flow-item p{margin:1px 0 0; font-size:14px; color:var(--text-secondary);}
 #afw-body{font-size:15px; line-height:1.85; margin-bottom:1.2rem;}
 #afw-body p{margin:0 0 .7rem;}
-.term{border-radius:3px; padding:0 1px;}
-.term.hl{background:var(--hl-bg); color:var(--hl-fg);}
-.term.current{outline:2px solid var(--hl-cur-outline); outline-offset:1px; background:var(--hl-cur-bg); color:var(--hl-cur-fg);}
+.term{background:transparent; color:inherit; border-radius:3px; padding:0 1px;}
+.term.hl{text-decoration:underline; text-decoration-color:var(--accent-border); text-underline-offset:2px;}
+.term.current{outline:2px solid var(--accent-border); outline-offset:1px; background:var(--accent-bg); color:var(--accent); border-radius:3px;}
 .entities-hint{font-size:12px; color:var(--text-muted); margin:0 0 .5rem;}
 #afw-chips,#afk-cloud{display:flex; gap:6px; flex-wrap:wrap;}
 .kwchip{font-size:13px; padding:5px 11px; border-radius:999px; border:1px solid transparent; cursor:pointer;}
