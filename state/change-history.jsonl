@@ -1,0 +1,4 @@
+{"ts":"2026-06-29","event":"scaffold","phase":"phase-0-scaffold","detail":"aifrontier-wiki 프로젝트 스캐폴드 생성 (폴더/스펙/스키마/자산/CLI 스켈레톤). 네트워크/LLM 호출 없음."}
+{"ts":"2026-06-29","event":"phase-0-verified","phase":"phase-0-scaffold","detail":"validate PASS; demo render(ep96 fixture) -> 3 pages, 6 keywords; network/LLM stages refuse without opt-in; no external/CDN refs."}
+{"ts":"2026-06-30","event":"adversarial-review-fixes","phase":"phase-0-scaffold","detail":"Codex review 대응: canonical 2.wiki를 data/extracts의 순수 함수로 전환(관리출력 GC), demo는 preview/로 격리, render가 state/keyword-index 동기화. validate에 스키마+교차불변식+정합성(고아페이지/카운트/stale-index) 검사와 selfcheck 추가. 데모 산출물 canonical에서 제거."}
+{"ts":"2026-06-30","event":"phase-1-collect","phase":"phase-1-collect","detail":"fetch-index/fetch-pages 구현(stdlib urllib, 예의수집). 라이브 수집: ko 27편(ep45,ep75-100) 원문->06_Artifacts/raw, 0 실패. 변경감지=추출텍스트 해시(raw nonce 회피)로 incremental 안정화. llms.txt/llms-full.txt 스냅샷. validate PASS."}

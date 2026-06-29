@@ -1,0 +1,254 @@
+{
+  "schema_version": "1.0",
+  "language": "ko",
+  "updated_at": "2026-06-29T15:23:47Z",
+  "source": {
+    "sitemap": "https://aifrontier.kr/sitemap.xml",
+    "llms_txt": "https://aifrontier.kr/llms.txt"
+  },
+  "episodes": [
+    {
+      "ep_id": 45,
+      "url": "https://aifrontier.kr/ko/episodes/ep45",
+      "title": "EP 45: AI 비즈니스 생존전략 — 어디에 AI 비즈니스를 세울 것인가?",
+      "published_date": "2025-03-29",
+      "status": "fetched",
+      "content_hash": "9b923b084e86e05acf7edf94ae314b991567d4d37e1a8464eb4d36d009355d23",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 75,
+      "url": "https://aifrontier.kr/ko/episodes/ep75",
+      "title": "EP 75: (수학 공식 없는) 강화 학습 이야기",
+      "published_date": "2026-01-30",
+      "status": "fetched",
+      "content_hash": "204c6fe0f2a01b7fca3a656ff5a72f385e6287f63f7db38effa805a8700a5eb2",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 76,
+      "url": "https://aifrontier.kr/ko/episodes/ep76",
+      "title": "EP 76: 교육과 AI: 한미유치원 설립자 최승준의 생각과 실천",
+      "published_date": "2026-01-28",
+      "status": "fetched",
+      "content_hash": "131f31cf24b7e148a45c5948498fa83d0af2beb7817e1fe141d64661de1f3198",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 77,
+      "url": "https://aifrontier.kr/ko/episodes/ep77",
+      "title": "EP 77: Gemini 3와 Antigravity: 너무도 가파른 변화의 곡선",
+      "published_date": "2026-01-28",
+      "status": "fetched",
+      "content_hash": "9faa632d6afd9250c8d08ccebe1f64c23c7e1e990b1d88bb2f041eae31bb5411",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 78,
+      "url": "https://aifrontier.kr/ko/episodes/ep78",
+      "title": "EP 78: Ilya Sutskever의 설명",
+      "published_date": "2026-01-28",
+      "status": "fetched",
+      "content_hash": "5a99586252812bc535dde2130fb69cf17b9ff051afe8ea46b56315d4bc1b1810",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 79,
+      "url": "https://aifrontier.kr/ko/episodes/ep79",
+      "title": "EP 79: AI Frontier 도망자 연합 회고 & GPT 5.2",
+      "published_date": "2026-01-28",
+      "status": "fetched",
+      "content_hash": "7dc1b9f499cab14ee1c61dd0988e23137d84f8f431ca91fedc465e5a96c50478",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 80,
+      "url": "https://aifrontier.kr/ko/episodes/ep80",
+      "title": "EP 80: 2026년은 과학의 해가 될까? AI와 과학",
+      "published_date": "2026-01-28",
+      "status": "fetched",
+      "content_hash": "0f0d492656f14297f6012704053c438ef6b4f9df32bf4a9ce34d4e76ca3d8e6e",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 81,
+      "url": "https://aifrontier.kr/ko/episodes/ep81",
+      "title": "EP 81: DeepSeek이 바꿔버린 모든 것: MoE와 RLVR, 2025년 AI 회고",
+      "published_date": "2026-01-28",
+      "status": "fetched",
+      "content_hash": "26f7b033650c5567670d7215f53e7d9aced5f80ab2505ec93296f75bcc5cf696",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 82,
+      "url": "https://aifrontier.kr/ko/episodes/ep82",
+      "title": "EP 82: 원리를 생각하는 프롬프팅",
+      "published_date": "2026-01-28",
+      "status": "fetched",
+      "content_hash": "9178cd28548b20a0ff6f699c2f1c16dc812f9fe6eb43bc4da768e13fb4ea3112",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 83,
+      "url": "https://aifrontier.kr/ko/episodes/ep83",
+      "title": "EP 83: 이야기로 읽는 트랜스포머: 윤회하는 토큰의 순례",
+      "published_date": "2026-01-28",
+      "status": "fetched",
+      "content_hash": "44760a330e37c0d6b1ada955db1adc7e78ec1a477fe1f5f3cf805913caa378ee",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 84,
+      "url": "https://aifrontier.kr/ko/episodes/ep84",
+      "title": "EP 84: Physical AI를 알아보자 (sudoremove 박종현 대표)",
+      "published_date": "2026-02-11",
+      "status": "fetched",
+      "content_hash": "7b2266f82b858bc09e5becd4e679cd2ffd7d0f3f96f58d955bdc1fb9be5cfcca",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 85,
+      "url": "https://aifrontier.kr/ko/episodes/ep85",
+      "title": "EP 85: OpenClaw와 2026년 2월의 신호들",
+      "published_date": "2026-02-11",
+      "status": "fetched",
+      "content_hash": "8cfef17c72a6f2c250807222703eb54f9bbdf33f35a4c56da66601d0e1bbc499",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 86,
+      "url": "https://aifrontier.kr/ko/episodes/ep86",
+      "title": "EP 86: 진짜 내 일을 위한 Agentic Workflow",
+      "published_date": "2026-02-18",
+      "status": "fetched",
+      "content_hash": "cf8f16ceb36edbcd8d6b451dac70efacc9c4acaf9cdcb0629ec623140a8281b0",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 87,
+      "url": "https://aifrontier.kr/ko/episodes/ep87",
+      "title": "EP 87:",
+      "published_date": "2026-02-24",
+      "status": "fetched",
+      "content_hash": "207e9106a179822c53d8cf80724ae7079b0f11a662dc0af1eb7be9a9d624046f",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 88,
+      "url": "https://aifrontier.kr/ko/episodes/ep88",
+      "title": "EP 88: 비결은 없다",
+      "published_date": "2026-03-04",
+      "status": "fetched",
+      "content_hash": "b558ce052ec87386c4ea7ee576a3c2751d9848832db2e6f814107d9ad4ff53db",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 89,
+      "url": "https://aifrontier.kr/ko/episodes/ep89",
+      "title": "EP 89: 딸깍과 덜컹",
+      "published_date": "2026-03-15",
+      "status": "fetched",
+      "content_hash": "d0f3a2edb0f22749ca84f78bd481b90245d203d15571b3b951564cecfd556fb5",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 90,
+      "url": "https://aifrontier.kr/ko/episodes/ep90",
+      "title": "EP 90: 알파고 이후, 10년 (feat. HyperAccel 이진원 CTO)",
+      "published_date": "2026-03-15",
+      "status": "fetched",
+      "content_hash": "372532ec17550b47100691e3017c6492d88f0bec9c898fc683dc0f6e47bb5151",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 91,
+      "url": "https://aifrontier.kr/ko/episodes/ep91",
+      "title": "EP 91: 26.1Q 비즈니스 관점에서의 AI",
+      "published_date": "2026-03-21",
+      "status": "fetched",
+      "content_hash": "0da2bb5b02b4a87b6ea9d1b29a77f67b91a475875ee6cbc8ef6c700ed6cbe92a",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 92,
+      "url": "https://aifrontier.kr/ko/episodes/ep92",
+      "title": "EP 92: EP 92. 루프를 닫아라",
+      "published_date": "2026-03-29",
+      "status": "fetched",
+      "content_hash": "313782e0889525e666bf89c4de3d8e1921b98974f11f9fb88b38ec50bed58aa2",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 93,
+      "url": "https://aifrontier.kr/ko/episodes/ep93",
+      "title": "EP 93: Claude Code 소스코드 유출 이후",
+      "published_date": "2026-04-07",
+      "status": "fetched",
+      "content_hash": "6f555956cb4b1d63db3099f11dd9517c9882bb718b0f1fd14d559a37876bcc21",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 94,
+      "url": "https://aifrontier.kr/ko/episodes/ep94",
+      "title": "EP 94: Anthropic과 낮게 열린 과실들",
+      "published_date": "2026-04-21",
+      "status": "fetched",
+      "content_hash": "6e635e86cd88c7546cdb6ea14d5f43bb5fff61c5da710215fa05089b0124c4ac",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 95,
+      "url": "https://aifrontier.kr/ko/episodes/ep95",
+      "title": "EP 95: DeepSeek-V4 논문 읽기",
+      "published_date": "2026-04-28",
+      "status": "fetched",
+      "content_hash": "34ad84408c5b212268f4b5d3028ba34e72a83323516be00122de17d275ce0856",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 96,
+      "url": "https://aifrontier.kr/ko/episodes/ep96",
+      "title": "EP 96: LLM 추론 인프라와 토큰 경제학",
+      "published_date": "2026-05-08",
+      "status": "fetched",
+      "content_hash": "9875d72ee2a7708551138f6ae5bb18481b5f9215580bc8fc9be25d2510e50847",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 97,
+      "url": "https://aifrontier.kr/ko/episodes/ep97",
+      "title": "EP 97: AI Psychosis 시대의 사람들",
+      "published_date": "2026-05-21",
+      "status": "fetched",
+      "content_hash": "c5fb869d75503ebdf2ea13bdd3fa564613217f6b7d0fa27ed70fd4bf2ae4ef6a",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 98,
+      "url": "https://aifrontier.kr/ko/episodes/ep98",
+      "title": "EP 98: AI가 실행하는 시대, 인간에게 남는 건",
+      "published_date": "2026-05-26",
+      "status": "fetched",
+      "content_hash": "136c99faaf01319a2e189aed8be4aa4345e2f39354234fedb6ae940ddba8efa4",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 99,
+      "url": "https://aifrontier.kr/ko/episodes/ep99",
+      "title": "EP 99: Opus 4.8 출시, 요즘 AI 경쟁과 인간의 일",
+      "published_date": "2026-06-07",
+      "status": "fetched",
+      "content_hash": "51c36bbf577712654b9d978861b7023832bddeb604d4d11a07ccaead5bd0ba10",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "ep_id": 100,
+      "url": "https://aifrontier.kr/ko/episodes/ep100",
+      "title": "EP 100: EP 100. Claude Mythos, Fable 5, 그리고 다음 국면은?",
+      "published_date": "2026-06-16",
+      "status": "fetched",
+      "content_hash": "0765360658e96d9baaa1ea41a9e19184a3f1390ca81a6c1487c2ac3191ad320c",
+      "last_seen": "2026-06-29"
+    }
+  ]
+}

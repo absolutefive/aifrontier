@@ -1,0 +1,15 @@
+# secrets
+config/local.env
+
+# os
+.DS_Store
+
+# logs (keep dir, ignore contents)
+logs/**/*.log
+logs/*.log
+
+# bulky raw originals live in 06_Artifacts, not here
+raw/
+
+# demo/preview renders are SAMPLE output, never canonical
+preview/

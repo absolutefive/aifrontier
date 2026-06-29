@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AI Frontier episode extract (엑기스)",
+  "type": "object",
+  "required": ["schema_version", "ep_id", "title", "one_line", "key_points", "entities", "body_paragraphs", "review_status"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "ep_id": { "type": "integer" },
+    "slug": { "type": ["string", "null"] },
+    "title": { "type": "string" },
+    "published_date": { "type": ["string", "null"] },
+    "hosts": { "type": "array", "items": { "type": "string" } },
+    "category": { "type": ["string", "null"] },
+    "source_url": { "type": ["string", "null"] },
+    "raw_path": { "type": ["string", "null"] },
+    "one_line": { "type": "string" },
+    "key_points": { "type": "array", "items": { "type": "string" } },
+    "flow": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["stage", "summary"],
+        "properties": {
+          "stage": { "type": "string" },
+          "summary": { "type": "string" }
+        }
+      }
+    },
+    "body_paragraphs": { "type": "array", "items": { "type": "string" } },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "type"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "label": { "type": "string" },
+          "type": { "type": "string", "enum": ["concept", "person", "model"] },
+          "aliases": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "notable_quote": {
+      "type": ["object", "null"],
+      "properties": {
+        "text": { "type": "string" },
+        "speaker": { "type": ["string", "null"] }
+      }
+    },
+    "language": { "type": "string", "enum": ["ko"] },
+    "extractor": { "type": ["string", "null"] },
+    "extracted_at": { "type": ["string", "null"] },
+    "review_status": { "type": "string", "enum": ["draft", "reviewed", "promoted"] }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 96,
+  "slug": "llm-inference-infra-token-economics",
+  "title": "LLM 추론 인프라와 토큰 이코노믹스",
+  "published_date": "2026-05-08",
+  "hosts": ["노정석", "최승준", "김성현"],
+  "category": "추론 인프라",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep96",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep96/page.html",
+  "one_line": "KV 캐시 동역학과 roofline 분석으로 보면, 추론 비용의 승부처는 모델 크기가 아니라 메모리 대역폭과 캐시 재사용 전략이다.",
+  "key_points": [
+    "토큰당 비용은 FLOPs가 아니라 KV 캐시 메모리 이동량이 지배한다.",
+    "Roofline 상에서 디코딩은 memory-bound — 배치·캐시 재사용이 처리량을 결정한다.",
+    "긴 컨텍스트는 KV 캐시를 선형으로 키워 동시 사용자 수의 상한을 만든다.",
+    "양자화와 HDD/SSD 캐싱은 통합메모리 한계를 우회하는 실전 카드다."
+  ],
+  "flow": [
+    { "stage": "도입", "summary": "추론 비용이 화두가 된 배경과 토큰 이코노믹스 정의" },
+    { "stage": "본론 1", "summary": "KV 캐시 메커니즘과 MLA·sparse attention의 효과" },
+    { "stage": "본론 2", "summary": "Roofline 모델로 본 prefill vs decode 병목" },
+    { "stage": "정리", "summary": "로컬 추론·API 비용 구조에 주는 실전 함의" }
+  ],
+  "body_paragraphs": [
+    "추론 비용의 핵심은 연산량이 아니라 메모리 이동량이다. 디코딩 단계에서 KV 캐시가 차지하는 대역폭이 처리량의 상한을 결정한다.",
+    "Roofline 모델 위에 올려 보면 prefill은 compute-bound, decode는 memory-bound로 갈린다. 이때 KV 캐시 재사용률이 곧 비용이 된다.",
+    "MLA와 Sparse Attention은 KV 캐시 크기를 줄이는 대표적 기법이다. DeepSeek-V4는 이를 적극적으로 채택했다.",
+    "같은 Roofline 분석에서 양자화는 가중치와 캐시를 동시에 압축해 메모리 상한을 낮춘다. 양자화 수준과 KV 캐시 정밀도의 트레이드오프가 품질을 좌우한다.",
+    "결국 DeepSeek-V4류가 보여준 건, 토큰 이코노믹스가 모델 크기 경쟁이 아니라 캐시 설계 경쟁이라는 점이다."
+  ],
+  "entities": [
+    { "id": "kv", "label": "KV 캐시", "type": "concept", "aliases": ["KV 캐시", "KV cache", "KV캐시"] },
+    { "id": "roofline", "label": "Roofline 모델", "type": "concept", "aliases": ["Roofline", "루프라인"] },
+    { "id": "mla", "label": "MLA", "type": "concept", "aliases": ["MLA"] },
+    { "id": "sparse", "label": "Sparse Attention", "type": "concept", "aliases": ["Sparse Attention"] },
+    { "id": "quant", "label": "양자화", "type": "concept", "aliases": ["양자화"] },
+    { "id": "dsv4", "label": "DeepSeek-V4", "type": "model", "aliases": ["DeepSeek-V4", "딥시크 V4", "딥시크-V4"] }
+  ],
+  "notable_quote": {
+    "text": "토큰 이코노믹스는 모델 크기 경쟁이 아니라 캐시 설계 경쟁이다.",
+    "speaker": "노정석"
+  },
+  "language": "ko",
+  "extractor": "fixture-hand-authored",
+  "extracted_at": "2026-06-29",
+  "review_status": "draft"
+}

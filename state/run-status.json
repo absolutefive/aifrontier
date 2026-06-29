@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "run_id": null,
+  "phase": "phase-0-scaffold",
+  "run_status": "never_run",
+  "started_at": null,
+  "finished_at": "2026-06-29T15:23:47Z",
+  "skip_reason": null,
+  "error_log_path": null,
+  "retry_policy": "failed_runs_do_not_retry_automatically",
+  "stage_statuses": {
+    "fetch_index": "success",
+    "fetch_pages": "success",
+    "extract": "not_run",
+    "build_keyword_index": "not_run",
+    "render_wiki": "not_run"
+  },
+  "user_facing_summary": {
+    "language": "ko",
+    "text": "Phase 0 스캐폴드 상태입니다. 아직 수집/추출/렌더를 실행하지 않았습니다."
+  }
+}

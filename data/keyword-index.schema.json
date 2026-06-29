@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AI Frontier keyword index",
+  "type": "object",
+  "required": ["schema_version", "generated_at", "keywords"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "generated_at": { "type": ["string", "null"] },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "type", "total", "eps"],
+        "properties": {
+          "id": { "type": "string" },
+          "label": { "type": "string" },
+          "type": { "type": "string", "enum": ["concept", "person", "model"] },
+          "total": { "type": "integer" },
+          "eps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["ep_id", "count", "first_anchor"],
+              "properties": {
+                "ep_id": { "type": "integer" },
+                "count": { "type": "integer" },
+                "first_anchor": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

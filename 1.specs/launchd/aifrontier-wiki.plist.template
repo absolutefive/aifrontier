@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE ONLY. Do not load without explicit approval.
+  Scheduler is also gated by state/scheduler-state.json (enabled=false by default).
+  Replace __HOME__ and review the schedule before any `launchctl load`.
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>kr.aifrontier.wiki.weekly</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>__HOME__/BaseCamp/02_Knowledge/research/aifrontier-wiki/scripts/run_aifrontier_wiki_cycle.sh</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Weekday</key><integer>1</integer>
+    <key>Hour</key><integer>4</integer>
+    <key>Minute</key><integer>0</integer>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>__HOME__/BaseCamp/02_Knowledge/research/aifrontier-wiki/logs/scheduler/launchd.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>__HOME__/BaseCamp/02_Knowledge/research/aifrontier-wiki/logs/scheduler/launchd.err.log</string>
+  <key>RunAtLoad</key>
+  <false/>
+</dict>
+</plist>
