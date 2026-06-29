@@ -37,7 +37,13 @@ ASSETS_REL_DEEP = "../../assets"   # from <out>/episodes|keywords/*.html
 ASSETS_REL_TOP = "../assets"       # from <out>/*.html
 
 # Bulky originals live OUTSIDE the repo, in 06_Artifacts (per operating rules).
-RAW_ROOT = Path.home() / "BaseCamp" / "06_Artifacts" / "aifrontier-wiki" / "raw"
+ARTIFACT_ROOT = Path.home() / "BaseCamp" / "06_Artifacts" / "aifrontier-wiki"
+RAW_ROOT = ARTIFACT_ROOT / "raw"
+JOBS_DIR = ARTIFACT_ROOT / "extract-jobs"
+
+# Phase 2 extraction config (overridable via config/local.env -> environment).
+EXTRACT_MAX_CHARS = int(os.environ.get("AIFRONTIER_EXTRACT_MAX_CHARS", "80000"))
+EXTRACT_ADAPTERS = ("noop", "prompt_export", "openai_compatible", "deepseek")
 
 # Polite fetch configuration (overridable via config/local.env -> environment).
 FETCH_UA = os.environ.get("AIFRONTIER_FETCH_USER_AGENT", "aifrontier-wiki/phase1 personal-research")
@@ -748,12 +754,218 @@ def cmd_fetch_pages(args):
     return 0 if failed == 0 else 1
 
 
+# --------------------------------------------------------------------------- #
+# Phase 2: extraction input assembly + adapters.
+# Deterministic plumbing (input assembly, prompt_export, output validation) is
+# done here; the LLM call (openai_compatible/deepseek) is opt-in and run by
+# Hermes + DeepSeek Pro. See 1.specs/phase-2-extraction-runbook.md.
+# --------------------------------------------------------------------------- #
+def read_llms_sections():
+    """Parse raw/_site/llms-full.txt into {ep_id: section_markdown}."""
+    path = RAW_ROOT / "_site" / "llms-full.txt"
+    if not path.exists():
+        return {}
+    full = path.read_text(encoding="utf-8", errors="replace")
+    sections = {}
+    cur_id, buf = None, []
+    for line in full.splitlines():
+        m = re.match(r"^##\s+EP\s+(\d+):", line)
+        if m:
+            if cur_id is not None:
+                sections[cur_id] = "\n".join(buf).strip()
+            cur_id, buf = int(m.group(1)), [line]
+        elif cur_id is not None:
+            buf.append(line)
+    if cur_id is not None:
+        sections[cur_id] = "\n".join(buf).strip()
+    return sections
+
+
+def transcript_from_text(text, hosts):
+    """Slice the spoken transcript out of the page text (drop nav + chapter list).
+    Transcript starts where a host first speaks at 00:00."""
+    sliced = None
+    for h in hosts or []:
+        m = re.search(r"\b0?0:00\b\s*" + re.escape(h), text)
+        if m:
+            sliced = text[m.start():]
+            break
+    if sliced is None:
+        m = re.search(r"\n\s*0?0:00\s+\S", text)
+        sliced = text[m.start():] if m else text
+    # drop the trailing site footer / prev-next navigation
+    for marker in ("\n ← 이전", "\n← 이전", "← 이전", "© 20"):
+        idx = sliced.find(marker)
+        if idx != -1:
+            sliced = sliced[:idx]
+            break
+    return sliced.strip()
+
+
+def build_payload(ep_id):
+    """Assemble the user-content payload for one episode (clean metadata +
+    chapters from llms-full, transcript from text.txt)."""
+    epdir = RAW_ROOT / f"ep{ep_id}"
+    meta = load_json(epdir / "meta.json") if (epdir / "meta.json").exists() else {}
+    section = read_llms_sections().get(ep_id, "")
+    text = (epdir / "text.txt").read_text(encoding="utf-8", errors="replace") if (epdir / "text.txt").exists() else ""
+    hosts = []
+    mh = re.search(r"(?m)^- Hosts:\s*(.+)$", section)
+    if mh:
+        hosts = [h.strip() for h in re.split(r"[,/·]", mh.group(1)) if h.strip()]
+    transcript = transcript_from_text(text, hosts)
+    truncated = ""
+    if len(transcript) > EXTRACT_MAX_CHARS:
+        transcript = transcript[:EXTRACT_MAX_CHARS]
+        truncated = "\n\n[... 트랜스크립트 일부 생략 (길이 제한) ...]"
+    return (
+        f"## 에피소드 메타데이터\n"
+        f"- ep_id: {ep_id}\n"
+        f"- title: {meta.get('title') or ''}\n"
+        f"- published_date: {meta.get('published_date') or ''}\n"
+        f"- source_url: {meta.get('url') or ''}\n"
+        f"- raw_path: 06_Artifacts/aifrontier-wiki/raw/ep{ep_id}/page.html\n\n"
+        f"## 구조화된 요약 (llms-full.txt)\n{section}\n\n"
+        f"## 전사(transcript)\n{transcript}{truncated}\n"
+    )
+
+
+def system_prompt():
+    return (ROOT / "0.prompt" / "extract-prompt.md").read_text(encoding="utf-8")
+
+
+def build_messages(ep_id):
+    return [
+        {"role": "system", "content": system_prompt()},
+        {"role": "user", "content": build_payload(ep_id)},
+    ]
+
+
+def extract_problems(obj, ep_id):
+    schema = load_json(DATA / "extract.schema.json")
+    errs = ["schema: " + e for e in schema_errors(obj, schema, "extract")]
+    if obj.get("ep_id") != ep_id:
+        errs.append(f"ep_id mismatch: payload {ep_id} vs output {obj.get('ep_id')}")
+    ids = [e.get("id") for e in obj.get("entities", [])]
+    dupes = {i for i in ids if ids.count(i) > 1}
+    if dupes:
+        errs.append(f"duplicate entity id(s): {sorted(dupes)}")
+    return errs
+
+
+def write_extract(obj, ep_id):
+    problems = extract_problems(obj, ep_id)
+    if problems:
+        return problems
+    dump_json(EXTRACTS_DIR / f"ep{ep_id}.json", obj)
+    doc = load_json(DATA / "episodes.json")
+    for e in doc.get("episodes", []):
+        if e["ep_id"] == ep_id:
+            e["status"] = "extracted"
+    dump_json(DATA / "episodes.json", doc)
+    return []
+
+
+def http_post_json(url, payload, api_key=None, timeout=180):
+    data = json.dumps(payload).encode("utf-8")
+    headers = {"Content-Type": "application/json", "User-Agent": FETCH_UA}
+    if api_key:
+        headers["Authorization"] = "Bearer " + api_key
+    req = urllib.request.Request(url, data=data, headers=headers, method="POST")
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return json.loads(r.read().decode("utf-8"))
+
+
+def extract_targets(args):
+    doc = load_json(DATA / "episodes.json")
+    eps = doc.get("episodes", [])
+    if args.episode:
+        return [e for e in eps if e["ep_id"] == args.episode]
+    pending = []
+    for e in eps:
+        if e.get("status") not in ("fetched", "extracted", "rendered"):
+            continue
+        already = (EXTRACTS_DIR / f"ep{e['ep_id']}.json").exists()
+        if already and not args.force:
+            continue
+        pending.append(e)
+    return pending[: max(0, args.limit)]
+
+
 def cmd_extract(args):
-    if not args.allow_llm:
-        print("extract requires --allow-llm --adapter deepseek (opt-in).")
+    if args.adapter not in EXTRACT_ADAPTERS:
+        print(f"unknown adapter: {args.adapter} (choose from {EXTRACT_ADAPTERS})")
         return 2
-    print("extract: not implemented in Phase 2 yet (requires DeepSeek Pro adapter wiring).")
-    return 2
+    targets = extract_targets(args)
+    if not targets:
+        print("extract: nothing to do (no fetched episodes pending, or all already extracted; use --force/--episode).")
+        return 0
+
+    if args.adapter == "prompt_export":
+        # Deterministic: write ready-to-run jobs for DeepSeek/Hermes. No LLM.
+        JOBS_DIR.mkdir(parents=True, exist_ok=True)
+        for e in targets:
+            ep_id = e["ep_id"]
+            msgs = build_messages(ep_id)
+            (JOBS_DIR / f"ep{ep_id}.messages.json").write_text(
+                json.dumps({"ep_id": ep_id, "response_format": "json_object",
+                            "output_path": f"data/extracts/ep{ep_id}.json", "messages": msgs},
+                           ensure_ascii=False, indent=2), encoding="utf-8")
+            (JOBS_DIR / f"ep{ep_id}.prompt.md").write_text(
+                f"# Extract job — EP {ep_id}\n\n"
+                f"결과를 `data/extracts/ep{ep_id}.json` 에 **단일 JSON 객체**로 저장한다 "
+                f"(스키마: `data/extract.schema.json`).\n\n"
+                f"---\n\n## SYSTEM\n\n{msgs[0]['content']}\n\n---\n\n## INPUT\n\n{msgs[1]['content']}\n",
+                encoding="utf-8")
+        print(f"extract(prompt_export): wrote {len(targets)} job(s) -> {JOBS_DIR}")
+        print("  next: DeepSeek/Hermes runs each job and saves data/extracts/epNN.json (see 1.specs/phase-2-extraction-runbook.md)")
+        return 0
+
+    if args.adapter == "noop":
+        for e in targets:
+            build_messages(e["ep_id"])  # exercise assembly only
+        print(f"extract(noop): assembled {len(targets)} payload(s); wrote nothing.")
+        return 0
+
+    # openai_compatible / deepseek: live LLM call (opt-in).
+    if not args.allow_llm:
+        print(f"extract --adapter {args.adapter} requires --allow-llm (opt-in).")
+        return 2
+    base = args.llm_base_url or os.environ.get("AIFRONTIER_LLM_BASE_URL")
+    model = args.llm_model or os.environ.get("AIFRONTIER_LLM_MODEL") or "deepseek-pro"
+    key = os.environ.get("AIFRONTIER_LLM_API_KEY") or None
+    if not base:
+        print("missing endpoint: set --llm-base-url or AIFRONTIER_LLM_BASE_URL (config/local.env).")
+        return 2
+    is_local = re.search(r"localhost|127\.0\.0\.1", base) is not None
+    if not is_local and not key:
+        print("non-local endpoint requires AIFRONTIER_LLM_API_KEY.")
+        return 2
+    ok = fail = 0
+    for e in targets:
+        ep_id = e["ep_id"]
+        try:
+            resp = http_post_json(base.rstrip("/") + "/chat/completions",
+                                  {"model": model, "messages": build_messages(ep_id),
+                                   "temperature": 0.2, "response_format": {"type": "json_object"}},
+                                  api_key=key)
+            obj = json.loads(resp["choices"][0]["message"]["content"])
+        except Exception as ex:
+            fail += 1
+            print(f"  ep{ep_id}: FAIL {ex}")
+            continue
+        problems = write_extract(obj, ep_id)
+        if problems:
+            fail += 1
+            print(f"  ep{ep_id}: INVALID output -> not written")
+            for pr in problems[:5]:
+                print("      " + pr)
+            continue
+        ok += 1
+        print(f"  ep{ep_id}: extracted -> data/extracts/ep{ep_id}.json")
+    _set_stage("extract", "success" if fail == 0 else "partial_success")
+    print(f"extract({args.adapter}): ok {ok}, fail {fail}")
+    return 0 if fail == 0 else 1
 
 
 def main(argv=None) -> int:
@@ -771,10 +983,14 @@ def main(argv=None) -> int:
     fp.add_argument("--limit", type=int, default=5)
     fp.add_argument("--refresh", action="store_true", help="Re-check already-fetched episodes too")
     fp.add_argument("--force", action="store_true", help="Re-write even if content hash is unchanged")
-    ex = sub.add_parser("extract", help="[Phase 2] DeepSeek Pro extraction to data/extracts")
-    ex.add_argument("--allow-llm", action="store_true")
-    ex.add_argument("--adapter", default="deepseek")
+    ex = sub.add_parser("extract", help="[Phase 2] Assemble inputs / export jobs / run DeepSeek extraction")
+    ex.add_argument("--adapter", default="prompt_export", choices=EXTRACT_ADAPTERS)
+    ex.add_argument("--allow-llm", action="store_true", help="Required for openai_compatible/deepseek adapters")
     ex.add_argument("--limit", type=int, default=5)
+    ex.add_argument("--episode", type=int, help="Target a single ep_id")
+    ex.add_argument("--force", action="store_true", help="Re-extract even if data/extracts/epNN.json exists")
+    ex.add_argument("--llm-base-url", help="OpenAI-compatible base URL (else AIFRONTIER_LLM_BASE_URL)")
+    ex.add_argument("--llm-model", help="Model id (else AIFRONTIER_LLM_MODEL, default deepseek-pro)")
     args = parser.parse_args(argv)
     return {
         "validate": cmd_validate,
