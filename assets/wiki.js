@@ -28,6 +28,8 @@
     var eplist = document.getElementById("afw-eplist");
     var countEl = document.getElementById("afw-count");
     var note = document.getElementById("afw-note");
+    var floatEl = document.getElementById("afw-float");
+    var labelEl = document.getElementById("afw-float-kw");
     var terms = [], idx = 0;
 
     function clearHl() {
@@ -40,7 +42,15 @@
       for (var j = 0; j < terms.length; j++) terms[j].classList.remove("current");
       terms[idx].classList.add("current");
       terms[idx].scrollIntoView({ behavior: "smooth", block: "center" });
-      countEl.textContent = (idx + 1) + " / " + terms.length;
+      if (countEl) countEl.textContent = (idx + 1) + "/" + terms.length;
+    }
+    function deactivate() {
+      clearHl();
+      var chips = document.querySelectorAll(".kwchip");
+      for (var i = 0; i < chips.length; i++) chips[i].classList.remove("active");
+      if (floatEl) floatEl.classList.remove("show");
+      if (panel) panel.style.display = "none";
+      terms = [];
     }
     function activate(kw) {
       clearHl();
@@ -49,7 +59,8 @@
       terms = [].slice.call(body.querySelectorAll('.term[data-kw="' + kw + '"]'));
       for (var t = 0; t < terms.length; t++) terms[t].classList.add("hl");
       var info = kwmap[kw] || { label: kw, eps: [] };
-      nameEl.textContent = info.label || kw;
+      if (nameEl) nameEl.textContent = info.label || kw;
+      if (labelEl) labelEl.textContent = info.label || kw;
       if (note) note.style.display = "none";
       eplist.innerHTML = "";
       (info.eps || []).forEach(function (e) {
@@ -65,7 +76,8 @@
           eplist.appendChild(a);
         }
       });
-      panel.style.display = "block";
+      if (panel) panel.style.display = "block";
+      if (floatEl) floatEl.classList.add("show");
       goto(0);
     }
     var chips = document.querySelectorAll(".kwchip");
@@ -74,9 +86,14 @@
         chip.addEventListener("click", function () { activate(chip.getAttribute("data-kw")); });
       })(chips[c]);
     }
-    var prev = document.getElementById("afw-prev"), next = document.getElementById("afw-next");
+    var prev = document.getElementById("afw-prev"), next = document.getElementById("afw-next"), clr = document.getElementById("afw-clear");
     if (prev) prev.addEventListener("click", function () { goto(idx - 1); });
     if (next) next.addEventListener("click", function () { goto(idx + 1); });
+    if (clr) clr.addEventListener("click", deactivate);
+    document.addEventListener("keydown", function (e) {
+      if (!floatEl || !floatEl.classList.contains("show")) return;
+      if (e.key === "Escape") deactivate();
+    });
   }
 
   // ---------- Keyword index page mode ----------

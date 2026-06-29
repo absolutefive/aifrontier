@@ -84,6 +84,27 @@ h2{font-size:17px; font-weight:600; margin:1.6rem 0 .6rem;}
 .eprow .epn{font-weight:600; color:var(--accent);}
 .eprow .cur{font-size:11px; padding:2px 7px; border-radius:999px; background:var(--success-bg); color:var(--success-fg);}
 .note{display:none; margin:10px 0 0; font-size:12px; color:var(--accent);}
+
+/* floating vertical occurrence navigator */
+#afw-float{position:fixed; right:16px; top:50%; transform:translateY(-50%); z-index:50;
+  display:none; flex-direction:column; align-items:center; gap:7px;
+  background:var(--surface-2); border:1px solid var(--border); border-radius:999px; padding:9px 7px;
+  box-shadow:0 3px 14px rgba(0,0,0,.12);}
+#afw-float.show{display:flex;}
+#afw-float .fbtn{width:32px; height:32px; border-radius:50%; border:1px solid var(--border-strong);
+  background:var(--surface-1); color:var(--text-primary); cursor:pointer; font-size:16px; line-height:1;
+  display:flex; align-items:center; justify-content:center;}
+#afw-float .fbtn:hover{background:var(--accent-bg); border-color:var(--accent-border); color:var(--accent);}
+#afw-float .fcount{font-size:12px; font-weight:500; color:var(--text-secondary); white-space:nowrap;}
+#afw-float .fkw{writing-mode:vertical-rl; text-orientation:mixed; font-size:12px; color:var(--text-muted);
+  max-height:140px; overflow:hidden; text-overflow:ellipsis; margin:2px 0;}
+#afw-float .fclear{width:22px; height:22px; border:none; background:transparent; color:var(--text-muted);
+  cursor:pointer; font-size:15px; line-height:1; border-radius:50%;}
+#afw-float .fclear:hover{background:var(--surface-1); color:var(--text-primary);}
+@media (max-width:640px){
+  #afw-float{top:auto; bottom:16px; right:50%; transform:translateX(50%); flex-direction:row;}
+  #afw-float .fkw{writing-mode:horizontal-tb; max-height:none; max-width:120px; white-space:nowrap;}
+}
 .quote{margin:0 0 1.2rem; padding:10px 16px; border-left:3px solid var(--border-strong); font-family:var(--font-voice); font-size:15px; color:var(--text-secondary);}
 .sources{font-size:13px; line-height:1.9;}
 .ep-footer{display:flex; align-items:center; gap:8px; padding-top:12px; margin-top:1.2rem; border-top:1px solid var(--border); font-size:12px; color:var(--text-muted);}

@@ -237,12 +237,17 @@ def render_episode(ex, index_keywords):
     p.append(f'<div id="afw-chips">{chips}</div>')
     p.append(
         '<div id="afw-panel" class="panel"><div class="panel-head">'
-        '<span><span id="afw-kwname"></span> <span class="muted">— 등장 에피소드</span></span>'
-        '<span id="afw-stepper" class="stepper"><span class="muted">본문 위치</span>'
-        '<button id="afw-prev" aria-label="이전 등장">‹</button>'
-        '<span id="afw-count" class="count">1 / 1</span>'
-        '<button id="afw-next" aria-label="다음 등장">›</button></span></div>'
+        '<span><span id="afw-kwname"></span> <span class="muted">— 등장 에피소드</span></span></div>'
         '<div id="afw-eplist" class="eplist"></div><p id="afw-note" class="note"></p></div>'
+    )
+    # Floating vertical occurrence navigator (fixed to the right; visible while scrolling).
+    p.append(
+        '<div id="afw-float" role="navigation" aria-label="키워드 본문 이동">'
+        '<button id="afw-clear" class="fclear" aria-label="키워드 해제" title="해제 (Esc)">×</button>'
+        '<span id="afw-float-kw" class="fkw"></span>'
+        '<button id="afw-prev" class="fbtn" aria-label="이전 등장" title="이전 등장">↑</button>'
+        '<span id="afw-count" class="fcount">1/1</span>'
+        '<button id="afw-next" class="fbtn" aria-label="다음 등장" title="다음 등장">↓</button></div>'
     )
     if ex.get("notable_quote"):
         q = ex["notable_quote"]
