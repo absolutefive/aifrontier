@@ -39,7 +39,26 @@ if [ "${DRY_RUN}" -eq 1 ]; then
   exit 0
 fi
 
-# Live path (Phase 1+). Network/LLM stages still require their own opt-in flags
-# and are not implemented in the Phase 0 scaffold.
-echo "[cycle] live path is not enabled in Phase 0 scaffold."
+# Live path: real weekly incremental driver.
+# Network/LLM are used here intentionally (this is the automation surface), but
+# the whole wrapper stays gated by scheduler-state.enabled / --force, and extract
+# only runs when an LLM endpoint is configured.
+echo "[cycle] live: validate"
+${CLI} validate || { echo "[cycle] validate failed; aborting"; exit 1; }
+echo "[cycle] live: fetch-index"
+${CLI} fetch-index --allow-network || { echo "[cycle] fetch-index failed; aborting"; exit 1; }
+echo "[cycle] live: fetch-pages (incremental; text-hash skips unchanged)"
+${CLI} fetch-pages --allow-network --refresh --limit 50
+if [ -n "${AIFRONTIER_LLM_BASE_URL:-}" ]; then
+  echo "[cycle] live: extract (deepseek)"
+  ${CLI} extract --allow-llm --adapter deepseek --limit 50
+else
+  echo "[cycle] live: AIFRONTIER_LLM_BASE_URL unset -> skipping extract (set config/local.env to enable)"
+fi
+${CLI} build-keyword-index
+${CLI} render-wiki
+echo "[cycle] live: post-cycle consistency check"
+${CLI} validate
+${CLI} selfcheck
+echo "[cycle] live complete. (review git diff; commit per operating rules)"
 exit 0

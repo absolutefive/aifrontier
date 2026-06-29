@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "run_id": null,
+  "run_id": "20260629T154559Z",
   "phase": "phase-0-scaffold",
-  "run_status": "never_run",
+  "run_status": "success",
   "started_at": null,
-  "finished_at": "2026-06-29T15:23:47Z",
+  "finished_at": "2026-06-29T15:45:59Z",
   "skip_reason": null,
   "error_log_path": null,
   "retry_policy": "failed_runs_do_not_retry_automatically",
@@ -12,11 +12,11 @@
     "fetch_index": "success",
     "fetch_pages": "success",
     "extract": "not_run",
-    "build_keyword_index": "not_run",
-    "render_wiki": "not_run"
+    "build_keyword_index": "success",
+    "render_wiki": "success"
   },
   "user_facing_summary": {
     "language": "ko",
-    "text": "Phase 0 스캐폴드 상태입니다. 아직 수집/추출/렌더를 실행하지 않았습니다."
+    "text": "로컬 렌더 완료: 에피소드 3개, 키워드 22개."
   }
 }

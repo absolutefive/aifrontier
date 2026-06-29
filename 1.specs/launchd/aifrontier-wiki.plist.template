@@ -13,7 +13,16 @@
   <array>
     <string>/bin/bash</string>
     <string>__HOME__/BaseCamp/02_Knowledge/research/aifrontier-wiki/scripts/run_aifrontier_wiki_cycle.sh</string>
+    <string>--run</string>
   </array>
+  <!-- --run selects the live cycle (fetch -> extract -> render). Still gated by
+       state/scheduler-state.json (enabled must be true). Set config/local.env so
+       AIFRONTIER_LLM_BASE_URL is exported for the extract step. -->
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>AIFRONTIER_LLM_BASE_URL</key><string></string>
+    <key>AIFRONTIER_LLM_MODEL</key><string>deepseek-pro</string>
+  </dict>
   <key>StartCalendarInterval</key>
   <dict>
     <key>Weekday</key><integer>1</integer>

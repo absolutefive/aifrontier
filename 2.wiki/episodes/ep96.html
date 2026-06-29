@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP96 · LLM 추론 인프라와 토큰 경제학</title>
+<link rel="stylesheet" href="../../assets/styles/wiki.css">
+</head>
+<body>
+<main>
+<p class="ep-cat">AI Frontier 위키 · 추론 인프라</p>
+<p class="ep-meta"><span class="epn">EP 96</span> 2026-05-08 · 노정석 · 최승준</p>
+<h1>LLM 추론 인프라와 토큰 경제학</h1>
+<blockquote class="one-line">추론 비용을 좌우하는 것은 연산량이 아니라 메모리 이동량이며, KV 캐시·배치·캐시 계층이 토큰 가격을 결정한다.</blockquote>
+<h2>핵심 포인트</h2>
+<ul class="key-points"><li>토큰당 비용은 FLOPs가 아니라 KV 캐시 메모리 이동량이 지배한다.</li><li>추론은 prefill(compute-bound)과 decode(memory-bound)로 갈리며 decode가 비용의 핵심이다.</li><li>Roofline 분석에서 latency는 t_mem과 t_compute 중 큰 쪽이 결정한다.</li><li>배치를 키우면 가중치 로딩이 amortize되지만 KV 캐시가 선형으로 커져 동시성의 상한을 만든다.</li><li>200K 컨텍스트 임계점과 캐시 계층·TTL이 가격 티어의 경제학을 만든다.</li></ul>
+<h2>다룬 흐름</h2>
+<div class="flow"><div class="flow-item"><span class="stage">도입</span><p>연휴에 본 Dwarkesh 칠판 강의를 따라 LLM 추론·서빙 경제학으로 입문</p></div><div class="flow-item"><span class="stage">추론 기초</span><p>KV cache·prefill·decode 용어와 트랜스포머 동작 흐름</p></div><div class="flow-item"><span class="stage">하드웨어</span><p>HBM 대역폭, NVLink·NVL72 랙 구성, MoE 구조의 직관</p></div><div class="flow-item"><span class="stage">Roofline</span><p>t_mem과 t_compute로 latency를 분해</p></div><div class="flow-item"><span class="stage">배치와 비용</span><p>amortize와 토큰당 비용 곡선, 최적 배치, PagedAttention</p></div><div class="flow-item"><span class="stage">캐시 경제학</span><p>200K 임계점과 캐시 계층·TTL이 만드는 가격 티어</p></div></div>
+<h2>본문 엑기스</h2>
+<div id="afw-body"><p>이번 회차는 Dwarkesh의 칠판 강의를 따라가며 LLM 추론과 서빙 인프라의 경제학을 정리한다. 핵심 결론은 토큰 비용을 좌우하는 것이 연산량이 아니라 메모리 이동량이라는 점이다.</p><p>추론은 <mark class="term" id="prefill-decode-1" data-kw="prefill-decode">prefill</mark>과 <mark class="term" id="prefill-decode-2" data-kw="prefill-decode">decode</mark> 두 단계로 나뉜다. <mark class="term" id="prefill-decode-3" data-kw="prefill-decode">prefill</mark>은 입력을 한 번에 처리해 compute-bound에 가깝고, <mark class="term" id="prefill-decode-4" data-kw="prefill-decode">decode</mark>는 토큰을 하나씩 생성하며 <mark class="term" id="kv-1" data-kw="kv">KV 캐시</mark>를 반복해서 읽어 memory-bound가 된다. 그래서 <mark class="term" id="kv-2" data-kw="kv">KV 캐시</mark>의 크기와 재사용률이 곧 비용이 된다.</p><p>하드웨어 층에서는 HBM 대역폭과 <mark class="term" id="nvlink-1" data-kw="nvlink">NVLink</mark>·<mark class="term" id="nvlink-2" data-kw="nvlink">NVL72</mark> 같은 랙 단위 연결이 서빙 성능을 가른다. <mark class="term" id="moe-1" data-kw="moe">MoE</mark> 구조는 활성 파라미터를 줄여 같은 비용으로 더 큰 모델을 굴리는 직관을 준다.</p><p><mark class="term" id="roofline-1" data-kw="roofline">Roofline</mark> 분석으로 보면 latency는 t_mem과 t_compute 중 큰 쪽이 결정한다. 배치를 키우면 가중치 로딩 비용이 amortize되지만 <mark class="term" id="kv-3" data-kw="kv">KV 캐시</mark>가 선형으로 커져 동시 사용자 수의 상한을 만든다. <mark class="term" id="pagedattention-1" data-kw="pagedattention">PagedAttention</mark>은 이 <mark class="term" id="kv-4" data-kw="kv">KV 캐시</mark> 메모리를 페이지 단위로 효율화한다.</p><p>결국 200K 컨텍스트 같은 임계점과 캐시 계층·TTL이 가격 티어의 경제학을 만든다. <mark class="term" id="dsv4-1" data-kw="dsv4">DeepSeek-V4</mark>가 보여준 컨텍스트 비용 절감 그래프처럼, 토큰 이코노믹스는 모델 크기 경쟁이 아니라 캐시 설계 경쟁이다.</p></div>
+<h2>등장 개념 · 인물 · 모델</h2>
+<p class="entities-hint">키워드를 누르면 등장 에피소드와 본문 위치로 이동합니다</p>
+<div id="afw-chips"><button class="kwchip kw-concept" data-kw="kv">KV 캐시</button><button class="kwchip kw-concept" data-kw="prefill-decode">prefill/decode</button><button class="kwchip kw-concept" data-kw="roofline">Roofline 분석</button><button class="kwchip kw-concept" data-kw="moe">MoE</button><button class="kwchip kw-concept" data-kw="nvlink">NVLink</button><button class="kwchip kw-concept" data-kw="pagedattention">PagedAttention</button><button class="kwchip kw-model" data-kw="dsv4">DeepSeek-V4</button></div>
+<div id="afw-panel" class="panel"><div class="panel-head"><span><span id="afw-kwname"></span> <span class="muted">— 등장 에피소드</span></span><span id="afw-stepper" class="stepper"><span class="muted">본문 위치</span><button id="afw-prev" aria-label="이전 등장">‹</button><span id="afw-count" class="count">1 / 1</span><button id="afw-next" aria-label="다음 등장">›</button></span></div><div id="afw-eplist" class="eplist"></div><p id="afw-note" class="note"></p></div>
+<blockquote class="quote">“토큰 이코노믹스는 모델 크기 경쟁이 아니라 캐시 설계 경쟁이다.” <span class="muted">— 노정석</span></blockquote>
+<h2>출처 · 원문</h2><div class="sources"><div>↪ <a href="https://aifrontier.kr/ko/episodes/ep96">https://aifrontier.kr/ko/episodes/ep96</a></div><div class="muted">archive: <code>06_Artifacts/aifrontier-wiki/raw/ep96/page.html</code></div></div>
+<div class="ep-footer"><span class="badge draft">draft</span><span>claude-opus-4.8 (trial) · 추출 2026-06-30</span></div>
+<script type="application/json" id="afw-data">{"ep_id": 96, "keywords": {"kv": {"label": "KV 캐시", "type": "concept", "eps": [{"ep": 96, "c": 4, "cur": true}]}, "prefill-decode": {"label": "prefill/decode", "type": "concept", "eps": [{"ep": 96, "c": 4, "cur": true}]}, "roofline": {"label": "Roofline 분석", "type": "concept", "eps": [{"ep": 96, "c": 1, "cur": true}]}, "moe": {"label": "MoE", "type": "concept", "eps": [{"ep": 96, "c": 1, "cur": true}]}, "nvlink": {"label": "NVLink", "type": "concept", "eps": [{"ep": 96, "c": 2, "cur": true}]}, "pagedattention": {"label": "PagedAttention", "type": "concept", "eps": [{"ep": 96, "c": 1, "cur": true}]}, "dsv4": {"label": "DeepSeek-V4", "type": "model", "eps": [{"ep": 96, "c": 1, "cur": true}]}}}</script>
+</main>
+<script src="../../assets/wiki.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 96,
+  "slug": "llm-inference-infra-token-economics",
+  "title": "LLM 추론 인프라와 토큰 경제학",
+  "published_date": "2026-05-08",
+  "hosts": ["노정석", "최승준"],
+  "category": "추론 인프라",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep96",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep96/page.html",
+  "one_line": "추론 비용을 좌우하는 것은 연산량이 아니라 메모리 이동량이며, KV 캐시·배치·캐시 계층이 토큰 가격을 결정한다.",
+  "key_points": [
+    "토큰당 비용은 FLOPs가 아니라 KV 캐시 메모리 이동량이 지배한다.",
+    "추론은 prefill(compute-bound)과 decode(memory-bound)로 갈리며 decode가 비용의 핵심이다.",
+    "Roofline 분석에서 latency는 t_mem과 t_compute 중 큰 쪽이 결정한다.",
+    "배치를 키우면 가중치 로딩이 amortize되지만 KV 캐시가 선형으로 커져 동시성의 상한을 만든다.",
+    "200K 컨텍스트 임계점과 캐시 계층·TTL이 가격 티어의 경제학을 만든다."
+  ],
+  "flow": [
+    { "stage": "도입", "summary": "연휴에 본 Dwarkesh 칠판 강의를 따라 LLM 추론·서빙 경제학으로 입문" },
+    { "stage": "추론 기초", "summary": "KV cache·prefill·decode 용어와 트랜스포머 동작 흐름" },
+    { "stage": "하드웨어", "summary": "HBM 대역폭, NVLink·NVL72 랙 구성, MoE 구조의 직관" },
+    { "stage": "Roofline", "summary": "t_mem과 t_compute로 latency를 분해" },
+    { "stage": "배치와 비용", "summary": "amortize와 토큰당 비용 곡선, 최적 배치, PagedAttention" },
+    { "stage": "캐시 경제학", "summary": "200K 임계점과 캐시 계층·TTL이 만드는 가격 티어" }
+  ],
+  "body_paragraphs": [
+    "이번 회차는 Dwarkesh의 칠판 강의를 따라가며 LLM 추론과 서빙 인프라의 경제학을 정리한다. 핵심 결론은 토큰 비용을 좌우하는 것이 연산량이 아니라 메모리 이동량이라는 점이다.",
+    "추론은 prefill과 decode 두 단계로 나뉜다. prefill은 입력을 한 번에 처리해 compute-bound에 가깝고, decode는 토큰을 하나씩 생성하며 KV 캐시를 반복해서 읽어 memory-bound가 된다. 그래서 KV 캐시의 크기와 재사용률이 곧 비용이 된다.",
+    "하드웨어 층에서는 HBM 대역폭과 NVLink·NVL72 같은 랙 단위 연결이 서빙 성능을 가른다. MoE 구조는 활성 파라미터를 줄여 같은 비용으로 더 큰 모델을 굴리는 직관을 준다.",
+    "Roofline 분석으로 보면 latency는 t_mem과 t_compute 중 큰 쪽이 결정한다. 배치를 키우면 가중치 로딩 비용이 amortize되지만 KV 캐시가 선형으로 커져 동시 사용자 수의 상한을 만든다. PagedAttention은 이 KV 캐시 메모리를 페이지 단위로 효율화한다.",
+    "결국 200K 컨텍스트 같은 임계점과 캐시 계층·TTL이 가격 티어의 경제학을 만든다. DeepSeek-V4가 보여준 컨텍스트 비용 절감 그래프처럼, 토큰 이코노믹스는 모델 크기 경쟁이 아니라 캐시 설계 경쟁이다."
+  ],
+  "entities": [
+    { "id": "kv", "label": "KV 캐시", "type": "concept", "aliases": ["KV 캐시", "KV cache", "KV캐시"] },
+    { "id": "prefill-decode", "label": "prefill/decode", "type": "concept", "aliases": ["prefill", "decode"] },
+    { "id": "roofline", "label": "Roofline 분석", "type": "concept", "aliases": ["Roofline", "roofline"] },
+    { "id": "moe", "label": "MoE", "type": "concept", "aliases": ["MoE"] },
+    { "id": "nvlink", "label": "NVLink", "type": "concept", "aliases": ["NVLink", "NVL72"] },
+    { "id": "pagedattention", "label": "PagedAttention", "type": "concept", "aliases": ["PagedAttention"] },
+    { "id": "dsv4", "label": "DeepSeek-V4", "type": "model", "aliases": ["DeepSeek-V4", "DeepSeek"] }
+  ],
+  "notable_quote": {
+    "text": "토큰 이코노믹스는 모델 크기 경쟁이 아니라 캐시 설계 경쟁이다.",
+    "speaker": "노정석"
+  },
+  "language": "ko",
+  "extractor": "claude-opus-4.8 (trial)",
+  "extracted_at": "2026-06-30",
+  "review_status": "draft"
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 100,
+  "slug": "claude-mythos-fable5-next-phase",
+  "title": "Claude Mythos, Fable 5, 그리고 다음 국면은?",
+  "published_date": "2026-06-16",
+  "hosts": ["노정석", "최승준"],
+  "category": "모델·전략",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep100",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep100/page.html",
+  "one_line": "Fable 5·Mythos 공개를 기점으로 경쟁축이 사전학습에서 포스트 트레이닝·데이터셋·루프 엔지니어링으로 옮겨가고, RSI와 주권 AI가 다음 국면을 연다.",
+  "key_points": [
+    "스케일이 커질수록 사전학습보다 포스트 트레이닝의 중요성이 커진다.",
+    "프론티어 모델의 실력은 데이터셋 엔지니어링에서 갈린다.",
+    "루프 엔지니어링이 새로운 언어로 등장하고 테스트 타임 컴퓨트가 상업적 변수다.",
+    "다리오 아모데이의 글을 따라 RSI 타임라인과 AI의 전략 자산화를 짚는다.",
+    "컴퓨팅 스케일 경쟁이 주권 AI로 번지며 한국의 독자 파운데이션 모델 기회가 논의된다."
+  ],
+  "flow": [
+    { "stage": "회고", "summary": "AI 프론티어 100회와 3년의 변화" },
+    { "stage": "경쟁축 이동", "summary": "스케일 증가와 포스트 트레이닝·데이터셋 엔지니어링의 부상" },
+    { "stage": "이름의 의미", "summary": "Mythos와 Fable이 던진 보안 질문과 명명의 함의" },
+    { "stage": "RSI", "summary": "다리오 아모데이의 글과 재귀적 자기개선 타임라인" },
+    { "stage": "루프 엔지니어링", "summary": "Fable 5 가격·API 비용과 테스트 타임 컴퓨트의 상업성" },
+    { "stage": "주권 AI", "summary": "컴퓨팅 스케일 경쟁과 한국 독자 파운데이션 모델 기회, Claude Code 이후" }
+  ],
+  "body_paragraphs": [
+    "AI 프론티어 100회는 Anthropic의 Fable 5와 Mythos급 모델 공개를 출발점으로 삼는다. 3년의 변화를 돌아보며, 경쟁의 무게중심이 사전학습에서 다른 곳으로 옮겨갔다고 진단한다.",
+    "스케일이 커질수록 포스트 트레이닝의 중요성이 커진다. 프론티어 모델의 실력은 이제 데이터셋 엔지니어링, 즉 어떤 데이터를 어떻게 만들고 정제하느냐에서 갈린다.",
+    "Mythos와 Fable이라는 이름은 보안 질문까지 던진다. 다리오 아모데이의 글을 따라 RSI(재귀적 자기개선) 타임라인과, AI가 전략 자산이 된 시장의 반응을 짚는다.",
+    "루프 엔지니어링이라는 새로운 언어가 등장한다. Fable 5의 가격과 테스트 타임 컴퓨트, Fable API 비용 구조는 루프 엔지니어링이 상업적으로 의미 있는 영역임을 보여준다.",
+    "컴퓨팅 스케일 경쟁은 주권 AI 경쟁으로 번지고, 여기서 한국의 독자 파운데이션 모델 기회가 논의된다. Claude Code 이후 엔지니어링의 변화와 함께 100회 이후의 방향을 전망한다."
+  ],
+  "entities": [
+    { "id": "fable5", "label": "Fable 5", "type": "model", "aliases": ["Fable 5", "Fable"] },
+    { "id": "mythos", "label": "Mythos", "type": "model", "aliases": ["Mythos"] },
+    { "id": "posttrain", "label": "포스트 트레이닝", "type": "concept", "aliases": ["포스트 트레이닝"] },
+    { "id": "dataset-eng", "label": "데이터셋 엔지니어링", "type": "concept", "aliases": ["데이터셋 엔지니어링"] },
+    { "id": "loop-eng", "label": "루프 엔지니어링", "type": "concept", "aliases": ["루프 엔지니어링"] },
+    { "id": "rsi", "label": "RSI", "type": "concept", "aliases": ["RSI", "재귀적 자기개선"] },
+    { "id": "sovereign-ai", "label": "주권 AI", "type": "concept", "aliases": ["주권 AI"] },
+    { "id": "claude-code", "label": "Claude Code", "type": "model", "aliases": ["Claude Code"] }
+  ],
+  "notable_quote": {
+    "text": "이제 경쟁은 사전학습이 아니라 포스트 트레이닝과 루프 엔지니어링에서 갈린다.",
+    "speaker": "노정석"
+  },
+  "language": "ko",
+  "extractor": "claude-opus-4.8 (trial)",
+  "extracted_at": "2026-06-30",
+  "review_status": "draft"
+}
