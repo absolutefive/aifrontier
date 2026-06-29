@@ -14,30 +14,42 @@
     "추론은 prefill(compute-bound)과 decode(memory-bound)로 갈리며 decode가 비용의 핵심이다.",
     "Roofline 분석에서 latency는 t_mem과 t_compute 중 큰 쪽이 결정한다.",
     "배치를 키우면 가중치 로딩이 amortize되지만 KV 캐시가 선형으로 커져 동시성의 상한을 만든다.",
+    "vLLM·SGLang은 배치를 가득 채우고 chunked prefill로 지연을 숨겨 처리량을 끌어올린다.",
     "200K 컨텍스트 임계점과 캐시 계층·TTL이 가격 티어의 경제학을 만든다."
   ],
   "flow": [
-    { "stage": "도입", "summary": "연휴에 본 Dwarkesh 칠판 강의를 따라 LLM 추론·서빙 경제학으로 입문" },
+    { "stage": "도입", "summary": "Dwarkesh의 칠판 강의를 따라 LLM 추론·서빙 경제학으로 입문" },
     { "stage": "추론 기초", "summary": "KV cache·prefill·decode 용어와 트랜스포머 동작 흐름" },
     { "stage": "하드웨어", "summary": "HBM 대역폭, NVLink·NVL72 랙 구성, MoE 구조의 직관" },
     { "stage": "Roofline", "summary": "t_mem과 t_compute로 latency를 분해" },
     { "stage": "배치와 비용", "summary": "amortize와 토큰당 비용 곡선, 최적 배치, PagedAttention" },
+    { "stage": "서빙 스택", "summary": "vLLM·SGLang의 배치 채우기와 chunked prefill" },
     { "stage": "캐시 경제학", "summary": "200K 임계점과 캐시 계층·TTL이 만드는 가격 티어" }
   ],
   "body_paragraphs": [
-    "이번 회차는 Dwarkesh의 칠판 강의를 따라가며 LLM 추론과 서빙 인프라의 경제학을 정리한다. 핵심 결론은 토큰 비용을 좌우하는 것이 연산량이 아니라 메모리 이동량이라는 점이다.",
-    "추론은 prefill과 decode 두 단계로 나뉜다. prefill은 입력을 한 번에 처리해 compute-bound에 가깝고, decode는 토큰을 하나씩 생성하며 KV 캐시를 반복해서 읽어 memory-bound가 된다. 그래서 KV 캐시의 크기와 재사용률이 곧 비용이 된다.",
-    "하드웨어 층에서는 HBM 대역폭과 NVLink·NVL72 같은 랙 단위 연결이 서빙 성능을 가른다. MoE 구조는 활성 파라미터를 줄여 같은 비용으로 더 큰 모델을 굴리는 직관을 준다.",
-    "Roofline 분석으로 보면 latency는 t_mem과 t_compute 중 큰 쪽이 결정한다. 배치를 키우면 가중치 로딩 비용이 amortize되지만 KV 캐시가 선형으로 커져 동시 사용자 수의 상한을 만든다. PagedAttention은 이 KV 캐시 메모리를 페이지 단위로 효율화한다.",
-    "결국 200K 컨텍스트 같은 임계점과 캐시 계층·TTL이 가격 티어의 경제학을 만든다. DeepSeek-V4가 보여준 컨텍스트 비용 절감 그래프처럼, 토큰 이코노믹스는 모델 크기 경쟁이 아니라 캐시 설계 경쟁이다."
+    "이번 회차는 Dwarkesh가 포맷을 바꿔 칠판에 직접 판서한 추론·서빙 인프라 강의를 따라가며 LLM 추론의 경제학을 정리한다. 출발 질문은 단순하다 — 우리가 API에서 보는 토큰 가격은 대체 무엇으로 정해지는가. 두 진행자는 이 가격표가 모델의 똑똑함이 아니라 메모리와 캐시의 물리학에서 나온다는 점을 강조한다.",
+    "논의의 첫 실마리는 DeepSeek-V4가 공개한 컨텍스트 비용 절감 그래프다. 같은 길이의 출력을 내더라도 캐시를 어떻게 다루느냐에 따라 비용이 몇 배씩 갈린다. 즉 추론 비용의 승부처는 연산량(FLOPs)이 아니라 데이터를 메모리에서 얼마나 자주, 얼마나 멀리 옮기느냐다.",
+    "하드웨어 지형부터 짚는다. NVIDIA GPU의 실효 성능은 코어 수보다 HBM 대역폭에 묶여 있고, Blackwell 세대의 NVL72는 랙 하나를 거대한 메모리 풀처럼 묶는다. 랙 내부는 NVLink·NVSwitch로 초고속 연결되지만, 랙과 랙 사이는 여전히 병목이라 '어디까지가 한 덩어리 메모리인가'가 서빙 설계를 좌우한다.",
+    "추론은 두 단계로 나뉜다. prefill은 입력 프롬프트를 한 번에 통과시키는 단계로 연산이 몰려 compute-bound에 가깝고, decode는 토큰을 하나씩 만들어 내는 단계다. 트랜스포머는 앞서 만든 토큰들의 key/value를 KV 캐시에 저장해 두고 매 스텝 재활용한다.",
+    "여기서 KV 캐시가 왜 비용의 핵심인지 드러난다. decode는 토큰 하나를 낼 때마다 누적된 KV 캐시 전체를 다시 읽어야 해서 철저히 memory-bound다. 그래서 토큰화와 vocab 크기, attention의 causal mask, 그리고 KV 압축 같은 기법이 모두 '캐시를 어떻게 줄일까'라는 한 가지 목표로 수렴한다.",
+    "모델 구조도 같은 렌즈로 본다. sparse MoE는 토큰마다 전체 파라미터가 아니라 일부 전문가만 활성화하기 때문에, 같은 추론 비용으로 훨씬 큰 모델의 표현력을 빌려올 수 있다. MoE는 '파라미터는 크게, 활성 연산은 작게'라는 추론 경제학의 직관을 잘 보여 준다.",
+    "이 모든 것을 한 장의 그림으로 묶는 도구가 Roofline 분석이다. 어떤 연산의 지연시간은 메모리를 옮기는 데 걸리는 t_mem과 실제 계산에 걸리는 t_compute 중 더 큰 쪽이 결정한다. decode는 대부분 t_mem이 지배하므로, GPU가 아무리 빨라도 대역폭이 한계를 긋는다.",
+    "그렇다면 처리량은 어떻게 올리나. 배치를 키우면 한 번 불러온 모델 가중치를 여러 요청이 나눠 쓰므로 로딩 비용이 amortize되고 GPU utilization(MFU)이 올라간다. 문제는 KV 캐시가 배치 크기에 비례해 선형으로 커진다는 점 — 동시에 받을 수 있는 사용자 수의 상한이 여기서 생긴다.",
+    "그래서 메모리 예산 배분이 핵심 설계가 된다. 20TB급 HBM을 가정해도 모델 가중치와 KV 캐시를 어떤 비율로 나누느냐가 동시 처리량을 정한다. PagedAttention은 KV 캐시를 운영체제의 페이지처럼 작은 블록으로 관리해 단편화를 줄이고, 같은 메모리로 더 많은 동시 요청을 담는다.",
+    "비용 곡선에는 최적점이 있다. 배치를 키울수록 토큰당 비용은 떨어지다가 어느 지점부터 다시 나빠진다. 강의는 FLOPs 대비 대역폭 비율과 모델의 sparsity로 그 최적 배치를 추정하고, '20ms짜리 연산 열차'와 그 열차가 빠져나가는 drain time 같은 비유로 직관을 잡아 준다.",
+    "실전 서빙 스택은 이 이론을 코드로 옮긴 것이다. vLLM·SGLang의 핵심 목표는 배치를 항상 가득 채워 두는 것과, chunked prefill로 긴 프롬프트 처리 지연을 디코딩 사이에 끼워 숨기는 것이다. 스케줄링과 오케스트레이션이 곧 단가 경쟁력이 된다.",
+    "마지막은 가격표의 경제학이다. 200K 컨텍스트 같은 임계점에서 가격 티어가 갈리는 이유, 그리고 캐시 계층과 TTL이 '캐시 가격'을 만드는 구조를 설명한다. 결론은 한 문장으로 모인다 — 토큰 이코노믹스는 모델 크기 경쟁이 아니라 캐시 설계 경쟁이다."
   ],
   "entities": [
     { "id": "kv", "label": "KV 캐시", "type": "concept", "aliases": ["KV 캐시", "KV cache", "KV캐시"] },
     { "id": "prefill-decode", "label": "prefill/decode", "type": "concept", "aliases": ["prefill", "decode"] },
     { "id": "roofline", "label": "Roofline 분석", "type": "concept", "aliases": ["Roofline", "roofline"] },
     { "id": "moe", "label": "MoE", "type": "concept", "aliases": ["MoE"] },
-    { "id": "nvlink", "label": "NVLink", "type": "concept", "aliases": ["NVLink", "NVL72"] },
+    { "id": "nvlink", "label": "NVLink", "type": "concept", "aliases": ["NVLink", "NVL72", "NVSwitch"] },
+    { "id": "hbm", "label": "HBM", "type": "concept", "aliases": ["HBM"] },
     { "id": "pagedattention", "label": "PagedAttention", "type": "concept", "aliases": ["PagedAttention"] },
+    { "id": "vllm", "label": "vLLM·SGLang", "type": "concept", "aliases": ["vLLM", "SGLang"] },
+    { "id": "dwarkesh", "label": "Dwarkesh", "type": "person", "aliases": ["Dwarkesh"] },
     { "id": "dsv4", "label": "DeepSeek-V4", "type": "model", "aliases": ["DeepSeek-V4", "DeepSeek"] }
   ],
   "notable_quote": {

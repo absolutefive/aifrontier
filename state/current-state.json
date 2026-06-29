@@ -7,11 +7,11 @@
     "episodes_fetched": 27,
     "episodes_extracted": 3,
     "episodes_rendered": 3,
-    "keywords": 22
+    "keywords": 32
   },
   "report_paths": {
     "wiki_index": "2.wiki/index.html",
     "keyword_index": "2.wiki/keywords/index.html"
   },
-  "last_run_id": "20260629T154559Z"
+  "last_run_id": "20260629T231241Z"
 }

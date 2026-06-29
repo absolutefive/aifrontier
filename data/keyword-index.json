@@ -1,30 +1,30 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-29T15:45:59Z",
+  "generated_at": "2026-06-29T23:12:41Z",
   "keywords": [
-    {
-      "id": "fable5",
-      "label": "Fable 5",
-      "type": "model",
-      "total": 4,
-      "eps": [
-        {
-          "ep_id": 100,
-          "count": 4,
-          "first_anchor": "fable5-1"
-        }
-      ]
-    },
     {
       "id": "kv",
       "label": "KV 캐시",
       "type": "concept",
-      "total": 4,
+      "total": 6,
       "eps": [
         {
           "ep_id": 96,
-          "count": 4,
+          "count": 6,
           "first_anchor": "kv-1"
+        }
+      ]
+    },
+    {
+      "id": "fable5",
+      "label": "Fable 5",
+      "type": "model",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 100,
+          "count": 5,
+          "first_anchor": "fable5-1"
         }
       ]
     },
@@ -32,25 +32,25 @@
       "id": "prefill-decode",
       "label": "prefill/decode",
       "type": "concept",
-      "total": 4,
+      "total": 5,
       "eps": [
         {
           "ep_id": 96,
-          "count": 4,
+          "count": 5,
           "first_anchor": "prefill-decode-1"
         }
       ]
     },
     {
-      "id": "kimsj",
-      "label": "김서준 (Hashed)",
-      "type": "person",
+      "id": "vibe",
+      "label": "바이브 코딩",
+      "type": "concept",
       "total": 4,
       "eps": [
         {
           "ep_id": 98,
           "count": 4,
-          "first_anchor": "kimsj-1"
+          "first_anchor": "vibe-1"
         }
       ]
     },
@@ -58,12 +58,90 @@
       "id": "intent",
       "label": "의도",
       "type": "concept",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 98,
+          "count": 4,
+          "first_anchor": "intent-1"
+        }
+      ]
+    },
+    {
+      "id": "nvlink",
+      "label": "NVLink",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 96,
+          "count": 3,
+          "first_anchor": "nvlink-1"
+        }
+      ]
+    },
+    {
+      "id": "rsi",
+      "label": "RSI",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 100,
+          "count": 3,
+          "first_anchor": "rsi-1"
+        }
+      ]
+    },
+    {
+      "id": "kimsj",
+      "label": "김서준 (Hashed)",
+      "type": "person",
       "total": 3,
       "eps": [
         {
           "ep_id": 98,
           "count": 3,
-          "first_anchor": "intent-1"
+          "first_anchor": "kimsj-1"
+        }
+      ]
+    },
+    {
+      "id": "dataset-eng",
+      "label": "데이터셋 엔지니어링",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 100,
+          "count": 3,
+          "first_anchor": "dataset-eng-1"
+        }
+      ]
+    },
+    {
+      "id": "hbm",
+      "label": "HBM",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 96,
+          "count": 2,
+          "first_anchor": "hbm-1"
+        }
+      ]
+    },
+    {
+      "id": "moe",
+      "label": "MoE",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 96,
+          "count": 2,
+          "first_anchor": "moe-1"
         }
       ]
     },
@@ -81,28 +159,15 @@
       ]
     },
     {
-      "id": "nvlink",
-      "label": "NVLink",
+      "id": "vllm",
+      "label": "vLLM·SGLang",
       "type": "concept",
       "total": 2,
       "eps": [
         {
           "ep_id": 96,
           "count": 2,
-          "first_anchor": "nvlink-1"
-        }
-      ]
-    },
-    {
-      "id": "rsi",
-      "label": "RSI",
-      "type": "concept",
-      "total": 2,
-      "eps": [
-        {
-          "ep_id": 100,
-          "count": 2,
-          "first_anchor": "rsi-1"
+          "first_anchor": "vllm-1"
         }
       ]
     },
@@ -116,6 +181,58 @@
           "ep_id": 100,
           "count": 2,
           "first_anchor": "loop-eng-1"
+        }
+      ]
+    },
+    {
+      "id": "posttrain",
+      "label": "포스트 트레이닝",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 100,
+          "count": 2,
+          "first_anchor": "posttrain-1"
+        }
+      ]
+    },
+    {
+      "id": "aeo",
+      "label": "AEO/GEO",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 98,
+          "count": 1,
+          "first_anchor": "aeo-1"
+        }
+      ]
+    },
+    {
+      "id": "karpathy",
+      "label": "Andrej Karpathy",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 98,
+          "count": 1,
+          "first_anchor": "karpathy-1"
+        }
+      ]
+    },
+    {
+      "id": "balaji",
+      "label": "Balaji Srinivasan",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 98,
+          "count": 1,
+          "first_anchor": "balaji-1"
         }
       ]
     },
@@ -146,6 +263,19 @@
       ]
     },
     {
+      "id": "dwarkesh",
+      "label": "Dwarkesh",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 96,
+          "count": 1,
+          "first_anchor": "dwarkesh-1"
+        }
+      ]
+    },
+    {
       "id": "erc8004",
       "label": "ERC-8004",
       "type": "concept",
@@ -159,15 +289,15 @@
       ]
     },
     {
-      "id": "moe",
-      "label": "MoE",
+      "id": "mcp",
+      "label": "MCP",
       "type": "concept",
       "total": 1,
       "eps": [
         {
-          "ep_id": 96,
+          "ep_id": 98,
           "count": 1,
-          "first_anchor": "moe-1"
+          "first_anchor": "mcp-1"
         }
       ]
     },
@@ -224,28 +354,15 @@
       ]
     },
     {
-      "id": "dataset-eng",
-      "label": "데이터셋 엔지니어링",
-      "type": "concept",
+      "id": "dario",
+      "label": "다리오 아모데이",
+      "type": "person",
       "total": 1,
       "eps": [
         {
           "ep_id": 100,
           "count": 1,
-          "first_anchor": "dataset-eng-1"
-        }
-      ]
-    },
-    {
-      "id": "vibe",
-      "label": "바이브 코딩",
-      "type": "concept",
-      "total": 1,
-      "eps": [
-        {
-          "ep_id": 98,
-          "count": 1,
-          "first_anchor": "vibe-1"
+          "first_anchor": "dario-1"
         }
       ]
     },
@@ -276,15 +393,28 @@
       ]
     },
     {
-      "id": "posttrain",
-      "label": "포스트 트레이닝",
+      "id": "ttc",
+      "label": "테스트 타임 컴퓨트",
       "type": "concept",
       "total": 1,
       "eps": [
         {
           "ep_id": 100,
           "count": 1,
-          "first_anchor": "posttrain-1"
+          "first_anchor": "ttc-1"
+        }
+      ]
+    },
+    {
+      "id": "korea-foundation",
+      "label": "한국 파운데이션 모델",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 100,
+          "count": 1,
+          "first_anchor": "korea-foundation-1"
         }
       ]
     }
