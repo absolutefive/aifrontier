@@ -29,7 +29,7 @@
     var countEl = document.getElementById("afw-count");
     var note = document.getElementById("afw-note");
     var floatEl = document.getElementById("afw-float");
-    var labelEl = document.getElementById("afw-float-kw");
+    var selectEl = document.getElementById("afw-kwselect");
     var terms = [], idx = 0;
 
     function clearHl() {
@@ -48,8 +48,9 @@
       clearHl();
       var chips = document.querySelectorAll(".kwchip");
       for (var i = 0; i < chips.length; i++) chips[i].classList.remove("active");
-      if (floatEl) floatEl.classList.remove("show");
       if (panel) panel.style.display = "none";
+      if (selectEl) selectEl.value = "";
+      if (countEl) countEl.textContent = "—";
       terms = [];
     }
     function activate(kw) {
@@ -60,7 +61,7 @@
       for (var t = 0; t < terms.length; t++) terms[t].classList.add("hl");
       var info = kwmap[kw] || { label: kw, eps: [] };
       if (nameEl) nameEl.textContent = info.label || kw;
-      if (labelEl) labelEl.textContent = info.label || kw;
+      if (selectEl) selectEl.value = kw;
       if (note) note.style.display = "none";
       eplist.innerHTML = "";
       (info.eps || []).forEach(function (e) {
@@ -77,8 +78,18 @@
         }
       });
       if (panel) panel.style.display = "block";
-      if (floatEl) floatEl.classList.add("show");
       goto(0);
+    }
+    if (selectEl) {
+      Object.keys(kwmap).forEach(function (kw) {
+        var o = document.createElement("option");
+        o.value = kw;
+        o.textContent = (kwmap[kw] && kwmap[kw].label) || kw;
+        selectEl.appendChild(o);
+      });
+      selectEl.addEventListener("change", function () {
+        if (selectEl.value) activate(selectEl.value); else deactivate();
+      });
     }
     var chips = document.querySelectorAll(".kwchip");
     for (var c = 0; c < chips.length; c++) {
@@ -91,8 +102,7 @@
     if (next) next.addEventListener("click", function () { goto(idx + 1); });
     if (clr) clr.addEventListener("click", deactivate);
     document.addEventListener("keydown", function (e) {
-      if (!floatEl || !floatEl.classList.contains("show")) return;
-      if (e.key === "Escape") deactivate();
+      if (e.key === "Escape" && terms.length) deactivate();
     });
   }
 

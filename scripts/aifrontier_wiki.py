@@ -240,14 +240,17 @@ def render_episode(ex, index_keywords):
         '<span><span id="afw-kwname"></span> <span class="muted">— 등장 에피소드</span></span></div>'
         '<div id="afw-eplist" class="eplist"></div><p id="afw-note" class="note"></p></div>'
     )
-    # Floating vertical occurrence navigator (fixed to the right; visible while scrolling).
+    # Floating keyword explorer: pick a keyword (combo) + step through its body
+    # occurrences. Fixed to the right, visible while scrolling.
     p.append(
-        '<div id="afw-float" role="navigation" aria-label="키워드 본문 이동">'
-        '<button id="afw-clear" class="fclear" aria-label="키워드 해제" title="해제 (Esc)">×</button>'
-        '<span id="afw-float-kw" class="fkw"></span>'
+        '<div id="afw-float" role="navigation" aria-label="키워드 탐색">'
+        '<div class="ff-head"><span class="ff-title">키워드</span>'
+        '<button id="afw-clear" class="fclear" aria-label="키워드 해제" title="해제 (Esc)">×</button></div>'
+        '<select id="afw-kwselect" class="ff-select" aria-label="키워드 선택"><option value="">키워드 선택…</option></select>'
+        '<div class="ff-nav">'
         '<button id="afw-prev" class="fbtn" aria-label="이전 등장" title="이전 등장">↑</button>'
-        '<span id="afw-count" class="fcount">1/1</span>'
-        '<button id="afw-next" class="fbtn" aria-label="다음 등장" title="다음 등장">↓</button></div>'
+        '<span id="afw-count" class="fcount">—</span>'
+        '<button id="afw-next" class="fbtn" aria-label="다음 등장" title="다음 등장">↓</button></div></div>'
     )
     if ex.get("notable_quote"):
         q = ex["notable_quote"]
