@@ -5,13 +5,13 @@
   "counts": {
     "episodes_discovered": 28,
     "episodes_fetched": 28,
-    "episodes_extracted": 13,
-    "episodes_rendered": 13,
-    "keywords": 158
+    "episodes_extracted": 28,
+    "episodes_rendered": 28,
+    "keywords": 403
   },
   "report_paths": {
     "wiki_index": "2.wiki/index.html",
     "keyword_index": "2.wiki/keywords/index.html"
   },
-  "last_run_id": "20260702T155953Z"
+  "last_run_id": "20260702T164617Z"
 }

@@ -1,0 +1,330 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 45,
+  "slug": "ai-business-non-verifiable-data-domain",
+  "title": "AI 비즈니스 생존전략 — 어디에 AI 비즈니스를 세울 것인가?",
+  "published_date": "2025-03-29",
+  "hosts": [
+    "노정석",
+    "최승준"
+  ],
+  "category": "AI 사업",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep45",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep45/page.html",
+  "one_line": "프런티어 모델이 검증 가능한 영역을 빠르게 흡수하는 시대에 스타트업의 해자는 non-verifiable한 도메인을 verifiable한 피드백 루프로 바꾸는 closed-loop system에서 나온다.",
+  "key_points": [
+    "AI 비즈니스에서 돈을 버는 큰 축은 NVIDIA·Lablup 같은 AGI infrastructure와 Tesla식 full-stack vertical integration으로 나뉜다.",
+    "프런티어 모델 위의 서비스는 큰 기회지만 AI 기능 자체의 moat는 약하고, 빠른 실행과 GTM이 핵심 경쟁력이 된다.",
+    "OpenAI o1과 DeepSeek R1 이후 verifiable reward function을 만들 수 있는 수학·과학·코딩 영역은 test-time compute와 RL로 데이터가 자동 생성되는 방향으로 간다.",
+    "Reasoning model이 만든 reasoning token을 distillation하면 작은 instruct model도 빠르게 강해지므로, 검증 가능한 영역의 능력은 프런티어 모델에 흡수된다.",
+    "진짜 proprietary data는 알고리즘적으로 정답을 만들기 어려운 non-verifiable data domain에서 환경·사용자 피드백·서비스 루프가 생성하는 데이터다.",
+    "메이크업 취향, 로봇/VLA, Cursor식 코딩 피드백처럼 non-verifiable을 verifiable로 바꾸는 AI 서비스나 simulator가 스타트업의 방어 가능한 위치가 된다."
+  ],
+  "flow": [
+    {
+      "stage": "문제",
+      "summary": "프런티어 모델을 만들 수 없는 창업가와 AI 엔지니어가 어디서 살아남을지 묻는다."
+    },
+    {
+      "stage": "지형",
+      "summary": "AGI infrastructure와 full-stack vertical integration이라는 두 돈 버는 축을 제시한다."
+    },
+    {
+      "stage": "압박",
+      "summary": "AGI 임박, test-time compute, DeepSeek R1 이후 검증 가능한 영역의 자동 데이터 생성을 설명한다."
+    },
+    {
+      "stage": "선순환",
+      "summary": "Reasoning model, distillation, instruct model의 선순환이 능력을 빠르게 상품화한다고 본다."
+    },
+    {
+      "stage": "도망",
+      "summary": "프런티어 모델이 잘 다루지 못하는 non-verifiable data domain으로 이동해야 한다고 제안한다."
+    },
+    {
+      "stage": "환경",
+      "summary": "로봇/VLA, 메이크업 취향, 사용자 피드백이 검증 불가능한 영역에 label을 만드는 방식을 설명한다."
+    },
+    {
+      "stage": "시스템",
+      "summary": "AI 서비스나 simulator를 non-verifiable을 verifiable로 바꾸는 closed-loop system으로 정의한다."
+    },
+    {
+      "stage": "실습",
+      "summary": "각자의 도메인에서 closed-loop system 예시를 AI와 함께 찾아보라는 실습으로 마무리한다."
+    }
+  ],
+  "body_paragraphs": [
+    "이 회차는 2025년 3월 29일 녹화됐고, 노정석이 한 행사에서 발표한 내용을 최승준에게 다시 설명하는 형식이다. 제목은 'Non-Verifiable Data Domain is All You Need'다. OpenAI나 Google처럼 프런티어 모델을 직접 만들 수 없는 스타트업 founder와 AI engineer가, 곧 AGI가 될 모델들의 공격에서 어떻게 살아남을지에 대한 생각 실험이다.",
+    "노정석은 AI world에서 돈을 버는 영역을 크게 두 축으로 본다. 하나는 NVIDIA처럼 칩을 제공하고, Lablup처럼 orchestration layer와 cloud service를 제공하는 AGI infrastructure다. 다른 하나는 Tesla처럼 명확한 vertical을 잡고, 빈 공간을 AI service로 연결해 full-stack vertical integration을 만드는 방식이다. 두 경우 모두 핵심은 나만 가질 수 있는 proprietary data와 data flywheel이다.",
+    "서비스, 알고리즘, compute라는 세 관점으로 보면 algorithm layer는 가장 빠르게 commoditize되고 democratize된다. Big Tech에 들어가거나 학교 연구자가 되는 길이 아니라면 value capture가 가장 어려운 영역이라는 판단이다. 반대로 compute와 engineering layer는 돈을 벌고, NVIDIA, OpenAI, Google, Meta, Tesla는 서로 다른 출발점에서 위아래 레이어로 확장하며 자신만의 통합 구조를 만든다.",
+    "스타트업의 선택지는 그래서 두 가지다. 프런티어 모델 위에서 빠르게 AI service를 만들거나, 프런티어 모델이 handle하지 못하는 vertical에서 수직 통합 AI service를 만드는 것이다. 전자는 Cursor 같은 사례처럼 큰 기회가 있지만, LLM 자체가 거대한 infrastructure가 된 만큼 AI 기능 그 자체로 moat를 만들기는 어렵다. 여기서는 좋은 팀, 좋은 문제 정의, 빠른 execution, GTM이 핵심이다.",
+    "두 번째 선택지가 중요한 이유는 프런티어 모델의 흡수 속도 때문이다. Dario Amodei는 2027년이면 거의 모든 영역에서 인간을 뛰어넘는 모델을 말하고, Google Gemini, DeepSeek R1, OpenAI o1 같은 흐름은 몇 달 사이에도 성능 기준을 흔든다. 노정석은 이미 많은 영역에서 모델이 인간보다 뛰어난 수준에 가까워졌다고 보고, 2027년에 될까 말까를 논하기보다 된다는 가정에서 전략을 세워야 한다고 말한다.",
+    "핵심 분기점은 verifiable reward function이다. 수학, 과학, 코딩처럼 알고리즘적으로 검증 가능한 reward function을 만들 수 있는 영역에서는 답안지만 주어지면 reasoning token은 test-time compute를 투입해 생성할 수 있다. OpenAI o1과 DeepSeek R1은 그 가능성을 보여 줬고, 그런 영역의 dataset은 reinforcement learning을 통해 자체 생성되는 방향으로 넘어간다.",
+    "여기에 distillation이 붙으면 속도는 더 빨라진다. 거대한 reasoning model이 어려운 문제에 대해 reasoning token을 많이 만들어 내고, 그 고품질 reasoning dataset을 추려 작은 모델에 SFT하면 o1-mini급 성능에 가까워지는 사례들이 나온다. Stanford Alpaca 같은 흐름이 보여준 것처럼, 한 세대의 reasoning model이 만든 데이터는 다음 세대 instruct model이 물어보는 순간 바로 아는 능력으로 흡수할 수 있다.",
+    "그래서 검증 가능한 영역은 Big Tech와 프런티어 랩이 자동으로 먹어 치울 가능성이 크다. 그러면 남는 전략은 non-verifiable한 영역으로 도망가는 것이다. 물론 Shakespeare, 시, 정치적 가치 판단처럼 인류가 쌓은 큰 non-verifiable 영역도 프런티어 모델이 이미 상당 부분 외우고 있다. 하지만 아직 모델이 스스로 참·거짓을 만들 수 없고, prompt work나 agent 조합만으로 정확한 synthetic data를 만들기 어려운 영역들이 있다.",
+    "노정석은 proprietary data의 정의를 여기서 한 단계 좁힌다. 단순히 회사 내부에 있는 데이터가 아니라, 알고리즘적 방법으로 검증 가능한 reward function을 만들 수 없는 영역에서 생기는 데이터가 중요하다는 것이다. 이런 데이터는 외부 모델이 인터넷과 공개 데이터만으로 재현하기 어렵고, 특정 서비스와 환경 속에서만 label이 생긴다.",
+    "로봇과 VLA는 환경이 non-verifiable을 verifiable로 바꾸는 사례다. Gemini Robotics, Figure AI, Physical Intelligence 같은 흐름에서 중요한 것은 모델만이 아니라 실험 환경이다. '포도를 바나나가 있는 접시에 넣어 줘'라는 task는 vision과 action이 연결된 환경이 있어야 성공 여부를 label로 만들 수 있다. simulator나 실제 로봇 실험실은 이전에는 검증 불가능하던 행동을 0과 1의 피드백으로 바꾸는 장치다.",
+    "메이크업 데이터셋은 취향과 주관의 예다. 기계는 어떤 조합이 좋은지 나쁜지 모호하게 말할 수 있지만, 특정 context 안의 인간은 이 조합이 좋다, 싫다를 명확히 labeling한다. 고객이 메이크업 combination을 보고 좋아요를 누르거나 그냥 넘기거나, 직접적으로 선호를 표현하는 loop가 생기면 그 자체가 데이터가 된다. 이 피드백은 일반 LLM이 사전에 만들어 낼 수 없는 도메인 특화 label이다.",
+    "이 관점에서 AI service나 simulator는 closed-loop system이다. non-verifiable한 상황을 사용자 행동, 환경 반응, 성공과 실패의 신호를 통해 verifiable하게 바꿔 주는 시스템이기 때문이다. Tesla의 카메라와 Autopilot 해제, 급제동, 급가속 신호가 data flywheel을 만들듯, 좋은 AI 서비스는 프런티어 모델이 갖지 못하는 환경 신호와 label을 계속 만든다.",
+    "노정석은 이 정의가 프로젝트 판단 기준이 된다고 말한다. 처음에 evaluation metric이 상상되지 않는 프로젝트는 시작하면 안 된다는 경험적 교훈이다. 결국 모든 것은 evaluation으로 귀결되고, evaluation metric을 명확하게 정의한다는 것은 label의 0과 1을 정하는 것과 비슷하다. 이 틀이 생기면 똑같이 proprietary data라고 해도 '이건 LLM이 하겠네'와 '이건 LLM이 못 하겠네'를 가르는 기준이 된다.",
+    "마무리는 실습 제안이다. 자기 도메인에서 'non-verifiable을 verifiable로 바꿔주는 closed-loop system의 예제를 알려줘'라고 ChatGPT, Claude, Google AI에 물어보라는 것이다. 최승준은 이를 두 갈래길로 recap한다. 하나는 프런티어 모델 위에서 빠르게 서비스 레이어를 올리는 길이고, 다른 하나는 기존 비즈니스 안에서 환경으로부터 신호를 얻어 다른 곳이 건드리기 어려운 데이터를 만드는 길이다. 노정석은 이를 어디로 도망갈까에 대한 도피 일기라고 부른다."
+  ],
+  "entities": [
+    {
+      "id": "non-verifiable-data",
+      "label": "Non-Verifiable Data Domain",
+      "type": "concept",
+      "aliases": [
+        "Non-Verifiable Data Domain",
+        "non-verifiable",
+        "non-verifiable data domain"
+      ]
+    },
+    {
+      "id": "frontier-model",
+      "label": "프런티어 모델",
+      "type": "concept",
+      "aliases": [
+        "프런티어 모델",
+        "frontier model"
+      ]
+    },
+    {
+      "id": "agi-infrastructure",
+      "label": "AGI infrastructure",
+      "type": "concept",
+      "aliases": [
+        "AGI infrastructure"
+      ]
+    },
+    {
+      "id": "nvidia",
+      "label": "NVIDIA",
+      "type": "concept",
+      "aliases": [
+        "NVIDIA"
+      ]
+    },
+    {
+      "id": "lablup",
+      "label": "Lablup",
+      "type": "concept",
+      "aliases": [
+        "Lablup"
+      ]
+    },
+    {
+      "id": "tesla",
+      "label": "Tesla",
+      "type": "concept",
+      "aliases": [
+        "Tesla"
+      ]
+    },
+    {
+      "id": "vertical-integration",
+      "label": "full-stack vertical integration",
+      "type": "concept",
+      "aliases": [
+        "full-stack vertical integration",
+        "수직 통합"
+      ]
+    },
+    {
+      "id": "proprietary-data",
+      "label": "proprietary data",
+      "type": "concept",
+      "aliases": [
+        "proprietary data",
+        "proprietary 데이터"
+      ]
+    },
+    {
+      "id": "data-flywheel",
+      "label": "data flywheel",
+      "type": "concept",
+      "aliases": [
+        "data flywheel"
+      ]
+    },
+    {
+      "id": "cursor",
+      "label": "Cursor",
+      "type": "concept",
+      "aliases": [
+        "Cursor"
+      ]
+    },
+    {
+      "id": "gtm",
+      "label": "GTM",
+      "type": "concept",
+      "aliases": [
+        "GTM",
+        "go-to-market"
+      ]
+    },
+    {
+      "id": "dario-amodei",
+      "label": "Dario Amodei",
+      "type": "person",
+      "aliases": [
+        "Dario Amodei"
+      ]
+    },
+    {
+      "id": "gemini",
+      "label": "Gemini",
+      "type": "model",
+      "aliases": [
+        "Gemini",
+        "Gemini 1.5",
+        "Gemini Robotics"
+      ]
+    },
+    {
+      "id": "deepseek-r1",
+      "label": "DeepSeek-R1",
+      "type": "model",
+      "aliases": [
+        "DeepSeek R1",
+        "DeepSeek-R1"
+      ]
+    },
+    {
+      "id": "openai-o1",
+      "label": "OpenAI o1",
+      "type": "model",
+      "aliases": [
+        "OpenAI o1",
+        "o1"
+      ]
+    },
+    {
+      "id": "test-time-compute",
+      "label": "test-time compute",
+      "type": "concept",
+      "aliases": [
+        "test-time compute"
+      ]
+    },
+    {
+      "id": "verifiable-reward",
+      "label": "verifiable reward function",
+      "type": "concept",
+      "aliases": [
+        "verifiable reward function",
+        "검증 가능한 reward function"
+      ]
+    },
+    {
+      "id": "rl",
+      "label": "reinforcement learning",
+      "type": "concept",
+      "aliases": [
+        "reinforcement learning",
+        "RL"
+      ]
+    },
+    {
+      "id": "reasoning-model",
+      "label": "reasoning model",
+      "type": "concept",
+      "aliases": [
+        "reasoning model"
+      ]
+    },
+    {
+      "id": "distillation",
+      "label": "distillation",
+      "type": "concept",
+      "aliases": [
+        "distillation"
+      ]
+    },
+    {
+      "id": "sft",
+      "label": "SFT",
+      "type": "concept",
+      "aliases": [
+        "SFT",
+        "supervised fine-tune"
+      ]
+    },
+    {
+      "id": "stanford-alpaca",
+      "label": "Stanford Alpaca",
+      "type": "concept",
+      "aliases": [
+        "Stanford Alpaca"
+      ]
+    },
+    {
+      "id": "vla",
+      "label": "VLA",
+      "type": "concept",
+      "aliases": [
+        "VLA",
+        "Vision Language Action"
+      ]
+    },
+    {
+      "id": "figure-ai",
+      "label": "Figure AI",
+      "type": "concept",
+      "aliases": [
+        "Figure AI"
+      ]
+    },
+    {
+      "id": "physical-intelligence",
+      "label": "Physical Intelligence",
+      "type": "concept",
+      "aliases": [
+        "Physical Intelligence"
+      ]
+    },
+    {
+      "id": "makeup-dataset",
+      "label": "메이크업 데이터셋",
+      "type": "concept",
+      "aliases": [
+        "메이크업 데이터셋",
+        "메이크업 combination"
+      ]
+    },
+    {
+      "id": "closed-loop-system",
+      "label": "closed-loop system",
+      "type": "concept",
+      "aliases": [
+        "closed-loop system"
+      ]
+    },
+    {
+      "id": "simulator",
+      "label": "simulator",
+      "type": "concept",
+      "aliases": [
+        "simulator"
+      ]
+    },
+    {
+      "id": "ai-service",
+      "label": "AI service",
+      "type": "concept",
+      "aliases": [
+        "AI service"
+      ]
+    }
+  ],
+  "notable_quote": {
+    "text": "“어떻게 도망갈까”에 대한 도피 일기인 것이지, 이게 그다지 막 자랑스러운 내용은 사실은 아니죠.",
+    "speaker": "노정석"
+  },
+  "language": "ko",
+  "extractor": "deepseek-pro",
+  "extracted_at": "2026-07-03",
+  "review_status": "draft"
+}

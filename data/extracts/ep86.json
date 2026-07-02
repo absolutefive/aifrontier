@@ -1,0 +1,247 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 86,
+  "slug": "agentic-workflow-for-real-work",
+  "title": "진짜 내 일을 위한 Agentic Workflow",
+  "published_date": "2026-02-18",
+  "hosts": [
+    "노정석",
+    "최승준",
+    "신정규"
+  ],
+  "category": "에이전트",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep86",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep86/page.html",
+  "one_line": "에이전트 코딩의 핵심은 코드를 빨리 뽑는 일이 아니라, 내 일을 줄이는 하네스를 만들고 그 하네스가 스스로 일하도록 운영 구조를 세우는 일이다.",
+  "key_points": [
+    "Backend.AI:GO는 Continuum 라우터를 제품화하려다 40일 동안 130억 토큰과 약 100만 줄 코드 규모로 커진 실전 에이전트 개발 사례다.",
+    "에이전트 코딩의 병목은 merge queue에서 토큰 비용, thinking budget, 고속 inference, 그리고 인간의 인지 부하로 이동했다.",
+    "AI가 코드를 대신 작성해도 사람의 바이오 토큰은 줄지 않으며, 빠른 피드백과 도파민 때문에 오히려 더 쉽게 혹사될 수 있다.",
+    "소프트웨어 과잉 시대에는 인스턴트 앱이 늘어나지만, 오래 유지되는 브랜드와 트랙 레코드가 다시 핵심 경쟁력이 된다.",
+    "실전 워크플로는 바로 결과물을 만들기보다 CLAUDE.md, PROGRESS.md, PLAN.md, reference cache, sub-agent command처럼 생성 장치를 만드는 데 초점을 둔다.",
+    "Lablup은 사람용 UI보다 AI를 위한 인터페이스와 Backend.AI 자체를 다루는 모델로 회사의 핵심 가치를 재정의하고 있다."
+  ],
+  "flow": [
+    {
+      "stage": "제품",
+      "summary": "Backend.AI:GO의 배경, Continuum 라우터, 로컬·클라우드 모델 연결과 데모를 소개한다."
+    },
+    {
+      "stage": "개발량",
+      "summary": "40일, 130억 토큰, 약 100만 줄 코드가 만든 에이전트 개발 경험을 설명한다."
+    },
+    {
+      "stage": "병목",
+      "summary": "토큰 경쟁력, thinking budget, 고속 inference, 바이오 토큰과 인지 부하를 짚는다."
+    },
+    {
+      "stage": "소프트웨어 변화",
+      "summary": "인스턴트 앱, 소프트웨어 과잉, 코드 가치 하락과 하네스의 부상을 논의한다."
+    },
+    {
+      "stage": "실전 방식",
+      "summary": "컨텍스트 빌딩, 존댓말, soul document, command와 sub-agent 구성 방식을 데모한다."
+    },
+    {
+      "stage": "운영",
+      "summary": "GitHub 이슈, cron, PR, tech report로 돌아가는 Backend.AI:GO 자동화 파이프라인을 보여 준다."
+    },
+    {
+      "stage": "조직",
+      "summary": "CFO와 콘텐츠 담당자의 사례를 통해 비개발 직군도 자기 하네스를 만들 수 있음을 설명한다."
+    },
+    {
+      "stage": "전략",
+      "summary": "AI용 인터페이스, Claude Code와 Codex의 철학 차이, 스타트업의 복제 위험과 컴퓨터 공학의 재정의를 다룬다."
+    }
+  ],
+  "body_paragraphs": [
+    "이번 회차는 Lablup 신정규 대표가 Backend.AI:GO를 들고 나와 실제 에이전트 워크플로를 공개한 편이다. Backend.AI:GO는 원래 Backend.AI 인프라에서 재해 대응용으로 만든 Continuum 라우터의 제품화 과정에서 출발했다. 병원이나 금융기관이 클라우드 AI 장애 때 자체 GPU로 버틸 수 있게 하자는 발상에서 라우터가 생겼고, 설명 가능한 UI가 필요해지면서 로컬 모델, 클라우드 모델, 번역, 이미지 생성, 벤치마크, 통계가 붙은 제품으로 커졌다.",
+    "데모에서 Backend.AI:GO는 Ollama나 LM Studio처럼 로컬 모델을 받고 실행하는 도구처럼 보이지만, 핵심은 모델 라우팅과 관측 가능성이다. Hugging Face 모델을 고르고, 양자화와 KV 캐시, transformer 블록 구조를 설명해 주며, OpenAI, Gemini, Anthropic, Ollama, LM Studio 같은 원격·로컬 모델을 한 화면에 묶는다. 사무실 여러 대의 컴퓨터를 연결해 텍스트, 이미지, PDF 처리 모델을 서로 나눠 쓰는 분산 라우팅도 가능하다.",
+    "개발 규모는 이 회차의 충격적인 숫자다. 신정규는 Claude Code Max를 여러 대의 PC와 VM에서 돌렸고, 2025년 12월 24일 시작해 CES 첫 데모까지 약 열흘, 전체적으로 40일 동안 Backend.AI:GO를 만들었다고 말한다. 사용한 토큰은 130억 토큰 정도이고, 결과 코드 규모는 약 100만 줄, 작성·폐기까지 포함하면 더 크다. TextCube 때 3년 동안 썼던 코드량을 40일에 압축한 경험이었다.",
+    "그 경험에서 나온 첫 교훈은 토큰을 사용할 수 있는 양이 IT 회사의 경쟁력과 직결될 수 있다는 점이다. 예전에는 merge queue가 병목이었지만, 이제는 에이전트끼리 충돌을 해결하고 테스트와 병합까지 처리한다. 다음 병목은 어떻게 하면 토큰을 덜 쓰고, thinking budget을 필요한 곳에만 쓰며, 같은 결과를 더 빠르게 내느냐다. 그래서 고속 inference와 adaptive thinking budget을 다루는 하네스가 중요해진다.",
+    "하지만 사람이 편해지기만 하는 것은 아니다. 신정규는 AI에 일을 맡기면서 흰머리가 늘고 잠을 줄였다고 말한다. 빠른 피드백은 모바일 게임의 가챠처럼 도파민을 주고, 예전에는 닿지 못할 것 같던 결과를 계속 보여 준다. 그런데 잘 되니까 더 하게 되고, 더 하면 또 잘 되기 때문에 인간의 바이오 토큰과 인지 부하는 줄지 않는다. AI가 생산성을 올리는 동시에 사람을 혹사시키는 구조가 여기서 나타난다.",
+    "소프트웨어 산업의 모양도 바뀐다. AI로 빠르게 만들어진 소프트웨어는 유지 의지가 약할 수 있고, 비슷한 프로젝트가 너무 많이 생겨 대부분은 관리되지 않거나 쓰이고 버려질 수 있다. 신정규는 이를 인스턴트 앱의 등장으로 본다. 필요할 때 만들고, 자주 쓰면 저장하며, 결국 사람의 생활에 깊게 붙거나 사회적 네트워크와 브랜드를 가진 소수만 살아남는다는 전망이다.",
+    "코드의 가치는 0으로 수렴한다는 말도 단순한 과장이 아니다. 간담회 두 시간 사이에 PR 20여 개가 만들어지고 테스트와 merge까지 끝나는 페이스라면, 기존 DevOps에서 developer가 하던 일의 종류가 바뀐다. 코드는 목적이 아니라 로직을 컴퓨터에 전달하는 매체였고, 앞으로는 딥러닝 모델이나 다른 로직 엔진이 코드의 많은 역할을 맡는다. 대신 모델을 결정론적 제품처럼 감싸는 하네스와 제어 레이어의 가치가 커진다.",
+    "Claude Code의 경쟁력도 이 관점에서 다시 보인다. 신정규는 같은 백엔드 모델을 붙여 보며 Claude Code의 핵심은 Opus나 Sonnet 엔진보다 Claude Code 그 자체, 즉 모델을 결정론적 작업 흐름으로 감싸는 하네스라고 말한다. Gemini 3 Pro를 Claude Code 하네스에 붙이면 잘 돈다는 경험도 공유한다. 기존 소프트웨어는 사라지는 것이 아니라 모델 주변에서 모델을 통제하는 새 형태로 재배치된다.",
+    "실전 데모의 핵심은 바로 결과물을 만들지 않는다는 점이다. 신정규는 설 뉴스레터를 쓰는 예시에서 먼저 AI Frontier 채널을 조사하게 하고, 고려할 점을 묻고, 그다음에야 CLAUDE.md 같은 soul document를 만들게 한다. PROGRESS.md와 PLAN.md로 진행 상황과 계획을 남기고, reference cache를 만들어 매번 웹을 다시 뒤지지 않게 한다. 중요한 것은 최종 이메일이 아니라, 앞으로 이메일을 계속 만들 수 있는 생성 장치를 고치는 일이다.",
+    "sub-agent와 command를 다루는 방식도 실용적이다. sub-agent는 병렬 작업에 쓰고, command는 여러 sub-agent를 병렬로 부르거나 chaining하기 위해 쓴다. 번역 문서 100개처럼 단위가 작고 독립적인 일은 한 에이전트가 4개씩 맡도록 제한해 컨텍스트 폭발을 막는다. Backend.AI:GO에서는 이런 하네스 엔지니어링이 더 고도화되어 GitHub 이슈를 읽고, ground plan을 짜고, 큐에 넣고, 다른 에이전트가 주워가 구현하는 파이프라인으로 돌아간다.",
+    "놀라운 점은 이 파이프라인이 복잡한 플랫폼이 아니라 cron과 Claude -p 옵션 같은 단순한 부품으로 구성된다는 것이다. 15분마다 새 이슈를 보고, 필요한 skill로 검증하고, PR을 만들고, 테스트를 돌리고, 결과 보고서를 남긴다. tech report는 사람에게 보고하는 문서이면서 동시에 AI가 내린 기술적 선택을 사람이 따라잡기 위해 무엇을 공부해야 하는지 알려 주는 학습 장치다.",
+    "이 워크플로는 개발자에게만 머물지 않는다. Lablup의 CFO는 처음에는 신정규에게 던지는 편이 빠르다고 느꼈지만, 30분 정도 Claude Code를 익힌 뒤 본인이 3분 안에 처리할 수 있게 됐다. 콘텐츠 담당자도 상담하러 왔다가 자기 하네스를 만들고 GitHub에 command를 두는 방식으로 일하게 됐다. 신정규는 누군가의 skill을 복사하는 것보다 내 일을 줄이는 하네스를 직접 만들 때 가속 구간에 올라탄다고 본다.",
+    "Lablup의 전략도 이 변화에 맞춰 이동한다. 회사는 인간을 위한 인터페이스보다 AI를 위한 인터페이스에 집중하고, Backend.AI가 AI 에이전트에게 잘 읽히고 잘 호출되는 도구가 되도록 바꾸려 한다. 더 나아가 Backend.AI의 코어도 자원 관리와 업무 처리를 잘하는 모델로 재정의된다. 실행 환경과 GPU, CUDA 메모리 같은 규격을 다루는 시스템 안에 모델 런타임 자체가 들어오는 방향이다.",
+    "마지막 전략 논의는 스타트업과 컴퓨터 공학으로 확장된다. 모든 아이템의 복제가 너무 쉬워져 NotebookLM 클론도 며칠 만에 나오는 시대라면, 스타트업은 복제되지 않는 타임 갭과 암묵지 갭, 그리고 물레방아를 어디에 놓을지 찾아야 한다. 신정규는 컴퓨터 공학 무용론에도 반대한다. AI가 코드를 써 주더라도 컴퓨터 공학은 로직을 세우는 방법과 사고 구조를 배우는 학문이고, 도메인을 배우는 CS 인력이 오히려 더 빠르게 새 영역을 IT의 영역으로 끌어올 수 있기 때문이다."
+  ],
+  "entities": [
+    {
+      "id": "lablup",
+      "label": "Lablup",
+      "type": "concept",
+      "aliases": [
+        "Lablup"
+      ]
+    },
+    {
+      "id": "shin-jungkyu",
+      "label": "신정규",
+      "type": "person",
+      "aliases": [
+        "신정규"
+      ]
+    },
+    {
+      "id": "backend-ai-go",
+      "label": "Backend.AI:GO",
+      "type": "concept",
+      "aliases": [
+        "Backend.AI:GO"
+      ]
+    },
+    {
+      "id": "backend-ai",
+      "label": "Backend.AI",
+      "type": "concept",
+      "aliases": [
+        "Backend.AI"
+      ]
+    },
+    {
+      "id": "continuum-router",
+      "label": "Continuum 라우터",
+      "type": "concept",
+      "aliases": [
+        "Continuum 라우터"
+      ]
+    },
+    {
+      "id": "kv",
+      "label": "KV 캐시",
+      "type": "concept",
+      "aliases": [
+        "KV 캐시",
+        "KV cache"
+      ]
+    },
+    {
+      "id": "claude-code",
+      "label": "Claude Code",
+      "type": "model",
+      "aliases": [
+        "Claude Code"
+      ]
+    },
+    {
+      "id": "thinking-budget",
+      "label": "thinking budget",
+      "type": "concept",
+      "aliases": [
+        "thinking budget"
+      ]
+    },
+    {
+      "id": "high-speed-inference",
+      "label": "고속 inference",
+      "type": "concept",
+      "aliases": [
+        "고속 inference",
+        "high-speed inference"
+      ]
+    },
+    {
+      "id": "bio-token",
+      "label": "바이오 토큰",
+      "type": "concept",
+      "aliases": [
+        "바이오 토큰"
+      ]
+    },
+    {
+      "id": "instant-app",
+      "label": "인스턴트 앱",
+      "type": "concept",
+      "aliases": [
+        "인스턴트 앱"
+      ]
+    },
+    {
+      "id": "harness-engineering",
+      "label": "하네스 엔지니어링",
+      "type": "concept",
+      "aliases": [
+        "하네스 엔지니어링"
+      ]
+    },
+    {
+      "id": "gemini3-pro",
+      "label": "Gemini 3 Pro",
+      "type": "model",
+      "aliases": [
+        "Gemini 3 Pro"
+      ]
+    },
+    {
+      "id": "soul-document",
+      "label": "soul document",
+      "type": "concept",
+      "aliases": [
+        "soul document"
+      ]
+    },
+    {
+      "id": "claude-md",
+      "label": "CLAUDE.md",
+      "type": "concept",
+      "aliases": [
+        "CLAUDE.md"
+      ]
+    },
+    {
+      "id": "sub-agent",
+      "label": "sub-agent",
+      "type": "concept",
+      "aliases": [
+        "sub-agent"
+      ]
+    },
+    {
+      "id": "cron",
+      "label": "cron",
+      "type": "concept",
+      "aliases": [
+        "cron"
+      ]
+    },
+    {
+      "id": "tech-report",
+      "label": "tech report",
+      "type": "concept",
+      "aliases": [
+        "tech report"
+      ]
+    },
+    {
+      "id": "ai-interface",
+      "label": "AI를 위한 인터페이스",
+      "type": "concept",
+      "aliases": [
+        "AI를 위한 인터페이스"
+      ]
+    },
+    {
+      "id": "waterwheel-theory",
+      "label": "물레방아론",
+      "type": "concept",
+      "aliases": [
+        "물레방아",
+        "물레방아론"
+      ]
+    }
+  ],
+  "notable_quote": {
+    "text": "내 일이 줄어드는 게 핵심이 돼야 되거든요.",
+    "speaker": "신정규"
+  },
+  "language": "ko",
+  "extractor": "deepseek-pro",
+  "extracted_at": "2026-07-03",
+  "review_status": "draft"
+}

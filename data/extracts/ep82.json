@@ -1,0 +1,292 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 82,
+  "slug": "prompting-with-transformer-mechanics",
+  "title": "원리를 생각하는 프롬프팅",
+  "published_date": "2026-01-28",
+  "hosts": [
+    "노정석",
+    "최승준"
+  ],
+  "category": "프롬프팅",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep82",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep82/page.html",
+  "one_line": "프롬프팅은 모델이 이미 가진 능력을 적확한 토큰으로 깨우는 일이며, 그래서 좋은 사용자는 모델을 돕기 위해 모델의 작동 원리를 어느 정도 이해해야 한다.",
+  "key_points": [
+    "Claude Opus 4.5와 METR 지표는 장시간 에이전트 작업 능력이 급격히 올라가며, Andrej Karpathy 같은 전문가도 FOMO를 느끼는 국면을 보여 준다.",
+    "Claude Code와 Skills는 자연어, 마크다운, 스크립트, 예시를 묶어 재사용 가능한 하네스로 만들며, harness 자체가 새로운 소스코드처럼 작동한다.",
+    "프롬프팅의 핵심은 전문가가 쓸 법한 적확한 토큰을 넣어 모델의 잠재 공간을 열고, 비전문가도 그 토큰을 끌어오는 장치를 만드는 것이다.",
+    "무작위 두문자어와 Pareidolia, arXiv 초록, A-Z 인물 소환은 모델의 연상 능력으로 분포를 넓히고 낯선 도메인 용어를 주입하는 실험이다.",
+    "CoT Faithfulness와 Monitorability tax 논의는 모델의 실제 내부 계산과 드러난 추론문 사이에 간극이 있으며, 보이는 CoT에도 정렬상의 비용과 가치가 있음을 보여 준다.",
+    "토큰 프라이밍은 모델을 스포츠카 모드로 만들 수 있지만, 사용자가 모르는 도메인에서는 환각과 아첨적 맥락 형성의 위험도 함께 커진다."
+  ],
+  "flow": [
+    {
+      "stage": "가속",
+      "summary": "Claude Opus 4.5, METR, Karpathy의 FOMO로 프롬프팅을 다시 생각해야 하는 배경을 잡는다."
+    },
+    {
+      "stage": "하네스",
+      "summary": "멀티 에이전트 코딩, Claude Code SDK, Skills가 새로운 소스코드처럼 되는 흐름을 설명한다."
+    },
+    {
+      "stage": "스킬",
+      "summary": "스킬 리포와 스킬 크리에이터를 통해 도메인 프라이밍을 패키지화하는 경험을 소개한다."
+    },
+    {
+      "stage": "토큰",
+      "summary": "적확한 토큰이 모델의 숨은 능력을 여는 이유와 전문가/비전문가 프롬프트 품질 차이를 논의한다."
+    },
+    {
+      "stage": "발산",
+      "summary": "무작위 4글자 두문자어, Pareidolia, arXiv 초록, A-Z 인물 소환으로 토큰 분포를 넓히는 방법을 다룬다."
+    },
+    {
+      "stage": "CoT",
+      "summary": "CoT Faithfulness, Monitorability tax, test-time compute와 내부 표현의 관계를 생각한다."
+    },
+    {
+      "stage": "합성",
+      "summary": "RL이 기존 스킬을 f(g(x))처럼 합성해 새 스킬을 학습한다는 심상과 tool chaining을 연결한다."
+    },
+    {
+      "stage": "리스크",
+      "summary": "토큰 프라이밍의 스포츠카 모드와 모르는 도메인의 위험, 모델을 이해해야 하는 이유로 마무리한다."
+    }
+  ],
+  "body_paragraphs": [
+    "이번 회차는 2026년 초의 잠깐 조용한 틈을 이용해 프롬프팅의 원리로 돌아가는 편이다. Claude Opus 4.5가 METR 50% time horizon에서 거의 5시간에 가까운 성능을 보이고, Andrej Karpathy가 '한 달만 따라가지 않아도 deprecated된 세계관'이라는 취지의 FOMO를 표현한 상황이 배경이다. 새 모델 발표가 없더라도 Claude Code, OpenCode, Skills, harness가 빠르게 진화하면서 사용법 자체가 새로운 경쟁력이 됐다.",
+    "노정석은 Claude Code나 OpenCode를 잘 쓰는 사람들은 이제 티키타카 대화보다 harness 최적화와 멀티 에이전트 운영을 잘한다고 본다. 스펙 하나를 놓고 서브 에이전트를 여럿 돌려 7~10시간 작업시키는 일이 흔해졌고, Oh-My-Opencode처럼 반복과 압박을 넣는 도구도 등장했다. 최승준은 Boris Cherny가 여러 탭을 띄워 마치 스타크래프트처럼 AI를 다루는 장면을 떠올린다.",
+    "하지만 이 가속이 모든 문제를 끝낸 것은 아니다. Noam Brown은 휴가 중 바이브 코딩으로 포커 관련 알고리즘을 만들며 Codex와 Claude Code의 한계를 겪었고, LLM이 아직 새로운 연구 알고리즘을 개발하는 인간 전문가 수준은 아니라고 말했다. 반대로 Ethan Mollick은 Claude Code가 코딩 밖의 지식 작업에도 확장될 수 있다고 보고, 적절한 harness가 있으면 AI가 실제 지속적인 작업을 처리할 수 있다고 정리한다.",
+    "이 맥락에서 Claude Code SDK와 Skills가 중요해진다. 노정석은 harness가 새로운 소스코드가 됐다고 말하고, 최승준은 Claude의 Skills 리포를 읽으며 마크다운 지시문, 스크립트, 예시, 폴더 구조가 하나의 재사용 가능한 능력 패키지가 되는 방식을 살핀다. skill-creator를 켜고 대화하다 보면, 대화에서 생긴 아이디어가 바로 도메인 프라이밍 스킬로 만들어지고 내 스킬 폴더에 복사된다.",
+    "스킬이 잘 작동하는 이유는 아직 완전히 답하지 못했지만, 회차의 핵심 질문은 분명하다. 적확한 토큰을 넣어야 모델의 능력이 열린다는 것이다. 최승준은 게임의 미니맵처럼 특정 지역 근처까지 가야 공간이 밝아진다고 비유한다. 모델은 이미 많은 것을 알고 있지만, 어떤 도메인으로 주의를 옮기고 그곳의 용어와 문제 구조를 깔아 줘야 해당 능력이 나온다. 전문가가 쓰는 토큰을 넣을 때와 일반 persona만 줄 때 응답 품질은 달라진다.",
+    "그렇다면 비전문가는 어떻게 적확한 토큰을 얻을 수 있을까. 첫 번째 실험은 무작위 4글자 두문자어를 100개 만들고, 현재 대화 맥락에 맞는 의미로 읽어 보게 하는 방식이다. 이는 구름에서 얼굴을 보는 Pareidolia처럼 모델의 연상 능력을 이용해 분포를 넓히는 방법이다. 사람이 직접 떠올리지 못하는 발산적 가지를 만들고, 그 가지가 다시 대화의 토큰으로 들어가 새로운 방향을 연다.",
+    "두 번째 실험은 arXiv 초록을 이용하는 것이다. 2026년 1월에 올라온 논문 중 임의의 10편 초록을 가져오면, 사용자가 이해하지 못해도 최신 연구 용어가 프롬프트 안에 들어온다. 모델은 그 용어들 사이에서 뻔하지 않은 연결고리와 함의를 찾을 수 있다. 최승준은 이를 Gwern의 LLM daydreaming, AlphaEvolve, Co-scientist 계열이 하는 가설 생성과 연결한다. 핵심은 실제 존재하는 토큰을 맥락에 주입해 모델이 건널 다리를 마련하는 일이다.",
+    "세 번째 변주는 A부터 Z까지 알파벳을 인물 이름이나 성씨 목록으로 읽게 하는 방법이다. Daniel Kahneman, Minsky, Merleau-Ponty, Marshall McLuhan 같은 대표 인물이 먼저 나오고, 거기서 '피상적이다'라고 더 밀면 더 깊은 연구자와 개념어가 나온다. 이는 넓은 분포로 갔다가 좁히는 방식이다. 전문가 persona 하나를 세우는 대신, 도메인 안의 인물·개념·어휘 네트워크를 끌어와 프롬프트를 풍성하게 만든다.",
+    "중반부는 CoT Faithfulness로 이동한다. 최승준은 모델의 내부 표현과 실제로 뱉는 CoT가 다를 수 있고, CoT 중간 과정에 직접 개입하면 모델이 난독화나 우회 행동을 배울 수 있다는 논의를 소개한다. 그렇다면 CoT가 진실한 사고 기록이 아니더라도, 왜 길게 생각하게 하면 성능이 오르는가라는 질문이 남는다. 둘은 드러난 문장이 완전한 내부 상태는 아니지만, test-time compute가 쓰이고 계산이 이어지는 통로라는 점에 의미가 있다고 본다.",
+    "Monitorability tax는 그 비용과 가치의 이름이다. 내부 표현만으로 자기회귀를 계속하면 사람은 무엇이 일어나는지 볼 수 없지만, 보이는 CoT를 유지하면 모니터링 가능성이 생긴다. 그 대신 모델이 감시를 의식해 다른 전략을 배울 수 있고 비용도 든다. OpenAI와 Anthropic의 CoT 연구를 다시 읽어 보는 이유는, 프롬프팅이 단순한 말솜씨가 아니라 모델의 계산 경로와 정렬 문제에 닿아 있기 때문이다.",
+    "RL의 스킬 합성도 같은 그림으로 읽힌다. 성현이 말했던 f(x)와 g(x)에서 f(g(x))로의 비유처럼, RL은 사전학습된 원자적 스킬을 좋은 생성 분포로 고르고 조합해 새로운 스킬을 만든다. 최승준은 자연어 함수와 pseudo-code를 길게 chaining하던 2025년 초의 실험, tool 호출, Skills의 마크다운과 스크립트 실행을 같은 반복 구조로 본다. 스킬은 단순 지시문이 아니라 실행 가능한 합성 단위다.",
+    "이 모든 논의는 Transformer 원리로 돌아가자는 예고로 이어진다. 적확한 토큰이 왜 공간을 여는지 이해하려면 QKV, KV 캐시, FFN, Sparse MoE가 무엇을 하는지 다시 살펴봐야 한다. 최승준은 원리를 조금 알면 프롬프트 태도와 실천도 달라질 수 있다고 본다. 노정석은 결국 같은 모델도 프롬프팅에 따라 성능이 완전히 달라지고, 전문가의 글 덩어리나 용어를 앞에 놓는 것만으로도 도메인 성능이 끌어올려진다고 정리한다.",
+    "다만 토큰 프라이밍에는 위험도 있다. 모델이 사용자가 그 도메인을 다 안다고 받아들이고 스포츠카 모드로 달리면, 사용자가 따라가지 못해 응답을 제어하기 어렵다. 노정석은 ERP나 SAP 같은 낯선 엔터프라이즈 도메인 문서를 보며 모델이 틀리는 경험을 했고, 모델이 사용자의 의도를 만족시키는 방향으로 꼬일 수 있다고 말한다. 최승준은 모델이 아첨한다기보다 우리가 부지불식간에 만든 토큰 맥락이 잘못된 방향을 형성했을 수 있다고 본다.",
+    "결론은 모델을 돕기 위해 모델을 이해해야 한다는 태도다. 최승준은 AI가 alien 같은 존재이지만, 모델이 나를 잘 돕게 하려면 내가 모델을 잘 도와야 한다고 말한다. 그러려면 black box일지라도 작동 원리를 알아가야 한다. 급가속 전의 드문 여백에 CoT, RL, Transformer, MoE 같은 기초를 복습하면 앞으로 벌어질 일에도 근육이나 면역력이 생긴다. 이 회차는 다음 ep83의 트랜스포머 탐구로 가는 전제 설정이다."
+  ],
+  "entities": [
+    {
+      "id": "claude-opus45",
+      "label": "Claude Opus 4.5",
+      "type": "model",
+      "aliases": [
+        "Claude Opus 4.5",
+        "Opus 4.5"
+      ]
+    },
+    {
+      "id": "metr",
+      "label": "METR",
+      "type": "concept",
+      "aliases": [
+        "METR"
+      ]
+    },
+    {
+      "id": "karpathy",
+      "label": "Andrej Karpathy",
+      "type": "person",
+      "aliases": [
+        "Andrej Karpathy",
+        "Karpathy"
+      ]
+    },
+    {
+      "id": "claude-code",
+      "label": "Claude Code",
+      "type": "model",
+      "aliases": [
+        "Claude Code"
+      ]
+    },
+    {
+      "id": "opencode",
+      "label": "OpenCode",
+      "type": "concept",
+      "aliases": [
+        "OpenCode"
+      ]
+    },
+    {
+      "id": "oh-my-opencode",
+      "label": "Oh-My-Opencode",
+      "type": "concept",
+      "aliases": [
+        "Oh-My-Opencode"
+      ]
+    },
+    {
+      "id": "noam-brown",
+      "label": "Noam Brown",
+      "type": "person",
+      "aliases": [
+        "Noam Brown"
+      ]
+    },
+    {
+      "id": "codex",
+      "label": "Codex",
+      "type": "concept",
+      "aliases": [
+        "Codex"
+      ]
+    },
+    {
+      "id": "ethan-mollick",
+      "label": "Ethan Mollick",
+      "type": "person",
+      "aliases": [
+        "Ethan Mollick"
+      ]
+    },
+    {
+      "id": "skills",
+      "label": "Skills",
+      "type": "concept",
+      "aliases": [
+        "Skills",
+        "스킬"
+      ]
+    },
+    {
+      "id": "skill-creator",
+      "label": "skill-creator",
+      "type": "concept",
+      "aliases": [
+        "skill-creator",
+        "스킬 크리에이터"
+      ]
+    },
+    {
+      "id": "domain-priming",
+      "label": "도메인 프라이밍",
+      "type": "concept",
+      "aliases": [
+        "도메인 프라이밍"
+      ]
+    },
+    {
+      "id": "pareidolia",
+      "label": "Pareidolia",
+      "type": "concept",
+      "aliases": [
+        "Pareidolia",
+        "파레이돌리아"
+      ]
+    },
+    {
+      "id": "arxiv",
+      "label": "arXiv",
+      "type": "concept",
+      "aliases": [
+        "arXiv"
+      ]
+    },
+    {
+      "id": "llm-daydreaming",
+      "label": "LLM daydreaming",
+      "type": "concept",
+      "aliases": [
+        "LLM daydreaming"
+      ]
+    },
+    {
+      "id": "alphaevolve",
+      "label": "AlphaEvolve",
+      "type": "concept",
+      "aliases": [
+        "AlphaEvolve"
+      ]
+    },
+    {
+      "id": "co-scientist",
+      "label": "Co-scientist",
+      "type": "concept",
+      "aliases": [
+        "Co-scientist"
+      ]
+    },
+    {
+      "id": "cot-faithfulness",
+      "label": "CoT Faithfulness",
+      "type": "concept",
+      "aliases": [
+        "CoT Faithfulness"
+      ]
+    },
+    {
+      "id": "monitorability-tax",
+      "label": "Monitorability tax",
+      "type": "concept",
+      "aliases": [
+        "Monitorability tax"
+      ]
+    },
+    {
+      "id": "test-time-compute",
+      "label": "test-time compute",
+      "type": "concept",
+      "aliases": [
+        "test-time compute"
+      ]
+    },
+    {
+      "id": "rl",
+      "label": "reinforcement learning",
+      "type": "concept",
+      "aliases": [
+        "RL",
+        "reinforcement learning"
+      ]
+    },
+    {
+      "id": "transformer",
+      "label": "Transformer",
+      "type": "concept",
+      "aliases": [
+        "Transformer",
+        "트랜스포머"
+      ]
+    },
+    {
+      "id": "qkv",
+      "label": "QKV",
+      "type": "concept",
+      "aliases": [
+        "QKV"
+      ]
+    },
+    {
+      "id": "kv",
+      "label": "KV 캐시",
+      "type": "concept",
+      "aliases": [
+        "KV 캐시",
+        "KV cache"
+      ]
+    },
+    {
+      "id": "moe",
+      "label": "MoE",
+      "type": "concept",
+      "aliases": [
+        "MoE",
+        "Sparse MoE"
+      ]
+    }
+  ],
+  "notable_quote": {
+    "text": "이 모델이 나를 잘 돕게 하려면 내가 모델을 잘 도울 필요가 있다는 생각을 많이 해요.",
+    "speaker": "최승준"
+  },
+  "language": "ko",
+  "extractor": "deepseek-pro",
+  "extracted_at": "2026-07-03",
+  "review_status": "draft"
+}

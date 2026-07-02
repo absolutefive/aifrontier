@@ -1,0 +1,273 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 84,
+  "slug": "physical-ai-vla-primer",
+  "title": "Physical AI를 알아보자 (sudoremove 박종현 대표)",
+  "published_date": "2026-02-11",
+  "hosts": [
+    "노정석",
+    "박종현"
+  ],
+  "category": "로보틱스",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep84",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep84/page.html",
+  "one_line": "Physical AI의 본질은 LLM식 인지 지능을 물리 행동으로 확장하는 것이며, 가장 큰 병목은 인터넷에 없는 action 데이터를 어떻게 스케일링하느냐다.",
+  "key_points": [
+    "Physical AI는 rule-based 로직 대신 end-to-end 학습으로 비정형 물리 상황을 다루는 로봇 지능으로 좁게 정의된다.",
+    "Boston Dynamics Atlas, Sharpa CraftNet, Figure Helix는 보행보다 물체 조작과 촉각, end-to-end 제어가 새 병목임을 보여 준다.",
+    "VLA, VTLA, LBM, Robot Foundation Model은 이름은 다르지만 vision과 language를 입력으로 받아 action을 출력하는 방향으로 수렴하고 있다.",
+    "LLM과 달리 action 데이터는 인터넷에 없기 때문에 teleoperation, 커뮤니티 로봇, 시뮬레이션, NVIDIA Cosmos 같은 world model이 데이터 병목을 푸는 핵심 경로다.",
+    "VLA 모델은 상황 인지와 빠른 action 생성을 나누는 System 1/2 구조, continuous action을 위한 Diffusion 기반 접근으로 수렴하고 있다.",
+    "Moravec paradox는 물리 지능이 언어 추론과 다른 종류의 어려움임을 보여 주지만, 로봇은 손바닥 카메라나 LiDAR처럼 인간과 다른 센서로 우회할 수 있다."
+  ],
+  "flow": [
+    {
+      "stage": "정의",
+      "summary": "Physical AI를 end-to-end 물리 지능과 VLA 중심으로 좁혀 정의한다."
+    },
+    {
+      "stage": "데모",
+      "summary": "Atlas, CraftNet, Helix를 통해 최신 로봇 데모가 무엇을 보여 주는지 살핀다."
+    },
+    {
+      "stage": "범용화",
+      "summary": "빨래 개기, deformable object, Robot Foundation Model로 specialist에서 generalist로 가는 흐름을 설명한다."
+    },
+    {
+      "stage": "데이터",
+      "summary": "action 데이터가 인터넷에 없다는 병목과 teleoperation 수집의 현실을 다룬다."
+    },
+    {
+      "stage": "시뮬레이션",
+      "summary": "NVIDIA Cosmos, Isaac Sim, 데이터 증강, sim-to-real gap을 통해 스케일링 전략을 논의한다."
+    },
+    {
+      "stage": "아키텍처",
+      "summary": "VLA 수렴 진화, System 1/2 구조, Diffusion 기반 continuous action을 정리한다."
+    },
+    {
+      "stage": "지능",
+      "summary": "Moravec paradox와 reporting bias를 통해 Physical Intelligence가 인지 지능과 왜 다른지 설명한다."
+    },
+    {
+      "stage": "기회",
+      "summary": "LeRobot, 커뮤니티 데이터, 게임 시뮬레이션, 로봇의 생활 진입과 사업 기회를 전망한다."
+    }
+  ],
+  "body_paragraphs": [
+    "이번 회차는 sudoremove 채널의 박종현이 Physical AI와 VLA를 개론처럼 풀어 주는 편이다. 박종현은 LLM이 주로 코딩, 수학, 추론 같은 Cognitive Intelligence를 다뤄 왔다면, 로봇이 물리 세계에서 행동하는 지능은 다른 축이라고 구분한다. 여기서 Physical AI는 NVIDIA가 넓게 쓰는 모든 물리 AI가 아니라, end-to-end 학습으로 비정형 상황을 다루는 general한 로봇 지능으로 좁게 정의된다.",
+    "초반 데모는 Physical AI의 경계를 보여 준다. Boston Dynamics Atlas가 CES에서 보여 준 춤과 웨이브 동작은 훌륭한 몸체 데모지만, 박종현은 거기에 별다른 지능이 들어 있다고 보지는 않는다. 반대로 Atlas가 물체를 집고 방해를 받아도 노동을 이어가는 연구 데모는 LBM이나 VLA와 가까운 모델이 동적인 상황을 처리하는 예다. 몸체와 지능은 구분되어야 하고, 지금 주목할 지점은 후자다.",
+    "Sharpa의 CraftNet은 촉각까지 붙은 VTLA 사례로 소개된다. 트럼프 카드를 딜링하거나 종이 바람개비를 접는 일은 눈과 언어만으로는 어렵고 tactile, 즉 촉각이 필요하다. Figure Helix는 주방에서 물건을 옮기고 골반으로 서랍을 미는 인간 같은 행동을 보여 주며, 10만 줄짜리 C++ low-level control이 end-to-end 모델로 대체될 수 있음을 주장한다. 이는 Tesla FSD가 rule-based 자율주행에서 end-to-end로 간 궤적과 닮아 있다.",
+    "왜 이런 일이 이제 가능해졌는가에 대해 박종현은 '안 되던 게 된다'고 표현한다. 빨래 개기나 비닐 박스 다루기 같은 deformable object 조작은 강체와 달리 모양이 계속 바뀌어 시뮬레이션도 어렵고 경우의 수가 많다. 그런데 LLM 기반 모델에는 컵, 집기, 접기 같은 World Knowledge가 들어 있기 때문에, 새로운 모양의 컵이나 옷도 어느 정도 상식적으로 다룰 수 있다. specialist 모델이 generalist로 이동하는 배경이다.",
+    "용어는 복잡하지만 방향은 비교적 명확하다. Robot Foundation Model은 범용 로봇 제어 모델이고, VLA는 vision과 language를 입력으로 받아 action을 출력하는 수단이다. Boston Dynamics와 Toyota Research Institute가 말하는 LBM도 비슷한 계열이고, Sharpa처럼 tactile을 붙이면 VTLA라고 부를 수 있다. 이름은 제각각이지만, 모델이 눈으로 보고 말로 목표를 이해한 뒤 모터 각도나 손 위치 같은 action value를 내는 방향으로 수렴하고 있다.",
+    "가장 큰 병목은 action 데이터다. LLM은 인터넷의 텍스트를 스케일링할 수 있었고, vision 모델은 이미지가 널려 있었지만, 로봇 관절 각도와 카메라, 손목 시야, 행동 로그가 함께 붙은 action 데이터는 인터넷에 존재하지 않는다. 그래서 Tesla처럼 사람이 VR 장비를 쓰고 로봇을 teleoperation으로 조종하거나, UMI처럼 더 편한 장치로 행동을 로깅하는 방식이 필요하다. 하지만 한 사람과 한 로봇이 묶이는 방식은 인터넷 스케일로 확장되기 어렵다.",
+    "데이터 병목을 풀기 위한 접근은 여러 갈래다. NVIDIA는 Isaac Sim과 Cosmos 같은 world model을 통해 시뮬레이션에서 trajectory를 만들고, 재질과 조명, 배경을 바꿔 dataset augmentation을 하려 한다. 현실 데이터와 가상 데이터를 섞어 학습하지만, 여전히 sim-to-real gap이 큰 문제다. Meta식 안경, Vision Pro, 오픈소스 로봇, 1X NEO처럼 가정에 로봇을 먼저 배포하고 teleop으로 서비스를 제공하면서 데이터를 모으는 flywheel도 중요한 전략이다.",
+    "스케일링 법칙은 아직 LLM만큼 명확하지 않지만, 데이터가 많아질수록 좋아진다는 관찰은 여러 곳에서 나온다. Generalist, NVIDIA GR00T, Physical Intelligence 모두 비슷한 이야기를 한다. 노정석은 Robot Foundation Model이 GPT-2 정도의 generality를 보이기 시작한 단계처럼 느껴진다고 말하고, 박종현은 유저가 실제로 쓸 수 있는 수준의 GPT-3 모먼트가 올해 또는 내년에 올 수 있다고 본다. 자본과 인재가 Physical AI로 몰리고 있다는 점도 이 전망을 뒷받침한다.",
+    "모델 구조는 수렴 진화를 보인다. NVIDIA GR00T, Figure Helix, Gemini Robotics는 모두 느리게 상황을 인지하는 큰 모델과 빠르게 action을 생성하는 작은 모델을 나누는 System 1/2 구조를 쓴다. VLM이 vision과 language를 받아 환경과 명령을 해석하고, Diffusion Transformer가 robot state와 그 해석을 바탕으로 action 토큰 또는 action value를 만든다. 상황 인지는 느려도 되지만 균형과 조작은 200Hz처럼 빠른 주파수가 필요하기 때문이다.",
+    "또 하나의 수렴점은 continuous action이다. 초기 RT-1이나 OpenVLA 계열은 LLM처럼 discrete token을 내보내는 방식이라 행동이 뚝뚝 끊기기 쉽다. 하지만 로봇 action은 관절 각도와 위치처럼 연속값이고, 중간값이 모두 의미를 가진다. 그래서 Diffusion Policy와 Diffusion Transformer가 action 생성을 담당하는 방식이 중요해진다. 이미지가 continuous라 Diffusion으로 잘 만들어진 것처럼, 물리 행동도 denoising을 통해 연속적인 궤적을 생성하는 쪽으로 간다.",
+    "Physical Intelligence를 이해하는 철학적 배경으로 Moravec paradox도 등장한다. 사람은 체스나 수학이 어렵고 물건을 집는 일은 쉬워 보이지만, 진화적으로 보면 물리 행동은 10억 년 넘게 쌓인 능력이고 추상 추론은 비교적 최근의 능력이다. 컵을 잡는 1초 동안 눈, 촉각, 근육, 균형, 물체 선택이 빠르게 처리되고, 혀는 식사 중 엄청난 일을 하지만 우리는 기억조차 하지 못한다. 이 지능은 reasoning token으로 생각하는 언어 지능과 다르다.",
+    "텍스트 데이터에는 reporting bias도 있다. 사람은 특이한 것만 글로 남기고, 벽이 상아색인지 의자가 평범했는지처럼 당연한 물리 세계 정보는 거의 쓰지 않는다. 그래서 LLM은 인터넷 텍스트를 다 배워도 코끼리가 냉장고에 안 들어간다는 상식을 놓칠 수 있다. Physical Intelligence는 이런 누락된 물리 정보를 다루는 문제다. 다만 로봇은 인간처럼 배울 필요가 없고, 손바닥 카메라나 LiDAR처럼 인간에게 없는 센서로 우회할 수 있다.",
+    "사업과 커뮤니티 관점에서는 큰 플레이어의 스케일링을 따라가기 어렵기 때문에 다른 경로가 필요하다. 박종현은 HuggingFace LeRobot처럼 저렴한 오픈소스 하드웨어와 커뮤니티 데이터가 가능성을 만든다고 본다. 사람들이 50만 원 안팎의 로봇을 조립하고 teleoperation 데이터를 모아 VLA를 fine-tuning하면, SmolVLA처럼 커뮤니티 데이터로 모델이 만들어질 수 있다. 게임과 물리 시뮬레이션도 데이터와 evaluation 문제를 싸게 푸는 경로가 될 수 있다.",
+    "마지막 전망은 로봇이 몇 년 안에 삶에 들어온다는 쪽이다. 노동 시장과 가정용 로봇이 먼저 올 수 있지만, 꼭 휴머노이드일 필요는 없다. 책상 위 로봇, 싱크대 팔, 로봇 인형, 병원 레일처럼 환경 자체가 로봇 폼팩터에 맞게 바뀔 수 있다. 노정석은 LLM 열차에 타지 못한 인재에게 Physical AI의 last mile이 올해와 내년에 뜨거운 기회가 될 수 있다고 보고, 박종현은 큰 회사에 합류하거나 LeRobot과 Physical Intelligence 논문을 통해 직접 시작하라고 권한다."
+  ],
+  "entities": [
+    {
+      "id": "sudoremove",
+      "label": "sudoremove",
+      "type": "concept",
+      "aliases": [
+        "sudoremove"
+      ]
+    },
+    {
+      "id": "park-jonghyun",
+      "label": "박종현",
+      "type": "person",
+      "aliases": [
+        "박종현"
+      ]
+    },
+    {
+      "id": "physical-ai",
+      "label": "Physical AI",
+      "type": "concept",
+      "aliases": [
+        "Physical AI"
+      ]
+    },
+    {
+      "id": "vla",
+      "label": "VLA",
+      "type": "concept",
+      "aliases": [
+        "VLA"
+      ]
+    },
+    {
+      "id": "vtla",
+      "label": "VTLA",
+      "type": "concept",
+      "aliases": [
+        "VTLA"
+      ]
+    },
+    {
+      "id": "lbm",
+      "label": "LBM",
+      "type": "concept",
+      "aliases": [
+        "LBM"
+      ]
+    },
+    {
+      "id": "robot-foundation-model",
+      "label": "Robot Foundation Model",
+      "type": "concept",
+      "aliases": [
+        "Robot Foundation Model"
+      ]
+    },
+    {
+      "id": "boston-dynamics-atlas",
+      "label": "Boston Dynamics Atlas",
+      "type": "concept",
+      "aliases": [
+        "Boston Dynamics Atlas",
+        "Atlas"
+      ]
+    },
+    {
+      "id": "sharpa-craftnet",
+      "label": "Sharpa CraftNet",
+      "type": "model",
+      "aliases": [
+        "Sharpa CraftNet",
+        "CraftNet"
+      ]
+    },
+    {
+      "id": "figure-helix",
+      "label": "Figure Helix",
+      "type": "model",
+      "aliases": [
+        "Figure Helix",
+        "Helix"
+      ]
+    },
+    {
+      "id": "deformable-object",
+      "label": "deformable object",
+      "type": "concept",
+      "aliases": [
+        "deformable object"
+      ]
+    },
+    {
+      "id": "world-knowledge",
+      "label": "World Knowledge",
+      "type": "concept",
+      "aliases": [
+        "World Knowledge"
+      ]
+    },
+    {
+      "id": "teleoperation",
+      "label": "teleoperation",
+      "type": "concept",
+      "aliases": [
+        "teleoperation"
+      ]
+    },
+    {
+      "id": "nvidia-cosmos",
+      "label": "NVIDIA Cosmos",
+      "type": "model",
+      "aliases": [
+        "NVIDIA Cosmos",
+        "Cosmos"
+      ]
+    },
+    {
+      "id": "sim-to-real-gap",
+      "label": "sim-to-real gap",
+      "type": "concept",
+      "aliases": [
+        "sim-to-real gap"
+      ]
+    },
+    {
+      "id": "physical-intelligence",
+      "label": "Physical Intelligence",
+      "type": "concept",
+      "aliases": [
+        "Physical Intelligence"
+      ]
+    },
+    {
+      "id": "nvidia-gr00t",
+      "label": "NVIDIA GR00T",
+      "type": "model",
+      "aliases": [
+        "NVIDIA GR00T",
+        "GR00T"
+      ]
+    },
+    {
+      "id": "system-12",
+      "label": "System 1/2",
+      "type": "concept",
+      "aliases": [
+        "System 1/2",
+        "System 1, 2"
+      ]
+    },
+    {
+      "id": "diffusion-transformer",
+      "label": "Diffusion Transformer",
+      "type": "model",
+      "aliases": [
+        "Diffusion Transformer"
+      ]
+    },
+    {
+      "id": "moravec-paradox",
+      "label": "Moravec paradox",
+      "type": "concept",
+      "aliases": [
+        "Moravec paradox"
+      ]
+    },
+    {
+      "id": "reporting-bias",
+      "label": "reporting bias",
+      "type": "concept",
+      "aliases": [
+        "reporting bias"
+      ]
+    },
+    {
+      "id": "lerobot",
+      "label": "LeRobot",
+      "type": "concept",
+      "aliases": [
+        "LeRobot"
+      ]
+    },
+    {
+      "id": "smolvla",
+      "label": "SmolVLA",
+      "type": "model",
+      "aliases": [
+        "SmolVLA"
+      ]
+    }
+  ],
+  "notable_quote": {
+    "text": "action이라는 거는 인터넷에 존재하지가 않아요.",
+    "speaker": "박종현"
+  },
+  "language": "ko",
+  "extractor": "deepseek-pro",
+  "extracted_at": "2026-07-03",
+  "review_status": "draft"
+}

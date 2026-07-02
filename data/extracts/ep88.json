@@ -1,0 +1,232 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 88,
+  "slug": "there-is-no-secret",
+  "title": "EP 88: 비결은 없다",
+  "published_date": "2026-03-04",
+  "hosts": [
+    "노정석",
+    "최승준",
+    "김성현"
+  ],
+  "category": "모델",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep88",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep88/page.html",
+  "one_line": "프런티어 모델 경쟁의 핵심은 숨겨진 비밀 레시피보다 RL을 더 넓고 안정적으로 돌리는 기본기, 제품 감각, 검증 가능한 환경 설계에 가까워졌다.",
+  "key_points": [
+    "김성현은 DeepSeek V4나 GLM 5의 세부 기술보다, 2026년의 중심축이 RL을 더 효율적이고 안정적이며 다양하게 확장하는 일이라고 본다.",
+    "프런티어 기업의 격차는 남들이 모르는 단일 비결보다 좋은 데이터, 안정적 인프라, 많은 반복, 제품을 갈고닦는 감각에서 커진다.",
+    "AI의 사회적 파급력이 커질수록 직업과 제품 전략은 미래 예측에 의존하지만, Fog of Progress 때문에 장기 전망은 구조적으로 불확실하다.",
+    "에이전트 RL의 병목은 검증 가능한 환경을 얼마나 많이 만들고, 하네스를 모델 학습의 일부로 얼마나 잘 결합하느냐에 있다.",
+    "컨텍스트 길이의 한계는 Sparse Attention 같은 기술뿐 아니라 멀티 에이전트, Compaction, Second Brain식 도구 사용으로 우회될 수 있다.",
+    "개인 전략으로는 현재 모델의 한계에만 조급해하기보다 기술 발전을 기다리고 즐기면서, 낙관과 비관 사이의 균형 감각을 갖는 태도가 중요하다."
+  ],
+  "flow": [
+    {
+      "stage": "문제 제기",
+      "summary": "최근 두 달의 변화를 돌아보며 특정 기술 하나로 AI 발전을 설명하기 어려워졌다는 감각에서 출발한다."
+    },
+    {
+      "stage": "RL 중심성",
+      "summary": "GLM 5와 Yao Shunyu의 The Second Half를 통해 RL이 사실상 답지처럼 쓰이는 상황을 설명한다."
+    },
+    {
+      "stage": "기본기",
+      "summary": "비밀 레시피보다 데이터, 인프라, 연산, 제품 감각과 반복 개선이 성능 차이를 만든다고 정리한다."
+    },
+    {
+      "stage": "불확실성",
+      "summary": "AI의 사회적 영향이 커지는 가운데 Fog of Progress로 미래 예측이 어려운 구조를 짚는다."
+    },
+    {
+      "stage": "환경 스케일링",
+      "summary": "에이전트 RL에서 검증 가능성과 환경 확장이 병목이며, 지속 학습이 판을 바꿀 가능성을 논의한다."
+    },
+    {
+      "stage": "하네스와 제품",
+      "summary": "Claude Code 같은 하네스가 모델 학습 환경의 일부가 되면서 제품과 모델의 경계가 가까워진다고 본다."
+    },
+    {
+      "stage": "컨텍스트 관리",
+      "summary": "Sparse Attention, 멀티 에이전트, Compaction을 통해 컨텍스트 한계를 다루는 방향을 살핀다."
+    },
+    {
+      "stage": "태도",
+      "summary": "런던 이주 소식과 함께 기술을 즐기되 극단적 예측에 흔들리지 않는 균형 감각으로 마무리한다."
+    }
+  ],
+  "body_paragraphs": [
+    "이번 회차는 김성현이 오랜만에 다시 합류해 2026년 초 두 달간의 변화를 돌아보는 자리다. 그는 DeepSeek V4의 Engram이나 MHC 같은 세부 기술을 이야기할 수도 있지만, 이제는 특정 기술 하나를 잡아 앞으로의 패러다임을 설명하기가 어려워졌다고 말한다. 중요한 변화가 없어서가 아니라, 변화의 대부분이 이미 큰 방향을 공유한 채 점진적으로 쌓이고 있기 때문이다.",
+    "그 방향의 중심에는 RL이 있다. 김성현은 Zhipu AI의 GLM 5 리포트를 예로 들며, 흥미로운 세부 혁신 대부분이 RL을 더 효율적으로, 더 안정적으로, 더 다양한 환경에서 돌리기 위한 것이라고 요약한다. Yao Shunyu가 말한 The Second Half처럼, 방법의 큰 답지는 어느 정도 RL로 수렴했고 이제 과제는 그 답지를 많은 문제에 확장하는 일이 됐다는 해석이다.",
+    "그래서 그는 프런티어 모델에 숨겨진 절대적 비밀 레시피가 있다는 믿음을 조심스럽게 낮춘다. RLVR은 한때 가장 비밀 레시피에 가까운 혁신처럼 보였지만, MoE나 효율화 기법을 포함한 많은 변화는 모델을 점진적으로 개선하다 보면 발견 가능한 궤적 안에 있었다고 본다. 중국 기업들이 스스로 비슷한 레시피를 찾아 공개한 것도 이런 감각을 더 강하게 만든다.",
+    "그 결과 더 중요해진 것은 기본기다. 좋은 데이터를 만들고, 안정적인 인프라를 갖추고, 충분한 연산을 쓰고, 모델을 제품처럼 반복해서 갈고닦는 일이 성능 차이를 지배한다. 김성현은 연구적 혁신만 좇는 태도와 달리, 제품을 만드는 감각은 많은 사용과 시행착오를 통해 구석을 채우는 일에 가깝다고 말한다. 지금의 모델도 이미 쓸 만하기 때문에 이 작은 차이가 사용자에게 크게 느껴진다.",
+    "AI의 사회적 파급력도 논의의 배경이 된다. Anthropic이 어떤 제품을 내거나 미국 정부 사용 조건을 어떻게 정하느냐만으로 기업 주가와 국가적 논쟁이 움직이는 상황에서, AI 모델의 발전은 더 이상 기술 커뮤니티 안의 사건이 아니다. 김성현은 모델이 계속 발전할 것이라는 믿음이 있기 때문에 오히려 미래의 영향이 두렵다고 말하고, 노정석은 똑똑한 사람과 도구가 결합해 더 강한 조직을 만드는 변화가 역사적으로 반복돼 왔다고 받는다.",
+    "하지만 미래 예측은 안개 속 운전에 가깝다. 김성현은 Geoffrey Hinton의 Fog of Progress 비유를 떠올리며, 가까운 변화는 보이지만 조금만 멀어져도 예측의 빛이 급격히 줄어든다고 설명한다. AI를 배워야 하는지, 개발자가 필요할지, 프롬프트 능력이 오래 갈지 같은 논쟁은 모두 미래 모델의 모습에 대한 가정을 깔고 있다. 그래서 단기적으로는 발전을 예상할 수 있어도 장기 전략은 불확실성을 품어야 한다.",
+    "2026년의 핵심 병목은 환경 스케일링과 에이전트 RL로 모인다. 노정석이 정리하듯 DeepSeek이 보여 준 아키텍처 효율화는 이미 중요한 배경이 되었고, 근원적 capability의 점프는 RLVR과 포스트 트레이닝에서 누가 어떤 돌파구를 만들느냐에 달려 있다. 김성현은 Anthropic, Google, OpenAI의 차이도 결국 RL 환경을 어떻게 만들고 모델을 어떻게 가이드했는지에서 생길 것이라고 본다.",
+    "모델 성향의 차이는 프리트레이닝보다 포스트 트레이닝에서 강하게 드러난다. 김성현은 Gemini가 지식과 프리트레이닝 면에서 강할 수 있지만, 사람들이 Claude나 Codex를 선호하는 이유는 성향과 사용감에 있다고 본다. Claude의 캐릭터 역시 Constitutional AI 같은 기술뿐 아니라 Amanda Askell 등이 제품 관점에서 정립한 constitution과 반복 개선의 결과에 가깝다.",
+    "하네스와 모델의 경계도 가까워지고 있다. Claude Code 같은 하네스는 단순한 외부 도구가 아니라 모델이 학습하는 환경의 일부가 되고, 모델은 그 하네스를 쓰는 법을 이미 배운 채 제품으로 나온다. 김성현은 Moonshot AI CEO의 언급을 떠올리며 제품과 모델의 경계가 가까워진다고 말하고, 노정석은 모델이 좋아지면 하네스가 좋아지고, 그 하네스가 다음 세대 모델에 다시 내재화되는 정반합 흐름으로 이해한다.",
+    "지속 학습은 더 큰 전환의 후보로 등장한다. 여러 환경에서 활동하는 Claude 봇들이 과제를 수행하고 피드백을 얻으며 자기 자신을 발전시키는 구조가 가능해진다면, 단순한 일반화 능력을 넘어 모델이 실제 세계와 상호작용하며 달라지는 시나리오가 열린다. 김성현은 이런 일이 가능해지면 사람들이 '하면 안 된다'고 말하는 목소리도 늘어날 만큼 체감이 달라질 것이라고 본다.",
+    "한편 현재 모델의 한계만 보고 제품 전략을 닫아 버리는 태도도 경계한다. Boris Cherny가 6개월 뒤의 모델을 상대로 제품을 만든다고 했듯, 안 되는 문제 중 상당수는 시간이 지나면 해결될 수 있다. 김성현에게 기술을 기다리는 전략은 조바심에 휘둘리기보다 다음 모델이 더 쉽게, 더 크게 해낼 일을 기대하면서 제품과 사용법을 생각하는 방식이다.",
+    "검증 가능성은 RL의 또 다른 병목이다. 코드 품질이나 커뮤니케이션처럼 정답을 명확히 주기 어려운 영역은 RLVR로부터 도망가야 하는 구간처럼 보인다. 노정석은 트랜스포머의 1M 컨텍스트 한계가 오래 이어지며 에이전트 엔지니어링이 그 빈자리를 보완해 왔다고 말하고, 김성현은 Sparse Attention 같은 전통적 방법과 함께 멀티 에이전트, Compaction, Second Brain식 도구 사용이 컨텍스트 관리의 축이 된다고 설명한다.",
+    "Compaction의 핵심은 모델이 스스로 이 컨텍스트로는 끝내기 어렵다고 판단하고, 지금까지의 진행 상황을 요약해 다음 모델이나 에이전트에게 넘기는 것이다. 예전에는 하네스가 어디서 쪼개고 어떻게 요약하고 어떻게 다시 합칠지 모두 정해야 했지만, 이제는 그런 의사결정 자체도 RL로 학습 가능한 도구 사용이 될 수 있다. 학습 가능한 것과 가능하지 않은 것 사이에는 질적인 차이가 있다는 김성현의 믿음이 여기서 드러난다.",
+    "마지막은 개인적 태도와 균형 감각이다. 김성현은 런던으로 이주하며 프런티어 현장을 더 가까이 접하게 됐지만, 동시에 미래의 확률과 결과를 모두 알 수 없기 때문에 한 가지 예측에 자신을 과도하게 걸 필요는 없다고 말한다. 노정석은 모두가 예측 엔진처럼 사는 시대일수록 비관과 낙관 사이의 균형 감각이 중요하다고 정리한다. 기술을 기다리고 즐기되, 불확실성 앞에서 중심을 잃지 않는 태도가 이 회차의 결론이다."
+  ],
+  "entities": [
+    {
+      "id": "dsv4",
+      "label": "DeepSeek-V4",
+      "type": "model",
+      "aliases": [
+        "DeepSeek-V4",
+        "DeepSeek V4"
+      ]
+    },
+    {
+      "id": "glm5",
+      "label": "GLM 5",
+      "type": "model",
+      "aliases": [
+        "GLM 5"
+      ]
+    },
+    {
+      "id": "rlvr",
+      "label": "RLVR",
+      "type": "concept",
+      "aliases": [
+        "RLVR",
+        "Reinforcement Learning by Verifiable Rewards"
+      ]
+    },
+    {
+      "id": "the-second-half",
+      "label": "The Second Half",
+      "type": "concept",
+      "aliases": [
+        "The Second Half"
+      ]
+    },
+    {
+      "id": "yao-shunyu",
+      "label": "Yao Shunyu",
+      "type": "person",
+      "aliases": [
+        "Yao Shunyu"
+      ]
+    },
+    {
+      "id": "fog-of-progress",
+      "label": "Fog of Progress",
+      "type": "concept",
+      "aliases": [
+        "Fog of Progress"
+      ]
+    },
+    {
+      "id": "geoffrey-hinton",
+      "label": "Geoffrey Hinton",
+      "type": "person",
+      "aliases": [
+        "Geoffrey Hinton"
+      ]
+    },
+    {
+      "id": "posttrain",
+      "label": "포스트 트레이닝",
+      "type": "concept",
+      "aliases": [
+        "포스트 트레이닝",
+        "post-training"
+      ]
+    },
+    {
+      "id": "claude-code",
+      "label": "Claude Code",
+      "type": "model",
+      "aliases": [
+        "Claude Code"
+      ]
+    },
+    {
+      "id": "codex",
+      "label": "Codex",
+      "type": "concept",
+      "aliases": [
+        "Codex"
+      ]
+    },
+    {
+      "id": "constitutional-ai",
+      "label": "Constitutional AI",
+      "type": "concept",
+      "aliases": [
+        "Constitutional AI"
+      ]
+    },
+    {
+      "id": "amanda-askell",
+      "label": "Amanda Askell",
+      "type": "person",
+      "aliases": [
+        "Amanda Askell"
+      ]
+    },
+    {
+      "id": "moonshot-ai",
+      "label": "Moonshot AI",
+      "type": "concept",
+      "aliases": [
+        "Moonshot AI"
+      ]
+    },
+    {
+      "id": "continual-learning",
+      "label": "지속 학습",
+      "type": "concept",
+      "aliases": [
+        "지속 학습"
+      ]
+    },
+    {
+      "id": "boris-cherny",
+      "label": "Boris Cherny",
+      "type": "person",
+      "aliases": [
+        "Boris Cherny"
+      ]
+    },
+    {
+      "id": "sparse-attention",
+      "label": "Sparse Attention",
+      "type": "concept",
+      "aliases": [
+        "Sparse Attention",
+        "sparse attention"
+      ]
+    },
+    {
+      "id": "compaction",
+      "label": "Compaction",
+      "type": "concept",
+      "aliases": [
+        "Compaction"
+      ]
+    },
+    {
+      "id": "second-brain",
+      "label": "Second Brain",
+      "type": "concept",
+      "aliases": [
+        "Second Brain"
+      ]
+    }
+  ],
+  "notable_quote": {
+    "text": "기술이 발전하는 것을 기대하면서 즐기는 것도 또 한 가지 전략이라고 생각합니다.",
+    "speaker": "김성현"
+  },
+  "language": "ko",
+  "extractor": "deepseek-pro",
+  "extracted_at": "2026-07-03",
+  "review_status": "draft"
+}

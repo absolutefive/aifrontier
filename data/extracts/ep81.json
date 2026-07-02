@@ -1,0 +1,286 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 81,
+  "slug": "deepseek-moe-rlvr-2025-review",
+  "title": "DeepSeek이 바꿔버린 모든 것: MoE와 RLVR, 2025년 AI 회고",
+  "published_date": "2026-01-28",
+  "hosts": [
+    "노정석",
+    "최승준",
+    "김성현"
+  ],
+  "category": "AI 회고",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep81",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep81/page.html",
+  "one_line": "2025년 AI의 핵심 변화는 DeepSeek이 증명한 MoE 효율과 RLVR 기반 에이전트 포스트트레이닝이며, 2026년의 관건은 더 큰 스케일과 스스로 배울 문제를 찾는 지속 학습이다.",
+  "key_points": [
+    "DeepSeek-R1 이후 중국의 오픈 프런티어 모델들이 대거 등장했고, 제한된 연산력으로도 프런티어를 노릴 수 있다는 사고 전환이 일어났다.",
+    "MoE는 같은 학습 연산량에서 dense model보다 훨씬 큰 compute multiplier를 만들며, 2025년 프런티어 모델의 기본 아키텍처로 자리 잡았다.",
+    "RLVR은 검증 가능한 보상으로 추론과 도구 사용을 학습시키며, RLHF가 챗봇을 만들었다면 RLVR은 에이전트를 만드는 post-training으로 해석된다.",
+    "2025년의 후반부는 새 패러다임이 계속 터진 시기라기보다 RL 인프라, 데이터, 암묵지, 제품화 레시피를 연마한 시간이었다.",
+    "2026년에는 pre-training 체급과 active 파라미터를 키우려는 스케일업, 더 자율적인 에이전트, continual learning이 핵심 의제가 될 수 있다.",
+    "self-play와 지속 학습이 실제 경제적 가치를 만들려면 모델이 사람이 보기에 흥미롭고 가치 있는 문제를 스스로 찾는 내적 동기와 정렬 문제가 풀려야 한다."
+  ],
+  "flow": [
+    {
+      "stage": "회고",
+      "summary": "2025년을 DeepSeek 모멘트 이후 MoE와 RLVR 패러다임이 확산된 해로 정리한다."
+    },
+    {
+      "stage": "MoE",
+      "summary": "dense model 대비 MoE의 compute multiplier와 sparsity, 라우팅, 모듈화의 의미를 설명한다."
+    },
+    {
+      "stage": "RLVR",
+      "summary": "검증 가능한 보상으로 추론 모델과 에이전트 포스트트레이닝이 가능해진 과정을 짚는다."
+    },
+    {
+      "stage": "RL 이해",
+      "summary": "atomic skill과 조합 능력, LLM RL 논쟁, RL 인프라 발전을 통해 2025년의 연마 과정을 설명한다."
+    },
+    {
+      "stage": "레시피",
+      "summary": "논문 밖의 데이터 정제, 인프라, 암묵지, 제품화 문화가 프런티어 경쟁의 핵심임을 논의한다."
+    },
+    {
+      "stage": "스케일",
+      "summary": "2026년 중국 기업들이 더 큰 pre-training, 더 큰 active 파라미터, 더 긴 학습을 갈망한다고 본다."
+    },
+    {
+      "stage": "지속 학습",
+      "summary": "자율 에이전트, continual learning, self-play가 모두 모델의 동기와 인간 정렬 문제로 수렴한다고 본다."
+    },
+    {
+      "stage": "태도",
+      "summary": "AI 전쟁과 투자 FOMO 속에서 개인은 즐기기와 unlearning으로 불확실성에 대응해야 한다고 마무리한다."
+    }
+  ],
+  "body_paragraphs": [
+    "녹화일은 2025년 12월 27일이고, 세 사람은 2025년 AI를 돌아보며 2026년을 예상한다. 김성현은 한 해 내내 엄청난 변화가 있었던 것 같지만, 다시 보면 핵심 패러다임 전환은 초반 DeepSeek-R1 이후에 집중됐다고 본다. 그 뒤의 시간은 RLVR과 에이전트 포스트트레이닝을 이해하고 발전시키는 연마의 시간에 가까웠다.",
+    "첫 번째 변화는 중국발 오픈 프런티어 모델 붐이다. DeepSeek, MiniMax, Z.ai, Xiaomi, Tencent, Moonshot, Ant, Alibaba, Meituan 같은 중국 기업들이 프런티어 또는 준프런티어 수준 모델을 공개했다. 2024년까지는 제한된 자원 안에서 작은 모델이나 효율 모델을 만드는 흐름이 강했지만, 2025년에는 제한된 연산력으로도 프런티어를 노릴 수 있다는 DeepSeek의 증명이 시장의 목표 자체를 바꿨다.",
+    "그 기술적 기반의 첫 축은 MoE다. 김성현은 같은 10의 24승 학습 연산량을 써도 MoE 모델이 dense model의 7배 연산력을 부은 것과 비슷한 성능을 보인다고 설명한다. 더 놀라운 점은 학습 연산량이 커질수록 이 compute multiplier가 커지는 패턴이며, 그래서 MoE를 쓰지 않으면 이상한 상황이 됐다.",
+    "MoE의 핵심은 sparsity와 모듈화다. 전체 파라미터는 크지만 매 토큰마다 일부 expert만 활성화하므로, 실제 사용하는 파라미터는 제한하면서도 전체 시스템은 훨씬 큰 모델처럼 작동한다. DeepSeek은 잘 정립된 MoE 레시피를 제시했고, Kimi나 Mistral 같은 모델도 그 아키텍처를 크게 바꾸지 않고 채택할 만큼 표준에 가까워졌다.",
+    "두 번째 축은 RLVR이다. DeepSeek-R1은 검증 가능한 방식으로 정답을 사용해 보상을 주면 추론이 학습된다는 단순한 방법을 공개했고, 이것이 o1 같은 추론 모델을 만드는 강력한 단서가 됐다. 노정석이 RLHF가 챗봇을 만들기 위한 post-training이었다면 RLVR은 에이전트를 만들기 위한 post-training이라고 정리하자, 김성현도 그 방향으로 볼 수 있다고 답한다.",
+    "RLVR이 에이전트와 연결되는 방식은 최종 결과 평가다. 코딩 에이전트라면 모델이 편집기, 파일, repository 같은 도구를 사용해 외부 환경과 상호작용하게 하고, 그 과정은 일단 모델에게 맡긴다. 사람이 과정 전체를 설계하기보다 unit test 같은 검증 가능한 최종 결과로 보상을 주면, 모델은 도구 사용과 작업 수행을 함께 학습한다.",
+    "이 변화는 RL 인프라를 복잡하게 만들었다. LLM RL은 학습 인프라, 샘플링 엔진, 환경 상호작용, 평가와 보상 부여가 빠르고 정확하게 연결되어야 한다. MoE RL을 안정적으로 수행하는 문제까지 겹치면서 중국 연구자와 기업들이 2025년 내내 빠르게 개선한 영역이 됐다. 빠른 것과 정확한 것을 동시에 가져가는 일이 새로운 경쟁력이 된 것이다.",
+    "RL 이해도도 바뀌었다. 초기에는 RL이 새 능력을 주는가, 아니면 사전학습에 있던 능력을 끌어내는가가 논쟁이었지만, 이제는 atomic skill과 조합 능력의 구분이 중요해졌다. 사칙연산 같은 원자적 능력은 pre-training에서 배우고, RL은 그 능력들을 f(g(x))처럼 길게 조합해 더 복잡한 문제를 푸는 법을 익히게 한다는 관점이다.",
+    "그렇다고 논문에 나온 레시피만 알면 되는 것은 아니다. 노정석은 데이터셋 정제, computation infrastructure, 복잡한 training pipeline, 하이퍼파라미터가 어디서 망가지는지 아는 암묵지를 모두 합쳐 사람들이 레시피라고 부른다고 말한다. 김성현은 특히 post-training 데이터를 어떻게 만드는지가 숨겨진 경쟁력이며, 이제 모델은 연구 대상이면서 동시에 99%, 99.9% 완성도를 요구하는 제품이라고 본다.",
+    "프런티어 기준도 단순히 총 파라미터 수만으로 말하기 어려워졌다. DeepSeek이나 Kimi는 600B에서 700B급으로 이야기되지만, MiniMax나 Z.ai처럼 전체 100B, active 10B 규모에서도 프런티어의 자취가 보인다. 모델은 제품이고 데이터는 모델이라는 표현처럼, 데이터 품질과 학습 방법이 아키텍처 그림보다 더 결정적인 요소가 되고 있다.",
+    "2026년 전망의 첫 번째는 스케일업이다. 김성현은 중국 기업들이 더 큰 pre-training, 더 큰 모델, 더 긴 학습을 원하고 있다고 읽는다. 지금의 active 파라미터가 10B에서 50B 정도라면 200B, 300B active 파라미터에서는 무엇이 가능할지 궁금해지는 것이 자연스럽다. DeepSeek-V3와 R1에서 큰 모델일수록 RLVR이 잘 되는 관측도 이 욕구를 강화한다.",
+    "하지만 가장 큰 병목은 데이터다. 더 복잡한 일을 하는 에이전트를 만들려면 더 복잡하고 고품질인 데이터를 만들어야 하고, 이는 자율주행에서 90%를 99%, 99.9%로 올리는 롱테일 문제와 닮았다. 수많은 edge case와 corner case를 계속 모아야 하는 구조를 돌파하려면 모델이 스스로 필요한 데이터를 발견하고 학습하는 continual learning이 필요해진다.",
+    "여기서 자율적인 에이전트와 self-play 문제가 만난다. 김성현은 앞으로 더 큰 경제적 가치를 만들려면 사람이 계속 지시하는 채팅 인터페이스를 넘어, 에이전트가 알아서 코드를 개선하고 프로젝트를 진행하는 형태가 필요하다고 본다. 그러나 수학이나 코딩은 바둑처럼 깔끔한 zero-sum game이 아니어서 self-play가 어렵고, 정답률 0% 문제를 만드는 것보다 사람이 보기에 흥미로운 문제를 만드는 것이 핵심이다.",
+    "마지막으로 이 모든 문제는 내적 동기와 인간 정렬로 수렴한다. 모델이 무엇을 배울지, 왜 배울지, 어떤 문제를 가치 있다고 여길지 스스로 찾을 수 있어야 continual learning도 자율 에이전트도 의미를 갖는다. 투자와 FOMO가 AI 전쟁의 감각을 만들지만, 김성현은 불확실성 속에서 그냥 즐기기로 했다고 말한다. 최승준은 2025년에 됐다고 믿은 것들을 2026년에 unlearning해야 할 가능성이 높다고 덧붙인다."
+  ],
+  "entities": [
+    {
+      "id": "deepseek-r1",
+      "label": "DeepSeek-R1",
+      "type": "model",
+      "aliases": [
+        "DeepSeek-R1"
+      ]
+    },
+    {
+      "id": "rlvr",
+      "label": "RLVR",
+      "type": "concept",
+      "aliases": [
+        "RLVR"
+      ]
+    },
+    {
+      "id": "agent-post-training",
+      "label": "에이전트 포스트트레이닝",
+      "type": "concept",
+      "aliases": [
+        "에이전트 포스트트레이닝"
+      ]
+    },
+    {
+      "id": "deepseek",
+      "label": "DeepSeek",
+      "type": "model",
+      "aliases": [
+        "DeepSeek"
+      ]
+    },
+    {
+      "id": "minimax",
+      "label": "MiniMax",
+      "type": "model",
+      "aliases": [
+        "MiniMax"
+      ]
+    },
+    {
+      "id": "z-ai",
+      "label": "Z.ai",
+      "type": "model",
+      "aliases": [
+        "Z.ai"
+      ]
+    },
+    {
+      "id": "moonshot",
+      "label": "Moonshot",
+      "type": "model",
+      "aliases": [
+        "Moonshot"
+      ]
+    },
+    {
+      "id": "moe",
+      "label": "MoE",
+      "type": "concept",
+      "aliases": [
+        "MoE"
+      ]
+    },
+    {
+      "id": "dense-model",
+      "label": "dense model",
+      "type": "concept",
+      "aliases": [
+        "dense model"
+      ]
+    },
+    {
+      "id": "compute-multiplier",
+      "label": "compute multiplier",
+      "type": "concept",
+      "aliases": [
+        "compute multiplier"
+      ]
+    },
+    {
+      "id": "sparsity",
+      "label": "sparsity",
+      "type": "concept",
+      "aliases": [
+        "sparsity"
+      ]
+    },
+    {
+      "id": "kimi",
+      "label": "Kimi",
+      "type": "model",
+      "aliases": [
+        "Kimi"
+      ]
+    },
+    {
+      "id": "mistral",
+      "label": "Mistral",
+      "type": "model",
+      "aliases": [
+        "Mistral"
+      ]
+    },
+    {
+      "id": "o1",
+      "label": "o1",
+      "type": "model",
+      "aliases": [
+        "o1"
+      ]
+    },
+    {
+      "id": "rlhf",
+      "label": "RLHF",
+      "type": "concept",
+      "aliases": [
+        "RLHF"
+      ]
+    },
+    {
+      "id": "llm-rl",
+      "label": "LLM RL",
+      "type": "concept",
+      "aliases": [
+        "LLM RL"
+      ]
+    },
+    {
+      "id": "moe-rl",
+      "label": "MoE RL",
+      "type": "concept",
+      "aliases": [
+        "MoE RL"
+      ]
+    },
+    {
+      "id": "atomic-skill",
+      "label": "atomic skill",
+      "type": "concept",
+      "aliases": [
+        "atomic skill"
+      ]
+    },
+    {
+      "id": "posttrain",
+      "label": "포스트 트레이닝",
+      "type": "concept",
+      "aliases": [
+        "포스트 트레이닝",
+        "post-training"
+      ]
+    },
+    {
+      "id": "pre-training",
+      "label": "pre-training",
+      "type": "concept",
+      "aliases": [
+        "pre-training"
+      ]
+    },
+    {
+      "id": "active-parameters",
+      "label": "active 파라미터",
+      "type": "concept",
+      "aliases": [
+        "active 파라미터"
+      ]
+    },
+    {
+      "id": "continual-learning",
+      "label": "지속 학습",
+      "type": "concept",
+      "aliases": [
+        "지속 학습",
+        "continual learning"
+      ]
+    },
+    {
+      "id": "self-play",
+      "label": "self-play",
+      "type": "concept",
+      "aliases": [
+        "self-play"
+      ]
+    },
+    {
+      "id": "fomo",
+      "label": "FOMO",
+      "type": "concept",
+      "aliases": [
+        "FOMO"
+      ]
+    },
+    {
+      "id": "unlearning",
+      "label": "unlearning",
+      "type": "concept",
+      "aliases": [
+        "unlearning"
+      ]
+    }
+  ],
+  "notable_quote": {
+    "text": "그냥 저는 즐기기로 했습니다.",
+    "speaker": "김성현"
+  },
+  "language": "ko",
+  "extractor": "deepseek-pro",
+  "extracted_at": "2026-07-03",
+  "review_status": "draft"
+}

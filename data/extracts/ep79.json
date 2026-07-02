@@ -1,0 +1,320 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 79,
+  "slug": "runaways-alliance-gpt-52",
+  "title": "AI Frontier 도망자 연합 회고 & GPT 5.2",
+  "published_date": "2026-01-28",
+  "hosts": [
+    "노정석",
+    "최승준",
+    "김성현"
+  ],
+  "category": "커뮤니티",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep79",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep79/page.html",
+  "one_line": "GPT-5.2가 지적 노동의 가격과 속도를 다시 흔드는 가운데, 도망자 연합은 불안과 외로움을 자기조직화된 학습 공동체와 AI와의 공생 선언으로 바꾸려는 실험이다.",
+  "key_points": [
+    "GPT-5.2는 GDPVal 점수를 GPT-5.1의 39점 수준에서 70점으로 끌어올리며, 인간 직업 태스크가 빠르게 commoditize되는 신호를 보였다.",
+    "GDPVal의 1% 비용과 11배 속도, METR/Epoch AI의 Gemini 3 Pro 4시간 지평은 지적 노동의 시간·가격 기준이 급격히 재편되고 있음을 뜻한다.",
+    "도망자 연합 첫 sync-up은 140여 명이 모여 패널, 소그룹, AMA, Discord 아카이빙을 통해 생성형 컨퍼런스처럼 자기조직화된 사례였다.",
+    "Andy Jones의 Horses, Amanda Askell의 soul document, Shane Legg의 AGI 전망은 능력 논쟁이 윤리·지속 학습·인간 대체의 감각으로 이동하고 있음을 보여 준다.",
+    "도망자 연합 키노트는 Hilbert, Gödel, Strange Loop, 창발을 통해 AGI/ASI 논쟁보다 다음 레이어가 온다는 전제 아래 공생을 생각하자고 제안한다.",
+    "노정석은 능력이 희소하지 않아지는 세계에서 인간에게 남는 것은 의지, 취향, evaluation, responsibility이며, AI entrepreneur로 살아야 한다고 정리한다."
+  ],
+  "flow": [
+    {
+      "stage": "업데이트",
+      "summary": "GPT-5.2와 GDPVal 급상승을 통해 지적 노동 상품화의 속도를 짚는다."
+    },
+    {
+      "stage": "시간 지평",
+      "summary": "METR/Epoch AI의 Gemini 3 Pro 4시간 추정과 모델 가격 경쟁을 연결한다."
+    },
+    {
+      "stage": "커뮤니티",
+      "summary": "도망자 연합이 불안과 외로움을 공유한 사람들의 first sync-up으로 생겨난 과정을 회고한다."
+    },
+    {
+      "stage": "자기조직화",
+      "summary": "패널, 소그룹, AMA, Discord 아카이빙이 생성형 컨퍼런스처럼 작동한 방식을 설명한다."
+    },
+    {
+      "stage": "AI 뉴스",
+      "summary": "Andy Jones, Amanda Askell, Shane Legg, continual learning 논의로 기어가 바뀌는 감각을 읽는다."
+    },
+    {
+      "stage": "괴델의 계단",
+      "summary": "Hilbert와 Gödel, Strange Loop와 창발을 통해 복잡한 시스템이 다음 레이어로 도약하는 그림을 제시한다."
+    },
+    {
+      "stage": "공생",
+      "summary": "도구와 공생을 구분하고, AI workflow와 autonomous company를 공생의 현재형으로 본다."
+    },
+    {
+      "stage": "선언",
+      "summary": "희소성이 사라지는 세계에서 의지와 책임을 가진 AI entrepreneur로 살아야 한다는 선언으로 마무리한다."
+    }
+  ],
+  "body_paragraphs": [
+    "녹화일은 2025년 12월 14일이고, 오프닝은 GPT-5.2 업데이트에서 시작한다. 노정석은 5.1에서 0.1 오른 판올림처럼 보이지만 변화는 꽤 크며, Gemini 3를 견제하기 위한 발표로 본다. OpenAI가 압박을 받고 있는 상황에서 무엇을 보여줘야 했고, 그중 그가 주목한 지표가 GDPVal이다.",
+    "GDPVal은 OpenAI가 GPT-5 발표 때 만든 직무형 벤치마크다. 44개 정도 인간 직업군에서 1,300~1,500개 태스크를 뽑아 사람이 하는 일을 모델이 얼마나 잘하는지 보는 방식인데, GPT-5.1의 39점 수준이 GPT-5.2에서 70점으로 뛰었다. 노정석은 원인이 synthetic data인지 post-training 강화인지 알 수 없지만, 인간 고유의 지적 노동이 급격히 commoditize되고 있다는 사실이 중요하다고 본다.",
+    "더 큰 충격은 비용과 속도다. GDPVal 태스크를 처리하는 데 든 비용은 사람에게 지불했을 추정 비용의 1%이고, 속도는 11배 빠르다고 한다. 연초에는 이런 벤치마크를 풀면 AGI라는 식으로 이야기했지만, 이제는 벤치마크가 만들어지고 verifiable reward가 주어지면 모델이 끝낸다는 규칙처럼 보인다. 최승준은 벤치마크를 만들면 된다는 뒤집힌 감각이 생긴다고 말한다.",
+    "METR/Epoch AI의 시간 지평도 같은 방향을 가리킨다. Gemini 3 Pro가 50% 인간 수행 기준에서 4시간 작업을 달성했다는 추정이 나오고, 이 추세라면 full-day에 해당하는 8시간 업무도 멀지 않아 보인다. 노정석은 한 달이 1년 같은 시대라는 표현을 이제 2주가 1년 같은 시대로 바꿔야 할지 모른다고 말한다. 인간의 속도로는 따라가기 어려운 압축이 일어나고 있다.",
+    "이 압축감이 도망자 연합의 배경이다. 두 진행자는 2023년부터 AI 변화를 따라가며 외롭고 불안하다는 감각을 공유해 왔고, 지원자들의 프로필과 글에서도 같은 감정을 발견했다. 그래서 서로를 위로하고, 가지고 있는 것을 교환하고, 어디로 도망갈지 함께 탐색하는 자리를 만들었다. 그 결과 첫 sync-up에는 140여 명이 모였다.",
+    "행사는 단순 네트워킹이 아니라 생성형 컨퍼런스처럼 작동했다. 패널 토의, 45분짜리 소집단 세션 3라운드, 오순석·김민석·신정규 등이 참여한 AMA, 케이터링과 애프터 파티까지 이어졌다. 최승준은 처음에 비어 있던 21개 방이 금방 채워졌고 세션들이 자기조직화됐다고 말한다. 노정석은 대부분 사람이 끝까지 남아 있던 에너지에 놀랐다고 회고한다.",
+    "Discord 아카이빙도 중요한 장치였다. 문제 보유자, 문제 해결자, 모더레이터가 각자의 역할을 맡고, 사진과 텍스트 기록, 배운 것과 잊은 것, 다음 개선점이 남았다. 최승준은 다층 공간을 만들고 살짝 넛지하면 조건과 온도와 압력 속에서 자기조직화가 일어난다는 심상으로 이 과정을 설명한다. 다만 프라이버시, 인센티브 비대칭, 개방성과 닫힘의 균형은 계속 다뤄야 할 회고 포인트다.",
+    "행사 회고 뒤에도 AI 뉴스는 멈추지 않는다. Andy Jones의 Horses 글은 Anthropic 안에서 신입 직원들이 묻던 질문을 Claude가 대신 답하면서 자신의 일이 줄어드는 감각을 말의 소멸 그래프에 비유한다. Amanda Askell의 soul document 논의와 Shane Legg의 AGI 3년 내 50% 이상 전망은, 이제 모델 능력 자체보다 윤리 판단, 준비 불가능성, 인간의 위치가 더 큰 주제가 됐음을 보여 준다.",
+    "continual learning은 그중에서도 예민한 화두다. 노정석은 지금도 Claude나 Gemini의 메모리 harness가 사용자의 핵심 내용을 시스템 프롬프트처럼 옮겨 개인화된 기억을 흉내 낸다고 본다. 최승준은 가중치까지 바뀌는 continual learning이 대규모로 배포되면, 수많은 조직에서 얻은 경험이 한 번에 모여 지능 폭발처럼 보일 수 있다는 SF적 우려를 던진다.",
+    "이런 압박감 속에서 노정석의 도망자 연합 키노트가 다시 호출된다. 그는 Hilbert와 Gödel, Logicomix, 괴델·에셔·바흐, Strange Loop를 거쳐 인간 가치와 영혼의 문제를 설명하려 한다. Hilbert가 수학을 완전히 탄탄한 기반 위에 세우려 했지만 Gödel의 불완전성 정리가 참이지만 증명 불가능한 문장을 드러냈듯, 충분히 복잡한 시스템에는 자기 자신을 참조하며 넘을 수 없는 구멍이 생긴다는 것이다.",
+    "노정석은 이것을 '괴델의 계단'이라는 개인적 은유로 부른다. 레벨 n 시스템이 충분히 복잡해지면 내부 모순과 에너지 투입이 쌓이고, 그 시스템을 설명할 수 없는 레벨 n+1이 창발한다. 물리학만으로 생명을 완전히 기술하기 어렵고 생물학이라는 새 형식 체계가 필요하듯, LLM과 computation이 임계점을 넘으면 AGI/ASI 논쟁보다 다음 레이어가 온다는 전제가 더 중요해진다는 주장이다.",
+    "그래서 결론은 공생이다. Ray Kurzweil의 singularity, Blaise Agüera y Arcas의 공생적 시각, 미토콘드리아와 세포의 사례처럼 다음 레이어와 하나가 되며 살아남는 방식이 반복되어 왔다. 노정석은 도구는 예측 가능한 출력을 주는 것이고, 공생은 입력 이상의 통찰을 가져오는 타자와의 대화라고 구분한다. 회사 workflow를 AI로 다시 짜고 autonomous company를 만드는 것도 현재형 공생으로 본다.",
+    "능력이 희소하지 않아지면 경제학적으로 그 가격은 0에 가까워진다. 노정석은 코딩, 영상, 음악, 그림, 컨설팅이 차례로 commoditize되는 모습을 보며, 능력으로 경쟁하는 생각을 버려야 한다고 말한다. 인간에게 남는 영역은 의지, 취향, evaluation, responsibility다. mission-driven하게 문제를 정하고, AI가 실패 확률을 말려도 '아니, 그런데 난 해야겠어'라고 책임지는 태도가 중요해진다.",
+    "마지막 선언은 AI entrepreneur다. Steve Jobs, Elon Musk, Demis Hassabis 같은 entrepreneur는 단순한 창업가라기보다 목적을 세우고 끝까지 밀어붙이는 사람으로 해석된다. great reset으로 기존 전문성의 출발선이 지워지는 상황에서, 노정석은 AI와 빨리 공생을 선택하고 entrepreneur로 사는 것이 맞다고 정리한다. 최승준은 이를 주권적 존재로 살아라는 뜻으로 받아들이며, 불편한 지점이 있다면 견해를 공유해 달라고 마무리한다."
+  ],
+  "entities": [
+    {
+      "id": "gpt-52",
+      "label": "GPT-5.2",
+      "type": "model",
+      "aliases": [
+        "GPT-5.2"
+      ]
+    },
+    {
+      "id": "gemini-3",
+      "label": "Gemini 3",
+      "type": "model",
+      "aliases": [
+        "Gemini 3",
+        "Gemini 3 Pro"
+      ]
+    },
+    {
+      "id": "openai",
+      "label": "OpenAI",
+      "type": "model",
+      "aliases": [
+        "OpenAI"
+      ]
+    },
+    {
+      "id": "gdpval",
+      "label": "GDPVal",
+      "type": "concept",
+      "aliases": [
+        "GDPVal"
+      ]
+    },
+    {
+      "id": "synthetic-data",
+      "label": "synthetic data",
+      "type": "concept",
+      "aliases": [
+        "synthetic data"
+      ]
+    },
+    {
+      "id": "posttrain",
+      "label": "포스트 트레이닝",
+      "type": "concept",
+      "aliases": [
+        "포스트 트레이닝",
+        "post-training"
+      ]
+    },
+    {
+      "id": "verifiable-reward",
+      "label": "verifiable reward function",
+      "type": "concept",
+      "aliases": [
+        "verifiable reward",
+        "verifiable reward function"
+      ]
+    },
+    {
+      "id": "metr",
+      "label": "METR",
+      "type": "concept",
+      "aliases": [
+        "METR"
+      ]
+    },
+    {
+      "id": "epoch-ai",
+      "label": "Epoch AI",
+      "type": "concept",
+      "aliases": [
+        "Epoch AI"
+      ]
+    },
+    {
+      "id": "runaways-alliance",
+      "label": "도망자 연합",
+      "type": "concept",
+      "aliases": [
+        "도망자 연합"
+      ]
+    },
+    {
+      "id": "discord",
+      "label": "Discord",
+      "type": "concept",
+      "aliases": [
+        "Discord"
+      ]
+    },
+    {
+      "id": "andy-jones",
+      "label": "Andy Jones",
+      "type": "person",
+      "aliases": [
+        "Andy Jones"
+      ]
+    },
+    {
+      "id": "anthropic",
+      "label": "Anthropic",
+      "type": "model",
+      "aliases": [
+        "Anthropic"
+      ]
+    },
+    {
+      "id": "claude",
+      "label": "Claude",
+      "type": "model",
+      "aliases": [
+        "Claude"
+      ]
+    },
+    {
+      "id": "amanda-askell",
+      "label": "Amanda Askell",
+      "type": "person",
+      "aliases": [
+        "Amanda Askell"
+      ]
+    },
+    {
+      "id": "soul-document",
+      "label": "soul document",
+      "type": "concept",
+      "aliases": [
+        "soul document"
+      ]
+    },
+    {
+      "id": "shane-legg",
+      "label": "Shane Legg",
+      "type": "person",
+      "aliases": [
+        "Shane Legg"
+      ]
+    },
+    {
+      "id": "agi",
+      "label": "AGI",
+      "type": "concept",
+      "aliases": [
+        "AGI"
+      ]
+    },
+    {
+      "id": "continual-learning",
+      "label": "지속 학습",
+      "type": "concept",
+      "aliases": [
+        "지속 학습",
+        "continual learning"
+      ]
+    },
+    {
+      "id": "gemini",
+      "label": "Gemini",
+      "type": "model",
+      "aliases": [
+        "Gemini"
+      ]
+    },
+    {
+      "id": "hilbert",
+      "label": "Hilbert",
+      "type": "person",
+      "aliases": [
+        "Hilbert"
+      ]
+    },
+    {
+      "id": "godel",
+      "label": "Gödel",
+      "type": "person",
+      "aliases": [
+        "Gödel"
+      ]
+    },
+    {
+      "id": "strange-loop",
+      "label": "Strange Loop",
+      "type": "concept",
+      "aliases": [
+        "Strange Loop"
+      ]
+    },
+    {
+      "id": "llm",
+      "label": "LLM",
+      "type": "concept",
+      "aliases": [
+        "LLM"
+      ]
+    },
+    {
+      "id": "asi",
+      "label": "ASI",
+      "type": "concept",
+      "aliases": [
+        "ASI"
+      ]
+    },
+    {
+      "id": "ray-kurzweil",
+      "label": "Ray Kurzweil",
+      "type": "person",
+      "aliases": [
+        "Ray Kurzweil"
+      ]
+    },
+    {
+      "id": "blaise-aguera-y-arcas",
+      "label": "Blaise Agüera y Arcas",
+      "type": "person",
+      "aliases": [
+        "Blaise Agüera y Arcas"
+      ]
+    },
+    {
+      "id": "autonomous-company",
+      "label": "autonomous company",
+      "type": "concept",
+      "aliases": [
+        "autonomous company"
+      ]
+    },
+    {
+      "id": "ai-entrepreneur",
+      "label": "AI entrepreneur",
+      "type": "concept",
+      "aliases": [
+        "AI entrepreneur"
+      ]
+    }
+  ],
+  "notable_quote": {
+    "text": "AI와의 공생을 선택하고 entrepreneur로 살아라.",
+    "speaker": "노정석"
+  },
+  "language": "ko",
+  "extractor": "deepseek-pro",
+  "extracted_at": "2026-07-03",
+  "review_status": "draft"
+}

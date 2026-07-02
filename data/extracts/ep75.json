@@ -1,0 +1,287 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 75,
+  "slug": "reinforcement-learning-without-math",
+  "title": "(수학 공식 없는) 강화 학습 이야기",
+  "published_date": "2026-01-30",
+  "hosts": [
+    "노정석",
+    "최승준"
+  ],
+  "category": "강화학습",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep75",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep75/page.html",
+  "one_line": "LLM에서의 강화 학습은 모델이 이미 낮은 확률로 가진 추론 패턴을 정확한 보상과 on-policy 경험으로 끌어올려 일반화 가능한 행동으로 만드는 과정이다.",
+  "key_points": [
+    "Kimi K2 Thinking은 GPT-5와 Sonnet 4.5 Thinking을 벤치마크에서 겨루며, 포스트 트레이닝 레시피가 모델 출시 주기를 빠르게 만드는 흐름을 보여 준다.",
+    "강화 학습은 정답 풀이 방법을 가르치는 대신 목표와 보상을 주고, 에이전트가 스스로 행동 경로를 찾게 한다는 점에서 지도 학습과 다르다.",
+    "Credit Assignment Problem과 sparse reward는 여전히 강화 학습의 핵심 난제이며, Montezuma's Revenge 같은 사례는 긴 행동 뒤에 주어지는 보상이 왜 어려운지 보여 준다.",
+    "SFT와 off-policy 학습은 전문가가 만든 경로를 모델이 모사하게 하지만, 모델이 실제로 그 경로를 수행할 능력이 없으면 할루시네이션과 일반화 실패로 이어질 수 있다.",
+    "프리트레이닝은 방대한 토큰 공간을 낮은 perplexity의 의미 있는 경로로 줄이지만, 인터넷 데이터에는 중간 추론 과정이 드물어 CoT 패턴이 낮은 확률로 묻혀 있다.",
+    "정확한 보상과 on-policy RL은 낮은 확률의 CoT 생성이 정답률이 높을 때 그 패턴을 빠르게 강화하며, DeepSeek R1은 추론 내용에 직접 손대지 않고도 이 효과를 보여 준 사례로 제시된다."
+  ],
+  "flow": [
+    {
+      "stage": "모델",
+      "summary": "Kimi K2 Thinking의 벤치마크와 MoE 양자화, 포스트 트레이닝 레시피 경쟁을 배경으로 RL 논의에 들어간다."
+    },
+    {
+      "stage": "정의",
+      "summary": "강화 학습을 에이전트, 환경, 행동, 보상으로 설명하고 지도 학습과 자율주행 비유로 대비한다."
+    },
+    {
+      "stage": "난제",
+      "summary": "Credit Assignment Problem, sparse reward, Montezuma's Revenge로 RL이 왜 어려운지 짚는다."
+    },
+    {
+      "stage": "정렬",
+      "summary": "RLHF와 SFT를 비교하며 모르는 질문에도 답하게 되는 할루시네이션 학습 문제를 설명한다."
+    },
+    {
+      "stage": "정책",
+      "summary": "on-policy와 off-policy의 차이를 통해 전문가 경로를 모사하는 학습이 왜 일반화 실패를 낳을 수 있는지 다룬다."
+    },
+    {
+      "stage": "토큰",
+      "summary": "프리트레이닝, perplexity, entropy 높은 토큰, 인터넷 포럼 사례를 연결해 CoT가 낮은 확률로 존재하는 이유를 설명한다."
+    },
+    {
+      "stage": "발현",
+      "summary": "정답 보상이 낮은 확률의 추론 생성 패턴을 빠르게 강화하여 CoT가 주류 패턴으로 부상하는 과정을 다룬다."
+    },
+    {
+      "stage": "조건",
+      "summary": "모델이 풀 수 있는 문제, on-policy 경험, 정확한 피드백, DeepSeek R1, Jason Wei의 인생 비유로 마무리한다."
+    }
+  ],
+  "body_paragraphs": [
+    "도입은 Moonshot의 Kimi K2 Thinking에서 시작한다. Kimi K2 Thinking은 GPT-5와 Sonnet 4.5 Thinking을 직접 비교 대상으로 삼을 만큼 강한 벤치마크 성적을 보였고, 9월 instruct 모델 이후 빠르게 추론 모델로 진화했다. 김성현은 이 속도가 프리트레이닝 전체를 다시 하는 주기보다 포스트 트레이닝 레시피를 개선해 모델에 적용하는 주기가 훨씬 빨라진 결과라고 본다. 그래서 이번 회차의 질문은 자연스럽게 강화 학습, 특히 LLM 시대의 RL이 실제로 무엇을 하고 있는가로 이어진다.",
+    "Kimi K2 Thinking의 또 다른 포인트는 MoE와 양자화다. 김성현은 MoE FFN에 INT4 quantization이 들어갔고, OpenAI의 gpt-oss가 MXFP4를 썼던 흐름과 비슷하게 서비스 효율을 위해 MoE 부분을 압축하는 방식이 대세가 될 것이라고 설명한다. 1조 파라미터급 모델이라도 메모리에는 대략 500GB 수준으로 올라갈 수 있다는 추정이 나오고, 노정석은 8개 GPU가 달린 한 대의 서버에서도 간신히 돌릴 수 있는 규모라고 정리한다. 성능은 유지하면서 추론 효율과 배포 가능성을 높이는 이 흐름도 결국 posttrain 경쟁력의 일부다.",
+    "강화 학습의 기본 그림은 에이전트가 환경 안에서 행동하고, 그 행동이 상태를 바꾸며, 때로 보상이 들어오고, 에이전트가 그 보상을 최대화하도록 배우는 과정이다. 지도 학습은 사람이 만든 운전 궤적을 모사하게 하는 자율주행에 가깝고, 강화 학습은 목적지에 도달하면 보상을 주되 어떻게 운전할지는 에이전트가 직접 찾게 하는 쪽에 가깝다. 이 차이 때문에 RL은 인간이 이미 만든 방법을 모방하는 수준을 넘어, 알파고처럼 인간을 뛰어넘는 방법을 발견할 가능성을 가진다.",
+    "하지만 RL은 간단한 만능 열쇠가 아니다. Karpathy식으로 거칠게 말하면 보상이 들어올 때까지 했던 행동들의 확률을 올리는 것인데, 그중 어떤 행동이 실제로 결과에 기여했는지 알아내는 Credit Assignment Problem이 곧바로 생긴다. 보상이 드물게 주어지는 sparse reward 환경에서는 이 문제가 더 심해진다. 김성현은 Atari의 Montezuma's Revenge를 예로 들며, 사람의 가이드나 환경 리셋 같은 변칙을 주지 않으면 긴 행동 뒤에 오는 보상을 제대로 배워 초인적 성능에 도달하기 어렵다고 설명한다.",
+    "LLM에 RL이 들어온 첫 주류 사례는 RLHF다. 모델이 여러 응답을 만들고, 사람이 선호를 레이블링하고, 그 레이블로 보상 모델을 만든 뒤, 모델이 보상 모델의 점수를 최대화하도록 학습한다. 겉으로는 SFT처럼 사람이 정답을 써 주면 되는 것 아닌가 싶지만, 김성현은 여기서 학습하는 LLM과 정답을 쓴 전문가는 다른 에이전트라는 점을 강조한다. 모델이 모르는 질문에 대해 전문가 답을 모사하게 하면, 지식뿐 아니라 '모를 때도 일단 응답하자'는 행동 양식까지 배울 수 있고, 이것이 할루시네이션과 연결된다.",
+    "이 문제를 더 잘 설명하는 축이 on-policy와 off-policy다. off-policy는 행동하는 에이전트와 학습하는 에이전트가 다른 상황이다. 전문가가 운전한 데이터를 모델이 배우는 것은 효율적일 수 있지만, 전문가가 A에서 B로 갈 능력이 있고 모델은 그 능력이 없으면 모델은 실제 환경에서 C로 빠진 뒤 본 적 없는 상태에 놓인다. 모델이 풀 수 없는 경로를 전제로 학습하면 일반화가 아니라 암기와 오버피팅이 생기기 쉽다.",
+    "일반화의 핵심은 모델이 풀 수 있는 문제를 주는 것이다. 김성현은 작은 이미지, 덧셈 레이어, 정렬 알고리즘, 2차 방정식 예시를 통해, 단순히 모델을 작게 하거나 변수를 줄인다고 일반화가 좋아지는 것이 아니라고 설명한다. 모델이 한 토큰에서 처리할 수 있는 연산량보다 문제가 크면 외우는 쪽으로 흐르지만, 문제를 여러 단계로 나누어 각 단계가 모델이 풀 수 있는 크기가 되면 알고리즘을 배울 수 있다. 이 논리는 CoT가 왜 추론에 도움이 되는지와 직접 연결된다.",
+    "문제는 인터넷 데이터에 그런 중간 과정이 드물다는 점이다. Math Stack Exchange의 Cleo 사례처럼, 답은 올라와도 그 답에 이르는 trajectory가 생략되는 경우가 많다. 모델은 뉴턴이 짝수 해에 태어났는지 묻는 질문에 바로 '짝수'라고 답하려는 충동을 배우지만, 낮은 확률로는 1643년을 떠올리고 홀수라고 판단하는 패턴도 갖고 있다. 프리트레이닝은 완전히 아무것도 없는 곳에서 추론을 만들기보다, 희박하지만 존재하는 생각 패턴을 낮은 확률로 품게 한다.",
+    "프리트레이닝의 역할은 토큰 탐색 공간을 극적으로 줄이는 것이다. Kimi K2의 vocabulary가 163,840개라면 100개 토큰 시퀀스의 원래 가능성은 상상하기 어려울 정도로 크지만, 학습 후 perplexity가 약 3.7이라는 것은 평균적으로 각 토큰에서 몇 개의 의미 있는 선택지로 좁혀졌다는 뜻이다. 대부분의 토큰은 파란색처럼 확신이 높고, 중요한 것은 흐름을 바꾸는 entropy 높은 토큰이다. 노정석은 이것을 결정적인 '그런데 말입니다' 토큰이라고 받아들인다.",
+    "그 희박한 추론 패턴을 강화하는 메커니즘이 RL이다. 추론을 생성할 확률은 낮지만, 추론했을 때 정답일 확률이 더 높다면, 정답 보상을 주는 RL은 낮은 확률의 추론 생성 사례를 비대칭적으로 강화한다. 최승준이 CoT를 뱉는 액션이 강화되는 것인지 묻자, 김성현은 CoT를 하지 않는 쪽보다 CoT를 하는 쪽이 더 큰 강화를 받는다고 답한다. 1이 2가 되고 2가 4가 되는 식으로, 낮은 확률의 패턴이 빠르게 주류 분포로 이동한다.",
+    "이 설명은 'RL이 기존 능력을 꺼내는 것인가, 새 능력을 만드는 것인가'라는 철학적 질문으로 이어진다. 김성현은 단순히 있던 것을 꺼내기만 한다고 보기는 어렵다고 말한다. pre-training이 여러 영역을 연결해 두었기 때문에 수학에서 배운 추론이 시 쓰기에도 확장될 수 있고, A 문제를 푸는 능력과 B 문제를 푸는 능력을 결합해 C 문제를 푸는 능력이 생길 수도 있다. Kimi K2가 한 번의 지시로 200~300개의 도구를 쓰는 능력도 이런 조합 능력의 창발로 읽을 수 있다.",
+    "성공적인 RL의 조건은 세 가지로 정리된다. 첫째, 모델이 풀 수 있는 능력 안의 문제를 줘야 한다. 둘째, 모델이 자기 방식으로 직접 시도하고 보상을 받는 on-policy 학습이어야 한다. 셋째, 정답을 정확하게 판단해 false positive를 줄여야 한다. 정답 판정이 흐리면 찍어서 맞힌 패턴도 강화를 받고, 일반화 가능한 CoT 패턴이 부상하는 데 방해가 된다.",
+    "DeepSeek R1은 이 조건을 보여 주는 사례로 나온다. 김성현은 DeepSeek R1이 추론 과정을 태그 안에 넣고 최종 응답을 별도 태그로 감싸게 한 뒤, 최종 응답이 정답과 맞는지만 판단했다고 설명한다. 추론 내용 안에 무엇이 들어가야 하는지는 직접 건드리지 않았는데도 CoT가 발생했다는 점이 중요하다. 모델이 자신이 풀 수 있는 방식대로 문제를 풀고, 그 결과에 정확한 피드백을 받으면 추론이 등장할 수 있다는 이야기다.",
+    "마무리는 Jason Wei의 비유로 확장된다. 사람도 처음에는 선생님과 좋은 사례를 모방하지만, 각자가 가진 능력과 조건이 달라 어느 지점부터는 더 이상 그대로 모방할 수 없다. 그때는 스스로 시도하고 경험하고 보상을 얻는 on-policy RL을 할 수밖에 없다. 노정석은 '사실 우리네 인생 자체가 on-policy RL이죠'라고 받아치며, 사회의 명시적 보상뿐 아니라 자기 안에서 더 높은 보상 함수를 짜는 사람이 위대한 방향으로 간다고 덧붙인다."
+  ],
+  "entities": [
+    {
+      "id": "kimi-k2",
+      "label": "Kimi K2 Thinking",
+      "type": "model",
+      "aliases": [
+        "Kimi K2 Thinking",
+        "Kimi K2"
+      ]
+    },
+    {
+      "id": "gpt-5",
+      "label": "GPT-5",
+      "type": "model",
+      "aliases": [
+        "GPT-5"
+      ]
+    },
+    {
+      "id": "sonnet-45",
+      "label": "Sonnet 4.5 Thinking",
+      "type": "model",
+      "aliases": [
+        "Sonnet 4.5 Thinking",
+        "Sonnet 4.5"
+      ]
+    },
+    {
+      "id": "moe",
+      "label": "MoE",
+      "type": "concept",
+      "aliases": [
+        "MoE"
+      ]
+    },
+    {
+      "id": "quantization",
+      "label": "양자화",
+      "type": "concept",
+      "aliases": [
+        "양자화",
+        "quantization",
+        "INT4 quantization"
+      ]
+    },
+    {
+      "id": "posttrain",
+      "label": "포스트 트레이닝",
+      "type": "concept",
+      "aliases": [
+        "포스트 트레이닝",
+        "posttrain"
+      ]
+    },
+    {
+      "id": "rl",
+      "label": "reinforcement learning",
+      "type": "concept",
+      "aliases": [
+        "강화 학습",
+        "RL"
+      ]
+    },
+    {
+      "id": "alphago",
+      "label": "AlphaGo",
+      "type": "model",
+      "aliases": [
+        "알파고",
+        "AlphaGo"
+      ]
+    },
+    {
+      "id": "karpathy",
+      "label": "Andrej Karpathy",
+      "type": "person",
+      "aliases": [
+        "Karpathy",
+        "Andrej Karpathy"
+      ]
+    },
+    {
+      "id": "credit-assignment",
+      "label": "Credit Assignment Problem",
+      "type": "concept",
+      "aliases": [
+        "Credit Assignment Problem"
+      ]
+    },
+    {
+      "id": "sparse-reward",
+      "label": "sparse reward",
+      "type": "concept",
+      "aliases": [
+        "sparse reward"
+      ]
+    },
+    {
+      "id": "montezuma",
+      "label": "Montezuma's Revenge",
+      "type": "concept",
+      "aliases": [
+        "Montezuma's Revenge",
+        "Montezuma’s Revenge"
+      ]
+    },
+    {
+      "id": "rlhf",
+      "label": "RLHF",
+      "type": "concept",
+      "aliases": [
+        "RLHF"
+      ]
+    },
+    {
+      "id": "sft",
+      "label": "SFT",
+      "type": "concept",
+      "aliases": [
+        "SFT"
+      ]
+    },
+    {
+      "id": "hallucination",
+      "label": "할루시네이션",
+      "type": "concept",
+      "aliases": [
+        "할루시네이션"
+      ]
+    },
+    {
+      "id": "on-policy",
+      "label": "on-policy",
+      "type": "concept",
+      "aliases": [
+        "on-policy"
+      ]
+    },
+    {
+      "id": "off-policy",
+      "label": "off-policy",
+      "type": "concept",
+      "aliases": [
+        "off-policy"
+      ]
+    },
+    {
+      "id": "overfitting",
+      "label": "오버피팅",
+      "type": "concept",
+      "aliases": [
+        "오버피팅",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "cot",
+      "label": "CoT",
+      "type": "concept",
+      "aliases": [
+        "CoT"
+      ]
+    },
+    {
+      "id": "pretraining",
+      "label": "프리트레이닝",
+      "type": "concept",
+      "aliases": [
+        "프리트레이닝",
+        "pre-training"
+      ]
+    },
+    {
+      "id": "perplexity",
+      "label": "perplexity",
+      "type": "concept",
+      "aliases": [
+        "perplexity"
+      ]
+    },
+    {
+      "id": "entropy",
+      "label": "entropy",
+      "type": "concept",
+      "aliases": [
+        "entropy"
+      ]
+    },
+    {
+      "id": "deepseek-r1",
+      "label": "DeepSeek-R1",
+      "type": "model",
+      "aliases": [
+        "DeepSeek R1",
+        "DeepSeek-R1"
+      ]
+    },
+    {
+      "id": "jason-wei",
+      "label": "Jason Wei",
+      "type": "person",
+      "aliases": [
+        "Jason Wei"
+      ]
+    }
+  ],
+  "notable_quote": {
+    "text": "사실 우리네 인생 자체가 on-policy RL이죠.",
+    "speaker": "노정석"
+  },
+  "language": "ko",
+  "extractor": "deepseek-pro",
+  "extracted_at": "2026-07-03",
+  "review_status": "draft"
+}

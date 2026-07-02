@@ -1,13 +1,58 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-02T15:59:53Z",
+  "generated_at": "2026-07-02T16:46:17Z",
   "keywords": [
     {
       "id": "claude-code",
       "label": "Claude Code",
       "type": "model",
-      "total": 29,
+      "total": 51,
       "eps": [
+        {
+          "ep_id": 77,
+          "count": 3,
+          "first_anchor": "claude-code-1"
+        },
+        {
+          "ep_id": 78,
+          "count": 2,
+          "first_anchor": "claude-code-1"
+        },
+        {
+          "ep_id": 80,
+          "count": 1,
+          "first_anchor": "claude-code-1"
+        },
+        {
+          "ep_id": 82,
+          "count": 5,
+          "first_anchor": "claude-code-1"
+        },
+        {
+          "ep_id": 83,
+          "count": 1,
+          "first_anchor": "claude-code-1"
+        },
+        {
+          "ep_id": 85,
+          "count": 1,
+          "first_anchor": "claude-code-1"
+        },
+        {
+          "ep_id": 86,
+          "count": 6,
+          "first_anchor": "claude-code-1"
+        },
+        {
+          "ep_id": 87,
+          "count": 2,
+          "first_anchor": "claude-code-1"
+        },
+        {
+          "ep_id": 88,
+          "count": 1,
+          "first_anchor": "claude-code-1"
+        },
         {
           "ep_id": 89,
           "count": 2,
@@ -59,8 +104,38 @@
       "id": "codex",
       "label": "Codex",
       "type": "concept",
-      "total": 17,
+      "total": 23,
       "eps": [
+        {
+          "ep_id": 77,
+          "count": 1,
+          "first_anchor": "codex-1"
+        },
+        {
+          "ep_id": 80,
+          "count": 1,
+          "first_anchor": "codex-1"
+        },
+        {
+          "ep_id": 82,
+          "count": 1,
+          "first_anchor": "codex-1"
+        },
+        {
+          "ep_id": 83,
+          "count": 1,
+          "first_anchor": "codex-1"
+        },
+        {
+          "ep_id": 87,
+          "count": 1,
+          "first_anchor": "codex-1"
+        },
+        {
+          "ep_id": 88,
+          "count": 1,
+          "first_anchor": "codex-1"
+        },
         {
           "ep_id": 89,
           "count": 2,
@@ -89,33 +164,68 @@
       ]
     },
     {
-      "id": "dsv4",
-      "label": "DeepSeek-V4",
-      "type": "model",
-      "total": 15,
+      "id": "rl",
+      "label": "reinforcement learning",
+      "type": "concept",
+      "total": 20,
       "eps": [
         {
-          "ep_id": 95,
-          "count": 14,
-          "first_anchor": "dsv4-1"
+          "ep_id": 45,
+          "count": 1,
+          "first_anchor": "rl-1"
         },
         {
-          "ep_id": 96,
-          "count": 1,
-          "first_anchor": "dsv4-1"
+          "ep_id": 75,
+          "count": 13,
+          "first_anchor": "rl-1"
+        },
+        {
+          "ep_id": 78,
+          "count": 3,
+          "first_anchor": "rl-1"
+        },
+        {
+          "ep_id": 82,
+          "count": 3,
+          "first_anchor": "rl-1"
         }
       ]
     },
     {
-      "id": "jordan-taylor",
-      "label": "Jordan Taylor",
-      "type": "person",
-      "total": 12,
+      "id": "moe",
+      "label": "MoE",
+      "type": "concept",
+      "total": 18,
       "eps": [
         {
-          "ep_id": 101,
-          "count": 12,
-          "first_anchor": "jordan-taylor-1"
+          "ep_id": 75,
+          "count": 3,
+          "first_anchor": "moe-1"
+        },
+        {
+          "ep_id": 81,
+          "count": 5,
+          "first_anchor": "moe-1"
+        },
+        {
+          "ep_id": 82,
+          "count": 2,
+          "first_anchor": "moe-1"
+        },
+        {
+          "ep_id": 83,
+          "count": 3,
+          "first_anchor": "moe-1"
+        },
+        {
+          "ep_id": 95,
+          "count": 3,
+          "first_anchor": "moe-1"
+        },
+        {
+          "ep_id": 96,
+          "count": 2,
+          "first_anchor": "moe-1"
         }
       ]
     },
@@ -123,8 +233,38 @@
       "id": "karpathy",
       "label": "Andrej Karpathy",
       "type": "person",
-      "total": 10,
+      "total": 17,
       "eps": [
+        {
+          "ep_id": 75,
+          "count": 1,
+          "first_anchor": "karpathy-1"
+        },
+        {
+          "ep_id": 77,
+          "count": 1,
+          "first_anchor": "karpathy-1"
+        },
+        {
+          "ep_id": 80,
+          "count": 1,
+          "first_anchor": "karpathy-1"
+        },
+        {
+          "ep_id": 82,
+          "count": 1,
+          "first_anchor": "karpathy-1"
+        },
+        {
+          "ep_id": 83,
+          "count": 1,
+          "first_anchor": "karpathy-1"
+        },
+        {
+          "ep_id": 87,
+          "count": 2,
+          "first_anchor": "karpathy-1"
+        },
         {
           "ep_id": 89,
           "count": 1,
@@ -144,6 +284,324 @@
           "ep_id": 98,
           "count": 1,
           "first_anchor": "karpathy-1"
+        }
+      ]
+    },
+    {
+      "id": "dsv4",
+      "label": "DeepSeek-V4",
+      "type": "model",
+      "total": 16,
+      "eps": [
+        {
+          "ep_id": 88,
+          "count": 1,
+          "first_anchor": "dsv4-1"
+        },
+        {
+          "ep_id": 95,
+          "count": 14,
+          "first_anchor": "dsv4-1"
+        },
+        {
+          "ep_id": 96,
+          "count": 1,
+          "first_anchor": "dsv4-1"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3",
+      "label": "Gemini 3",
+      "type": "model",
+      "total": 14,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 9,
+          "first_anchor": "gemini-3-1"
+        },
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "gemini-3-1"
+        },
+        {
+          "ep_id": 79,
+          "count": 2,
+          "first_anchor": "gemini-3-1"
+        },
+        {
+          "ep_id": 80,
+          "count": 2,
+          "first_anchor": "gemini-3-1"
+        }
+      ]
+    },
+    {
+      "id": "openclaw",
+      "label": "OpenClaw",
+      "type": "concept",
+      "total": 14,
+      "eps": [
+        {
+          "ep_id": 85,
+          "count": 9,
+          "first_anchor": "openclaw-1"
+        },
+        {
+          "ep_id": 91,
+          "count": 5,
+          "first_anchor": "openclaw-1"
+        }
+      ]
+    },
+    {
+      "id": "rlvr",
+      "label": "RLVR",
+      "type": "concept",
+      "total": 14,
+      "eps": [
+        {
+          "ep_id": 80,
+          "count": 1,
+          "first_anchor": "rlvr-1"
+        },
+        {
+          "ep_id": 81,
+          "count": 5,
+          "first_anchor": "rlvr-1"
+        },
+        {
+          "ep_id": 83,
+          "count": 1,
+          "first_anchor": "rlvr-1"
+        },
+        {
+          "ep_id": 85,
+          "count": 1,
+          "first_anchor": "rlvr-1"
+        },
+        {
+          "ep_id": 88,
+          "count": 3,
+          "first_anchor": "rlvr-1"
+        },
+        {
+          "ep_id": 90,
+          "count": 1,
+          "first_anchor": "rlvr-1"
+        },
+        {
+          "ep_id": 91,
+          "count": 2,
+          "first_anchor": "rlvr-1"
+        }
+      ]
+    },
+    {
+      "id": "jordan-taylor",
+      "label": "Jordan Taylor",
+      "type": "person",
+      "total": 12,
+      "eps": [
+        {
+          "ep_id": 101,
+          "count": 12,
+          "first_anchor": "jordan-taylor-1"
+        }
+      ]
+    },
+    {
+      "id": "kv",
+      "label": "KV 캐시",
+      "type": "concept",
+      "total": 12,
+      "eps": [
+        {
+          "ep_id": 82,
+          "count": 1,
+          "first_anchor": "kv-1"
+        },
+        {
+          "ep_id": 83,
+          "count": 3,
+          "first_anchor": "kv-1"
+        },
+        {
+          "ep_id": 86,
+          "count": 1,
+          "first_anchor": "kv-1"
+        },
+        {
+          "ep_id": 95,
+          "count": 1,
+          "first_anchor": "kv-1"
+        },
+        {
+          "ep_id": 96,
+          "count": 6,
+          "first_anchor": "kv-1"
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "label": "Skills",
+      "type": "concept",
+      "total": 12,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 1,
+          "first_anchor": "skills-1"
+        },
+        {
+          "ep_id": 82,
+          "count": 11,
+          "first_anchor": "skills-1"
+        }
+      ]
+    },
+    {
+      "id": "posttrain",
+      "label": "포스트 트레이닝",
+      "type": "concept",
+      "total": 12,
+      "eps": [
+        {
+          "ep_id": 75,
+          "count": 2,
+          "first_anchor": "posttrain-1"
+        },
+        {
+          "ep_id": 77,
+          "count": 2,
+          "first_anchor": "posttrain-1"
+        },
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "posttrain-1"
+        },
+        {
+          "ep_id": 81,
+          "count": 3,
+          "first_anchor": "posttrain-1"
+        },
+        {
+          "ep_id": 88,
+          "count": 2,
+          "first_anchor": "posttrain-1"
+        },
+        {
+          "ep_id": 100,
+          "count": 2,
+          "first_anchor": "posttrain-1"
+        }
+      ]
+    },
+    {
+      "id": "ralph-loop",
+      "label": "Ralph loop",
+      "type": "concept",
+      "total": 11,
+      "eps": [
+        {
+          "ep_id": 83,
+          "count": 1,
+          "first_anchor": "ralph-loop-1"
+        },
+        {
+          "ep_id": 85,
+          "count": 1,
+          "first_anchor": "ralph-loop-1"
+        },
+        {
+          "ep_id": 87,
+          "count": 2,
+          "first_anchor": "ralph-loop-1"
+        },
+        {
+          "ep_id": 89,
+          "count": 1,
+          "first_anchor": "ralph-loop-1"
+        },
+        {
+          "ep_id": 90,
+          "count": 1,
+          "first_anchor": "ralph-loop-1"
+        },
+        {
+          "ep_id": 91,
+          "count": 3,
+          "first_anchor": "ralph-loop-1"
+        },
+        {
+          "ep_id": 92,
+          "count": 1,
+          "first_anchor": "ralph-loop-1"
+        },
+        {
+          "ep_id": 93,
+          "count": 1,
+          "first_anchor": "ralph-loop-1"
+        }
+      ]
+    },
+    {
+      "id": "openai",
+      "label": "OpenAI",
+      "type": "model",
+      "total": 10,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 3,
+          "first_anchor": "openai-1"
+        },
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "openai-1"
+        },
+        {
+          "ep_id": 79,
+          "count": 2,
+          "first_anchor": "openai-1"
+        },
+        {
+          "ep_id": 80,
+          "count": 4,
+          "first_anchor": "openai-1"
+        }
+      ]
+    },
+    {
+      "id": "transformer",
+      "label": "Transformer",
+      "type": "concept",
+      "total": 10,
+      "eps": [
+        {
+          "ep_id": 80,
+          "count": 2,
+          "first_anchor": "transformer-1"
+        },
+        {
+          "ep_id": 82,
+          "count": 3,
+          "first_anchor": "transformer-1"
+        },
+        {
+          "ep_id": 83,
+          "count": 3,
+          "first_anchor": "transformer-1"
+        },
+        {
+          "ep_id": 90,
+          "count": 2,
+          "first_anchor": "transformer-1"
         }
       ]
     },
@@ -184,53 +642,84 @@
       ]
     },
     {
-      "id": "kv",
-      "label": "KV 캐시",
-      "type": "concept",
-      "total": 7,
+      "id": "shin-jungkyu",
+      "label": "신정규",
+      "type": "person",
+      "total": 9,
       "eps": [
         {
-          "ep_id": 95,
-          "count": 1,
-          "first_anchor": "kv-1"
-        },
-        {
-          "ep_id": 96,
-          "count": 6,
-          "first_anchor": "kv-1"
+          "ep_id": 86,
+          "count": 9,
+          "first_anchor": "shin-jungkyu-1"
         }
       ]
     },
     {
-      "id": "ralph-loop",
-      "label": "Ralph loop",
+      "id": "continual-learning",
+      "label": "지속 학습",
       "type": "concept",
-      "total": 7,
+      "total": 9,
       "eps": [
         {
-          "ep_id": 89,
-          "count": 1,
-          "first_anchor": "ralph-loop-1"
-        },
-        {
-          "ep_id": 90,
-          "count": 1,
-          "first_anchor": "ralph-loop-1"
-        },
-        {
-          "ep_id": 91,
+          "ep_id": 78,
           "count": 3,
-          "first_anchor": "ralph-loop-1"
+          "first_anchor": "continual-learning-1"
         },
         {
-          "ep_id": 92,
-          "count": 1,
-          "first_anchor": "ralph-loop-1"
+          "ep_id": 79,
+          "count": 2,
+          "first_anchor": "continual-learning-1"
         },
         {
-          "ep_id": 93,
+          "ep_id": 80,
           "count": 1,
-          "first_anchor": "ralph-loop-1"
+          "first_anchor": "continual-learning-1"
+        },
+        {
+          "ep_id": 81,
+          "count": 2,
+          "first_anchor": "continual-learning-1"
+        },
+        {
+          "ep_id": 88,
+          "count": 1,
+          "first_anchor": "continual-learning-1"
+        }
+      ]
+    },
+    {
+      "id": "ilya-sutskever",
+      "label": "Ilya Sutskever",
+      "type": "person",
+      "total": 8,
+      "eps": [
+        {
+          "ep_id": 78,
+          "count": 8,
+          "first_anchor": "ilya-sutskever-1"
+        }
+      ]
+    },
+    {
+      "id": "pre-training",
+      "label": "pre-training",
+      "type": "concept",
+      "total": 8,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 3,
+          "first_anchor": "pre-training-1"
+        },
+        {
+          "ep_id": 78,
+          "count": 3,
+          "first_anchor": "pre-training-1"
+        },
+        {
+          "ep_id": 81,
+          "count": 2,
+          "first_anchor": "pre-training-1"
         }
       ]
     },
@@ -238,8 +727,13 @@
       "id": "alphago",
       "label": "AlphaGo",
       "type": "model",
-      "total": 6,
+      "total": 7,
       "eps": [
+        {
+          "ep_id": 75,
+          "count": 1,
+          "first_anchor": "alphago-1"
+        },
         {
           "ep_id": 90,
           "count": 6,
@@ -248,15 +742,249 @@
       ]
     },
     {
+      "id": "antigravity",
+      "label": "Google Antigravity",
+      "type": "concept",
+      "total": 7,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 6,
+          "first_anchor": "antigravity-1"
+        },
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "antigravity-1"
+        }
+      ]
+    },
+    {
       "id": "sparse-attention",
       "label": "Sparse Attention",
       "type": "concept",
-      "total": 6,
+      "total": 7,
       "eps": [
+        {
+          "ep_id": 88,
+          "count": 1,
+          "first_anchor": "sparse-attention-1"
+        },
         {
           "ep_id": 95,
           "count": 6,
           "first_anchor": "sparse-attention-1"
+        }
+      ]
+    },
+    {
+      "id": "park-jonghyun",
+      "label": "박종현",
+      "type": "person",
+      "total": 7,
+      "eps": [
+        {
+          "ep_id": 84,
+          "count": 7,
+          "first_anchor": "park-jonghyun-1"
+        }
+      ]
+    },
+    {
+      "id": "frontier-model",
+      "label": "프런티어 모델",
+      "type": "concept",
+      "total": 7,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 7,
+          "first_anchor": "frontier-model-1"
+        }
+      ]
+    },
+    {
+      "id": "ai-for-science",
+      "label": "AI for Science",
+      "type": "concept",
+      "total": 6,
+      "eps": [
+        {
+          "ep_id": 85,
+          "count": 1,
+          "first_anchor": "ai-for-science-1"
+        },
+        {
+          "ep_id": 89,
+          "count": 1,
+          "first_anchor": "ai-for-science-1"
+        },
+        {
+          "ep_id": 92,
+          "count": 3,
+          "first_anchor": "ai-for-science-1"
+        },
+        {
+          "ep_id": 94,
+          "count": 1,
+          "first_anchor": "ai-for-science-1"
+        }
+      ]
+    },
+    {
+      "id": "cot",
+      "label": "CoT",
+      "type": "concept",
+      "total": 6,
+      "eps": [
+        {
+          "ep_id": 75,
+          "count": 6,
+          "first_anchor": "cot-1"
+        }
+      ]
+    },
+    {
+      "id": "deepseek",
+      "label": "DeepSeek",
+      "type": "model",
+      "total": 6,
+      "eps": [
+        {
+          "ep_id": 81,
+          "count": 5,
+          "first_anchor": "deepseek-1"
+        },
+        {
+          "ep_id": 83,
+          "count": 1,
+          "first_anchor": "deepseek-1"
+        }
+      ]
+    },
+    {
+      "id": "deepseek-r1",
+      "label": "DeepSeek-R1",
+      "type": "model",
+      "total": 6,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 2,
+          "first_anchor": "deepseek-r1-1"
+        },
+        {
+          "ep_id": 75,
+          "count": 2,
+          "first_anchor": "deepseek-r1-1"
+        },
+        {
+          "ep_id": 81,
+          "count": 2,
+          "first_anchor": "deepseek-r1-1"
+        }
+      ]
+    },
+    {
+      "id": "gpt-52",
+      "label": "GPT-5.2",
+      "type": "model",
+      "total": 6,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 2,
+          "first_anchor": "gpt-52-1"
+        },
+        {
+          "ep_id": 80,
+          "count": 4,
+          "first_anchor": "gpt-52-1"
+        }
+      ]
+    },
+    {
+      "id": "kimi-k2",
+      "label": "Kimi K2 Thinking",
+      "type": "model",
+      "total": 6,
+      "eps": [
+        {
+          "ep_id": 75,
+          "count": 5,
+          "first_anchor": "kimi-k2-1"
+        },
+        {
+          "ep_id": 83,
+          "count": 1,
+          "first_anchor": "kimi-k2-1"
+        }
+      ]
+    },
+    {
+      "id": "mvk",
+      "label": "MVK",
+      "type": "concept",
+      "total": 6,
+      "eps": [
+        {
+          "ep_id": 83,
+          "count": 3,
+          "first_anchor": "mvk-1"
+        },
+        {
+          "ep_id": 87,
+          "count": 3,
+          "first_anchor": "mvk-1"
+        }
+      ]
+    },
+    {
+      "id": "non-verifiable-data",
+      "label": "Non-Verifiable Data Domain",
+      "type": "concept",
+      "total": 6,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 6,
+          "first_anchor": "non-verifiable-data-1"
+        }
+      ]
+    },
+    {
+      "id": "terence-tao",
+      "label": "Terence Tao",
+      "type": "person",
+      "total": 6,
+      "eps": [
+        {
+          "ep_id": 80,
+          "count": 1,
+          "first_anchor": "terence-tao-1"
+        },
+        {
+          "ep_id": 92,
+          "count": 5,
+          "first_anchor": "terence-tao-1"
+        }
+      ]
+    },
+    {
+      "id": "vla",
+      "label": "VLA",
+      "type": "concept",
+      "total": 6,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 1,
+          "first_anchor": "vla-1"
+        },
+        {
+          "ep_id": 84,
+          "count": 5,
+          "first_anchor": "vla-1"
         }
       ]
     },
@@ -287,6 +1015,57 @@
       ]
     },
     {
+      "id": "harness-engineering",
+      "label": "하네스 엔지니어링",
+      "type": "concept",
+      "total": 6,
+      "eps": [
+        {
+          "ep_id": 86,
+          "count": 1,
+          "first_anchor": "harness-engineering-1"
+        },
+        {
+          "ep_id": 87,
+          "count": 3,
+          "first_anchor": "harness-engineering-1"
+        },
+        {
+          "ep_id": 89,
+          "count": 1,
+          "first_anchor": "harness-engineering-1"
+        },
+        {
+          "ep_id": 93,
+          "count": 1,
+          "first_anchor": "harness-engineering-1"
+        }
+      ]
+    },
+    {
+      "id": "agi",
+      "label": "AGI",
+      "type": "concept",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 76,
+          "count": 1,
+          "first_anchor": "agi-1"
+        },
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "agi-1"
+        },
+        {
+          "ep_id": 79,
+          "count": 3,
+          "first_anchor": "agi-1"
+        }
+      ]
+    },
+    {
       "id": "ai-native",
       "label": "AI Native",
       "type": "concept",
@@ -310,25 +1089,38 @@
       ]
     },
     {
-      "id": "ai-for-science",
-      "label": "AI for Science",
+      "id": "ax",
+      "label": "AX",
       "type": "concept",
       "total": 5,
       "eps": [
         {
-          "ep_id": 89,
+          "ep_id": 76,
           "count": 1,
-          "first_anchor": "ai-for-science-1"
+          "first_anchor": "ax-1"
         },
         {
-          "ep_id": 92,
+          "ep_id": 77,
+          "count": 1,
+          "first_anchor": "ax-1"
+        },
+        {
+          "ep_id": 91,
           "count": 3,
-          "first_anchor": "ai-for-science-1"
-        },
+          "first_anchor": "ax-1"
+        }
+      ]
+    },
+    {
+      "id": "backend-ai-go",
+      "label": "Backend.AI:GO",
+      "type": "concept",
+      "total": 5,
+      "eps": [
         {
-          "ep_id": 94,
-          "count": 1,
-          "first_anchor": "ai-for-science-1"
+          "ep_id": 86,
+          "count": 5,
+          "first_anchor": "backend-ai-go-1"
         }
       ]
     },
@@ -387,33 +1179,110 @@
       ]
     },
     {
-      "id": "moe",
-      "label": "MoE",
-      "type": "concept",
+      "id": "gpt-5",
+      "label": "GPT-5",
+      "type": "model",
       "total": 5,
       "eps": [
         {
-          "ep_id": 95,
-          "count": 3,
-          "first_anchor": "moe-1"
+          "ep_id": 75,
+          "count": 1,
+          "first_anchor": "gpt-5-1"
         },
         {
-          "ep_id": 96,
+          "ep_id": 78,
           "count": 2,
-          "first_anchor": "moe-1"
+          "first_anchor": "gpt-5-1"
+        },
+        {
+          "ep_id": 80,
+          "count": 2,
+          "first_anchor": "gpt-5-1"
         }
       ]
     },
     {
-      "id": "openclaw",
-      "label": "OpenClaw",
+      "id": "google-deepmind",
+      "label": "Google DeepMind",
+      "type": "model",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 1,
+          "first_anchor": "google-deepmind-1"
+        },
+        {
+          "ep_id": 80,
+          "count": 4,
+          "first_anchor": "google-deepmind-1"
+        }
+      ]
+    },
+    {
+      "id": "lablup",
+      "label": "Lablup",
       "type": "concept",
       "total": 5,
       "eps": [
         {
-          "ep_id": 91,
+          "ep_id": 45,
+          "count": 1,
+          "first_anchor": "lablup-1"
+        },
+        {
+          "ep_id": 86,
+          "count": 3,
+          "first_anchor": "lablup-1"
+        },
+        {
+          "ep_id": 97,
+          "count": 1,
+          "first_anchor": "lablup-1"
+        }
+      ]
+    },
+    {
+      "id": "physical-ai",
+      "label": "Physical AI",
+      "type": "concept",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 84,
           "count": 5,
-          "first_anchor": "openclaw-1"
+          "first_anchor": "physical-ai-1"
+        }
+      ]
+    },
+    {
+      "id": "physical-intelligence",
+      "label": "Physical Intelligence",
+      "type": "concept",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 1,
+          "first_anchor": "physical-intelligence-1"
+        },
+        {
+          "ep_id": 84,
+          "count": 4,
+          "first_anchor": "physical-intelligence-1"
+        }
+      ]
+    },
+    {
+      "id": "pi-agent",
+      "label": "Pi",
+      "type": "concept",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 85,
+          "count": 5,
+          "first_anchor": "pi-agent-1"
         }
       ]
     },
@@ -431,19 +1300,6 @@
       ]
     },
     {
-      "id": "terence-tao",
-      "label": "Terence Tao",
-      "type": "person",
-      "total": 5,
-      "eps": [
-        {
-          "ep_id": 92,
-          "count": 5,
-          "first_anchor": "terence-tao-1"
-        }
-      ]
-    },
-    {
       "id": "prefill-decode",
       "label": "prefill/decode",
       "type": "concept",
@@ -453,6 +1309,73 @@
           "ep_id": 96,
           "count": 5,
           "first_anchor": "prefill-decode-1"
+        }
+      ]
+    },
+    {
+      "id": "verifiable-reward",
+      "label": "verifiable reward function",
+      "type": "concept",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 3,
+          "first_anchor": "verifiable-reward-1"
+        },
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "verifiable-reward-1"
+        },
+        {
+          "ep_id": 80,
+          "count": 1,
+          "first_anchor": "verifiable-reward-1"
+        }
+      ]
+    },
+    {
+      "id": "scaffolding",
+      "label": "스캐폴딩",
+      "type": "concept",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 87,
+          "count": 2,
+          "first_anchor": "scaffolding-1"
+        },
+        {
+          "ep_id": 89,
+          "count": 3,
+          "first_anchor": "scaffolding-1"
+        }
+      ]
+    },
+    {
+      "id": "ai-service",
+      "label": "AI service",
+      "type": "concept",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 4,
+          "first_anchor": "ai-service-1"
+        }
+      ]
+    },
+    {
+      "id": "demis-hassabis",
+      "label": "Demis Hassabis",
+      "type": "person",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 80,
+          "count": 4,
+          "first_anchor": "demis-hassabis-1"
         }
       ]
     },
@@ -475,6 +1398,29 @@
       ]
     },
     {
+      "id": "gemini",
+      "label": "Gemini",
+      "type": "model",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 2,
+          "first_anchor": "gemini-1"
+        },
+        {
+          "ep_id": 76,
+          "count": 1,
+          "first_anchor": "gemini-1"
+        },
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "gemini-1"
+        }
+      ]
+    },
+    {
       "id": "imagenet",
       "label": "ImageNet",
       "type": "concept",
@@ -484,6 +1430,112 @@
           "ep_id": 90,
           "count": 4,
           "first_anchor": "imagenet-1"
+        }
+      ]
+    },
+    {
+      "id": "llm",
+      "label": "LLM",
+      "type": "concept",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 76,
+          "count": 2,
+          "first_anchor": "llm-1"
+        },
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "llm-1"
+        },
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "llm-1"
+        }
+      ]
+    },
+    {
+      "id": "moltbook",
+      "label": "Moltbook",
+      "type": "concept",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 85,
+          "count": 4,
+          "first_anchor": "moltbook-1"
+        }
+      ]
+    },
+    {
+      "id": "autoregressive",
+      "label": "auto-regressive",
+      "type": "concept",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 83,
+          "count": 4,
+          "first_anchor": "autoregressive-1"
+        }
+      ]
+    },
+    {
+      "id": "harness",
+      "label": "harness",
+      "type": "concept",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 4,
+          "first_anchor": "harness-1"
+        }
+      ]
+    },
+    {
+      "id": "on-policy",
+      "label": "on-policy",
+      "type": "concept",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 75,
+          "count": 4,
+          "first_anchor": "on-policy-1"
+        }
+      ]
+    },
+    {
+      "id": "soft-lookup",
+      "label": "soft lookup",
+      "type": "concept",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 83,
+          "count": 4,
+          "first_anchor": "soft-lookup-1"
+        }
+      ]
+    },
+    {
+      "id": "top-k",
+      "label": "top-k",
+      "type": "concept",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 83,
+          "count": 1,
+          "first_anchor": "top-k-1"
+        },
+        {
+          "ep_id": 95,
+          "count": 3,
+          "first_anchor": "top-k-1"
         }
       ]
     },
@@ -527,6 +1579,19 @@
       ]
     },
     {
+      "id": "pretraining",
+      "label": "프리트레이닝",
+      "type": "concept",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 75,
+          "count": 4,
+          "first_anchor": "pretraining-1"
+        }
+      ]
+    },
+    {
       "id": "ai-assisted",
       "label": "AI Assisted",
       "type": "concept",
@@ -540,15 +1605,131 @@
       ]
     },
     {
-      "id": "ax",
-      "label": "AX",
+      "id": "ai-studio",
+      "label": "AI Studio",
       "type": "concept",
       "total": 3,
       "eps": [
         {
-          "ep_id": 91,
+          "ep_id": 77,
           "count": 3,
-          "first_anchor": "ax-1"
+          "first_anchor": "ai-studio-1"
+        }
+      ]
+    },
+    {
+      "id": "alphaevolve",
+      "label": "AlphaEvolve",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 80,
+          "count": 2,
+          "first_anchor": "alphaevolve-1"
+        },
+        {
+          "ep_id": 82,
+          "count": 1,
+          "first_anchor": "alphaevolve-1"
+        }
+      ]
+    },
+    {
+      "id": "anthropic",
+      "label": "Anthropic",
+      "type": "model",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "anthropic-1"
+        },
+        {
+          "ep_id": 80,
+          "count": 2,
+          "first_anchor": "anthropic-1"
+        }
+      ]
+    },
+    {
+      "id": "backend-ai",
+      "label": "Backend.AI",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 86,
+          "count": 3,
+          "first_anchor": "backend-ai-1"
+        }
+      ]
+    },
+    {
+      "id": "claude",
+      "label": "Claude",
+      "type": "model",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 76,
+          "count": 1,
+          "first_anchor": "claude-1"
+        },
+        {
+          "ep_id": 79,
+          "count": 2,
+          "first_anchor": "claude-1"
+        }
+      ]
+    },
+    {
+      "id": "claude-opus45",
+      "label": "Claude Opus 4.5",
+      "type": "model",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 78,
+          "count": 2,
+          "first_anchor": "claude-opus45-1"
+        },
+        {
+          "ep_id": 82,
+          "count": 1,
+          "first_anchor": "claude-opus45-1"
+        }
+      ]
+    },
+    {
+      "id": "claude-opus46",
+      "label": "Claude Opus 4.6",
+      "type": "model",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 85,
+          "count": 1,
+          "first_anchor": "claude-opus46-1"
+        },
+        {
+          "ep_id": 87,
+          "count": 2,
+          "first_anchor": "claude-opus46-1"
+        }
+      ]
+    },
+    {
+      "id": "gdpval",
+      "label": "GDPVal",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 3,
+          "first_anchor": "gdpval-1"
         }
       ]
     },
@@ -597,6 +1778,29 @@
       ]
     },
     {
+      "id": "metr",
+      "label": "METR",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "metr-1"
+        },
+        {
+          "ep_id": 82,
+          "count": 1,
+          "first_anchor": "metr-1"
+        },
+        {
+          "ep_id": 87,
+          "count": 1,
+          "first_anchor": "metr-1"
+        }
+      ]
+    },
+    {
       "id": "npu",
       "label": "NPU",
       "type": "concept",
@@ -606,6 +1810,24 @@
           "ep_id": 90,
           "count": 3,
           "first_anchor": "npu-1"
+        }
+      ]
+    },
+    {
+      "id": "nvidia",
+      "label": "NVIDIA",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 2,
+          "first_anchor": "nvidia-1"
+        },
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "nvidia-1"
         }
       ]
     },
@@ -623,6 +1845,42 @@
       ]
     },
     {
+      "id": "nano-banana-pro",
+      "label": "Nano Banana Pro",
+      "type": "model",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 3,
+          "first_anchor": "nano-banana-pro-1"
+        }
+      ]
+    },
+    {
+      "id": "noam-brown",
+      "label": "Noam Brown",
+      "type": "person",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "noam-brown-1"
+        },
+        {
+          "ep_id": 82,
+          "count": 1,
+          "first_anchor": "noam-brown-1"
+        },
+        {
+          "ep_id": 90,
+          "count": 1,
+          "first_anchor": "noam-brown-1"
+        }
+      ]
+    },
+    {
       "id": "oh-my",
       "label": "Oh-My 시리즈",
       "type": "concept",
@@ -632,6 +1890,37 @@
           "ep_id": 93,
           "count": 3,
           "first_anchor": "oh-my-1"
+        }
+      ]
+    },
+    {
+      "id": "oh-my-opencode",
+      "label": "Oh-My-Opencode",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 82,
+          "count": 1,
+          "first_anchor": "oh-my-opencode-1"
+        },
+        {
+          "ep_id": 83,
+          "count": 2,
+          "first_anchor": "oh-my-opencode-1"
+        }
+      ]
+    },
+    {
+      "id": "openai-o1",
+      "label": "OpenAI o1",
+      "type": "model",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 3,
+          "first_anchor": "openai-o1-1"
         }
       ]
     },
@@ -662,24 +1951,6 @@
       ]
     },
     {
-      "id": "rlvr",
-      "label": "RLVR",
-      "type": "concept",
-      "total": 3,
-      "eps": [
-        {
-          "ep_id": 90,
-          "count": 1,
-          "first_anchor": "rlvr-1"
-        },
-        {
-          "ep_id": 91,
-          "count": 2,
-          "first_anchor": "rlvr-1"
-        }
-      ]
-    },
-    {
       "id": "rsi",
       "label": "RSI",
       "type": "concept",
@@ -702,6 +1973,19 @@
           "ep_id": 93,
           "count": 3,
           "first_anchor": "sigrid-jin-1"
+        }
+      ]
+    },
+    {
+      "id": "tesla",
+      "label": "Tesla",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 3,
+          "first_anchor": "tesla-1"
         }
       ]
     },
@@ -742,6 +2026,32 @@
       ]
     },
     {
+      "id": "embedding",
+      "label": "embedding",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 83,
+          "count": 3,
+          "first_anchor": "embedding-1"
+        }
+      ]
+    },
+    {
+      "id": "inductive-bias",
+      "label": "inductive bias",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 78,
+          "count": 3,
+          "first_anchor": "inductive-bias-1"
+        }
+      ]
+    },
+    {
       "id": "latency",
       "label": "latency",
       "type": "concept",
@@ -755,15 +2065,28 @@
       ]
     },
     {
-      "id": "top-k",
-      "label": "top-k",
+      "id": "proprietary-data",
+      "label": "proprietary data",
       "type": "concept",
       "total": 3,
       "eps": [
         {
-          "ep_id": 95,
+          "ep_id": 45,
           "count": 3,
-          "first_anchor": "top-k-1"
+          "first_anchor": "proprietary-data-1"
+        }
+      ]
+    },
+    {
+      "id": "sub-agent",
+      "label": "sub-agent",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 86,
+          "count": 3,
+          "first_anchor": "sub-agent-1"
         }
       ]
     },
@@ -794,15 +2117,15 @@
       ]
     },
     {
-      "id": "scaffolding",
-      "label": "스캐폴딩",
+      "id": "reggio-emilia",
+      "label": "레지오 에밀리아",
       "type": "concept",
       "total": 3,
       "eps": [
         {
-          "ep_id": 89,
+          "ep_id": 76,
           "count": 3,
-          "first_anchor": "scaffolding-1"
+          "first_anchor": "reggio-emilia-1"
         }
       ]
     },
@@ -834,6 +2157,19 @@
           "ep_id": 93,
           "count": 3,
           "first_anchor": "clean-room-1"
+        }
+      ]
+    },
+    {
+      "id": "hanmi-kindergarten",
+      "label": "한미유치원",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 76,
+          "count": 3,
+          "first_anchor": "hanmi-kindergarten-1"
         }
       ]
     },
@@ -877,6 +2213,60 @@
       ]
     },
     {
+      "id": "ai-slop",
+      "label": "AI slop",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 83,
+          "count": 1,
+          "first_anchor": "ai-slop-1"
+        },
+        {
+          "ep_id": 85,
+          "count": 1,
+          "first_anchor": "ai-slop-1"
+        }
+      ]
+    },
+    {
+      "id": "asi",
+      "label": "ASI",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "asi-1"
+        },
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "asi-1"
+        }
+      ]
+    },
+    {
+      "id": "amanda-askell",
+      "label": "Amanda Askell",
+      "type": "person",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "amanda-askell-1"
+        },
+        {
+          "ep_id": 88,
+          "count": 1,
+          "first_anchor": "amanda-askell-1"
+        }
+      ]
+    },
+    {
       "id": "anticipatory-routing",
       "label": "Anticipatory Routing",
       "type": "concept",
@@ -916,6 +2306,19 @@
       ]
     },
     {
+      "id": "boston-dynamics-atlas",
+      "label": "Boston Dynamics Atlas",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 84,
+          "count": 2,
+          "first_anchor": "boston-dynamics-atlas-1"
+        }
+      ]
+    },
+    {
       "id": "chatgpt-unbundling",
       "label": "ChatGPT unbundling",
       "type": "concept",
@@ -947,6 +2350,19 @@
       ]
     },
     {
+      "id": "chris-lattner",
+      "label": "Chris Lattner",
+      "type": "person",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 87,
+          "count": 2,
+          "first_anchor": "chris-lattner-1"
+        }
+      ]
+    },
+    {
       "id": "claude-design",
       "label": "Claude Design",
       "type": "concept",
@@ -969,6 +2385,32 @@
           "ep_id": 93,
           "count": 2,
           "first_anchor": "claw-code-1"
+        }
+      ]
+    },
+    {
+      "id": "compaction",
+      "label": "Compaction",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 88,
+          "count": 2,
+          "first_anchor": "compaction-1"
+        }
+      ]
+    },
+    {
+      "id": "diffusion-transformer",
+      "label": "Diffusion Transformer",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 84,
+          "count": 2,
+          "first_anchor": "diffusion-transformer-1"
         }
       ]
     },
@@ -999,6 +2441,45 @@
       ]
     },
     {
+      "id": "figure-helix",
+      "label": "Figure Helix",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 84,
+          "count": 2,
+          "first_anchor": "figure-helix-1"
+        }
+      ]
+    },
+    {
+      "id": "geb",
+      "label": "GEB",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 78,
+          "count": 2,
+          "first_anchor": "geb-1"
+        }
+      ]
+    },
+    {
+      "id": "gpt53-codex",
+      "label": "GPT-5.3-Codex",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 85,
+          "count": 2,
+          "first_anchor": "gpt53-codex-1"
+        }
+      ]
+    },
+    {
       "id": "gemini35-flash",
       "label": "Gemini 3.5 Flash",
       "type": "model",
@@ -1012,6 +2493,19 @@
       ]
     },
     {
+      "id": "genie",
+      "label": "Genie",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 80,
+          "count": 2,
+          "first_anchor": "genie-1"
+        }
+      ]
+    },
+    {
       "id": "guido-van-rossum",
       "label": "Guido van Rossum",
       "type": "person",
@@ -1021,6 +2515,45 @@
           "ep_id": 89,
           "count": 2,
           "first_anchor": "guido-van-rossum-1"
+        }
+      ]
+    },
+    {
+      "id": "godel",
+      "label": "Gödel",
+      "type": "person",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 2,
+          "first_anchor": "godel-1"
+        }
+      ]
+    },
+    {
+      "id": "hwp",
+      "label": "HWP",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 2,
+          "first_anchor": "hwp-1"
+        }
+      ]
+    },
+    {
+      "id": "hilbert",
+      "label": "Hilbert",
+      "type": "person",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 2,
+          "first_anchor": "hilbert-1"
         }
       ]
     },
@@ -1064,6 +2597,71 @@
       ]
     },
     {
+      "id": "kimi",
+      "label": "Kimi",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 81,
+          "count": 2,
+          "first_anchor": "kimi-1"
+        }
+      ]
+    },
+    {
+      "id": "lbm",
+      "label": "LBM",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 84,
+          "count": 2,
+          "first_anchor": "lbm-1"
+        }
+      ]
+    },
+    {
+      "id": "lerobot",
+      "label": "LeRobot",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 84,
+          "count": 2,
+          "first_anchor": "lerobot-1"
+        }
+      ]
+    },
+    {
+      "id": "mamba",
+      "label": "Mamba",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 80,
+          "count": 2,
+          "first_anchor": "mamba-1"
+        }
+      ]
+    },
+    {
+      "id": "minimax",
+      "label": "MiniMax",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 81,
+          "count": 2,
+          "first_anchor": "minimax-1"
+        }
+      ]
+    },
+    {
       "id": "muon",
       "label": "Muon Optimizer",
       "type": "concept",
@@ -1073,6 +2671,94 @@
           "ep_id": 95,
           "count": 2,
           "first_anchor": "muon-1"
+        }
+      ]
+    },
+    {
+      "id": "nvidia-gr00t",
+      "label": "NVIDIA GR00T",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 84,
+          "count": 2,
+          "first_anchor": "nvidia-gr00t-1"
+        }
+      ]
+    },
+    {
+      "id": "nemotron",
+      "label": "NVIDIA Nemotron",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 80,
+          "count": 2,
+          "first_anchor": "nemotron-1"
+        }
+      ]
+    },
+    {
+      "id": "opencode",
+      "label": "OpenCode",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 82,
+          "count": 2,
+          "first_anchor": "opencode-1"
+        }
+      ]
+    },
+    {
+      "id": "qkv",
+      "label": "QKV",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 82,
+          "count": 1,
+          "first_anchor": "qkv-1"
+        },
+        {
+          "ep_id": 83,
+          "count": 1,
+          "first_anchor": "qkv-1"
+        }
+      ]
+    },
+    {
+      "id": "rlhf",
+      "label": "RLHF",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 75,
+          "count": 1,
+          "first_anchor": "rlhf-1"
+        },
+        {
+          "ep_id": 81,
+          "count": 1,
+          "first_anchor": "rlhf-1"
+        }
+      ]
+    },
+    {
+      "id": "robot-foundation-model",
+      "label": "Robot Foundation Model",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 84,
+          "count": 2,
+          "first_anchor": "robot-foundation-model-1"
         }
       ]
     },
@@ -1090,6 +2776,50 @@
       ]
     },
     {
+      "id": "sft",
+      "label": "SFT",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 1,
+          "first_anchor": "sft-1"
+        },
+        {
+          "ep_id": 75,
+          "count": 1,
+          "first_anchor": "sft-1"
+        }
+      ]
+    },
+    {
+      "id": "sima",
+      "label": "SIMA",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 80,
+          "count": 2,
+          "first_anchor": "sima-1"
+        }
+      ]
+    },
+    {
+      "id": "saas",
+      "label": "SaaS",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 85,
+          "count": 2,
+          "first_anchor": "saas-1"
+        }
+      ]
+    },
+    {
       "id": "sarah-guo",
       "label": "Sarah Guo",
       "type": "person",
@@ -1099,6 +2829,42 @@
           "ep_id": 92,
           "count": 2,
           "first_anchor": "sarah-guo-1"
+        }
+      ]
+    },
+    {
+      "id": "strange-loop",
+      "label": "Strange Loop",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "strange-loop-1"
+        },
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "strange-loop-1"
+        }
+      ]
+    },
+    {
+      "id": "tpu",
+      "label": "TPU",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 1,
+          "first_anchor": "tpu-1"
+        },
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "tpu-1"
         }
       ]
     },
@@ -1116,15 +2882,46 @@
       ]
     },
     {
-      "id": "transformer",
-      "label": "Transformer",
+      "id": "vtla",
+      "label": "VTLA",
       "type": "concept",
       "total": 2,
       "eps": [
         {
-          "ep_id": 90,
+          "ep_id": 84,
           "count": 2,
-          "first_anchor": "transformer-1"
+          "first_anchor": "vtla-1"
+        }
+      ]
+    },
+    {
+      "id": "veo",
+      "label": "Veo",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 76,
+          "count": 1,
+          "first_anchor": "veo-1"
+        },
+        {
+          "ep_id": 80,
+          "count": 1,
+          "first_anchor": "veo-1"
+        }
+      ]
+    },
+    {
+      "id": "vibe-check",
+      "label": "Vibe Check",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 2,
+          "first_anchor": "vibe-check-1"
         }
       ]
     },
@@ -1138,6 +2935,50 @@
           "ep_id": 90,
           "count": 2,
           "first_anchor": "vision-transformer-1"
+        }
+      ]
+    },
+    {
+      "id": "yao-shunyu",
+      "label": "Yao Shunyu",
+      "type": "person",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "yao-shunyu-1"
+        },
+        {
+          "ep_id": 88,
+          "count": 1,
+          "first_anchor": "yao-shunyu-1"
+        }
+      ]
+    },
+    {
+      "id": "z-ai",
+      "label": "Z.ai",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 81,
+          "count": 2,
+          "first_anchor": "z-ai-1"
+        }
+      ]
+    },
+    {
+      "id": "active-parameters",
+      "label": "active 파라미터",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 81,
+          "count": 2,
+          "first_anchor": "active-parameters-1"
         }
       ]
     },
@@ -1160,6 +3001,19 @@
       ]
     },
     {
+      "id": "closed-loop-system",
+      "label": "closed-loop system",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 2,
+          "first_anchor": "closed-loop-system-1"
+        }
+      ]
+    },
+    {
       "id": "control-layer",
       "label": "control layer",
       "type": "concept",
@@ -1169,6 +3023,32 @@
           "ep_id": 97,
           "count": 2,
           "first_anchor": "control-layer-1"
+        }
+      ]
+    },
+    {
+      "id": "data-flywheel",
+      "label": "data flywheel",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 2,
+          "first_anchor": "data-flywheel-1"
+        }
+      ]
+    },
+    {
+      "id": "vertical-integration",
+      "label": "full-stack vertical integration",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 2,
+          "first_anchor": "vertical-integration-1"
         }
       ]
     },
@@ -1186,6 +3066,107 @@
       ]
     },
     {
+      "id": "microgpt",
+      "label": "microgpt",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 87,
+          "count": 1,
+          "first_anchor": "microgpt-1"
+        },
+        {
+          "ep_id": 92,
+          "count": 1,
+          "first_anchor": "microgpt-1"
+        }
+      ]
+    },
+    {
+      "id": "o1",
+      "label": "o1",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "o1-1"
+        },
+        {
+          "ep_id": 81,
+          "count": 1,
+          "first_anchor": "o1-1"
+        }
+      ]
+    },
+    {
+      "id": "off-policy",
+      "label": "off-policy",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 75,
+          "count": 2,
+          "first_anchor": "off-policy-1"
+        }
+      ]
+    },
+    {
+      "id": "reasoning-model",
+      "label": "reasoning model",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 2,
+          "first_anchor": "reasoning-model-1"
+        }
+      ]
+    },
+    {
+      "id": "residual-stream",
+      "label": "residual stream",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 83,
+          "count": 2,
+          "first_anchor": "residual-stream-1"
+        }
+      ]
+    },
+    {
+      "id": "self-play",
+      "label": "self-play",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 81,
+          "count": 2,
+          "first_anchor": "self-play-1"
+        }
+      ]
+    },
+    {
+      "id": "simulator",
+      "label": "simulator",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 2,
+          "first_anchor": "simulator-1"
+        }
+      ]
+    },
+    {
       "id": "slow-ai",
       "label": "slow AI",
       "type": "concept",
@@ -1195,6 +3176,94 @@
           "ep_id": 97,
           "count": 2,
           "first_anchor": "slow-ai-1"
+        }
+      ]
+    },
+    {
+      "id": "soul-document",
+      "label": "soul document",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "soul-document-1"
+        },
+        {
+          "ep_id": 86,
+          "count": 1,
+          "first_anchor": "soul-document-1"
+        }
+      ]
+    },
+    {
+      "id": "speed-superintelligence",
+      "label": "speed superintelligence",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 2,
+          "first_anchor": "speed-superintelligence-1"
+        }
+      ]
+    },
+    {
+      "id": "teleoperation",
+      "label": "teleoperation",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 84,
+          "count": 2,
+          "first_anchor": "teleoperation-1"
+        }
+      ]
+    },
+    {
+      "id": "test-time-compute",
+      "label": "test-time compute",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 1,
+          "first_anchor": "test-time-compute-1"
+        },
+        {
+          "ep_id": 82,
+          "count": 1,
+          "first_anchor": "test-time-compute-1"
+        }
+      ]
+    },
+    {
+      "id": "thinking-budget",
+      "label": "thinking budget",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 86,
+          "count": 2,
+          "first_anchor": "thinking-budget-1"
+        }
+      ]
+    },
+    {
+      "id": "time-gap",
+      "label": "time gap",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 2,
+          "first_anchor": "time-gap-1"
         }
       ]
     },
@@ -1212,6 +3281,19 @@
       ]
     },
     {
+      "id": "value-function",
+      "label": "가치 함수",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 78,
+          "count": 2,
+          "first_anchor": "value-function-1"
+        }
+      ]
+    },
+    {
       "id": "supply-chain-attack",
       "label": "공급망 공격",
       "type": "concept",
@@ -1225,6 +3307,37 @@
       ]
     },
     {
+      "id": "runaways-alliance",
+      "label": "도망자 연합",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 2,
+          "first_anchor": "runaways-alliance-1"
+        }
+      ]
+    },
+    {
+      "id": "domain-tacit-knowledge",
+      "label": "도메인 암묵지",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 85,
+          "count": 1,
+          "first_anchor": "domain-tacit-knowledge-1"
+        },
+        {
+          "ep_id": 89,
+          "count": 1,
+          "first_anchor": "domain-tacit-knowledge-1"
+        }
+      ]
+    },
+    {
       "id": "loop-eng",
       "label": "루프 엔지니어링",
       "type": "concept",
@@ -1234,6 +3347,19 @@
           "ep_id": 100,
           "count": 2,
           "first_anchor": "loop-eng-1"
+        }
+      ]
+    },
+    {
+      "id": "makeup-dataset",
+      "label": "메이크업 데이터셋",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 2,
+          "first_anchor": "makeup-dataset-1"
         }
       ]
     },
@@ -1264,33 +3390,41 @@
       ]
     },
     {
-      "id": "posttrain",
-      "label": "포스트 트레이닝",
+      "id": "quantization",
+      "label": "양자화",
       "type": "concept",
       "total": 2,
       "eps": [
         {
-          "ep_id": 100,
+          "ep_id": 75,
           "count": 2,
-          "first_anchor": "posttrain-1"
+          "first_anchor": "quantization-1"
         }
       ]
     },
     {
-      "id": "harness-engineering",
-      "label": "하네스 엔지니어링",
+      "id": "centaur",
+      "label": "켄타우로스",
       "type": "concept",
       "total": 2,
       "eps": [
         {
-          "ep_id": 89,
-          "count": 1,
-          "first_anchor": "harness-engineering-1"
-        },
+          "ep_id": 87,
+          "count": 2,
+          "first_anchor": "centaur-1"
+        }
+      ]
+    },
+    {
+      "id": "3blue1brown",
+      "label": "3Blue1Brown",
+      "type": "concept",
+      "total": 1,
+      "eps": [
         {
-          "ep_id": 93,
+          "ep_id": 83,
           "count": 1,
-          "first_anchor": "harness-engineering-1"
+          "first_anchor": "3blue1brown-1"
         }
       ]
     },
@@ -1304,6 +3438,32 @@
           "ep_id": 98,
           "count": 1,
           "first_anchor": "aeo-1"
+        }
+      ]
+    },
+    {
+      "id": "agi-infrastructure",
+      "label": "AGI infrastructure",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 1,
+          "first_anchor": "agi-infrastructure-1"
+        }
+      ]
+    },
+    {
+      "id": "ai-entrepreneur",
+      "label": "AI entrepreneur",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "ai-entrepreneur-1"
         }
       ]
     },
@@ -1347,6 +3507,32 @@
       ]
     },
     {
+      "id": "ai-depression",
+      "label": "AI 우울증",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 87,
+          "count": 1,
+          "first_anchor": "ai-depression-1"
+        }
+      ]
+    },
+    {
+      "id": "ai-interface",
+      "label": "AI를 위한 인터페이스",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 86,
+          "count": 1,
+          "first_anchor": "ai-interface-1"
+        }
+      ]
+    },
+    {
       "id": "atd",
       "label": "ATD",
       "type": "concept",
@@ -1360,6 +3546,19 @@
       ]
     },
     {
+      "id": "abundance",
+      "label": "Abundance",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 85,
+          "count": 1,
+          "first_anchor": "abundance-1"
+        }
+      ]
+    },
+    {
       "id": "adaptive-thinking",
       "label": "Adaptive Thinking",
       "type": "concept",
@@ -1369,6 +3568,19 @@
           "ep_id": 94,
           "count": 1,
           "first_anchor": "adaptive-thinking-1"
+        }
+      ]
+    },
+    {
+      "id": "agent-teams",
+      "label": "Agent Teams",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 85,
+          "count": 1,
+          "first_anchor": "agent-teams-1"
         }
       ]
     },
@@ -1395,6 +3607,19 @@
           "ep_id": 89,
           "count": 1,
           "first_anchor": "alloy-1"
+        }
+      ]
+    },
+    {
+      "id": "andy-jones",
+      "label": "Andy Jones",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "andy-jones-1"
         }
       ]
     },
@@ -1451,6 +3676,58 @@
       ]
     },
     {
+      "id": "blaise-aguera-y-arcas",
+      "label": "Blaise Agüera y Arcas",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "blaise-aguera-y-arcas-1"
+        }
+      ]
+    },
+    {
+      "id": "boris-cherny",
+      "label": "Boris Cherny",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 88,
+          "count": 1,
+          "first_anchor": "boris-cherny-1"
+        }
+      ]
+    },
+    {
+      "id": "claude-md",
+      "label": "CLAUDE.md",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 86,
+          "count": 1,
+          "first_anchor": "claude-md-1"
+        }
+      ]
+    },
+    {
+      "id": "colt",
+      "label": "COLT",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 80,
+          "count": 1,
+          "first_anchor": "colt-1"
+        }
+      ]
+    },
+    {
       "id": "cat-wu",
       "label": "Cat Wu",
       "type": "person",
@@ -1473,6 +3750,110 @@
           "ep_id": 90,
           "count": 1,
           "first_anchor": "chris-olah-1"
+        }
+      ]
+    },
+    {
+      "id": "cloudbook",
+      "label": "CloudBook",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "cloudbook-1"
+        }
+      ]
+    },
+    {
+      "id": "co-scientist",
+      "label": "Co-scientist",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 82,
+          "count": 1,
+          "first_anchor": "co-scientist-1"
+        }
+      ]
+    },
+    {
+      "id": "cot-faithfulness",
+      "label": "CoT Faithfulness",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 82,
+          "count": 1,
+          "first_anchor": "cot-faithfulness-1"
+        }
+      ]
+    },
+    {
+      "id": "commonwealth-fusion",
+      "label": "Commonwealth Fusion",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 80,
+          "count": 1,
+          "first_anchor": "commonwealth-fusion-1"
+        }
+      ]
+    },
+    {
+      "id": "constitutional-ai",
+      "label": "Constitutional AI",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 88,
+          "count": 1,
+          "first_anchor": "constitutional-ai-1"
+        }
+      ]
+    },
+    {
+      "id": "continuum-router",
+      "label": "Continuum 라우터",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 86,
+          "count": 1,
+          "first_anchor": "continuum-router-1"
+        }
+      ]
+    },
+    {
+      "id": "credit-assignment",
+      "label": "Credit Assignment Problem",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 75,
+          "count": 1,
+          "first_anchor": "credit-assignment-1"
+        }
+      ]
+    },
+    {
+      "id": "cursor",
+      "label": "Cursor",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 1,
+          "first_anchor": "cursor-1"
         }
       ]
     },
@@ -1503,6 +3884,58 @@
       ]
     },
     {
+      "id": "dario-amodei",
+      "label": "Dario Amodei",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 1,
+          "first_anchor": "dario-amodei-1"
+        }
+      ]
+    },
+    {
+      "id": "discord",
+      "label": "Discord",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "discord-1"
+        }
+      ]
+    },
+    {
+      "id": "douglas-hofstadter",
+      "label": "Douglas Hofstadter",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "douglas-hofstadter-1"
+        }
+      ]
+    },
+    {
+      "id": "dwarkesh-patel",
+      "label": "Dwarkesh Patel",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "dwarkesh-patel-1"
+        }
+      ]
+    },
+    {
       "id": "erc8004",
       "label": "ERC-8004",
       "type": "concept",
@@ -1512,6 +3945,32 @@
           "ep_id": 98,
           "count": 1,
           "first_anchor": "erc8004-1"
+        }
+      ]
+    },
+    {
+      "id": "epoch-ai",
+      "label": "Epoch AI",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "epoch-ai-1"
+        }
+      ]
+    },
+    {
+      "id": "ethan-mollick",
+      "label": "Ethan Mollick",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 82,
+          "count": 1,
+          "first_anchor": "ethan-mollick-1"
         }
       ]
     },
@@ -1529,6 +3988,19 @@
       ]
     },
     {
+      "id": "fomo",
+      "label": "FOMO",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 81,
+          "count": 1,
+          "first_anchor": "fomo-1"
+        }
+      ]
+    },
+    {
       "id": "fp4",
       "label": "FP4 Quantization",
       "type": "concept",
@@ -1538,6 +4010,201 @@
           "ep_id": 95,
           "count": 1,
           "first_anchor": "fp4-1"
+        }
+      ]
+    },
+    {
+      "id": "figure-ai",
+      "label": "Figure AI",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 1,
+          "first_anchor": "figure-ai-1"
+        }
+      ]
+    },
+    {
+      "id": "fog-of-progress",
+      "label": "Fog of Progress",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 88,
+          "count": 1,
+          "first_anchor": "fog-of-progress-1"
+        }
+      ]
+    },
+    {
+      "id": "glm5",
+      "label": "GLM 5",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 88,
+          "count": 1,
+          "first_anchor": "glm5-1"
+        }
+      ]
+    },
+    {
+      "id": "gpt-pro",
+      "label": "GPT Pro",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "gpt-pro-1"
+        }
+      ]
+    },
+    {
+      "id": "gpt-51-codex-max",
+      "label": "GPT-5.1-Codex-Max",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 1,
+          "first_anchor": "gpt-51-codex-max-1"
+        }
+      ]
+    },
+    {
+      "id": "gtm",
+      "label": "GTM",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 1,
+          "first_anchor": "gtm-1"
+        }
+      ]
+    },
+    {
+      "id": "gemini3-pro",
+      "label": "Gemini 3 Pro",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 86,
+          "count": 1,
+          "first_anchor": "gemini3-pro-1"
+        }
+      ]
+    },
+    {
+      "id": "gemini31-pro",
+      "label": "Gemini 3.1 Pro",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 87,
+          "count": 1,
+          "first_anchor": "gemini31-pro-1"
+        }
+      ]
+    },
+    {
+      "id": "gemini35",
+      "label": "Gemini 3.5",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 85,
+          "count": 1,
+          "first_anchor": "gemini35-1"
+        }
+      ]
+    },
+    {
+      "id": "generative-ui",
+      "label": "Generative UI",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 1,
+          "first_anchor": "generative-ui-1"
+        }
+      ]
+    },
+    {
+      "id": "genesis-mission",
+      "label": "Genesis Mission",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 80,
+          "count": 1,
+          "first_anchor": "genesis-mission-1"
+        }
+      ]
+    },
+    {
+      "id": "geoffrey-hinton",
+      "label": "Geoffrey Hinton",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 88,
+          "count": 1,
+          "first_anchor": "geoffrey-hinton-1"
+        }
+      ]
+    },
+    {
+      "id": "gilbert-strang",
+      "label": "Gilbert Strang",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 87,
+          "count": 1,
+          "first_anchor": "gilbert-strang-1"
+        }
+      ]
+    },
+    {
+      "id": "google",
+      "label": "Google",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "google-1"
+        }
+      ]
+    },
+    {
+      "id": "human-in-the-loop",
+      "label": "Human In The Loop",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 85,
+          "count": 1,
+          "first_anchor": "human-in-the-loop-1"
         }
       ]
     },
@@ -1555,6 +4222,32 @@
       ]
     },
     {
+      "id": "jason-wei",
+      "label": "Jason Wei",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 75,
+          "count": 1,
+          "first_anchor": "jason-wei-1"
+        }
+      ]
+    },
+    {
+      "id": "kieran-egan",
+      "label": "Kieran Egan",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 76,
+          "count": 1,
+          "first_anchor": "kieran-egan-1"
+        }
+      ]
+    },
+    {
       "id": "knowledge-distillation",
       "label": "Knowledge Distillation",
       "type": "concept",
@@ -1564,6 +4257,32 @@
           "ep_id": 94,
           "count": 1,
           "first_anchor": "knowledge-distillation-1"
+        }
+      ]
+    },
+    {
+      "id": "llm-rl",
+      "label": "LLM RL",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 81,
+          "count": 1,
+          "first_anchor": "llm-rl-1"
+        }
+      ]
+    },
+    {
+      "id": "llm-daydreaming",
+      "label": "LLM daydreaming",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 82,
+          "count": 1,
+          "first_anchor": "llm-daydreaming-1"
         }
       ]
     },
@@ -1581,15 +4300,15 @@
       ]
     },
     {
-      "id": "lablup",
-      "label": "Lablup",
+      "id": "lean",
+      "label": "Lean",
       "type": "concept",
       "total": 1,
       "eps": [
         {
-          "ep_id": 97,
+          "ep_id": 80,
           "count": 1,
-          "first_anchor": "lablup-1"
+          "first_anchor": "lean-1"
         }
       ]
     },
@@ -1616,6 +4335,19 @@
           "ep_id": 98,
           "count": 1,
           "first_anchor": "mcp-1"
+        }
+      ]
+    },
+    {
+      "id": "midi",
+      "label": "MIDI",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 76,
+          "count": 1,
+          "first_anchor": "midi-1"
         }
       ]
     },
@@ -1659,6 +4391,45 @@
       ]
     },
     {
+      "id": "march-of-nines",
+      "label": "March of Nines",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 87,
+          "count": 1,
+          "first_anchor": "march-of-nines-1"
+        }
+      ]
+    },
+    {
+      "id": "mario-zechner",
+      "label": "Mario Zechner",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 85,
+          "count": 1,
+          "first_anchor": "mario-zechner-1"
+        }
+      ]
+    },
+    {
+      "id": "mistral",
+      "label": "Mistral",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 81,
+          "count": 1,
+          "first_anchor": "mistral-1"
+        }
+      ]
+    },
+    {
       "id": "mitchell-hashimoto",
       "label": "Mitchell Hashimoto",
       "type": "person",
@@ -1668,6 +4439,97 @@
           "ep_id": 89,
           "count": 1,
           "first_anchor": "mitchell-hashimoto-1"
+        }
+      ]
+    },
+    {
+      "id": "moe-rl",
+      "label": "MoE RL",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 81,
+          "count": 1,
+          "first_anchor": "moe-rl-1"
+        }
+      ]
+    },
+    {
+      "id": "monitorability-tax",
+      "label": "Monitorability tax",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 82,
+          "count": 1,
+          "first_anchor": "monitorability-tax-1"
+        }
+      ]
+    },
+    {
+      "id": "montezuma",
+      "label": "Montezuma's Revenge",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 75,
+          "count": 1,
+          "first_anchor": "montezuma-1"
+        }
+      ]
+    },
+    {
+      "id": "moonshot",
+      "label": "Moonshot",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 81,
+          "count": 1,
+          "first_anchor": "moonshot-1"
+        }
+      ]
+    },
+    {
+      "id": "moonshot-ai",
+      "label": "Moonshot AI",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 88,
+          "count": 1,
+          "first_anchor": "moonshot-ai-1"
+        }
+      ]
+    },
+    {
+      "id": "moravec-paradox",
+      "label": "Moravec paradox",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 84,
+          "count": 1,
+          "first_anchor": "moravec-paradox-1"
+        }
+      ]
+    },
+    {
+      "id": "nvidia-cosmos",
+      "label": "NVIDIA Cosmos",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 84,
+          "count": 1,
+          "first_anchor": "nvidia-cosmos-1"
         }
       ]
     },
@@ -1698,15 +4560,15 @@
       ]
     },
     {
-      "id": "noam-brown",
-      "label": "Noam Brown",
+      "id": "nick-bostrom",
+      "label": "Nick Bostrom",
       "type": "person",
       "total": 1,
       "eps": [
         {
-          "ep_id": 90,
+          "ep_id": 77,
           "count": 1,
-          "first_anchor": "noam-brown-1"
+          "first_anchor": "nick-bostrom-1"
         }
       ]
     },
@@ -1763,6 +4625,19 @@
       ]
     },
     {
+      "id": "oriol-vinyals",
+      "label": "Oriol Vinyals",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 1,
+          "first_anchor": "oriol-vinyals-1"
+        }
+      ]
+    },
+    {
       "id": "pmf",
       "label": "PMF",
       "type": "concept",
@@ -1789,6 +4664,32 @@
       ]
     },
     {
+      "id": "pareidolia",
+      "label": "Pareidolia",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 82,
+          "count": 1,
+          "first_anchor": "pareidolia-1"
+        }
+      ]
+    },
+    {
+      "id": "peter-steinberger",
+      "label": "Peter Steinberger",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 85,
+          "count": 1,
+          "first_anchor": "peter-steinberger-1"
+        }
+      ]
+    },
+    {
       "id": "pix2pix",
       "label": "Pix2Pix",
       "type": "model",
@@ -1802,6 +4703,19 @@
       ]
     },
     {
+      "id": "progettazione",
+      "label": "Progettazione",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 76,
+          "count": 1,
+          "first_anchor": "progettazione-1"
+        }
+      ]
+    },
+    {
       "id": "prompt-injection",
       "label": "Prompt Injection",
       "type": "concept",
@@ -1811,6 +4725,32 @@
           "ep_id": 91,
           "count": 1,
           "first_anchor": "prompt-injection-1"
+        }
+      ]
+    },
+    {
+      "id": "rl-scaling",
+      "label": "RL scaling",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "rl-scaling-1"
+        }
+      ]
+    },
+    {
+      "id": "ray-kurzweil",
+      "label": "Ray Kurzweil",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "ray-kurzweil-1"
         }
       ]
     },
@@ -1841,6 +4781,19 @@
       ]
     },
     {
+      "id": "rope",
+      "label": "RoPE",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 83,
+          "count": 1,
+          "first_anchor": "rope-1"
+        }
+      ]
+    },
+    {
       "id": "roofline",
       "label": "Roofline 분석",
       "type": "concept",
@@ -1850,6 +4803,58 @@
           "ep_id": 96,
           "count": 1,
           "first_anchor": "roofline-1"
+        }
+      ]
+    },
+    {
+      "id": "second-brain",
+      "label": "Second Brain",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 88,
+          "count": 1,
+          "first_anchor": "second-brain-1"
+        }
+      ]
+    },
+    {
+      "id": "shallotpeat",
+      "label": "Shallotpeat",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 1,
+          "first_anchor": "shallotpeat-1"
+        }
+      ]
+    },
+    {
+      "id": "shane-legg",
+      "label": "Shane Legg",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "shane-legg-1"
+        }
+      ]
+    },
+    {
+      "id": "sharpa-craftnet",
+      "label": "Sharpa CraftNet",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 84,
+          "count": 1,
+          "first_anchor": "sharpa-craftnet-1"
         }
       ]
     },
@@ -1867,6 +4872,45 @@
       ]
     },
     {
+      "id": "smolvla",
+      "label": "SmolVLA",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 84,
+          "count": 1,
+          "first_anchor": "smolvla-1"
+        }
+      ]
+    },
+    {
+      "id": "solomonoff-induction",
+      "label": "Solomonoff induction",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "solomonoff-induction-1"
+        }
+      ]
+    },
+    {
+      "id": "sonnet-45",
+      "label": "Sonnet 4.5 Thinking",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 75,
+          "count": 1,
+          "first_anchor": "sonnet-45-1"
+        }
+      ]
+    },
+    {
       "id": "stable-diffusion",
       "label": "Stable Diffusion",
       "type": "model",
@@ -1876,6 +4920,71 @@
           "ep_id": 101,
           "count": 1,
           "first_anchor": "stable-diffusion-1"
+        }
+      ]
+    },
+    {
+      "id": "stanford-alpaca",
+      "label": "Stanford Alpaca",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 1,
+          "first_anchor": "stanford-alpaca-1"
+        }
+      ]
+    },
+    {
+      "id": "strudel",
+      "label": "Strudel",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 1,
+          "first_anchor": "strudel-1"
+        }
+      ]
+    },
+    {
+      "id": "syncretism",
+      "label": "Syncretism",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 1,
+          "first_anchor": "syncretism-1"
+        }
+      ]
+    },
+    {
+      "id": "system-12",
+      "label": "System 1/2",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 84,
+          "count": 1,
+          "first_anchor": "system-12-1"
+        }
+      ]
+    },
+    {
+      "id": "sebastien-bubeck",
+      "label": "Sébastien Bubeck",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 80,
+          "count": 1,
+          "first_anchor": "sebastien-bubeck-1"
         }
       ]
     },
@@ -1893,6 +5002,19 @@
       ]
     },
     {
+      "id": "tangled-hierarchy",
+      "label": "Tangled Hierarchy",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "tangled-hierarchy-1"
+        }
+      ]
+    },
+    {
       "id": "textgrad",
       "label": "TextGrad",
       "type": "concept",
@@ -1902,6 +5024,32 @@
           "ep_id": 99,
           "count": 1,
           "first_anchor": "textgrad-1"
+        }
+      ]
+    },
+    {
+      "id": "the-second-half",
+      "label": "The Second Half",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 88,
+          "count": 1,
+          "first_anchor": "the-second-half-1"
+        }
+      ]
+    },
+    {
+      "id": "trello",
+      "label": "Trello",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 76,
+          "count": 1,
+          "first_anchor": "trello-1"
         }
       ]
     },
@@ -1919,6 +5067,19 @@
       ]
     },
     {
+      "id": "vibetunnel",
+      "label": "VibeTunnel",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 85,
+          "count": 1,
+          "first_anchor": "vibetunnel-1"
+        }
+      ]
+    },
+    {
       "id": "vinod-khosla",
       "label": "Vinod Khosla",
       "type": "person",
@@ -1928,6 +5089,97 @@
           "ep_id": 99,
           "count": 1,
           "first_anchor": "vinod-khosla-1"
+        }
+      ]
+    },
+    {
+      "id": "visual-layout-labs",
+      "label": "Visual Layout Labs",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 1,
+          "first_anchor": "visual-layout-labs-1"
+        }
+      ]
+    },
+    {
+      "id": "world-knowledge",
+      "label": "World Knowledge",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 84,
+          "count": 1,
+          "first_anchor": "world-knowledge-1"
+        }
+      ]
+    },
+    {
+      "id": "yi-tay",
+      "label": "Yi Tay",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 1,
+          "first_anchor": "yi-tay-1"
+        }
+      ]
+    },
+    {
+      "id": "agile",
+      "label": "agile",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 76,
+          "count": 1,
+          "first_anchor": "agile-1"
+        }
+      ]
+    },
+    {
+      "id": "arxiv",
+      "label": "arXiv",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 82,
+          "count": 1,
+          "first_anchor": "arxiv-1"
+        }
+      ]
+    },
+    {
+      "id": "atomic-skill",
+      "label": "atomic skill",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 81,
+          "count": 1,
+          "first_anchor": "atomic-skill-1"
+        }
+      ]
+    },
+    {
+      "id": "autonomous-company",
+      "label": "autonomous company",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "autonomous-company-1"
         }
       ]
     },
@@ -1945,6 +5197,32 @@
       ]
     },
     {
+      "id": "compute-multiplier",
+      "label": "compute multiplier",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 81,
+          "count": 1,
+          "first_anchor": "compute-multiplier-1"
+        }
+      ]
+    },
+    {
+      "id": "context-graph",
+      "label": "context graph",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 85,
+          "count": 1,
+          "first_anchor": "context-graph-1"
+        }
+      ]
+    },
+    {
       "id": "convex-hull",
       "label": "convex hull",
       "type": "concept",
@@ -1958,6 +5236,45 @@
       ]
     },
     {
+      "id": "cron",
+      "label": "cron",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 86,
+          "count": 1,
+          "first_anchor": "cron-1"
+        }
+      ]
+    },
+    {
+      "id": "deformable-object",
+      "label": "deformable object",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 84,
+          "count": 1,
+          "first_anchor": "deformable-object-1"
+        }
+      ]
+    },
+    {
+      "id": "dense-model",
+      "label": "dense model",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 81,
+          "count": 1,
+          "first_anchor": "dense-model-1"
+        }
+      ]
+    },
+    {
       "id": "disintermediation",
       "label": "disintermediation",
       "type": "concept",
@@ -1967,6 +5284,84 @@
           "ep_id": 91,
           "count": 1,
           "first_anchor": "disintermediation-1"
+        }
+      ]
+    },
+    {
+      "id": "distillation",
+      "label": "distillation",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 1,
+          "first_anchor": "distillation-1"
+        }
+      ]
+    },
+    {
+      "id": "domain-gap",
+      "label": "domain gap",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 1,
+          "first_anchor": "domain-gap-1"
+        }
+      ]
+    },
+    {
+      "id": "entropy",
+      "label": "entropy",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 75,
+          "count": 1,
+          "first_anchor": "entropy-1"
+        }
+      ]
+    },
+    {
+      "id": "graph-rag",
+      "label": "graph RAG",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 85,
+          "count": 1,
+          "first_anchor": "graph-rag-1"
+        }
+      ]
+    },
+    {
+      "id": "high-entropy-token",
+      "label": "high-entropy token",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 76,
+          "count": 1,
+          "first_anchor": "high-entropy-token-1"
+        }
+      ]
+    },
+    {
+      "id": "imovie",
+      "label": "iMovie",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 76,
+          "count": 1,
+          "first_anchor": "imovie-1"
         }
       ]
     },
@@ -2010,15 +5405,15 @@
       ]
     },
     {
-      "id": "microgpt",
-      "label": "microgpt",
-      "type": "model",
+      "id": "micrograd",
+      "label": "micrograd",
+      "type": "concept",
       "total": 1,
       "eps": [
         {
-          "ep_id": 92,
+          "ep_id": 87,
           "count": 1,
-          "first_anchor": "microgpt-1"
+          "first_anchor": "micrograd-1"
         }
       ]
     },
@@ -2036,6 +5431,19 @@
       ]
     },
     {
+      "id": "multi-head-attention",
+      "label": "multi-head attention",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 83,
+          "count": 1,
+          "first_anchor": "multi-head-attention-1"
+        }
+      ]
+    },
+    {
       "id": "nanochat",
       "label": "nanochat",
       "type": "model",
@@ -2045,6 +5453,45 @@
           "ep_id": 89,
           "count": 1,
           "first_anchor": "nanochat-1"
+        }
+      ]
+    },
+    {
+      "id": "perplexity",
+      "label": "perplexity",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 75,
+          "count": 1,
+          "first_anchor": "perplexity-1"
+        }
+      ]
+    },
+    {
+      "id": "programmazione",
+      "label": "programmazione",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 76,
+          "count": 1,
+          "first_anchor": "programmazione-1"
+        }
+      ]
+    },
+    {
+      "id": "reporting-bias",
+      "label": "reporting bias",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 84,
+          "count": 1,
+          "first_anchor": "reporting-bias-1"
         }
       ]
     },
@@ -2088,6 +5535,149 @@
       ]
     },
     {
+      "id": "shared-task-list",
+      "label": "shared task list",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 85,
+          "count": 1,
+          "first_anchor": "shared-task-list-1"
+        }
+      ]
+    },
+    {
+      "id": "sim-to-real-gap",
+      "label": "sim-to-real gap",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 84,
+          "count": 1,
+          "first_anchor": "sim-to-real-gap-1"
+        }
+      ]
+    },
+    {
+      "id": "skill-creator",
+      "label": "skill-creator",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 82,
+          "count": 1,
+          "first_anchor": "skill-creator-1"
+        }
+      ]
+    },
+    {
+      "id": "sparse-reward",
+      "label": "sparse reward",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 75,
+          "count": 1,
+          "first_anchor": "sparse-reward-1"
+        }
+      ]
+    },
+    {
+      "id": "sparsity",
+      "label": "sparsity",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 81,
+          "count": 1,
+          "first_anchor": "sparsity-1"
+        }
+      ]
+    },
+    {
+      "id": "speech-jammer",
+      "label": "speech jammer",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 83,
+          "count": 1,
+          "first_anchor": "speech-jammer-1"
+        }
+      ]
+    },
+    {
+      "id": "sudoremove",
+      "label": "sudoremove",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 84,
+          "count": 1,
+          "first_anchor": "sudoremove-1"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-data",
+      "label": "synthetic data",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "synthetic-data-1"
+        }
+      ]
+    },
+    {
+      "id": "tech-report",
+      "label": "tech report",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 86,
+          "count": 1,
+          "first_anchor": "tech-report-1"
+        }
+      ]
+    },
+    {
+      "id": "unlearning",
+      "label": "unlearning",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 81,
+          "count": 1,
+          "first_anchor": "unlearning-1"
+        }
+      ]
+    },
+    {
+      "id": "vibe-coding",
+      "label": "vibe coding",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 76,
+          "count": 1,
+          "first_anchor": "vibe-coding-1"
+        }
+      ]
+    },
+    {
       "id": "vibe-physics",
       "label": "vibe physics",
       "type": "concept",
@@ -2097,6 +5687,45 @@
           "ep_id": 92,
           "count": 1,
           "first_anchor": "vibe-physics-1"
+        }
+      ]
+    },
+    {
+      "id": "wet-lab",
+      "label": "wet lab",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 80,
+          "count": 1,
+          "first_anchor": "wet-lab-1"
+        }
+      ]
+    },
+    {
+      "id": "world-model",
+      "label": "world model",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 80,
+          "count": 1,
+          "first_anchor": "world-model-1"
+        }
+      ]
+    },
+    {
+      "id": "high-speed-inference",
+      "label": "고속 inference",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 86,
+          "count": 1,
+          "first_anchor": "high-speed-inference-1"
         }
       ]
     },
@@ -2127,15 +5756,15 @@
       ]
     },
     {
-      "id": "domain-tacit-knowledge",
-      "label": "도메인 암묵지",
+      "id": "domain-priming",
+      "label": "도메인 프라이밍",
       "type": "concept",
       "total": 1,
       "eps": [
         {
-          "ep_id": 89,
+          "ep_id": 82,
           "count": 1,
-          "first_anchor": "domain-tacit-knowledge-1"
+          "first_anchor": "domain-priming-1"
         }
       ]
     },
@@ -2166,6 +5795,19 @@
       ]
     },
     {
+      "id": "waterwheel-theory",
+      "label": "물레방아론",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 86,
+          "count": 1,
+          "first_anchor": "waterwheel-theory-1"
+        }
+      ]
+    },
+    {
       "id": "mission-moat",
       "label": "미션이 해자다",
       "type": "concept",
@@ -2175,6 +5817,19 @@
           "ep_id": 101,
           "count": 1,
           "first_anchor": "mission-moat-1"
+        }
+      ]
+    },
+    {
+      "id": "bio-token",
+      "label": "바이오 토큰",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 86,
+          "count": 1,
+          "first_anchor": "bio-token-1"
         }
       ]
     },
@@ -2192,6 +5847,19 @@
       ]
     },
     {
+      "id": "linear-algebra",
+      "label": "선형대수",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 83,
+          "count": 1,
+          "first_anchor": "linear-algebra-1"
+        }
+      ]
+    },
+    {
       "id": "stablecoin",
       "label": "스테이블코인",
       "type": "concept",
@@ -2201,6 +5869,84 @@
           "ep_id": 98,
           "count": 1,
           "first_anchor": "stablecoin-1"
+        }
+      ]
+    },
+    {
+      "id": "ariadne-thread",
+      "label": "아리아드네의 실",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 76,
+          "count": 1,
+          "first_anchor": "ariadne-thread-1"
+        }
+      ]
+    },
+    {
+      "id": "atelierista",
+      "label": "아틀리에리스타",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 76,
+          "count": 1,
+          "first_anchor": "atelierista-1"
+        }
+      ]
+    },
+    {
+      "id": "agent-post-training",
+      "label": "에이전트 포스트트레이닝",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 81,
+          "count": 1,
+          "first_anchor": "agent-post-training-1"
+        }
+      ]
+    },
+    {
+      "id": "overfitting",
+      "label": "오버피팅",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 75,
+          "count": 1,
+          "first_anchor": "overfitting-1"
+        }
+      ]
+    },
+    {
+      "id": "instant-app",
+      "label": "인스턴트 앱",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 86,
+          "count": 1,
+          "first_anchor": "instant-app-1"
+        }
+      ]
+    },
+    {
+      "id": "automatic-differentiation",
+      "label": "자동 미분",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 87,
+          "count": 1,
+          "first_anchor": "automatic-differentiation-1"
         }
       ]
     },
@@ -2218,6 +5964,19 @@
       ]
     },
     {
+      "id": "computational-thinking",
+      "label": "컴퓨테이셔널 씽킹",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 76,
+          "count": 1,
+          "first_anchor": "computational-thinking-1"
+        }
+      ]
+    },
+    {
       "id": "ttc",
       "label": "테스트 타임 컴퓨트",
       "type": "concept",
@@ -2231,6 +5990,19 @@
       ]
     },
     {
+      "id": "pedagogista",
+      "label": "페다고지스타",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 76,
+          "count": 1,
+          "first_anchor": "pedagogista-1"
+        }
+      ]
+    },
+    {
       "id": "korea-foundation",
       "label": "한국 파운데이션 모델",
       "type": "concept",
@@ -2240,6 +6012,19 @@
           "ep_id": 100,
           "count": 1,
           "first_anchor": "korea-foundation-1"
+        }
+      ]
+    },
+    {
+      "id": "hallucination",
+      "label": "할루시네이션",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 75,
+          "count": 1,
+          "first_anchor": "hallucination-1"
         }
       ]
     },

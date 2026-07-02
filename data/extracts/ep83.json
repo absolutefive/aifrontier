@@ -1,0 +1,284 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 83,
+  "slug": "transformer-token-pilgrimage",
+  "title": "이야기로 읽는 트랜스포머: 윤회하는 토큰의 순례",
+  "published_date": "2026-01-28",
+  "hosts": [
+    "노정석",
+    "최승준"
+  ],
+  "category": "모델",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep83",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep83/page.html",
+  "one_line": "트랜스포머를 토큰의 1인칭 여정으로 읽으면, 프롬프팅은 모델 내부의 soft lookup을 깨우는 기억의 궁전을 세우는 일로 보인다.",
+  "key_points": [
+    "10x 생산성이 뉴노멀이 되면 소프트웨어 공급은 폭발하지만, AI slop과 구별되는 기획·감성·의미의 가치가 더 상위 레벨로 이동한다.",
+    "트랜스포머의 한 토큰 생성은 prefill된 KV 캐시 위에서 embedding, normalization, QKV 분화, RoPE, attention, MoE, sampling을 통과하는 여정으로 설명된다.",
+    "attention은 딱 하나를 찾는 조회가 아니라 여러 value를 비율로 섞는 soft lookup이며, FFN과 MoE도 넓은 의미에서 유사한 lookup으로 볼 수 있다.",
+    "MoE는 한 층 안의 여러 expert 중 일부만 top-k로 활성화해 파라미터 규모를 키우면서도 실제 계산량을 제한하는 스케일링 방식이다.",
+    "트랜스포머를 이해하려면 학부 초반 선형대수와 토이 transformer inference 구현 정도가 최소 기준으로 제시된다.",
+    "MVK는 토큰을 많이 갈아 넣어 보고, 공통 키워드와 에너지 높은 질문을 추려 내며, 새로운 도메인을 다룰 수 있는 최소 지식 회로를 만드는 과정이다."
+  ],
+  "flow": [
+    {
+      "stage": "문제의식",
+      "summary": "10x가 뉴노멀이 되는 시대의 소프트웨어 공급 폭발과 AI slop 문제에서 출발한다."
+    },
+    {
+      "stage": "병목",
+      "summary": "CLI 루프 도구와 컨텍스트 관리로 인간 병목이 어떻게 아래 레이어로 캡슐화되는지 논의한다."
+    },
+    {
+      "stage": "비유",
+      "summary": "뇌와 트랜스포머의 autoregressive 성격을 연결하고, 토큰을 순례자로 보는 이야기를 도입한다."
+    },
+    {
+      "stage": "토큰 생성",
+      "summary": "prefill, KV 캐시, embedding, residual stream, normalization, QKV, RoPE를 1인칭 여정으로 설명한다."
+    },
+    {
+      "stage": "lookup",
+      "summary": "attention과 FFN, MoE를 soft lookup의 반복으로 읽고, residual connection이 의미를 누적한다고 본다."
+    },
+    {
+      "stage": "MoE",
+      "summary": "384 experts, top-k routing, sparse activation과 KV cache가 남는 위치를 설명한다."
+    },
+    {
+      "stage": "학습 기준",
+      "summary": "선형대수, 토이 구현, tensor dimension 감각이 기술 뉴스를 해석하는 바닥 지식이 된다고 정리한다."
+    },
+    {
+      "stage": "MVK",
+      "summary": "토큰 갈아넣기와 양질 전환으로 새로운 도메인의 Minimum Viable Knowledge를 만드는 방법을 논의한다."
+    }
+  ],
+  "body_paragraphs": [
+    "이번 회차는 트랜스포머를 수식 대신 이야기로 읽어 보려는 시도다. 최승준은 '윤회하는 토큰의 순례'라는 제목으로, auto-regressive하게 토큰 하나가 생성되고 다음 토큰에게 이어지는 과정을 한 번의 삶과 다음 생처럼 상상한다. 배경에는 harness와 CLI 도구가 쏟아지고, 10x 생산성이 뉴노멀이 되어 다시 1x가 되는 시대에 우리가 무엇을 이해해야 하는가라는 질문이 있다.",
+    "10x가 보편화되면 소프트웨어 시장은 캄브리아기 대폭발처럼 공급이 폭증한다. 노정석은 생산 비용이 0에 가까워지면 경제학의 수요·공급 논리에 따라 가격이 떨어지고, 소프트웨어도 commodity화된다고 본다. 하지만 최승준이 말한 AI slop처럼 많이 만들어진다고 모두 의미 있는 제품이 되는 것은 아니다. 경쟁의 지점은 코드 생산에서 기획, 감성, 의미, 고객 이해 같은 더 상위의 추상 레벨로 이동한다.",
+    "이때 '인간이 병목이다'라는 말도 단순하지 않다. Claude Code나 Codex를 직접 쓰면 사람은 매번 의사결정과 방향 설정을 해야 하므로 병목처럼 보인다. 그러나 Ralph loop나 Oh-My-Opencode처럼 필요한 압박과 반복을 넣은 while loop 도구는 인간 병목 일부를 아래 레이어로 캡슐화한다. 노정석은 이제 자신을 위해 상시 대기하는 직원 7~8명과 일하는 느낌이라고 말하지만, 여전히 투두 리스트 한두 줄의 에너지 레벨이 결과 품질을 크게 좌우한다고 본다.",
+    "트랜스포머 이야기는 인간의 뇌와 기계의 생각을 비유하는 데서 열린다. 최승준은 뇌도 빈 서판이 아니라 이미 차 있는 회로를 재배선하는 존재라고 보고, 노정석은 speech jammer를 예로 들며 인간의 말하기도 output이 다시 input으로 들어가는 autoregressive 구조라고 설명한다. 말이 몇백 밀리초 어긋나게 들리면 생각이 꼬이고 멈추는 경험은, 우리 뇌도 일종의 자기회귀 머신이라는 심상을 준다.",
+    "토큰의 순례는 prefill에서 시작한다. 사용자의 프롬프트와 시스템 프롬프트가 병렬로 처리되어 KV 캐시가 이미 쌓이고, 그 위에 다음 토큰 하나가 생성된다. 최승준은 KV 캐시를 key와 value의 건축물, 기억의 궁전처럼 그린다. 새 토큰은 embedding을 통해 hidden space로 들어가고, residual stream 위에서 자기 자신을 덧대며 32층 같은 여러 레이어를 통과한다.",
+    "각 레이어에서 토큰은 normalization으로 숨을 고른 뒤 QKV로 분화한다. Q는 내가 던지는 질문, K는 남길 표지, V는 가져올 물질처럼 비유된다. multi-head attention은 하나의 embedding을 여러 관점으로 나누어 보고 다시 합치는 과정이고, RoPE는 토큰의 위치를 회전하는 방식으로 새겨 넣는 position encoding이다. 레이어를 지날 때마다 토큰은 key와 value의 흔적을 남기고, 다음 토큰들은 그 흔적을 다시 본다.",
+    "attention은 Andrej Karpathy가 말한 soft lookup으로 설명된다. 일반적인 lookup이 key 하나로 value 하나를 찾는 일이라면, attention은 여러 value를 점수에 따라 0.1, 0.4처럼 섞어 가져온다. 노정석과 최승준은 FFN도, MoE도 넓은 의미에서는 soft lookup의 반복으로 볼 수 있다고 말한다. 결과는 기존 hidden state를 교체하는 것이 아니라 residual stream에 덧붙여져 의미와 맥락을 점점 풍부하게 만든다.",
+    "MoE는 또 다른 문들의 층이다. 한 레이어에 384개의 expert가 있을 수 있고, 라우터는 그중 현재 토큰과 잘 맞는 top-k expert만 고른다. DeepSeek이나 Kimi K2 같은 모델의 흐름을 예로 들며, 토큰은 여러 방에 복제되어 들어가 지식을 취하고 다시 가중합으로 합쳐진다. 이 방식은 전체 파라미터를 크게 늘리면서도 실제 활성화되는 계산량은 제한하는 sparse scaling의 방법이다.",
+    "중요한 차이는 흔적이 어디에 남느냐이다. MoE expert를 거치는 연산은 토큰 자신을 변형시키지만, KV 캐시처럼 다음 토큰이 직접 찾아볼 수 있는 건축물은 attention 쪽에서 생긴다. 그래서 하나의 토큰 생성은 각 레이어에서 기록을 만들고, 그 기록을 다음 생성이 참고하는 순환이다. 최승준은 프롬프팅을 이 기억의 궁전에 갑자기 큰 건축물을 세우는 일로 보고, 그 건축물도 아름다워야 하지 않겠냐고 말한다.",
+    "노정석은 이 설명이 tensor 여행을 PyTorch로 한 번 따라가 본 사람에게는 바로 와닿지만, 배경 지식이 없으면 '알겠는데 모르겠다'가 될 수 있다고 짚는다. 그래서 트랜스포머를 어느 정도 공부해야 하느냐가 중요한 질문이 된다. 둘의 잠정 답은 학부 1~2학년 수준의 선형대수와, 최소한 toy transformer inference를 한 번 구현해 보는 경험이다. embedding, sequence length, batch 차원이 어떻게 쪼개지고 다시 합쳐지는지 계산할 수 있으면 기술 뉴스를 해석할 바닥이 생긴다.",
+    "이 지식은 단지 구현을 위한 것이 아니라 의미를 음미하기 위한 것이다. 3Blue1Brown이 행렬과 벡터의 곱을 내적이 아니라 선형 결합으로 보라고 했듯, dense layer의 weight 열벡터에 들어 있는 지식이 hidden state의 가중치로 조합된다고 보면 soft lookup의 심상이 더 잘 잡힌다. 프롬프트 안에 어떤 토큰과 term이 들어 있느냐가 모델 내부에서 어떤 열벡터와 expert를 끌어낼 수 있는지의 key가 된다.",
+    "여기서 MVK, Minimum Viable Knowledge 논의가 이어진다. 노정석은 재벌 회장이 모르는 도메인에 진입할 때 전문가와 컨설턴트를 대거 투입해 보고서를 만들고, 공통 키워드와 에너지 높은 질문을 추려 심상을 구성하는 방법을 비유로 든다. 이제는 개인도 프런티어 모델과 skill, Oh-My-Opencode 같은 harness를 통해 비슷한 일을 할 수 있다. 중요한 것은 처음부터 답을 아는 것이 아니라, 토큰을 많이 갈아 넣어 공통 구조와 질문을 추출하는 일이다.",
+    "양질 전환은 이 회차의 실천적 결론이다. 쓰레기처럼 보이는 많은 출력도 양이 충분하고 추리는 방법이 있으면 quality로 전환될 수 있다. 최승준은 게임에서 어려운 구간을 150~200번 반복해 근육 기억을 만드는 경험을 떠올리고, 노정석은 이것을 RLVR의 구간처럼 본다. 토큰을 갈아 넣는 반복은 단지 결과물을 얻는 일이 아니라, 내 뇌 안에 새로운 도메인을 다루는 회로를 세우는 연습이다.",
+    "마지막에 최승준은 천 번째 생성도 첫 번째 생성을 본 것처럼 감탄하는 프롬프팅 태도를 다시 말한다. 한 토큰이 만들어지는 일은 풍요의 시대에 너무 흔해졌지만, 그 안에는 prefill된 기억, 수십 층의 변환, soft lookup, sampling, 다음 생으로 넘어가는 자기회귀가 들어 있다. 이 경이로움을 잃지 않는 것이 원리를 생각하는 프롬프팅과 MVK를 연결하는 태도다."
+  ],
+  "entities": [
+    {
+      "id": "transformer",
+      "label": "Transformer",
+      "type": "concept",
+      "aliases": [
+        "Transformer",
+        "트랜스포머"
+      ]
+    },
+    {
+      "id": "autoregressive",
+      "label": "auto-regressive",
+      "type": "concept",
+      "aliases": [
+        "auto-regressive",
+        "autoregressive",
+        "자기회귀"
+      ]
+    },
+    {
+      "id": "ai-slop",
+      "label": "AI slop",
+      "type": "concept",
+      "aliases": [
+        "AI slop"
+      ]
+    },
+    {
+      "id": "claude-code",
+      "label": "Claude Code",
+      "type": "model",
+      "aliases": [
+        "Claude Code"
+      ]
+    },
+    {
+      "id": "codex",
+      "label": "Codex",
+      "type": "concept",
+      "aliases": [
+        "Codex"
+      ]
+    },
+    {
+      "id": "ralph-loop",
+      "label": "Ralph loop",
+      "type": "concept",
+      "aliases": [
+        "Ralph loop"
+      ]
+    },
+    {
+      "id": "oh-my-opencode",
+      "label": "Oh-My-Opencode",
+      "type": "concept",
+      "aliases": [
+        "Oh-My-Opencode"
+      ]
+    },
+    {
+      "id": "speech-jammer",
+      "label": "speech jammer",
+      "type": "concept",
+      "aliases": [
+        "speech jammer"
+      ]
+    },
+    {
+      "id": "kv",
+      "label": "KV 캐시",
+      "type": "concept",
+      "aliases": [
+        "KV 캐시",
+        "KV cache"
+      ]
+    },
+    {
+      "id": "embedding",
+      "label": "embedding",
+      "type": "concept",
+      "aliases": [
+        "embedding"
+      ]
+    },
+    {
+      "id": "residual-stream",
+      "label": "residual stream",
+      "type": "concept",
+      "aliases": [
+        "residual stream"
+      ]
+    },
+    {
+      "id": "qkv",
+      "label": "QKV",
+      "type": "concept",
+      "aliases": [
+        "QKV"
+      ]
+    },
+    {
+      "id": "multi-head-attention",
+      "label": "multi-head attention",
+      "type": "concept",
+      "aliases": [
+        "multi-head attention"
+      ]
+    },
+    {
+      "id": "rope",
+      "label": "RoPE",
+      "type": "concept",
+      "aliases": [
+        "RoPE"
+      ]
+    },
+    {
+      "id": "karpathy",
+      "label": "Andrej Karpathy",
+      "type": "person",
+      "aliases": [
+        "Andrej Karpathy",
+        "Karpathy"
+      ]
+    },
+    {
+      "id": "soft-lookup",
+      "label": "soft lookup",
+      "type": "concept",
+      "aliases": [
+        "soft lookup"
+      ]
+    },
+    {
+      "id": "moe",
+      "label": "MoE",
+      "type": "concept",
+      "aliases": [
+        "MoE",
+        "Mixture-of-Experts"
+      ]
+    },
+    {
+      "id": "top-k",
+      "label": "top-k",
+      "type": "concept",
+      "aliases": [
+        "top-k",
+        "top-k routing"
+      ]
+    },
+    {
+      "id": "deepseek",
+      "label": "DeepSeek",
+      "type": "model",
+      "aliases": [
+        "DeepSeek"
+      ]
+    },
+    {
+      "id": "kimi-k2",
+      "label": "Kimi K2 Thinking",
+      "type": "model",
+      "aliases": [
+        "Kimi K2",
+        "Kimi K2 Thinking"
+      ]
+    },
+    {
+      "id": "linear-algebra",
+      "label": "선형대수",
+      "type": "concept",
+      "aliases": [
+        "선형대수"
+      ]
+    },
+    {
+      "id": "3blue1brown",
+      "label": "3Blue1Brown",
+      "type": "concept",
+      "aliases": [
+        "3Blue1Brown"
+      ]
+    },
+    {
+      "id": "mvk",
+      "label": "MVK",
+      "type": "concept",
+      "aliases": [
+        "MVK",
+        "Minimum Viable Knowledge"
+      ]
+    },
+    {
+      "id": "rlvr",
+      "label": "RLVR",
+      "type": "concept",
+      "aliases": [
+        "RLVR"
+      ]
+    }
+  ],
+  "notable_quote": {
+    "text": "한 토큰 생성하는 거가 사실은 경이로운 일일 수 있다.",
+    "speaker": "최승준"
+  },
+  "language": "ko",
+  "extractor": "deepseek-pro",
+  "extracted_at": "2026-07-03",
+  "review_status": "draft"
+}

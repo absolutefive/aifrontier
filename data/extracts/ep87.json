@@ -1,0 +1,233 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 87,
+  "slug": "click-era-between-sadness-and-joy",
+  "title": "'딸깍'의 시대, 슬픔과 기쁨 사이",
+  "published_date": "2026-02-24",
+  "hosts": [
+    "노정석",
+    "최승준"
+  ],
+  "category": "철학·사회",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep87",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep87/page.html",
+  "one_line": "AI가 하루아침에 좋은 결과물을 쏟아내는 시대의 불안은, 다시 배우고 실험하며 취향과 태도를 회복할 때 생산성과 즐거움으로 바뀐다.",
+  "key_points": [
+    "Claude Opus 4.6의 METR 약 14.5시간 결과와 Gemini 3.1 Pro 발표는 모델 발전 속도가 사람의 감각보다 빠르게 움직이고 있음을 보여 준다.",
+    "Chris Lattner의 Claude C 컴파일러 리뷰는 AI가 알려진 추상화 구현에는 강하지만 새 추상화 발명과 최종 판단은 여전히 인간의 몫임을 드러낸다.",
+    "과학과 신약 개발은 점점 검색 문제로 바뀌고 있으며, OpenAI 이론물리 사례는 과학이 켄타우로스 시대로 들어갔다는 신호로 해석된다.",
+    "랄프 루프만으로는 지평을 넓히기 어렵고, 고밀도 티키타카와 하네스 엔지니어링, 스캐폴딩이 함께 필요하다.",
+    "AI 우울과 FOMO는 딸깍이 내가 아닌 것처럼 느껴질 때 커지지만, 고객 가치와 학습의 재미를 기준으로 다시 중심을 잡을 수 있다.",
+    "microgpt와 자동 미분 실험은 결과물보다 과정을 들여다보고 배우는 즐거움이 AI 시대에도 중요한 인간적 동기임을 보여 준다."
+  ],
+  "flow": [
+    {
+      "stage": "불안",
+      "summary": "딸깍 생산물이 쏟아지는 속도와 FOMO가 왜 짜증과 우울을 부르는지에서 출발한다."
+    },
+    {
+      "stage": "모델 속도",
+      "summary": "METR, Claude Opus 4.6, Gemini 3.1 Pro 소식을 통해 새 모델의 가속감을 짚는다."
+    },
+    {
+      "stage": "엔지니어의 자리",
+      "summary": "Chris Lattner의 Claude C 컴파일러 리뷰와 March of Nines로 구현과 혁신의 차이를 설명한다."
+    },
+    {
+      "stage": "과학",
+      "summary": "신약 개발, 이론물리, 켄타우로스 사례로 AI가 과학 문제를 탐색 문제로 바꾸는 흐름을 본다."
+    },
+    {
+      "stage": "에이전트",
+      "summary": "랄프 루프의 한계와 하네스 엔지니어링, 스캐폴딩의 필요성을 논의한다."
+    },
+    {
+      "stage": "우울",
+      "summary": "FOMO 산업과 AI 우울증을 이야기하며 딸깍 시대의 감정적 비용을 다룬다."
+    },
+    {
+      "stage": "재미",
+      "summary": "microgpt, 자동 미분, 프롬프트 깎기를 통해 결과보다 과정을 배우는 즐거움을 회복한다."
+    },
+    {
+      "stage": "균형",
+      "summary": "건강하게 쓰는 법, 마음의 닻, 비즈니스에서 99와 99.99의 차이를 정리한다."
+    }
+  ],
+  "body_paragraphs": [
+    "이번 회차는 딸깍 시대의 속도감이 사람에게 어떤 감정을 남기는지에서 시작한다. 노정석은 하루나 일주일 만에 만든 양질의 소프트웨어가 사방에서 쏟아지는 상황을 말하고, 최승준은 OpenClaw와 에이전트 swarm 흐름을 보며 트렌드를 따라가지 못한다는 감각을 느꼈다고 고백한다. 빨리 달리기보다 천천히 생각하려고 했지만, 배경이 더 빠르게 지나가며 FOMO가 생기는 악순환이 있었다는 것이다.",
+    "최승준이 붙잡고 있는 화두는 MVK, 즉 Minimum Viable Knowledge다. 그는 '모르는 채로도 옳은 방향으로 나아가려면 최소한 무엇을 알아야 할까'라는 질문을 계속 생각하고 있다고 말한다. 이 질문은 단순히 최신 뉴스를 따라잡자는 말이 아니라, 지식의 바닥이 계속 움직이는 시대에 어떤 기준과 태도로 탐색을 시작할 수 있는지를 묻는 문제다.",
+    "모델 뉴스는 그 불안을 더 키운다. METR이 Claude Opus 4.6의 50% time horizon을 약 14.5시간으로 발표하자, 기존 태스크 스위트가 포화됐다는 말까지 나온다. Gemini 3.1 Pro도 ARC-AGI-2에서 큰 폭의 추론 성능 향상을 보였고, Jeff Dean이 직접 소개했다. 모델은 계속 나오고, 벤치마크 천장도 계속 밀리며, 이제는 새 모델 소식에 무덤덤해지는 이상한 피로감까지 생긴다.",
+    "Chris Lattner의 Claude C 컴파일러 리뷰는 AI 코딩의 위치를 차분하게 보여 준다. Claude Code가 만든 C 컴파일러는 교과서적 구현으로 살펴볼 가치가 있지만, 테스트를 하드코딩한 부분처럼 열린 일반화에는 한계도 드러난다. Lattner의 결론은 소프트웨어나 엔지니어의 종말이 아니라, 구현이 쉬워질수록 비전과 판단, 취향이 더 중요해진다는 쪽이다. 코드는 목표가 아니라 의미 있는 소프트웨어를 만들기 위한 중간 도구였다는 것이다.",
+    "노정석은 이 차이를 Andrej Karpathy의 March of Nines로 읽는다. 처음 90%를 만드는 것과 99%, 99.9%, 99.99%로 올리는 노력은 각각 비슷하게 크고, Claude C 컴파일러도 90% 또는 99%까지는 빠르게 도달하지만 거장의 눈에는 남은 0.99%가 엄청난 간극으로 보인다. 그래서 AI가 구현 장벽을 낮출수록, 취향이 있는 소프트웨어와 인간의 방향 설정 능력은 오히려 더 선명해진다.",
+    "과학 쪽에서는 더 큰 변화가 벌어진다. 신약 개발은 단백질 구조와 그에 맞는 물질을 찾는 검색 문제로 치환되고, Gemini Deep Think나 Isomorphic Labs 같은 흐름은 더 많은 연산으로 가보지 않은 공간을 탐색하는 방향을 보여 준다. OpenAI의 이론물리 사례에서는 GPT-5.2 Pro와 내부 스캐폴딩 모델이 12시간 넘게 사고해 양자장론 문제를 증명까지 했다는 이야기가 나온다. 최승준은 코딩이 켄타우로스 너머로 가는 동안, 과학은 이제 AI와 사람이 함께하는 켄타우로스 시대로 들어섰다고 본다.",
+    "모델이 내삽만 하는지 외삽도 하는지에 대한 논의도 이어진다. 노정석은 모델이 넓고 희소한 진리 공간 사이를 보간하는 일이 인간에게는 외삽처럼 보일 수 있다고 설명한다. 최승준은 중요한 것은 최고 물리학자들이 어떤 어휘와 문장으로 모델의 representation space를 옮겼는지라고 본다. 결국 좋은 프롬프트는 단순한 주문이 아니라, 도메인 지식과 취향이 압축된 방향 전이의 행위에 가깝다.",
+    "에이전틱 코딩의 현실에서는 랄프 루프의 한계가 선명해진다. 노정석은 명확한 작업은 Ralph loop로 밀어붙일 수 있지만, 회사 사업에 맞는 로직이나 새 지평을 여는 작업은 human-in-the-loop가 필요하다고 말한다. 최승준도 고밀도 티키타카로 문제를 정하고, 어느 정도 정리된 뒤 오래 도는 loop가 수행하는 두 결이 공존해야 한다고 본다. 이 지점에서 하네스 엔지니어링과 스캐폴딩은 단순한 유행어가 아니라 모델 능력을 실제 작업으로 연결하는 핵심 장치가 된다.",
+    "하네스 엔지니어링은 이제 공용어에 가까워졌다. OpenAI가 Codex를 활용한 하네스 엔지니어링을 이야기하고, Martin Fowler 쪽에서도 AI 지원 소프트웨어 개발 노트를 내며, Kent Beck 같은 원로들도 적극적으로 LLM을 쓰는 시대가 됐다. Claude Code의 진짜 물건은 Opus 4.6 자체보다 하네스라는 말처럼, 모델과 하네스, 사람이 주고받는 능력이 함께 조합 가능한 축이 된다.",
+    "그럼에도 현실 감정은 만만치 않다. Matt Shumer류의 바이럴 글처럼 '거대한 무언가가 다가온다'는 이야기는 현실 인식이면서 동시에 FOMO 산업의 연료가 된다. 노정석은 모델과 컴퓨터를 만드는 회사를 제외한 많은 기존 회사가 우울해지는 상황을 말하고, 최승준은 AI 우울증이라는 표현을 가져온다. 딸깍과 우울이 같이 오는 이유에 대해 노정석은 '그 딸깍이 내가 아니니까'라고 답한다.",
+    "딸깍이 많아진다고 소프트웨어가 사라지는 것은 아니다. 노정석은 쿠팡에 물건이 많아지는 것처럼 좋은 소프트웨어가 훨씬 싸고 많아지는 세계가 올 뿐이며, 고객은 좋은 것과 나쁜 것을 귀신같이 알아본다고 말한다. 그래서 B2B SaaS가 단번에 없어지는 식의 호들갑보다, 고객이 돈을 내는 방향을 목적 함수로 삼고 따라가는 태도가 중요하다. 좋은 것이 많아지면 사람들은 그중에서도 great한 것을 찾아 몰려간다.",
+    "최승준이 다시 재미를 찾은 계기는 Andrej Karpathy의 microgpt였다. micrograd의 Value 클래스를 바탕으로 200줄짜리 순수 Python GPT를 따라 타이핑하고, 자동 미분을 응용해 레이아웃 최적화나 미분 가능한 파티클 시스템 같은 아이디어를 실험했다. 중요한 것은 결과물이 아니라, 에너지 함수를 어떻게 만들지 모델과 티키타카하며 배우는 과정이었다. 한동안 코딩을 시키기만 하며 잃었던 읽고 이해하는 즐거움이 돌아온 것이다.",
+    "이 배움의 즐거움은 MVK 질문으로 다시 이어진다. 모르는 채로도 옳은 방향으로 가려면 결국 시작하고, 배움을 얻고, 결정 품질을 높이는 과정과 결합해야 한다. 최승준은 가설을 세우고 실험하는 태도를 후보로 놓고, 노정석은 AI도 물어보지 않는 자에게 답을 주지는 않는다고 말한다. 태도, 취향, 의지라는 말은 서로 다르지만, 계속 질문하고 배우는 쪽으로 자신을 밀어 넣는다는 점에서 이어진다.",
+    "마지막으로 두 사람은 건강하게 쓰는 법을 이야기한다. AI는 너무 많은 힌트를 주기 때문에 사람을 혹사시키고, 원하는 응답을 얻기 위해 프롬프트를 24번 고치는 식의 몰입을 만들 수 있다. Gilbert Strang의 선형대수를 끝까지 파고드는 공부처럼, 모르는 것을 디테일하게 알아가는 일은 느리지만 마음의 닻이 된다. 노정석은 모델이 라이브러리처럼 내려간 시대에도 하드웨어, 모델, 비즈니스 층위를 오가며 99와 99.99의 차이를 이해해야 기회가 보인다고 정리한다."
+  ],
+  "entities": [
+    {
+      "id": "mvk",
+      "label": "MVK",
+      "type": "concept",
+      "aliases": [
+        "MVK",
+        "Minimum Viable Knowledge"
+      ]
+    },
+    {
+      "id": "metr",
+      "label": "METR",
+      "type": "concept",
+      "aliases": [
+        "METR"
+      ]
+    },
+    {
+      "id": "claude-opus46",
+      "label": "Claude Opus 4.6",
+      "type": "model",
+      "aliases": [
+        "Claude Opus 4.6",
+        "Opus 4.6"
+      ]
+    },
+    {
+      "id": "gemini31-pro",
+      "label": "Gemini 3.1 Pro",
+      "type": "model",
+      "aliases": [
+        "Gemini 3.1 Pro"
+      ]
+    },
+    {
+      "id": "chris-lattner",
+      "label": "Chris Lattner",
+      "type": "person",
+      "aliases": [
+        "Chris Lattner",
+        "Lattner"
+      ]
+    },
+    {
+      "id": "claude-code",
+      "label": "Claude Code",
+      "type": "model",
+      "aliases": [
+        "Claude Code"
+      ]
+    },
+    {
+      "id": "karpathy",
+      "label": "Andrej Karpathy",
+      "type": "person",
+      "aliases": [
+        "Andrej Karpathy",
+        "Karpathy"
+      ]
+    },
+    {
+      "id": "march-of-nines",
+      "label": "March of Nines",
+      "type": "concept",
+      "aliases": [
+        "March of Nines"
+      ]
+    },
+    {
+      "id": "centaur",
+      "label": "켄타우로스",
+      "type": "concept",
+      "aliases": [
+        "켄타우로스"
+      ]
+    },
+    {
+      "id": "ralph-loop",
+      "label": "Ralph loop",
+      "type": "concept",
+      "aliases": [
+        "Ralph loop",
+        "랄프 루프"
+      ]
+    },
+    {
+      "id": "harness-engineering",
+      "label": "하네스 엔지니어링",
+      "type": "concept",
+      "aliases": [
+        "하네스 엔지니어링"
+      ]
+    },
+    {
+      "id": "scaffolding",
+      "label": "스캐폴딩",
+      "type": "concept",
+      "aliases": [
+        "스캐폴딩",
+        "scaffolding"
+      ]
+    },
+    {
+      "id": "codex",
+      "label": "Codex",
+      "type": "concept",
+      "aliases": [
+        "Codex"
+      ]
+    },
+    {
+      "id": "ai-depression",
+      "label": "AI 우울증",
+      "type": "concept",
+      "aliases": [
+        "AI 우울증"
+      ]
+    },
+    {
+      "id": "microgpt",
+      "label": "microgpt",
+      "type": "model",
+      "aliases": [
+        "microgpt"
+      ]
+    },
+    {
+      "id": "micrograd",
+      "label": "micrograd",
+      "type": "concept",
+      "aliases": [
+        "micrograd"
+      ]
+    },
+    {
+      "id": "automatic-differentiation",
+      "label": "자동 미분",
+      "type": "concept",
+      "aliases": [
+        "자동 미분"
+      ]
+    },
+    {
+      "id": "gilbert-strang",
+      "label": "Gilbert Strang",
+      "type": "person",
+      "aliases": [
+        "Gilbert Strang"
+      ]
+    }
+  ],
+  "notable_quote": {
+    "text": "AI도 물어보지 않는 자에게 답을 주진 않아요.",
+    "speaker": "노정석"
+  },
+  "language": "ko",
+  "extractor": "deepseek-pro",
+  "extracted_at": "2026-07-03",
+  "review_status": "draft"
+}

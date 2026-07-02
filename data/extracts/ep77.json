@@ -1,0 +1,321 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 77,
+  "slug": "gemini3-antigravity-steep-curve",
+  "title": "Gemini 3와 Antigravity: 너무도 가파른 변화의 곡선",
+  "published_date": "2026-01-28",
+  "hosts": [
+    "노정석",
+    "최승준"
+  ],
+  "category": "에이전트",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep77",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep77/page.html",
+  "one_line": "Gemini 3와 Antigravity는 모델 능력의 도약이 복잡한 harness보다 높은 에너지의 의도, 현장의 문제 정의, 사업가적 실행력을 더 중요하게 만드는 방향 전환을 보여 준다.",
+  "key_points": [
+    "Gemini 3는 pre-training과 post-training 모두에서 큰 도약을 보였고, scaling law가 끝났다는 통념에 다시 의문을 제기했다.",
+    "모델 vintage 관점에서는 같은 knowledge cutoff 안에서도 post-training과 사용자 데이터, AI Studio·Antigravity의 의도 토큰이 다음 pre-training 재료가 된다.",
+    "Gemini 3의 Generative UI, voxel/SVG 생성, Nano Banana Pro는 의도가 곧 인터랙티브 결과물로 바뀌는 감각을 강하게 만들었다.",
+    "속도 초지능 관점에서 현재 수준의 지능이 10배, 100배 빨라지고 싸지기만 해도 소프트웨어와 인지 노동의 가격 구조는 크게 바뀐다.",
+    "현장의 AI 트랜스포메이션은 기술 데모보다 문제 보유자의 맥락에 맞춘 1:1 유즈케이스와 건강한 마찰을 통해 더 잘 전달된다.",
+    "Antigravity는 CLI와 폴더 구조의 장벽을 낮추며, 엔지니어가 harness 자체보다 문제 holder와 business domain gap에 집중해야 한다는 결론으로 이어진다."
+  ],
+  "flow": [
+    {
+      "stage": "출시",
+      "summary": "Gemini 3, Antigravity, Nano Banana Pro, GPT-5.1-Codex-Max가 몰아친 한 주의 타임라인을 정리한다."
+    },
+    {
+      "stage": "스케일링",
+      "summary": "Oriol Vinyals 발언을 바탕으로 Gemini 3가 pre-training과 post-training의 도약을 보여 줬다고 본다."
+    },
+    {
+      "stage": "빈티지",
+      "summary": "knowledge cutoff와 데이터 수확 비유로 모델 vintage, 사용자 의도 데이터, 다음 학습 재료를 설명한다."
+    },
+    {
+      "stage": "언런",
+      "summary": "두꺼운 harness를 덜어내고 모델의 capability를 믿어야 하는 unlearn-learn 타이밍을 말한다."
+    },
+    {
+      "stage": "바이브",
+      "summary": "Karpathy의 vibe check, Generative UI, voxel/SVG 생성으로 벤치마크 밖의 실제 감각을 살핀다."
+    },
+    {
+      "stage": "역사",
+      "summary": "농업·산업혁명과 속도 초지능을 통해 인지 노동 대체의 규모와 속도를 조망한다."
+    },
+    {
+      "stage": "현장",
+      "summary": "HWP 인식, Strudel형 라이브 코딩, 물리 시각화, 유치원 AX 사례를 통해 의도가 현실이 되는 순간을 본다."
+    },
+    {
+      "stage": "사업",
+      "summary": "Antigravity와 Codex가 도구 장벽을 낮추는 만큼 엔지니어는 문제 해결과 business gap에 집중해야 한다고 정리한다."
+    }
+  ],
+  "body_paragraphs": [
+    "녹화일은 2025년 11월 22일이고, 한 주의 중심은 Gemini 3와 Antigravity다. Nano Banana Pro, GPT-5.1-Codex-Max, Grok 4.1, OpenAI DevDay, ChatGPT group chat까지 여러 소식이 겹쳤지만, 분위기는 Gemini 3 쪽으로 기울었다. 노정석은 며칠 동안 이 두 도구를 가지고 신나게 놀았다고 말하며, 단순 신제품이 아니라 변화 곡선의 기울기를 보여 주는 사건으로 본다.",
+    "첫 의미는 scaling law 논쟁이다. Google DeepMind의 Oriol Vinyals는 Gemini 3가 pre-training과 post-training 모두를 개선했고, 2.5에서 3.0 사이의 델타가 지금까지 본 것 중 가장 크다고 말했다. 최승준과 노정석은 데이터 고갈, 데이터 정제, 네트워크 구조, training 알고리즘, 컴퓨팅 한계 중 무엇이 풀렸는지는 모르지만, 적어도 벽을 만났다는 단정은 틀렸다고 본다.",
+    "노정석은 모델 vintage라는 비유를 쓴다. Gemini 2.5와 Gemini 3.0의 knowledge cutoff가 모두 2025년 1월이라면, 같은 포도 수확물에서 나온 다른 와인처럼 같은 데이터 수확에서 계속 개선된 산출물일 수 있다는 것이다. AI Studio와 Antigravity에 사용자가 쏟아붓는 의도, prompt, 작업 trail은 에너지가 높은 데이터이고, 이것이 다시 다음 pre-training과 post-training의 재료가 된다.",
+    "컴퓨팅 척도도 달라진다. GPU 몇 장보다 전력과 와트당 토큰이 더 중요한 의사결정 단위가 되는 세계다. 토큰은 문자 그대로 수익이 되고, Blackwell이든 TPU든 일관된 FLOP과 전력 인프라가 핵심이 된다. OpenAI 내부 메모와 Shallotpeat 프로젝트 소문은 Gemini 3가 pre-training 진보를 보였고, 이에 대응하는 OpenAI의 파이프라인도 이미 돌고 있을 가능성을 시사한다.",
+    "이 지점에서 unlearn-learn이 등장한다. 몇 달 전만 해도 Claude Code를 오래 일하게 하려면 Skills와 두꺼운 harness, 많은 guardrail이 중요했다. 하지만 Gemini 3와 Antigravity를 보며 노정석은 많은 harness가 capability overhang으로 모델 안에 흡수되고 있다고 느낀다. 이제는 관료적으로 제약하기보다 최소한의 가드레일만 두고 모델에게 더 자유를 주는 쪽이 산출물 품질을 높일 수 있다.",
+    "벤치마크보다 직접 써보는 감각도 중요하다. Andrej Karpathy는 모델의 본질이 준비된 등산로가 아니라 일반화의 정글에서 드러난다고 말했고, Every 팀처럼 새 모델이 나오면 곧장 온보딩해 분위기를 익히는 팀이 있다. 최승준은 Gemini 3 뉴스를 모르는 사람, 뉴스만 보는 사람, 바로 입력해보는 사람, 장단점을 먼저 말하는 사람이 갈린다고 보고, 적어도 예시를 복붙해서라도 써봐야 한다고 강조한다.",
+    "Gemini 3의 Generative UI는 그런 vibe check를 강하게 만든다. AI Studio의 Vibe Check에서 voxel로 달리는 스켈레톤, SVG, Visual Layout Labs 같은 예제가 나오고, 웹사이트·온보딩·랜딩 페이지를 잘 만드는 커리큘럼이 공개됐다. 노정석은 non-verifiable해 보이는 시각·디자인 품질에도 보상 신호를 만들고 컴퓨터를 넣으면 된다는 사실이 증명되고 있다고 읽는다.",
+    "이제 상상해야 할 것은 speed superintelligence다. Nick Bostrom이 말한 속도 초지능처럼, 현재 Gemini 3 수준의 지능이 10배 또는 100배 빨라지고 가격이 100분의 1이 되면 어떻게 되는가가 문제다. 지능이 더 좋아지지 않아도 속도와 가격만 바뀌면 impact는 크다. 노정석은 이 상황을 농업과 산업혁명처럼 보되, 200년의 변화가 2년 안에 압축될 수 있는 비선형 변화로 봐야 한다고 말한다.",
+    "인지 노동이 대체될수록 새 병목도 생긴다. 최승준은 같은 prompt를 여러 세션과 모델에 병렬로 넣다 보면 결과를 관리하고 context switching하는 인간이 먼저 피로해진다고 말한다. 노정석도 어제와 그제의 사건이 기억에서 사라질 정도로 정보량이 폭증했다고 한다. 오늘 만든 harness가 3개월 뒤 모델 기능이 될지 모른다는 예정된 패배감 속에서도, time gap을 앞서가는 데 기회가 있다.",
+    "HWP 파일 인식 사례는 데이터 이동의 의미를 보여 준다. Gemini가 HWP를 읽고 포맷팅하자, 최승준은 한국 정부와 교육 데이터가 AI 플랫폼 안으로 흘러 들어가는 장면을 본다. 노정석은 사용자가 직접 친 한 줄 prompt가 웹 페이지 10페이지보다 더 높은 정보 밀도를 가질 수 있다고 말한다. 사람의 intention이 담긴 토큰은 에너지 준위가 높고, 플랫폼 사업자에게 가장 귀한 데이터다.",
+    "의도가 현실이 되는 사례도 이어진다. 최승준은 Strudel 같은 라이브 코딩 음악 도구를 만들자는 Gemini 첫 prompt로 채팅, 라이브 코딩, 시각화가 결합된 DSL을 몇 번의 시도 만에 얻었다. Yi Tay의 prompt로 Minecraft 같은 공간을 만들고, Nano Banana Pro로 양자 오류 정정 그림을 인터랙티브 시각화로 바꿨다. 생각하는 순간 '되겠다'는 감각이 생기고, 핵심 description 세 줄이 spec sheet와 산출물로 부풀려진다.",
+    "현장의 AI 트랜스포메이션은 더 섬세하다. 최승준은 유치원 교사들이 가정에 보내는 글을 AI Studio에 넣어 소리의 물성 실험을 인터랙티브 콘텐츠로 만들고, Nano Banana Pro로 놀이 기록을 슬라이드 덱과 인포그래픽으로 바꿨다. 하지만 기술적으로 놀라운 데모가 곧장 착 감기지는 않았고, 1 on 1 피드백을 통해 교사의 맥락과 교육적 의미에 맞춘 유즈케이스를 찾아야 했다.",
+    "Antigravity는 agentic 도구의 장벽을 낮춘다. Claude Code는 조종간 많은 우주선 cockpit 같고, Antigravity나 Codex는 Tesla 우주선처럼 더 알아서 움직인다. CLI, Node.js 설치, 폴더 구조, 터미널 편집 같은 장벽이 일반 사용자에게 얼마나 컸는지 드러나고, Chrome DevTools Protocol 기반 테스트와 녹화 artifact처럼 브라우저를 직접 조작하는 루프가 품질을 높인다.",
+    "결론은 엔지니어 역할의 재배치다. harness를 조금 빨리 파서 2~3개월 우위를 얻는 것보다, 현실의 문제를 가진 problem holder와 AI 세상 사이의 time gap과 domain gap을 찾는 능력이 더 중요하다. 노정석은 소프트웨어 엔지니어임을 내려놓고, Antigravity와 Claude Code를 조금 빨리 쓰는 사업가의 관점으로 문제를 해결해야 한다고 말한다. 클로징에서는 Syncretism처럼 서로 다른 관점을 배제하지 않고 함께 보아야 고차원 변화의 그림자를 더 잘 읽을 수 있다고 정리한다."
+  ],
+  "entities": [
+    {
+      "id": "gemini-3",
+      "label": "Gemini 3",
+      "type": "model",
+      "aliases": [
+        "Gemini 3"
+      ]
+    },
+    {
+      "id": "antigravity",
+      "label": "Google Antigravity",
+      "type": "concept",
+      "aliases": [
+        "Google Antigravity",
+        "Antigravity"
+      ]
+    },
+    {
+      "id": "nano-banana-pro",
+      "label": "Nano Banana Pro",
+      "type": "model",
+      "aliases": [
+        "Nano Banana Pro"
+      ]
+    },
+    {
+      "id": "gpt-51-codex-max",
+      "label": "GPT-5.1-Codex-Max",
+      "type": "model",
+      "aliases": [
+        "GPT-5.1-Codex-Max"
+      ]
+    },
+    {
+      "id": "google-deepmind",
+      "label": "Google DeepMind",
+      "type": "model",
+      "aliases": [
+        "Google DeepMind"
+      ]
+    },
+    {
+      "id": "oriol-vinyals",
+      "label": "Oriol Vinyals",
+      "type": "person",
+      "aliases": [
+        "Oriol Vinyals"
+      ]
+    },
+    {
+      "id": "pre-training",
+      "label": "pre-training",
+      "type": "concept",
+      "aliases": [
+        "pre-training"
+      ]
+    },
+    {
+      "id": "posttrain",
+      "label": "포스트 트레이닝",
+      "type": "concept",
+      "aliases": [
+        "포스트 트레이닝",
+        "post-training"
+      ]
+    },
+    {
+      "id": "ai-studio",
+      "label": "AI Studio",
+      "type": "concept",
+      "aliases": [
+        "AI Studio"
+      ]
+    },
+    {
+      "id": "tpu",
+      "label": "TPU",
+      "type": "concept",
+      "aliases": [
+        "TPU"
+      ]
+    },
+    {
+      "id": "openai",
+      "label": "OpenAI",
+      "type": "model",
+      "aliases": [
+        "OpenAI"
+      ]
+    },
+    {
+      "id": "shallotpeat",
+      "label": "Shallotpeat",
+      "type": "concept",
+      "aliases": [
+        "Shallotpeat"
+      ]
+    },
+    {
+      "id": "claude-code",
+      "label": "Claude Code",
+      "type": "model",
+      "aliases": [
+        "Claude Code"
+      ]
+    },
+    {
+      "id": "skills",
+      "label": "Skills",
+      "type": "concept",
+      "aliases": [
+        "Skills"
+      ]
+    },
+    {
+      "id": "harness",
+      "label": "harness",
+      "type": "concept",
+      "aliases": [
+        "harness"
+      ]
+    },
+    {
+      "id": "karpathy",
+      "label": "Andrej Karpathy",
+      "type": "person",
+      "aliases": [
+        "Andrej Karpathy",
+        "Karpathy"
+      ]
+    },
+    {
+      "id": "vibe-check",
+      "label": "Vibe Check",
+      "type": "concept",
+      "aliases": [
+        "Vibe Check",
+        "vibe check"
+      ]
+    },
+    {
+      "id": "generative-ui",
+      "label": "Generative UI",
+      "type": "concept",
+      "aliases": [
+        "Generative UI"
+      ]
+    },
+    {
+      "id": "visual-layout-labs",
+      "label": "Visual Layout Labs",
+      "type": "concept",
+      "aliases": [
+        "Visual Layout Labs"
+      ]
+    },
+    {
+      "id": "speed-superintelligence",
+      "label": "speed superintelligence",
+      "type": "concept",
+      "aliases": [
+        "speed superintelligence",
+        "속도 초지능"
+      ]
+    },
+    {
+      "id": "nick-bostrom",
+      "label": "Nick Bostrom",
+      "type": "person",
+      "aliases": [
+        "Nick Bostrom"
+      ]
+    },
+    {
+      "id": "hwp",
+      "label": "HWP",
+      "type": "concept",
+      "aliases": [
+        "HWP"
+      ]
+    },
+    {
+      "id": "strudel",
+      "label": "Strudel",
+      "type": "concept",
+      "aliases": [
+        "Strudel"
+      ]
+    },
+    {
+      "id": "yi-tay",
+      "label": "Yi Tay",
+      "type": "person",
+      "aliases": [
+        "Yi Tay"
+      ]
+    },
+    {
+      "id": "ax",
+      "label": "AX",
+      "type": "concept",
+      "aliases": [
+        "AI 트랜스포메이션",
+        "AX"
+      ]
+    },
+    {
+      "id": "codex",
+      "label": "Codex",
+      "type": "concept",
+      "aliases": [
+        "Codex"
+      ]
+    },
+    {
+      "id": "time-gap",
+      "label": "time gap",
+      "type": "concept",
+      "aliases": [
+        "time gap"
+      ]
+    },
+    {
+      "id": "domain-gap",
+      "label": "domain gap",
+      "type": "concept",
+      "aliases": [
+        "domain gap"
+      ]
+    },
+    {
+      "id": "syncretism",
+      "label": "Syncretism",
+      "type": "concept",
+      "aliases": [
+        "Syncretism"
+      ]
+    }
+  ],
+  "notable_quote": {
+    "text": "소프트웨어 엔지니어임은 빨리 내려놔라 빨리 사업가적 마인드로 전환하는",
+    "speaker": "노정석"
+  },
+  "language": "ko",
+  "extractor": "deepseek-pro",
+  "extracted_at": "2026-07-03",
+  "review_status": "draft"
+}
