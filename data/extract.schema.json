@@ -14,9 +14,11 @@
     "source_url": { "type": ["string", "null"] },
     "raw_path": { "type": ["string", "null"] },
     "one_line": { "type": "string" },
-    "key_points": { "type": "array", "items": { "type": "string" } },
+    "key_points": { "type": "array", "minItems": 3, "maxItems": 6, "items": { "type": "string" } },
     "flow": {
       "type": "array",
+      "minItems": 0,
+      "maxItems": 8,
       "items": {
         "type": "object",
         "required": ["stage", "summary"],
@@ -26,7 +28,7 @@
         }
       }
     },
-    "body_paragraphs": { "type": "array", "items": { "type": "string" } },
+    "body_paragraphs": { "type": "array", "minItems": 8, "maxItems": 14, "items": { "type": "string" } },
     "entities": {
       "type": "array",
       "items": {

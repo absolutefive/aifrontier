@@ -1,17 +1,375 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-29T23:29:49Z",
+  "generated_at": "2026-07-02T15:59:53Z",
   "keywords": [
+    {
+      "id": "claude-code",
+      "label": "Claude Code",
+      "type": "model",
+      "total": 29,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 2,
+          "first_anchor": "claude-code-1"
+        },
+        {
+          "ep_id": 90,
+          "count": 1,
+          "first_anchor": "claude-code-1"
+        },
+        {
+          "ep_id": 91,
+          "count": 1,
+          "first_anchor": "claude-code-1"
+        },
+        {
+          "ep_id": 92,
+          "count": 2,
+          "first_anchor": "claude-code-1"
+        },
+        {
+          "ep_id": 93,
+          "count": 6,
+          "first_anchor": "claude-code-1"
+        },
+        {
+          "ep_id": 94,
+          "count": 6,
+          "first_anchor": "claude-code-1"
+        },
+        {
+          "ep_id": 97,
+          "count": 5,
+          "first_anchor": "claude-code-1"
+        },
+        {
+          "ep_id": 99,
+          "count": 5,
+          "first_anchor": "claude-code-1"
+        },
+        {
+          "ep_id": 100,
+          "count": 1,
+          "first_anchor": "claude-code-1"
+        }
+      ]
+    },
+    {
+      "id": "codex",
+      "label": "Codex",
+      "type": "concept",
+      "total": 17,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 2,
+          "first_anchor": "codex-1"
+        },
+        {
+          "ep_id": 91,
+          "count": 2,
+          "first_anchor": "codex-1"
+        },
+        {
+          "ep_id": 92,
+          "count": 1,
+          "first_anchor": "codex-1"
+        },
+        {
+          "ep_id": 94,
+          "count": 4,
+          "first_anchor": "codex-1"
+        },
+        {
+          "ep_id": 97,
+          "count": 8,
+          "first_anchor": "codex-1"
+        }
+      ]
+    },
+    {
+      "id": "dsv4",
+      "label": "DeepSeek-V4",
+      "type": "model",
+      "total": 15,
+      "eps": [
+        {
+          "ep_id": 95,
+          "count": 14,
+          "first_anchor": "dsv4-1"
+        },
+        {
+          "ep_id": 96,
+          "count": 1,
+          "first_anchor": "dsv4-1"
+        }
+      ]
+    },
+    {
+      "id": "jordan-taylor",
+      "label": "Jordan Taylor",
+      "type": "person",
+      "total": 12,
+      "eps": [
+        {
+          "ep_id": 101,
+          "count": 12,
+          "first_anchor": "jordan-taylor-1"
+        }
+      ]
+    },
+    {
+      "id": "karpathy",
+      "label": "Andrej Karpathy",
+      "type": "person",
+      "total": 10,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 1,
+          "first_anchor": "karpathy-1"
+        },
+        {
+          "ep_id": 90,
+          "count": 2,
+          "first_anchor": "karpathy-1"
+        },
+        {
+          "ep_id": 92,
+          "count": 6,
+          "first_anchor": "karpathy-1"
+        },
+        {
+          "ep_id": 98,
+          "count": 1,
+          "first_anchor": "karpathy-1"
+        }
+      ]
+    },
+    {
+      "id": "mythos",
+      "label": "Mythos",
+      "type": "model",
+      "total": 9,
+      "eps": [
+        {
+          "ep_id": 94,
+          "count": 5,
+          "first_anchor": "mythos-1"
+        },
+        {
+          "ep_id": 99,
+          "count": 2,
+          "first_anchor": "mythos-1"
+        },
+        {
+          "ep_id": 100,
+          "count": 2,
+          "first_anchor": "mythos-1"
+        }
+      ]
+    },
+    {
+      "id": "vizcom",
+      "label": "VIZCOM",
+      "type": "concept",
+      "total": 9,
+      "eps": [
+        {
+          "ep_id": 101,
+          "count": 9,
+          "first_anchor": "vizcom-1"
+        }
+      ]
+    },
     {
       "id": "kv",
       "label": "KV 캐시",
       "type": "concept",
-      "total": 6,
+      "total": 7,
       "eps": [
+        {
+          "ep_id": 95,
+          "count": 1,
+          "first_anchor": "kv-1"
+        },
         {
           "ep_id": 96,
           "count": 6,
           "first_anchor": "kv-1"
+        }
+      ]
+    },
+    {
+      "id": "ralph-loop",
+      "label": "Ralph loop",
+      "type": "concept",
+      "total": 7,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 1,
+          "first_anchor": "ralph-loop-1"
+        },
+        {
+          "ep_id": 90,
+          "count": 1,
+          "first_anchor": "ralph-loop-1"
+        },
+        {
+          "ep_id": 91,
+          "count": 3,
+          "first_anchor": "ralph-loop-1"
+        },
+        {
+          "ep_id": 92,
+          "count": 1,
+          "first_anchor": "ralph-loop-1"
+        },
+        {
+          "ep_id": 93,
+          "count": 1,
+          "first_anchor": "ralph-loop-1"
+        }
+      ]
+    },
+    {
+      "id": "alphago",
+      "label": "AlphaGo",
+      "type": "model",
+      "total": 6,
+      "eps": [
+        {
+          "ep_id": 90,
+          "count": 6,
+          "first_anchor": "alphago-1"
+        }
+      ]
+    },
+    {
+      "id": "sparse-attention",
+      "label": "Sparse Attention",
+      "type": "concept",
+      "total": 6,
+      "eps": [
+        {
+          "ep_id": 95,
+          "count": 6,
+          "first_anchor": "sparse-attention-1"
+        }
+      ]
+    },
+    {
+      "id": "koh-seokhyun",
+      "label": "고석현",
+      "type": "person",
+      "total": 6,
+      "eps": [
+        {
+          "ep_id": 93,
+          "count": 6,
+          "first_anchor": "koh-seokhyun-1"
+        }
+      ]
+    },
+    {
+      "id": "industrial-design",
+      "label": "산업디자인",
+      "type": "concept",
+      "total": 6,
+      "eps": [
+        {
+          "ep_id": 101,
+          "count": 6,
+          "first_anchor": "industrial-design-1"
+        }
+      ]
+    },
+    {
+      "id": "ai-native",
+      "label": "AI Native",
+      "type": "concept",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 91,
+          "count": 1,
+          "first_anchor": "ai-native-1"
+        },
+        {
+          "ep_id": 93,
+          "count": 1,
+          "first_anchor": "ai-native-1"
+        },
+        {
+          "ep_id": 97,
+          "count": 3,
+          "first_anchor": "ai-native-1"
+        }
+      ]
+    },
+    {
+      "id": "ai-for-science",
+      "label": "AI for Science",
+      "type": "concept",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 1,
+          "first_anchor": "ai-for-science-1"
+        },
+        {
+          "ep_id": 92,
+          "count": 3,
+          "first_anchor": "ai-for-science-1"
+        },
+        {
+          "ep_id": 94,
+          "count": 1,
+          "first_anchor": "ai-for-science-1"
+        }
+      ]
+    },
+    {
+      "id": "cua",
+      "label": "CUA",
+      "type": "concept",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 2,
+          "first_anchor": "cua-1"
+        },
+        {
+          "ep_id": 91,
+          "count": 3,
+          "first_anchor": "cua-1"
+        }
+      ]
+    },
+    {
+      "id": "dwarkesh",
+      "label": "Dwarkesh",
+      "type": "person",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 92,
+          "count": 2,
+          "first_anchor": "dwarkesh-1"
+        },
+        {
+          "ep_id": 96,
+          "count": 1,
+          "first_anchor": "dwarkesh-1"
+        },
+        {
+          "ep_id": 97,
+          "count": 2,
+          "first_anchor": "dwarkesh-1"
         }
       ]
     },
@@ -29,6 +387,63 @@
       ]
     },
     {
+      "id": "moe",
+      "label": "MoE",
+      "type": "concept",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 95,
+          "count": 3,
+          "first_anchor": "moe-1"
+        },
+        {
+          "ep_id": 96,
+          "count": 2,
+          "first_anchor": "moe-1"
+        }
+      ]
+    },
+    {
+      "id": "openclaw",
+      "label": "OpenClaw",
+      "type": "concept",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 91,
+          "count": 5,
+          "first_anchor": "openclaw-1"
+        }
+      ]
+    },
+    {
+      "id": "platform-37",
+      "label": "Platform 37",
+      "type": "concept",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 90,
+          "count": 5,
+          "first_anchor": "platform-37-1"
+        }
+      ]
+    },
+    {
+      "id": "terence-tao",
+      "label": "Terence Tao",
+      "type": "person",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 92,
+          "count": 5,
+          "first_anchor": "terence-tao-1"
+        }
+      ]
+    },
+    {
       "id": "prefill-decode",
       "label": "prefill/decode",
       "type": "concept",
@@ -38,6 +453,37 @@
           "ep_id": 96,
           "count": 5,
           "first_anchor": "prefill-decode-1"
+        }
+      ]
+    },
+    {
+      "id": "gan",
+      "label": "GAN",
+      "type": "concept",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 90,
+          "count": 3,
+          "first_anchor": "gan-1"
+        },
+        {
+          "ep_id": 92,
+          "count": 1,
+          "first_anchor": "gan-1"
+        }
+      ]
+    },
+    {
+      "id": "imagenet",
+      "label": "ImageNet",
+      "type": "concept",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 90,
+          "count": 4,
+          "first_anchor": "imagenet-1"
         }
       ]
     },
@@ -68,6 +514,102 @@
       ]
     },
     {
+      "id": "lee-jinwon",
+      "label": "이진원",
+      "type": "person",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 90,
+          "count": 4,
+          "first_anchor": "lee-jinwon-1"
+        }
+      ]
+    },
+    {
+      "id": "ai-assisted",
+      "label": "AI Assisted",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 97,
+          "count": 3,
+          "first_anchor": "ai-assisted-1"
+        }
+      ]
+    },
+    {
+      "id": "ax",
+      "label": "AX",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 91,
+          "count": 3,
+          "first_anchor": "ax-1"
+        }
+      ]
+    },
+    {
+      "id": "gpt",
+      "label": "GPT",
+      "type": "model",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 90,
+          "count": 3,
+          "first_anchor": "gpt-1"
+        }
+      ]
+    },
+    {
+      "id": "gpt54",
+      "label": "GPT-5.4",
+      "type": "model",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 3,
+          "first_anchor": "gpt54-1"
+        }
+      ]
+    },
+    {
+      "id": "hbm",
+      "label": "HBM",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 90,
+          "count": 1,
+          "first_anchor": "hbm-1"
+        },
+        {
+          "ep_id": 96,
+          "count": 2,
+          "first_anchor": "hbm-1"
+        }
+      ]
+    },
+    {
+      "id": "npu",
+      "label": "NPU",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 90,
+          "count": 3,
+          "first_anchor": "npu-1"
+        }
+      ]
+    },
+    {
       "id": "nvlink",
       "label": "NVLink",
       "type": "concept",
@@ -81,6 +623,63 @@
       ]
     },
     {
+      "id": "oh-my",
+      "label": "Oh-My 시리즈",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 93,
+          "count": 3,
+          "first_anchor": "oh-my-1"
+        }
+      ]
+    },
+    {
+      "id": "opus47",
+      "label": "Opus 4.7",
+      "type": "model",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 94,
+          "count": 3,
+          "first_anchor": "opus47-1"
+        }
+      ]
+    },
+    {
+      "id": "opus48",
+      "label": "Opus 4.8",
+      "type": "model",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 99,
+          "count": 3,
+          "first_anchor": "opus48-1"
+        }
+      ]
+    },
+    {
+      "id": "rlvr",
+      "label": "RLVR",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 90,
+          "count": 1,
+          "first_anchor": "rlvr-1"
+        },
+        {
+          "ep_id": 91,
+          "count": 2,
+          "first_anchor": "rlvr-1"
+        }
+      ]
+    },
+    {
       "id": "rsi",
       "label": "RSI",
       "type": "concept",
@@ -90,6 +689,81 @@
           "ep_id": 100,
           "count": 3,
           "first_anchor": "rsi-1"
+        }
+      ]
+    },
+    {
+      "id": "sigrid-jin",
+      "label": "Sigrid Jin",
+      "type": "person",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 93,
+          "count": 3,
+          "first_anchor": "sigrid-jin-1"
+        }
+      ]
+    },
+    {
+      "id": "auto-research",
+      "label": "auto research",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 90,
+          "count": 1,
+          "first_anchor": "auto-research-1"
+        },
+        {
+          "ep_id": 91,
+          "count": 1,
+          "first_anchor": "auto-research-1"
+        },
+        {
+          "ep_id": 92,
+          "count": 1,
+          "first_anchor": "auto-research-1"
+        }
+      ]
+    },
+    {
+      "id": "code-as-harness",
+      "label": "code as harness",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 99,
+          "count": 3,
+          "first_anchor": "code-as-harness-1"
+        }
+      ]
+    },
+    {
+      "id": "latency",
+      "label": "latency",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 99,
+          "count": 3,
+          "first_anchor": "latency-1"
+        }
+      ]
+    },
+    {
+      "id": "top-k",
+      "label": "top-k",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 95,
+          "count": 3,
+          "first_anchor": "top-k-1"
         }
       ]
     },
@@ -120,41 +794,407 @@
       ]
     },
     {
-      "id": "hbm",
-      "label": "HBM",
+      "id": "scaffolding",
+      "label": "스캐폴딩",
       "type": "concept",
-      "total": 2,
+      "total": 3,
       "eps": [
         {
-          "ep_id": 96,
-          "count": 2,
-          "first_anchor": "hbm-1"
+          "ep_id": 89,
+          "count": 3,
+          "first_anchor": "scaffolding-1"
         }
       ]
     },
     {
-      "id": "moe",
-      "label": "MoE",
+      "id": "taste",
+      "label": "취향",
       "type": "concept",
-      "total": 2,
+      "total": 3,
       "eps": [
         {
-          "ep_id": 96,
+          "ep_id": 92,
+          "count": 1,
+          "first_anchor": "taste-1"
+        },
+        {
+          "ep_id": 101,
           "count": 2,
-          "first_anchor": "moe-1"
+          "first_anchor": "taste-1"
         }
       ]
     },
     {
-      "id": "mythos",
-      "label": "Mythos",
+      "id": "clean-room",
+      "label": "클린룸",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 93,
+          "count": 3,
+          "first_anchor": "clean-room-1"
+        }
+      ]
+    },
+    {
+      "id": "mesh-algorithm",
+      "label": "3D 메쉬 알고리즘",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 2,
+          "first_anchor": "mesh-algorithm-1"
+        }
+      ]
+    },
+    {
+      "id": "ai-grant",
+      "label": "AI Grant",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 101,
+          "count": 2,
+          "first_anchor": "ai-grant-1"
+        }
+      ]
+    },
+    {
+      "id": "ai-psychosis",
+      "label": "AI psychosis",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 97,
+          "count": 2,
+          "first_anchor": "ai-psychosis-1"
+        }
+      ]
+    },
+    {
+      "id": "anticipatory-routing",
+      "label": "Anticipatory Routing",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 95,
+          "count": 2,
+          "first_anchor": "anticipatory-routing-1"
+        }
+      ]
+    },
+    {
+      "id": "bert",
+      "label": "BERT",
       "type": "model",
       "total": 2,
       "eps": [
         {
-          "ep_id": 100,
+          "ep_id": 90,
           "count": 2,
-          "first_anchor": "mythos-1"
+          "first_anchor": "bert-1"
+        }
+      ]
+    },
+    {
+      "id": "bitter-lesson",
+      "label": "Bitter Lesson",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 90,
+          "count": 2,
+          "first_anchor": "bitter-lesson-1"
+        }
+      ]
+    },
+    {
+      "id": "chatgpt-unbundling",
+      "label": "ChatGPT unbundling",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 91,
+          "count": 1,
+          "first_anchor": "chatgpt-unbundling-1"
+        },
+        {
+          "ep_id": 94,
+          "count": 1,
+          "first_anchor": "chatgpt-unbundling-1"
+        }
+      ]
+    },
+    {
+      "id": "chedex",
+      "label": "Chedex",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 91,
+          "count": 2,
+          "first_anchor": "chedex-1"
+        }
+      ]
+    },
+    {
+      "id": "claude-design",
+      "label": "Claude Design",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 94,
+          "count": 2,
+          "first_anchor": "claude-design-1"
+        }
+      ]
+    },
+    {
+      "id": "claw-code",
+      "label": "Claw Code",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 93,
+          "count": 2,
+          "first_anchor": "claw-code-1"
+        }
+      ]
+    },
+    {
+      "id": "donald-knuth",
+      "label": "Donald Knuth",
+      "type": "person",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 2,
+          "first_anchor": "donald-knuth-1"
+        }
+      ]
+    },
+    {
+      "id": "dynamic-workflows",
+      "label": "Dynamic Workflows",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 99,
+          "count": 2,
+          "first_anchor": "dynamic-workflows-1"
+        }
+      ]
+    },
+    {
+      "id": "gemini35-flash",
+      "label": "Gemini 3.5 Flash",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 99,
+          "count": 2,
+          "first_anchor": "gemini35-flash-1"
+        }
+      ]
+    },
+    {
+      "id": "guido-van-rossum",
+      "label": "Guido van Rossum",
+      "type": "person",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 2,
+          "first_anchor": "guido-van-rossum-1"
+        }
+      ]
+    },
+    {
+      "id": "hyperaccel",
+      "label": "HyperAccel",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 90,
+          "count": 2,
+          "first_anchor": "hyperaccel-1"
+        }
+      ]
+    },
+    {
+      "id": "hyperclova",
+      "label": "HyperCLOVA",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 90,
+          "count": 2,
+          "first_anchor": "hyperclova-1"
+        }
+      ]
+    },
+    {
+      "id": "kent-beck",
+      "label": "Kent Beck",
+      "type": "person",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 2,
+          "first_anchor": "kent-beck-1"
+        }
+      ]
+    },
+    {
+      "id": "muon",
+      "label": "Muon Optimizer",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 95,
+          "count": 2,
+          "first_anchor": "muon-1"
+        }
+      ]
+    },
+    {
+      "id": "rubric-reward",
+      "label": "Rubric Reward",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 95,
+          "count": 2,
+          "first_anchor": "rubric-reward-1"
+        }
+      ]
+    },
+    {
+      "id": "sarah-guo",
+      "label": "Sarah Guo",
+      "type": "person",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 92,
+          "count": 2,
+          "first_anchor": "sarah-guo-1"
+        }
+      ]
+    },
+    {
+      "id": "threejs",
+      "label": "Three.js",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 2,
+          "first_anchor": "threejs-1"
+        }
+      ]
+    },
+    {
+      "id": "transformer",
+      "label": "Transformer",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 90,
+          "count": 2,
+          "first_anchor": "transformer-1"
+        }
+      ]
+    },
+    {
+      "id": "vision-transformer",
+      "label": "Vision Transformer",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 90,
+          "count": 2,
+          "first_anchor": "vision-transformer-1"
+        }
+      ]
+    },
+    {
+      "id": "capability-overhang",
+      "label": "capability overhang",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 91,
+          "count": 1,
+          "first_anchor": "capability-overhang-1"
+        },
+        {
+          "ep_id": 94,
+          "count": 1,
+          "first_anchor": "capability-overhang-1"
+        }
+      ]
+    },
+    {
+      "id": "control-layer",
+      "label": "control layer",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 97,
+          "count": 2,
+          "first_anchor": "control-layer-1"
+        }
+      ]
+    },
+    {
+      "id": "manifest",
+      "label": "manifest",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 92,
+          "count": 2,
+          "first_anchor": "manifest-1"
+        }
+      ]
+    },
+    {
+      "id": "slow-ai",
+      "label": "slow AI",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 97,
+          "count": 2,
+          "first_anchor": "slow-ai-1"
         }
       ]
     },
@@ -172,6 +1212,19 @@
       ]
     },
     {
+      "id": "supply-chain-attack",
+      "label": "공급망 공격",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 93,
+          "count": 2,
+          "first_anchor": "supply-chain-attack-1"
+        }
+      ]
+    },
+    {
       "id": "loop-eng",
       "label": "루프 엔지니어링",
       "type": "concept",
@@ -181,6 +1234,32 @@
           "ep_id": 100,
           "count": 2,
           "first_anchor": "loop-eng-1"
+        }
+      ]
+    },
+    {
+      "id": "meta-harness",
+      "label": "메타 하네스",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 93,
+          "count": 2,
+          "first_anchor": "meta-harness-1"
+        }
+      ]
+    },
+    {
+      "id": "psionic",
+      "label": "사이오닉",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 93,
+          "count": 2,
+          "first_anchor": "psionic-1"
         }
       ]
     },
@@ -198,6 +1277,24 @@
       ]
     },
     {
+      "id": "harness-engineering",
+      "label": "하네스 엔지니어링",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 1,
+          "first_anchor": "harness-engineering-1"
+        },
+        {
+          "ep_id": 93,
+          "count": 1,
+          "first_anchor": "harness-engineering-1"
+        }
+      ]
+    },
+    {
       "id": "aeo",
       "label": "AEO/GEO",
       "type": "concept",
@@ -211,15 +1308,119 @@
       ]
     },
     {
-      "id": "karpathy",
-      "label": "Andrej Karpathy",
-      "type": "person",
+      "id": "ai-native-talent",
+      "label": "AI native talent",
+      "type": "concept",
       "total": 1,
       "eps": [
         {
-          "ep_id": 98,
+          "ep_id": 99,
           "count": 1,
-          "first_anchor": "karpathy-1"
+          "first_anchor": "ai-native-talent-1"
+        }
+      ]
+    },
+    {
+      "id": "ai-surface",
+      "label": "AI surface",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 97,
+          "count": 1,
+          "first_anchor": "ai-surface-1"
+        }
+      ]
+    },
+    {
+      "id": "ai-talent",
+      "label": "AI talent",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 97,
+          "count": 1,
+          "first_anchor": "ai-talent-1"
+        }
+      ]
+    },
+    {
+      "id": "atd",
+      "label": "ATD",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 92,
+          "count": 1,
+          "first_anchor": "atd-1"
+        }
+      ]
+    },
+    {
+      "id": "adaptive-thinking",
+      "label": "Adaptive Thinking",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 94,
+          "count": 1,
+          "first_anchor": "adaptive-thinking-1"
+        }
+      ]
+    },
+    {
+      "id": "alien-science",
+      "label": "Alien Science",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 94,
+          "count": 1,
+          "first_anchor": "alien-science-1"
+        }
+      ]
+    },
+    {
+      "id": "alloy",
+      "label": "Alloy",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 1,
+          "first_anchor": "alloy-1"
+        }
+      ]
+    },
+    {
+      "id": "attention-business",
+      "label": "Attention Business",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 94,
+          "count": 1,
+          "first_anchor": "attention-business-1"
+        }
+      ]
+    },
+    {
+      "id": "automated-alignment-researcher",
+      "label": "Automated Alignment Researcher",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 94,
+          "count": 1,
+          "first_anchor": "automated-alignment-researcher-1"
         }
       ]
     },
@@ -237,41 +1438,67 @@
       ]
     },
     {
-      "id": "claude-code",
-      "label": "Claude Code",
-      "type": "model",
+      "id": "basis-set",
+      "label": "Basis Set Ventures",
+      "type": "concept",
       "total": 1,
       "eps": [
         {
-          "ep_id": 100,
+          "ep_id": 101,
           "count": 1,
-          "first_anchor": "claude-code-1"
+          "first_anchor": "basis-set-1"
         }
       ]
     },
     {
-      "id": "dsv4",
-      "label": "DeepSeek-V4",
-      "type": "model",
-      "total": 1,
-      "eps": [
-        {
-          "ep_id": 96,
-          "count": 1,
-          "first_anchor": "dsv4-1"
-        }
-      ]
-    },
-    {
-      "id": "dwarkesh",
-      "label": "Dwarkesh",
+      "id": "cat-wu",
+      "label": "Cat Wu",
       "type": "person",
       "total": 1,
       "eps": [
         {
-          "ep_id": 96,
+          "ep_id": 97,
           "count": 1,
-          "first_anchor": "dwarkesh-1"
+          "first_anchor": "cat-wu-1"
+        }
+      ]
+    },
+    {
+      "id": "chris-olah",
+      "label": "Chris Olah",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 90,
+          "count": 1,
+          "first_anchor": "chris-olah-1"
+        }
+      ]
+    },
+    {
+      "id": "dmca",
+      "label": "DMCA",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 93,
+          "count": 1,
+          "first_anchor": "dmca-1"
+        }
+      ]
+    },
+    {
+      "id": "dspy",
+      "label": "DSPy",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 99,
+          "count": 1,
+          "first_anchor": "dspy-1"
         }
       ]
     },
@@ -289,6 +1516,97 @@
       ]
     },
     {
+      "id": "evo2",
+      "label": "Evo 2",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 94,
+          "count": 1,
+          "first_anchor": "evo2-1"
+        }
+      ]
+    },
+    {
+      "id": "fp4",
+      "label": "FP4 Quantization",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 95,
+          "count": 1,
+          "first_anchor": "fp4-1"
+        }
+      ]
+    },
+    {
+      "id": "jan-leike",
+      "label": "Jan Leike",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 94,
+          "count": 1,
+          "first_anchor": "jan-leike-1"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-distillation",
+      "label": "Knowledge Distillation",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 94,
+          "count": 1,
+          "first_anchor": "knowledge-distillation-1"
+        }
+      ]
+    },
+    {
+      "id": "lpddr",
+      "label": "LPDDR",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 90,
+          "count": 1,
+          "first_anchor": "lpddr-1"
+        }
+      ]
+    },
+    {
+      "id": "lablup",
+      "label": "Lablup",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 97,
+          "count": 1,
+          "first_anchor": "lablup-1"
+        }
+      ]
+    },
+    {
+      "id": "lightning-indexer",
+      "label": "Lightning Indexer",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 95,
+          "count": 1,
+          "first_anchor": "lightning-indexer-1"
+        }
+      ]
+    },
+    {
       "id": "mcp",
       "label": "MCP",
       "type": "concept",
@@ -298,6 +1616,71 @@
           "ep_id": 98,
           "count": 1,
           "first_anchor": "mcp-1"
+        }
+      ]
+    },
+    {
+      "id": "mla",
+      "label": "MLA",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 95,
+          "count": 1,
+          "first_anchor": "mla-1"
+        }
+      ]
+    },
+    {
+      "id": "man-computer-symbiosis",
+      "label": "Man-Computer Symbiosis",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 90,
+          "count": 1,
+          "first_anchor": "man-computer-symbiosis-1"
+        }
+      ]
+    },
+    {
+      "id": "managed-agent",
+      "label": "Managed Agent",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 94,
+          "count": 1,
+          "first_anchor": "managed-agent-1"
+        }
+      ]
+    },
+    {
+      "id": "mitchell-hashimoto",
+      "label": "Mitchell Hashimoto",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 1,
+          "first_anchor": "mitchell-hashimoto-1"
+        }
+      ]
+    },
+    {
+      "id": "nat-friedman",
+      "label": "Nat Friedman",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 101,
+          "count": 1,
+          "first_anchor": "nat-friedman-1"
         }
       ]
     },
@@ -315,6 +1698,84 @@
       ]
     },
     {
+      "id": "noam-brown",
+      "label": "Noam Brown",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 90,
+          "count": 1,
+          "first_anchor": "noam-brown-1"
+        }
+      ]
+    },
+    {
+      "id": "okr",
+      "label": "OKR",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 92,
+          "count": 1,
+          "first_anchor": "okr-1"
+        }
+      ]
+    },
+    {
+      "id": "omo-bot",
+      "label": "OMO.BOT",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 91,
+          "count": 1,
+          "first_anchor": "omo-bot-1"
+        }
+      ]
+    },
+    {
+      "id": "omx",
+      "label": "OMX",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 97,
+          "count": 1,
+          "first_anchor": "omx-1"
+        }
+      ]
+    },
+    {
+      "id": "on-policy-distillation",
+      "label": "On-Policy Distillation",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 95,
+          "count": 1,
+          "first_anchor": "on-policy-distillation-1"
+        }
+      ]
+    },
+    {
+      "id": "pmf",
+      "label": "PMF",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 93,
+          "count": 1,
+          "first_anchor": "pmf-1"
+        }
+      ]
+    },
+    {
       "id": "pagedattention",
       "label": "PagedAttention",
       "type": "concept",
@@ -324,6 +1785,58 @@
           "ep_id": 96,
           "count": 1,
           "first_anchor": "pagedattention-1"
+        }
+      ]
+    },
+    {
+      "id": "pix2pix",
+      "label": "Pix2Pix",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 101,
+          "count": 1,
+          "first_anchor": "pix2pix-1"
+        }
+      ]
+    },
+    {
+      "id": "prompt-injection",
+      "label": "Prompt Injection",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 91,
+          "count": 1,
+          "first_anchor": "prompt-injection-1"
+        }
+      ]
+    },
+    {
+      "id": "rlm",
+      "label": "Recursive Language Models",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 99,
+          "count": 1,
+          "first_anchor": "rlm-1"
+        }
+      ]
+    },
+    {
+      "id": "ricardo-cabello",
+      "label": "Ricardo Cabello",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 1,
+          "first_anchor": "ricardo-cabello-1"
         }
       ]
     },
@@ -341,6 +1854,58 @@
       ]
     },
     {
+      "id": "simon-willison",
+      "label": "Simon Willison",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 99,
+          "count": 1,
+          "first_anchor": "simon-willison-1"
+        }
+      ]
+    },
+    {
+      "id": "stable-diffusion",
+      "label": "Stable Diffusion",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 101,
+          "count": 1,
+          "first_anchor": "stable-diffusion-1"
+        }
+      ]
+    },
+    {
+      "id": "t-brain",
+      "label": "T_brain",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 97,
+          "count": 1,
+          "first_anchor": "t-brain-1"
+        }
+      ]
+    },
+    {
+      "id": "textgrad",
+      "label": "TextGrad",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 99,
+          "count": 1,
+          "first_anchor": "textgrad-1"
+        }
+      ]
+    },
+    {
       "id": "vc",
       "label": "VC",
       "type": "concept",
@@ -354,6 +1919,188 @@
       ]
     },
     {
+      "id": "vinod-khosla",
+      "label": "Vinod Khosla",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 99,
+          "count": 1,
+          "first_anchor": "vinod-khosla-1"
+        }
+      ]
+    },
+    {
+      "id": "bundle-unbundle",
+      "label": "bundle-unbundle",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 91,
+          "count": 1,
+          "first_anchor": "bundle-unbundle-1"
+        }
+      ]
+    },
+    {
+      "id": "convex-hull",
+      "label": "convex hull",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 1,
+          "first_anchor": "convex-hull-1"
+        }
+      ]
+    },
+    {
+      "id": "disintermediation",
+      "label": "disintermediation",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 91,
+          "count": 1,
+          "first_anchor": "disintermediation-1"
+        }
+      ]
+    },
+    {
+      "id": "mhc",
+      "label": "mHC",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 95,
+          "count": 1,
+          "first_anchor": "mhc-1"
+        }
+      ]
+    },
+    {
+      "id": "mega-kernel",
+      "label": "mega-kernel",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 95,
+          "count": 1,
+          "first_anchor": "mega-kernel-1"
+        }
+      ]
+    },
+    {
+      "id": "meta-cascading",
+      "label": "meta cascading",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 91,
+          "count": 1,
+          "first_anchor": "meta-cascading-1"
+        }
+      ]
+    },
+    {
+      "id": "microgpt",
+      "label": "microgpt",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 92,
+          "count": 1,
+          "first_anchor": "microgpt-1"
+        }
+      ]
+    },
+    {
+      "id": "mind-sized-bites",
+      "label": "mind-sized bites",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 97,
+          "count": 1,
+          "first_anchor": "mind-sized-bites-1"
+        }
+      ]
+    },
+    {
+      "id": "nanochat",
+      "label": "nanochat",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 1,
+          "first_anchor": "nanochat-1"
+        }
+      ]
+    },
+    {
+      "id": "search-problem",
+      "label": "search problem",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 91,
+          "count": 1,
+          "first_anchor": "search-problem-1"
+        }
+      ]
+    },
+    {
+      "id": "semantic-cpu",
+      "label": "semantic CPU",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 93,
+          "count": 1,
+          "first_anchor": "semantic-cpu-1"
+        }
+      ]
+    },
+    {
+      "id": "semi-formal-language",
+      "label": "semi-formal 언어",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 92,
+          "count": 1,
+          "first_anchor": "semi-formal-language-1"
+        }
+      ]
+    },
+    {
+      "id": "vibe-physics",
+      "label": "vibe physics",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 92,
+          "count": 1,
+          "first_anchor": "vibe-physics-1"
+        }
+      ]
+    },
+    {
       "id": "dario",
       "label": "다리오 아모데이",
       "type": "person",
@@ -363,6 +2110,84 @@
           "ep_id": 100,
           "count": 1,
           "first_anchor": "dario-1"
+        }
+      ]
+    },
+    {
+      "id": "dogfooding",
+      "label": "도그푸딩",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 101,
+          "count": 1,
+          "first_anchor": "dogfooding-1"
+        }
+      ]
+    },
+    {
+      "id": "domain-tacit-knowledge",
+      "label": "도메인 암묵지",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 1,
+          "first_anchor": "domain-tacit-knowledge-1"
+        }
+      ]
+    },
+    {
+      "id": "design-debt",
+      "label": "디자인 부채",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 101,
+          "count": 1,
+          "first_anchor": "design-debt-1"
+        }
+      ]
+    },
+    {
+      "id": "problem-definition",
+      "label": "문제 정의",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 1,
+          "first_anchor": "problem-definition-1"
+        }
+      ]
+    },
+    {
+      "id": "mission-moat",
+      "label": "미션이 해자다",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 101,
+          "count": 1,
+          "first_anchor": "mission-moat-1"
+        }
+      ]
+    },
+    {
+      "id": "brownout",
+      "label": "브라운아웃",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 1,
+          "first_anchor": "brownout-1"
         }
       ]
     },
@@ -415,6 +2240,19 @@
           "ep_id": 100,
           "count": 1,
           "first_anchor": "korea-foundation-1"
+        }
+      ]
+    },
+    {
+      "id": "huawei-chip",
+      "label": "화웨이 칩",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 95,
+          "count": 1,
+          "first_anchor": "huawei-chip-1"
         }
       ]
     }

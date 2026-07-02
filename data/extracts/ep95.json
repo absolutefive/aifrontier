@@ -1,0 +1,211 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 95,
+  "slug": "deepseek-v4-paper-reading",
+  "title": "DeepSeek-V4 논문 읽기",
+  "published_date": "2026-04-28",
+  "hosts": [
+    "노정석",
+    "최승준",
+    "김성현"
+  ],
+  "category": "모델",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep95",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep95/page.html",
+  "one_line": "DeepSeek-V4는 1.6T 규모와 Sparse Attention, mHC, Muon Optimizer, long-context pre-training으로 연산·KV 캐시 비용을 크게 낮추며 중국 프론티어 모델의 기술적 깊이를 드러낸다.",
+  "key_points": [
+    "DeepSeek-V4는 600B급 V3에서 1.6T급으로 커졌고 activated parameter도 증가했다.",
+    "Sparse Attention은 long-context에서 attention 연산량과 KV 캐시 메모리 부담을 동시에 줄이는 핵심 변화다.",
+    "Lightning Indexer와 top-k 선택은 효율을 만들지만 미분 불가능성과 학습 불안정성이라는 어려움을 만든다.",
+    "MLA를 제거하고 mHC와 Muon Optimizer를 도입하면서 DeepSeek은 아키텍처와 학습 안정성을 크게 다시 설계했다.",
+    "MoE pipeline, mega-kernel, FP4 Quantization, long-context pre-training은 알고리즘만큼 인프라가 중요하다는 점을 보여 준다.",
+    "DeepSeek-V4는 pre-training에서 미국 프론티어와 맞붙는 수준을 보였지만 post-training에서는 더 밀어붙일 여지가 남아 있다."
+  ],
+  "flow": [
+    {
+      "stage": "도입",
+      "summary": "GPT-5.5와 중국 프론티어 랩 지형을 배경으로 DeepSeek-V4를 핵심 뉴스로 잡는다."
+    },
+    {
+      "stage": "아키텍처",
+      "summary": "1.6T 모델 확장, Sparse Attention, mHC, Muon Optimizer라는 세 축을 소개한다."
+    },
+    {
+      "stage": "Sparse Attention",
+      "summary": "long-context에서 연산과 KV 캐시를 줄이기 위해 전체 토큰이 아니라 중요한 일부만 보게 하는 구조를 설명한다."
+    },
+    {
+      "stage": "선택과 학습",
+      "summary": "Lightning Indexer, top-k 선택, 미분 불가능성, from-scratch 학습 난점을 다룬다."
+    },
+    {
+      "stage": "인프라 최적화",
+      "summary": "MoE pipeline, mega-kernel, TileLang, FP4 Quantization, batch invariance 최적화를 짚는다."
+    },
+    {
+      "stage": "학습 구성",
+      "summary": "32T 토큰, long-context pre-training, Anticipatory Routing과 학습 불안정성을 살핀다."
+    },
+    {
+      "stage": "Post-training",
+      "summary": "On-Policy Distillation, Rubric Reward, 1M 컨텍스트 RL 인프라와 벤치마크를 정리한다."
+    },
+    {
+      "stage": "시장 신호",
+      "summary": "화웨이 칩, Meta Muse Spark, GPT-5.5와 Cloud Next 소식, 사업 가치 경쟁으로의 이동을 연결한다."
+    }
+  ],
+  "body_paragraphs": [
+    "이번 회차는 GPT-5.5와 Google Cloud Next 소식이 있던 주에도 DeepSeek-V4를 가장 중요한 사건으로 놓고 시작한다. 노정석은 DeepSeek, Kimi, GLM으로 유명한 Z.ai, Tencent의 Hy3, Xiaomi의 MiMo까지 중국 프론티어 랩 지형이 심상치 않다고 말한다. 김성현은 DeepSeek-V4가 pre-training base model 업데이트라는 점에서 연구적·기술적으로 특히 흥미로운 소재라고 평가한다.",
+    "DeepSeek-V4의 첫 변화는 크기다. DeepSeek-V3가 600B 정도였다면 V4는 1.6T 모델로 커졌고, activated parameter도 더 커졌다. 동시에 작은 모델도 함께 나왔으며, base model과 post-training 모델 성능이 모두 올라갔다. 하지만 이 회차의 진짜 초점은 단순한 규모가 아니라 long-context 비용을 낮춘 아키텍처 변화다.",
+    "핵심은 Sparse Attention이다. attention은 기본적으로 한 토큰이 이전의 모든 토큰을 참조하므로 context가 길어질수록 연산량과 KV 캐시 메모리 요구량이 커진다. DeepSeek-V4는 모든 토큰을 다 보지 않고 중요한 일부만 희소하게 보도록 만들어, Pro 기준으로 토큰 연산량을 V3 대비 약 27% 수준으로 낮추고 메모리 소비량도 10% 수준으로 줄였다고 소개된다.",
+    "이 변화가 중요한 이유는 long-context의 의미가 달라졌기 때문이다. 예전에는 긴 문서를 더 많이 넣기 위한 기능에 가까웠지만, agent 시대에는 다룰 수 있는 문제의 복잡성과 규모를 키우는 기반이 된다. 긴 context를 싸게 유지할 수 있다는 것은 긴 작업, 도구 호출, 누적 상태를 가진 에이전트가 더 큰 문제를 처리할 수 있다는 뜻이다.",
+    "Sparse Attention은 세 가지 컴포넌트로 구성된다. sliding window attention은 한 토큰이 가까운 과거의 제한된 범위만 보게 하고, 압축된 토큰에 full attention을 하는 구조가 들어가며, Compressed Sparse Attention은 context를 4분의 1로 압축한 뒤 top-k에만 attention을 한다. 이 조합은 직관적으로는 단순해 보이지만, 김성현은 왜 이 선택들이 실제로 작동하는지 명확히 설명하기 어렵다고 말한다.",
+    "가장 어려운 지점은 Lightning Indexer와 top-k 선택이다. sparse하게 보려면 중요한 k개를 골라야 하지만, top-k는 기본적으로 미분 불가능한 선택 연산이다. 선택된 값에는 gradient가 흐르지만 무엇을 선택할지 자체를 학습하기 어렵다. MoE에서도 sparse routing이 학습을 까다롭게 만들지만, attention에서는 100만 개 중 k개를 고르는 식으로 선택지 규모가 훨씬 커진다.",
+    "DeepSeek은 이 문제를 절충하지 않고 거의 from-scratch pre-training에 가깝게 밀어붙였다. 초반 1T 토큰 정도는 dense attention으로 학습하지만, 나머지 30T 이상은 Sparse Attention을 학습한다. 중국의 다른 실험들이 sparse attention은 dense attention 뒤에 얹는 것이 현실적이라고 봤던 데 비해, DeepSeek은 오랜 시행착오 끝에 정면 돌파한 셈이다.",
+    "다른 아키텍처 변화도 크다. DeepSeek의 상징 같았던 MLA는 빠지고 더 단순한 Multi-Query Attention 쪽으로 이동한다. 대신 residual connection의 통로 폭을 넓히는 mHC가 들어가고, Adam 이후 중국 모델들이 많이 쓰는 Muon Optimizer가 도입된다. DeepSeek은 일반적인 Muon 설정을 그대로 따르지 않고 더 정확하게 1에 가까워지도록 수정했다는 점도 언급된다.",
+    "인프라는 알고리즘만큼 복잡하다. MoE pipeline 최적화는 통신과 연산을 겹쳐 bubble을 줄이고, mega-kernel은 CUDA kernel의 밀도를 높여 전력 throttling이 걸릴 정도까지 가속 프로세서에 부하를 건다. TileLang 기여, batch invariance kernel, FP4 Quantization까지 이어지는 설명은 모델 성능이 paper 수식만이 아니라 실제 학습·추론 인프라의 총합이라는 점을 보여 준다.",
+    "학습 데이터와 context 구성도 이례적이다. DeepSeek-V4는 32T 토큰을 준비했다고만 말하고, 구체적인 데이터 구성이나 synthetic data 사용 여부는 거의 밝히지 않는다. 대신 4K에서 시작해 16K로 올리고, 이후 나머지 30T 이상을 64K 이상으로 학습하는 long-context pre-training이 강조된다. 이는 긴 문서가 충분히 많고, Sparse Attention 덕분에 그런 길이의 학습이 효율적이라는 뜻으로 해석된다.",
+    "학습 불안정성은 DeepSeek-V4 리포트의 또 다른 신호다. 요즘 프론티어 모델들은 학습이 안정적이라고 말하는 경우가 많지만, 여기서는 clamping과 Anticipatory Routing 같은 장치가 등장한다. Anticipatory Routing은 MoE routing을 몇 step 이전의 weight로 수행하는 복잡한 구조인데, 왜 이렇게까지 해야 했는지는 진행자들도 미스터리로 남긴다.",
+    "post-training에서는 On-Policy Distillation과 Rubric Reward가 중심이다. 코딩 전문가, 수학 추론 모델, 일반 추론 모델 같은 여러 전문가를 학습한 뒤 distillation해 최종 모델을 만들고, rubric 기반 reward model을 사용한다. 1M 토큰 context에서 RL을 하려면 100만 토큰을 빠르게 생성하고 sandbox와 상호작용해야 하므로, Docker 컨테이너와 storage 서비스까지 포함한 인프라가 병목이 된다.",
+    "벤치마크에서는 DeepSeek-V4가 Claude, GPT, Gemini와 비교되지만, 김성현은 post-training에는 아직 더 밀어붙일 여지가 있다고 본다. pre-training은 미국 프론티어와 동등하거나 일부 더 나은 수준에 근접했지만, 남은 싸움은 post-training에 pre-training만큼의 연산과 인프라를 투입하는 국면이라는 것이다. 그래서 V4는 완성판이라기보다 새로운 종을 연 preview처럼 읽힌다.",
+    "마지막으로 회차는 중국 프론티어의 실체감으로 닫힌다. DeepSeek이 NVIDIA 칩과 화웨이 칩을 함께 언급한 점, Meta Muse Spark보다 더 임팩트 있게 느껴진다는 평가, 항저우에 가서 엔지니어들을 만나야겠다는 노정석의 감상은 모두 같은 결론을 향한다. 모델 성능 자체보다 이제 이 기술로 어떤 사업 가치와 고객 문제 해결을 만들 것인가가 다음 경쟁 구도다."
+  ],
+  "entities": [
+    {
+      "id": "dsv4",
+      "label": "DeepSeek-V4",
+      "type": "model",
+      "aliases": [
+        "DeepSeek-V4",
+        "DeepSeek"
+      ]
+    },
+    {
+      "id": "sparse-attention",
+      "label": "Sparse Attention",
+      "type": "concept",
+      "aliases": [
+        "Sparse Attention",
+        "sparse attention"
+      ]
+    },
+    {
+      "id": "kv",
+      "label": "KV 캐시",
+      "type": "concept",
+      "aliases": [
+        "KV 캐시",
+        "KV cache",
+        "KV캐시"
+      ]
+    },
+    {
+      "id": "lightning-indexer",
+      "label": "Lightning Indexer",
+      "type": "concept",
+      "aliases": [
+        "Lightning Indexer"
+      ]
+    },
+    {
+      "id": "top-k",
+      "label": "top-k",
+      "type": "concept",
+      "aliases": [
+        "top-k"
+      ]
+    },
+    {
+      "id": "moe",
+      "label": "MoE",
+      "type": "concept",
+      "aliases": [
+        "MoE"
+      ]
+    },
+    {
+      "id": "mla",
+      "label": "MLA",
+      "type": "concept",
+      "aliases": [
+        "MLA"
+      ]
+    },
+    {
+      "id": "mhc",
+      "label": "mHC",
+      "type": "concept",
+      "aliases": [
+        "mHC"
+      ]
+    },
+    {
+      "id": "muon",
+      "label": "Muon Optimizer",
+      "type": "concept",
+      "aliases": [
+        "Muon Optimizer",
+        "Muon"
+      ]
+    },
+    {
+      "id": "mega-kernel",
+      "label": "mega-kernel",
+      "type": "concept",
+      "aliases": [
+        "mega-kernel"
+      ]
+    },
+    {
+      "id": "fp4",
+      "label": "FP4 Quantization",
+      "type": "concept",
+      "aliases": [
+        "FP4 Quantization",
+        "FP4"
+      ]
+    },
+    {
+      "id": "anticipatory-routing",
+      "label": "Anticipatory Routing",
+      "type": "concept",
+      "aliases": [
+        "Anticipatory Routing"
+      ]
+    },
+    {
+      "id": "on-policy-distillation",
+      "label": "On-Policy Distillation",
+      "type": "concept",
+      "aliases": [
+        "On-Policy Distillation"
+      ]
+    },
+    {
+      "id": "rubric-reward",
+      "label": "Rubric Reward",
+      "type": "concept",
+      "aliases": [
+        "Rubric Reward",
+        "rubric 기반 reward"
+      ]
+    },
+    {
+      "id": "huawei-chip",
+      "label": "화웨이 칩",
+      "type": "concept",
+      "aliases": [
+        "화웨이 칩"
+      ]
+    }
+  ],
+  "notable_quote": {
+    "text": "프론티어가 여기에 있네",
+    "speaker": "노정석"
+  },
+  "language": "ko",
+  "extractor": "deepseek-pro",
+  "extracted_at": "2026-07-03",
+  "review_status": "draft"
+}

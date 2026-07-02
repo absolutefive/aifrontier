@@ -1,0 +1,271 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 90,
+  "slug": "ten-years-after-alphago",
+  "title": "알파고 이후, 10년 (feat. HyperAccel 이진원 CTO)",
+  "published_date": "2026-03-15",
+  "hosts": [
+    "노정석",
+    "최승준",
+    "이진원"
+  ],
+  "category": "AI 역사",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep90",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep90/page.html",
+  "one_line": "AlphaGo 이후 10년은 검증 가능한 반복, 커뮤니티, 스케일, Transformer, 인프라가 겹치며 AI가 연구 이벤트에서 일과 산업의 운영 원리로 이동한 역사다.",
+  "key_points": [
+    "HyperAccel은 HBM 대신 LPDDR을 쓰는 추론 전용 AI 반도체로 서비스 가격을 낮추려는 인프라 관점의 문제의식을 제시한다.",
+    "AlphaGo의 37수와 Noam Brown의 비교는 인간 데이터 모방, 추론 시 compute 투입, 강화학습이라는 구조가 오늘날 reasoning model과 이어져 있음을 보여 준다.",
+    "Autoresearch와 Ralphthon은 검증 가능한 지표와 하네스를 정교하게 만들면 연구와 코딩 작업도 반복 최적화 문제로 바뀐다는 흐름을 보여 준다.",
+    "ImageNet, YouTube 고양이, CS231n, DeepDream, TensorFlow Korea와 PR 12는 한국 딥러닝 커뮤니티가 AlphaGo 충격을 학습 에너지로 바꾼 장면들이다.",
+    "Transformer, BERT, GPT, Vision Transformer의 역사는 inductive bias를 줄이고 데이터·parallelism·확장성에 기대는 Bitter Lesson의 반복으로 해석된다.",
+    "10년 회고의 결론은 소프트웨어의 시대가 끝난 것이 아니라, 소프트웨어를 만들던 사람의 방식이 끝나고 새 가치 생산 방식이 열린다는 것이다."
+  ],
+  "flow": [
+    {
+      "stage": "인프라",
+      "summary": "HyperAccel 이진원 CTO가 추론 전용 AI 반도체와 서비스 가격 문제를 소개한다."
+    },
+    {
+      "stage": "AlphaGo",
+      "summary": "AlphaGo 10주년, Noam Brown의 reasoning model 비교, 37수와 Platform 37의 상징성을 다룬다."
+    },
+    {
+      "stage": "루프",
+      "summary": "Autoresearch와 Ralphthon을 통해 검증 가능한 신호, 계획, 평가 하네스의 중요성을 본다."
+    },
+    {
+      "stage": "초기 딥러닝",
+      "summary": "ImageNet, NPU 개발, YouTube 고양이 실험, Karpathy 문서와 CS231n을 회고한다."
+    },
+    {
+      "stage": "커뮤니티",
+      "summary": "PR 12, TensorFlow Korea, 프레임워크 변화, David Ha와 GAN의 유행을 짚는다."
+    },
+    {
+      "stage": "Transformer",
+      "summary": "Attention, Bitter Lesson, BERT와 GPT의 차이, LLM으로 이어진 확장성을 설명한다."
+    },
+    {
+      "stage": "파운데이션 모델",
+      "summary": "Stability AI, HyperCLOVA, Vision Transformer와 데이터 스케일의 벽을 살핀다."
+    },
+    {
+      "stage": "미래",
+      "summary": "Man-Computer Symbiosis, 가속하는 변화, 37수가 다른 도메인에서 반복될 가능성으로 마무리한다."
+    }
+  ],
+  "body_paragraphs": [
+    "이번 회차는 AlphaGo 충격 이후 10년을 돌아보는 회고다. 게스트로 나온 HyperAccel 이진원 CTO는 2014년 무렵부터 딥러닝을 공부하고, 삼성전자에서 NPU 개발을 하며, PR 12 논문 읽기 모임과 TensorFlow Korea 커뮤니티에 참여했던 초기 딥러닝 세대의 시선을 제공한다. HyperAccel의 현재 문제의식은 추론 인프라와 서비스 가격이다. AI 서비스는 HBM과 고가 공정 때문에 아직 비싸고, 이진원은 LPDDR 기반 추론 전용 AI 반도체로 서버 가격을 10분의 1로 낮추고 월 3만 원 수준의 서비스를 5천 원 이하로 줄이는 목표를 소개한다.",
+    "AlphaGo 10주년을 맞아 Noam Brown은 오늘날 reasoning model과 AlphaGo의 유사성을 짚는다. 방대한 인간 데이터를 모방하고, 추론 시점에 더 많은 compute를 쓰며, 강화학습으로 단순 모방을 넘어서는 구조가 닮았다는 것이다. 당시의 Monte Carlo Tree Search가 오늘의 Chain of Thought와 직접 같지는 않지만, 더 나은 답을 위해 추론 시간을 쓰는 감각은 이어진다.",
+    "37수는 이 회차의 상징이다. Google DeepMind가 신사옥에 Platform 37이라는 이름을 붙이는 장면은, AlphaGo의 두 번째 대국 37수가 단순한 바둑 한 수를 넘어 AI가 인간의 직관 바깥에서 새 가능성을 제시한 순간으로 기억된다는 뜻이다. 노정석은 2016년 대국 현장에서 1국 이후 모두가 충격에 빠졌던 분위기를 회고하고, 한국 커뮤니티가 그 충격을 일찍 맞은 덕을 봤다고 본다.",
+    "Autoresearch는 AlphaGo의 자기 증강 논의를 현재형으로 가져온다. Andrej Karpathy의 실험은 train.py, prepare.py, program.md처럼 간단한 파일과 validation 점수만으로 성능을 낮추는 방향의 연구 루프를 돌린다. 핵심은 평가 가능한 metric이 있을 때 never stop에 가까운 반복이 실제 성과를 낸다는 점이며, 이는 RLVR과 Ralph loop의 응용 레이어 버전처럼 읽힌다.",
+    "Ralphthon 사례도 같은 결론을 준다. OpenAI와 함께 열린 행사에서 12시간 동안 계획을 세운 뒤 손을 댈 수 없고 RL 루프만 돌아가는 조건에서, 좋은 성적을 낸 사람들은 계획과 평가 하네스를 정교하게 설계한 사람들이었다. 결국 무한 반복 자체보다, 출발 컨텍스트와 evaluation metric을 어떻게 깔끔하게 설계하느냐가 중요하다.",
+    "10년 회고의 초반부는 ImageNet과 NPU 개발로 돌아간다. 이진원은 2014년 Google이 ImageNet에서 1등을 한 일을 보고 딥러닝에 본격적으로 관심을 가졌고, 삼성전자에서 동영상 코덱처럼 스펙이 고정된 반도체와 달리 알고리즘이 계속 바뀌는 NPU를 만들며 논문을 읽기 시작했다. 딥러닝은 뉴럴넷의 리브랜딩이면서, inductive bias를 줄이고 스케일을 키우는 Bitter Lesson의 방향이었다.",
+    "YouTube 고양이 실험은 창발의 상징으로 등장한다. 대규모 클러스터가 유튜브 영상을 비지도 방식으로 학습하다가 특정 레이어에서 고양이 얼굴을 인식하는 필터를 만든 사건은, 지능이 명시적 규칙 없이 학습에서 emerge할 수 있다는 감각을 줬다. 당시에는 Watson, HMM, Caffe, Theano 같은 흐름이 공존했고, 아직 무엇이 본류가 될지 모두에게 분명하지 않았다.",
+    "Karpathy의 Hacker's Guide to Neural Networks, CS231n, DeepDream, Chris Olah의 시각화 글들은 초기 딥러닝 커뮤니티의 학습 경로였다. ImageNet, VGG, GoogLeNet, ResNet, style transfer, neural style 같은 비전 중심의 유행은 사람들이 직접 돌려 보고 이해할 수 있는 구체적 장난감이자 연구였다. PR 12와 TensorFlow Korea도 AlphaGo 충격 이후 한국에서 이런 학습 에너지가 모인 장이었다.",
+    "프레임워크와 생성 모델의 흐름도 빠르게 바뀌었다. Torch, Theano, Caffe, Keras, TensorFlow, PyTorch가 차례로 등장했고, TensorFlow Korea는 한때 전 세계적으로도 큰 사용자 그룹이었다. David Ha의 creative coding과 GAN의 유행은 생성 AI의 초기 형태를 보여 줬다. DCGAN, image-to-image translation, StyleGAN은 지금 보면 서툴어도, 당시에는 처음으로 AI가 이미지를 만들어내는 감각을 준 사건이었다.",
+    "Transformer는 이 긴 흐름의 전환점이다. Attention은 이미지 캡션과 CNN feature map 선택 같은 곳에서도 이미 싹이 있었지만, Attention Is All You Need는 RNN 없이 parallelism을 극대화하는 구조로 등장했다. 이진원은 CNN과 convolution이 local bias를 가진 구조라면, 스케일이 커질수록 더 general한 Transformer가 이기는 것이 Bitter Lesson과 맞닿아 있다고 설명한다.",
+    "BERT와 GPT의 갈림길은 LLM으로 가는 확장성을 보여 준다. BERT는 self-supervised learning으로 라벨 없는 데이터를 폭발적으로 쓸 수 있게 만들었지만, encoder 구조라 생성 시 전체 입력을 다시 봐야 한다. GPT는 앞 단어만 보고 다음 단어를 예측하는 decoder라 초기에는 불리해 보였지만, key-value cache를 활용해 새 토큰만 계산하면 되는 확장성 때문에 결국 현재 LLM의 주류가 됐다.",
+    "Stability AI, HyperCLOVA, Vision Transformer는 국가·커뮤니티·스케일의 문제를 다시 보여 준다. Stable Diffusion은 LAION과 Eleuther 같은 커뮤니티 위에서 이미지를 대중화했고, 한국에서는 HyperCLOVA와 LG AI연구원, KT, 카카오 계열 시도들이 파운데이션 모델을 전략 자산으로 보게 만들었다. Vision Transformer는 2020년에야 성공했는데, 핵심은 구조보다 ImageNet 1,400만 장을 넘어서는 JFT급 데이터와 스케일이었다.",
+    "마지막 회고는 Man-Computer Symbiosis로 돌아간다. 1960년의 예측은 시점은 틀렸지만, 초지능이 오기 전 인간과 컴퓨터가 함께 겪는 창조적이고 흥미진진한 시대라는 방향은 맞았다고 최승준은 본다. 노정석은 2024년 GPT-4 이후의 압축된 속도 때문에 10년 전 사건들이 너무 오래전처럼 느껴진다고 말한다.",
+    "결론은 가치 생산의 관점 변화다. Claude Code가 있으면 망해도 다시 일어날 수 있다는 농담처럼, 소프트웨어가 끝나는 것이 아니라 소프트웨어의 시대가 진짜 열리고 있다. 다만 소프트웨어를 만들던 사람의 시대, 즉 사람이 직접 코드를 생산하던 방식은 끝나고 있다. Platform 37의 의미도 바둑에 머물지 않고, 생물학과 다른 도메인에서 37수 같은 순간들이 반복되는 방향으로 확장된다."
+  ],
+  "entities": [
+    {
+      "id": "alphago",
+      "label": "AlphaGo",
+      "type": "model",
+      "aliases": [
+        "AlphaGo"
+      ]
+    },
+    {
+      "id": "hyperaccel",
+      "label": "HyperAccel",
+      "type": "concept",
+      "aliases": [
+        "HyperAccel"
+      ]
+    },
+    {
+      "id": "lee-jinwon",
+      "label": "이진원",
+      "type": "person",
+      "aliases": [
+        "이진원"
+      ]
+    },
+    {
+      "id": "hbm",
+      "label": "HBM",
+      "type": "concept",
+      "aliases": [
+        "HBM"
+      ]
+    },
+    {
+      "id": "lpddr",
+      "label": "LPDDR",
+      "type": "concept",
+      "aliases": [
+        "LPDDR"
+      ]
+    },
+    {
+      "id": "noam-brown",
+      "label": "Noam Brown",
+      "type": "person",
+      "aliases": [
+        "Noam Brown"
+      ]
+    },
+    {
+      "id": "platform-37",
+      "label": "Platform 37",
+      "type": "concept",
+      "aliases": [
+        "Platform 37",
+        "37수"
+      ]
+    },
+    {
+      "id": "karpathy",
+      "label": "Andrej Karpathy",
+      "type": "person",
+      "aliases": [
+        "Andrej Karpathy",
+        "Karpathy"
+      ]
+    },
+    {
+      "id": "auto-research",
+      "label": "auto research",
+      "type": "concept",
+      "aliases": [
+        "Autoresearch",
+        "auto research"
+      ]
+    },
+    {
+      "id": "rlvr",
+      "label": "RLVR",
+      "type": "concept",
+      "aliases": [
+        "RLVR"
+      ]
+    },
+    {
+      "id": "ralph-loop",
+      "label": "Ralph loop",
+      "type": "concept",
+      "aliases": [
+        "Ralph loop"
+      ]
+    },
+    {
+      "id": "imagenet",
+      "label": "ImageNet",
+      "type": "concept",
+      "aliases": [
+        "ImageNet"
+      ]
+    },
+    {
+      "id": "npu",
+      "label": "NPU",
+      "type": "concept",
+      "aliases": [
+        "NPU"
+      ]
+    },
+    {
+      "id": "bitter-lesson",
+      "label": "Bitter Lesson",
+      "type": "concept",
+      "aliases": [
+        "Bitter Lesson"
+      ]
+    },
+    {
+      "id": "chris-olah",
+      "label": "Chris Olah",
+      "type": "person",
+      "aliases": [
+        "Chris Olah"
+      ]
+    },
+    {
+      "id": "gan",
+      "label": "GAN",
+      "type": "concept",
+      "aliases": [
+        "GAN"
+      ]
+    },
+    {
+      "id": "transformer",
+      "label": "Transformer",
+      "type": "concept",
+      "aliases": [
+        "Transformer"
+      ]
+    },
+    {
+      "id": "bert",
+      "label": "BERT",
+      "type": "model",
+      "aliases": [
+        "BERT"
+      ]
+    },
+    {
+      "id": "gpt",
+      "label": "GPT",
+      "type": "model",
+      "aliases": [
+        "GPT"
+      ]
+    },
+    {
+      "id": "hyperclova",
+      "label": "HyperCLOVA",
+      "type": "model",
+      "aliases": [
+        "HyperCLOVA"
+      ]
+    },
+    {
+      "id": "vision-transformer",
+      "label": "Vision Transformer",
+      "type": "model",
+      "aliases": [
+        "Vision Transformer"
+      ]
+    },
+    {
+      "id": "man-computer-symbiosis",
+      "label": "Man-Computer Symbiosis",
+      "type": "concept",
+      "aliases": [
+        "Man-Computer Symbiosis"
+      ]
+    },
+    {
+      "id": "claude-code",
+      "label": "Claude Code",
+      "type": "model",
+      "aliases": [
+        "Claude Code"
+      ]
+    }
+  ],
+  "notable_quote": {
+    "text": "소프트웨어의 시대가 진짜 활짝 열리는 건데, 소프트웨어를 만들던 사람의 시대가 끝난 거죠.",
+    "speaker": "노정석"
+  },
+  "language": "ko",
+  "extractor": "deepseek-pro",
+  "extracted_at": "2026-07-03",
+  "review_status": "draft"
+}

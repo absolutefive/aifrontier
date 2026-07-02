@@ -1,0 +1,190 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 99,
+  "slug": "opus48-ai-competition-human-work",
+  "title": "Opus 4.8 출시, 요즘 AI 경쟁과 인간의 일",
+  "published_date": "2026-06-07",
+  "hosts": [
+    "노정석",
+    "최승준"
+  ],
+  "category": "모델·전략",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep99",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep99/page.html",
+  "one_line": "Opus 4.8 이후 모델 경쟁은 더 빠른 교체 주기와 함께, 성능 자체보다 harness·latency·토큰 비용을 조합해 일을 끝내는 능력으로 이동한다.",
+  "key_points": [
+    "Opus 4.8은 Opus 4.7 이후 43일 만에 나오며 프런티어 모델의 교체 주기가 더 짧아지고 있음을 보여 준다.",
+    "Anthropic은 Opus 효율화와 Mythos급 모델 예고를 통해 모델 체급과 비용 구조를 재정렬하고 있다.",
+    "Gemini 3.5 Flash와 Dynamic Workflows 사례는 장기 실행 에이전트에서 모델보다 orchestration과 harness가 중요해지는 흐름을 보여 준다.",
+    "수학 연구 사례에서는 AI가 인간을 대체하기보다 AlphaGo 이후 바둑처럼 인간의 탐색 공간과 직관을 넓히는 양상이 나타난다.",
+    "AI 기업의 채용 확대는 전통적 개발자 수요보다 고객 문제를 AI로 풀 수 있는 AI native talent 수요로 읽어야 한다.",
+    "토큰 가격과 온프레미스 수요, latency trade-off가 기업 AI 도입의 핵심 비용 변수가 된다."
+  ],
+  "flow": [
+    {
+      "stage": "릴리스 가속",
+      "summary": "Opus 4.8의 43일 출시 주기와 싱귤래리티적 속도 가속을 짚는다."
+    },
+    {
+      "stage": "모델 체급 재편",
+      "summary": "Anthropic의 Opus 효율화, Mythos 예고, Gemini 3.5 Flash와 GPT 경쟁 구도를 본다."
+    },
+    {
+      "stage": "토큰과 지연시간",
+      "summary": "업무용 에이전트에서 성능보다 latency와 토큰 경제가 모델 선택을 좌우하기 시작한다."
+    },
+    {
+      "stage": "동적 워크플로",
+      "summary": "Dynamic Workflows, Managed Agents, RLM, DSPy, TextGrad를 code as harness의 흐름으로 묶는다."
+    },
+    {
+      "stage": "인간 증강",
+      "summary": "에르되시 문제와 AlphaGo 이후 바둑 사례를 통해 AI가 인간 연구자를 강하게 만드는 방식을 논의한다."
+    },
+    {
+      "stage": "일의 재정의",
+      "summary": "개발자 고용과 AI 기업 채용을 AI native problem solver의 부상으로 해석한다."
+    },
+    {
+      "stage": "기업 도입",
+      "summary": "API 비용 증가, 온프레미스 모델, 모델 성능과 latency trade-off를 기업 관점에서 본다."
+    },
+    {
+      "stage": "플랫폼 사이클",
+      "summary": "a16z와 Vinod Khosla 관점에서 AI 인프라 붐, intelligence 수요, IPO 가능성을 정리한다."
+    }
+  ],
+  "body_paragraphs": [
+    "이번 회차는 Google I/O와 Anthropic의 Opus 4.8 발표 이후, AI 경쟁의 속도와 방향이 어떻게 달라지는지를 짚는다. Opus 4.7이 4월 16일에 나온 뒤 Opus 4.8이 43일 만에 등장했다는 사실은 두 진행자에게 강한 신호다. 두 달 단위로 모델이 deploy되고 retire될 것이라는 감각마저 더 짧아지고 있다는 것이다.",
+    "그 속도는 싱귤래리티라는 오래된 단어와 다시 연결된다. 발전 속도가 계속 증가하다 어느 시점에 사실상 무한히 가팔라진다는 상상인데, 최승준은 2026년의 '두 달 리듬'이 이미 43일로 당겨졌다고 보고, 노정석은 그것이 싱귤래리티를 향한 가속의 한 장면이라고 해석한다.",
+    "Anthropic의 메시지는 단순히 더 강한 모델이 아니라 모델 체급의 재배치다. Opus 4.8은 이전 Opus의 역량을 유지하면서도 더 낮은 비용으로 쓰는 방향을 보이고, 동시에 Mythos급 모델을 몇 주 안에 더 넓게 제공할 수 있다는 신호를 냈다. 진행자들은 Mythos가 새로운 Opus가 되고 Opus가 Sonnet 자리로 내려오는 식의 체급 변화까지 상상한다.",
+    "Google 쪽에서는 Gemini 3.5 Flash가 여름 경쟁의 예고편처럼 다뤄진다. Flash는 최고 성능 모델이라기보다 적정 비용과 속도로 긴 작업을 밀어붙이는 모델이다. Varun Mohan이 93개 subagent와 15,000여 번의 model call로 custom kernel, filesystem, driver를 만들고 Doom을 부팅한 데모는 장기 실행 작업의 방향을 잘 보여 준다.",
+    "이 지점에서 토큰 경제와 latency가 모델 선택의 중심으로 올라온다. 노정석은 회사 업무가 Codex, Claude Code, Slack에 붙은 agent application과의 상호작용으로 바뀌고 있다고 말한다. 품질이 일정 수준에 도달하면 다음 요구는 더 빠른 응답이며, 그래서 '최고급 모델'보다 빠르고 충분히 좋은 모델이라는 새 기준이 생긴다.",
+    "Anthropic Dynamic Workflows는 이 흐름을 제품화한 사례로 읽힌다. 큰 모델이 매번 판단하는 대신 처음에 subagent를 조율하는 JavaScript 같은 결정적 구조를 만들고, 여러 Claude를 분기·집계해 작업을 밀어붙이는 방식이다. 기존 Agent Teams나 oh-my-openagent류의 실험과 닮았지만, 핵심은 context 안의 즉흥 판단보다 바깥의 orchestration 구조가 중요해졌다는 점이다.",
+    "이 논의는 Managed Agents와 Recursive Language Models, DSPy, TextGrad로 이어진다. REPL이나 sandbox, session abstraction을 context 밖 object처럼 두고, LLM이 code execution과 recursive sub-LLM call을 사용하게 만드는 흐름이다. 노정석은 이를 meta optimization의 층위가 하나 더 올라간 일로 보고, 평가 지표가 있으면 모델이 compute를 써서 검색하듯 성능을 올리는 구조라고 설명한다.",
+    "강규영 CTO가 제안한 code as harness라는 표현은 회차의 중간 결론에 가깝다. Cloudflare Dynamic Workflows와 Project Think처럼 장기 실행 agent, actor model, Durable Objects가 거론되는 이유는 모델만으로는 긴 작업을 안정적으로 끝내기 어렵기 때문이다. 기업 현장에서는 agent가 10분, 20분, 30분씩 돌아가며 일을 하므로, latency와 자체 harness에 대한 수요가 자연스럽게 커진다.",
+    "수학 사례는 AI가 인간의 일을 빼앗는다는 단순한 서사를 흔든다. OpenAI 내부 모델이 특수한 스캐폴딩으로 에르되시 문제 중 하나를 푸는 데 기여했고, 이후 인간 수학자들이 그 방법에서 영감을 받아 다른 문제를 진전시켰다는 흐름이 소개된다. Noam Brown의 표현처럼 AlphaGo 이후 인간 바둑 기사들이 강해졌듯, AI가 수학자의 탐색 공간과 직관을 넓히는 일이 벌어지고 있다.",
+    "그러나 동시에 생성형 인지 저하에 대한 우려도 남는다. 최승준은 생각을 모델에 계속 offloading하면 내 생각의 근육이 줄어드는 느낌을 말한다. 같은 기술이 한쪽에서는 intelligence augmentation을 만들고, 다른 한쪽에서는 slot machine처럼 도파민은 주지만 사용자의 역량을 약하게 만들 수 있다는 긴장이 이 회차의 인간적 고민이다.",
+    "일의 개념도 재정의된다. Simon Willison이 OpenAI와 Anthropic의 채용 공고를 분석하며 두 회사가 product-market fit을 찾았다고 본 대목에서, 두 진행자는 개발자 고용 증가를 단순히 전통적 엔지니어 수요로 읽지 않는다. 노정석은 Claude Code를 잘 다루는 사람보다 고객의 문제, 도메인, 영업·마케팅 감각까지 묶어 해결하는 AI native talent가 필요해진다고 본다.",
+    "그 변화는 조직 안의 암묵지도 바꾼다. 과거에는 AWS, Redis, DB, SQL, OS, 아키텍처를 이해하는 엔지니어가 강했지만, 이제 그런 지식 중 일부는 agent의 memory와 skill로 encapsulation되어 아래 layer로 내려간다. 전통 엔지니어 출신이 아닌 PM이나 마케터도 Claude Code와 축적된 prompt를 결합하면 단위 문제를 끝까지 해결하는 경험을 할 수 있다는 것이다.",
+    "기업 도입에서는 비용과 배치 전략이 더 중요해진다. 대기업이나 은행, 대형 IP 기업은 Claude Code를 그대로 쓰기 어렵기 때문에 Qwen, GLM 같은 로컬 모델을 Claude Code harness나 Codex류 문제 해결 앱에 붙여 온프레미스로 돌리려는 수요가 커진다. 결국 모델 벤치마크 성능과 latency의 trade-off를 문제 규모에 맞게 촘촘히 배치해야 예산이 무너지지 않는다.",
+    "마무리는 플랫폼 사이클과 intelligence 수요의 상방으로 향한다. a16z식 관점에서 보면 칩과 인프라 붐은 AI 사이클의 끝이 아니라 시작일 수 있고, Vinod Khosla의 말처럼 intelligence는 인터넷이나 모바일보다 수요 상한이 훨씬 열려 있다. 그래서 OpenAI와 Anthropic의 IPO 가능성은 끝이 아니라 public market에서 AI 플랫폼 경쟁이 새로 숫자로 드러나는 이정표로 읽힌다."
+  ],
+  "entities": [
+    {
+      "id": "opus48",
+      "label": "Opus 4.8",
+      "type": "model",
+      "aliases": [
+        "Opus 4.8"
+      ]
+    },
+    {
+      "id": "mythos",
+      "label": "Mythos",
+      "type": "model",
+      "aliases": [
+        "Mythos"
+      ]
+    },
+    {
+      "id": "gemini35-flash",
+      "label": "Gemini 3.5 Flash",
+      "type": "model",
+      "aliases": [
+        "Gemini 3.5 Flash",
+        "Flash"
+      ]
+    },
+    {
+      "id": "claude-code",
+      "label": "Claude Code",
+      "type": "model",
+      "aliases": [
+        "Claude Code"
+      ]
+    },
+    {
+      "id": "dynamic-workflows",
+      "label": "Dynamic Workflows",
+      "type": "concept",
+      "aliases": [
+        "Dynamic Workflows"
+      ]
+    },
+    {
+      "id": "code-as-harness",
+      "label": "code as harness",
+      "type": "concept",
+      "aliases": [
+        "code as harness",
+        "harness"
+      ]
+    },
+    {
+      "id": "rlm",
+      "label": "Recursive Language Models",
+      "type": "concept",
+      "aliases": [
+        "Recursive Language Models",
+        "RLM"
+      ]
+    },
+    {
+      "id": "dspy",
+      "label": "DSPy",
+      "type": "concept",
+      "aliases": [
+        "DSPy"
+      ]
+    },
+    {
+      "id": "textgrad",
+      "label": "TextGrad",
+      "type": "concept",
+      "aliases": [
+        "TextGrad"
+      ]
+    },
+    {
+      "id": "latency",
+      "label": "latency",
+      "type": "concept",
+      "aliases": [
+        "latency"
+      ]
+    },
+    {
+      "id": "ai-native-talent",
+      "label": "AI native talent",
+      "type": "concept",
+      "aliases": [
+        "AI native talent"
+      ]
+    },
+    {
+      "id": "simon-willison",
+      "label": "Simon Willison",
+      "type": "person",
+      "aliases": [
+        "Simon Willison"
+      ]
+    },
+    {
+      "id": "vinod-khosla",
+      "label": "Vinod Khosla",
+      "type": "person",
+      "aliases": [
+        "Vinod Khosla"
+      ]
+    }
+  ],
+  "notable_quote": {
+    "text": "이제 다음 층 위로 기어가 좀 바뀌었어요.",
+    "speaker": "노정석"
+  },
+  "language": "ko",
+  "extractor": "deepseek-pro",
+  "extracted_at": "2026-07-03",
+  "review_status": "draft"
+}

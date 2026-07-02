@@ -1,0 +1,213 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 94,
+  "slug": "anthropic-low-hanging-fruits",
+  "title": "Anthropic과 낮게 열린 과실들",
+  "published_date": "2026-04-21",
+  "hosts": [
+    "노정석",
+    "최승준"
+  ],
+  "category": "AI 사업",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep94",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep94/page.html",
+  "one_line": "Anthropic의 Mythos·Opus 4.7·Claude Design 흐름은 모델 안에 쌓인 capability overhang을 하네스와 도메인으로 꺼내 쓰는 싸움이 시작됐음을 보여 준다.",
+  "key_points": [
+    "Opus 계열의 릴리스 간격은 약 70일 주기로 좁아지고, 새 모델이 나올 때마다 프롬프트와 워크플로를 다시 맞춰야 한다.",
+    "Anthropic은 Claude Code와 B2B·코딩 유스케이스에 집중하며 OpenAI와 Google보다 코딩 에이전트 의제를 선점했다.",
+    "Mythos는 10T 스케일, 사이버보안 능력, 컴퓨트 제약, IPO 마케팅 논란이 얽힌 상징적 모델로 다뤄진다.",
+    "Opus 4.7의 Adaptive Thinking, tokenizer 변화, Knowledge Distillation 추정은 모델 체급과 비용 구조가 재편되고 있음을 시사한다.",
+    "Managed Agent, Automated Alignment Researcher, Alien Science는 모델이 강해질수록 하네스·검증·정렬 문제가 더 중요해지는 방향을 보여 준다.",
+    "도망자의 사업 기회는 ChatGPT unbundling과 AI for Science라는 두 갈래로 정리된다."
+  ],
+  "flow": [
+    {
+      "stage": "뉴스 폭주",
+      "summary": "2주 사이 Anthropic, Codex, GPT-Rosalind, 과학 AI 소식이 한꺼번에 쏟아진 맥락을 잡는다."
+    },
+    {
+      "stage": "Anthropic 집중",
+      "summary": "70일 모델 릴리스 주기, Claude Code 업데이트, 텍스트·코딩 집중 전략을 본다."
+    },
+    {
+      "stage": "Mythos와 Opus",
+      "summary": "Mythos 10T, 보안 능력, Opus 4.7의 Adaptive Thinking과 tokenizer·증류 추정을 다룬다."
+    },
+    {
+      "stage": "비용과 경쟁",
+      "summary": "토큰 가격 상승, 중국 랩과 Google 변수, capability overhang을 꺼내 쓰는 경쟁을 정리한다."
+    },
+    {
+      "stage": "하네스와 검증",
+      "summary": "Managed Agent, Automated Alignment Researcher, Alien Science로 뇌-손 분리와 verifier 한계를 살핀다."
+    },
+    {
+      "stage": "디자인과 앱",
+      "summary": "Claude Design, Codex 앱, 인앱 브라우저와 프론트엔드 피드백 루프를 연결한다."
+    },
+    {
+      "stage": "도망길",
+      "summary": "ChatGPT unbundling과 AI for Science를 도망자 관점의 두 사업 경로로 제시한다."
+    },
+    {
+      "stage": "취향과 결정",
+      "summary": "Attention Business 시대에 시그널과 노이즈를 가르는 취향·의사결정의 가치를 강조한다."
+    }
+  ],
+  "body_paragraphs": [
+    "이번 회차는 2주 만에 쏟아진 AI 소식을 주마간산으로 훑는 형식이다. 이전 회차가 Claude Code 소스코드 유출을 다뤘다면, 그 뒤 Anthropic은 오히려 Claude Code, Mythos, Opus 4.7, Claude Design을 빠르게 밀어붙였다. Codex 앱, GPT-Rosalind, 생명공학·재료공학·화학·물리·수학 쪽 소식까지 겹치며 진행자들은 '2주가 반년의 임팩트'처럼 느껴진다고 말한다.",
+    "첫 신호는 릴리스 주기다. Opus 계열은 2025년 이후 대략 70일 간격으로 새 모델이 나오고, Opus 쪽 간격은 점점 좁아지는 반면 Sonnet과 Haiku의 간격은 넓어진다. 사람들의 수요가 고급 모델에 몰리고 있다는 뜻이며, 새 모델이 나올 때마다 기존 프롬프트와 하네스를 다시 맞추는 일거리가 생긴다.",
+    "Anthropic의 집중 전략은 텍스트와 코딩, B2B 유스케이스에 선명하게 맞춰져 있다. Claude Code는 상반기 코딩 에이전트 의제를 사실상 선점했고, OpenAI는 Codex로 빠르게 뒤따라오며, Google은 과학과 알파 계열 문제에 더 무게를 둔 것처럼 보인다. 진행자들은 Google DeepMind가 뒤처질 것이라고 보지는 않지만, 지금의 이슈를 선점한 쪽은 Anthropic이라고 본다.",
+    "Mythos는 기술과 마케팅이 겹친 상징적 사건이다. 소문상 10T 스케일이고, 사이버보안 능력 때문에 50개 기관에 먼저 얼리 액세스를 주며 출시를 늦춘다는 이야기가 나온다. 다른 한편에서는 Anthropic의 컴퓨트 자원이 Google이나 OpenAI보다 부족해 서빙을 못 하는 것 아니냐는 해석도 있다. 어느 쪽이든 Mythos는 IPO 마케팅과 프론티어 안전성 담론을 동시에 자극한다.",
+    "사이버보안 이슈의 핵심은 모델이 완전히 새로운 악마적 능력을 얻었다기보다, 이미 있는 도구를 잘 조사하고 조합하는 능력이 강해졌다는 데 있다. Nicholas Carlini와 Simon Willison의 논의처럼, zero-day를 찾는 힘은 문헌·도구·취약점 사이의 연결을 탐색하는 능력에서 나온다. 이것이 보안, 수학, 과학에서 낮게 열린 과실을 따는 방식과 닮아 있다.",
+    "노정석은 이를 capability overhang의 싸움으로 요약한다. 모델 안에는 이미 과잉 능력이 쌓여 있고, 지금의 경쟁은 인간이 그것을 얼마나 빨리 잘 꺼내 쓰느냐라는 것이다. 딸깍으로 서비스를 만들거나, 생명공학과 화학에서 새로운 조합을 찾거나, 보안 취약점을 분석하는 일 모두 같은 구조를 갖는다.",
+    "Opus 4.7은 모델 운용과 비용 구조의 변화를 보여 준다. Adaptive Thinking은 웹에서는 모델이 thinking을 켤지 말지 알아서 정하게 만들고, Claude Code에서는 사용자가 thinking 레벨을 높이는 식으로 갈라진다. tokenizer 변화는 영어와 코드에서 토큰 수를 1.3~1.4배 늘려 실제 사용자에게는 토큰 가격 상승처럼 작동한다.",
+    "Mythos와 Opus 4.7의 관계는 Knowledge Distillation 추정으로 이어진다. 신정규 대표의 해석처럼 하나의 큰 Mythos급 모델에서 Opus, Sonnet, Haiku 체급으로 증류하는 통합 파이프라인이 만들어지고 있을 가능성이 거론된다. teacher model이 정답지나 logit distribution을 제공하고, student model이 on-policy로 보정되는 흐름은 프론티어 랩의 실제 제조법을 엿보게 한다.",
+    "Managed Agent는 모델과 하네스가 어떻게 분리되는지를 보여 준다. Anthropic은 뇌와 손을 디커플링하듯 모델, 메모리, 세션 스토리지, 샌드박스, 툴을 분리하고 보안상 시크릿이 모델에 직접 노출되지 않도록 관리하려 한다. 하네스라는 말의 원래 뜻처럼, 아무리 모델이 좋아져도 개인과 회사가 모델을 가두고 제어하는 계층은 남는다.",
+    "Jan Leike가 참여한 Automated Alignment Researcher와 Alien Science 논의는 더 먼 층위를 건드린다. 자동 연구자를 hill climbing처럼 만들 수 있는지, weak model이 strong model을 어떻게 가이드할 수 있는지, 인간이 더 이상 verifier로 개입할 수 없는 연구 결과를 어떻게 다룰지의 문제다. 바둑의 37수처럼 처음엔 이해되지 않는 연구가 모델에서 나오기 시작할 가능성을 대비하는 셈이다.",
+    "Claude Design은 프론트엔드 피드백 루프가 제품으로 내려온 장면이다. DOM 기반 애니메이션, 상호작용 가능한 엘리먼트, CSS 편집, 디자인 에셋을 context로 바로 넣는 흐름은 Claude가 원래 강했던 프론트엔드 취향을 도구화한다. Claude Code와 Codex 앱에 인앱 브라우저가 들어간 것도 같은 방향이다. 모델이 결과물을 보고 inspect하며 피드백 루프를 닫는 구조가 중요해진다.",
+    "그렇다면 도망자의 길은 무엇인가. 노정석은 첫 번째로 ChatGPT unbundling을 든다. Max 요금제를 결제하고 frontier 도구를 따라가는 사람은 아직 소수이고, 뒤따라오는 고객을 대상으로 Claude Code, Codex, ChatGPT가 제공하는 능력을 작은 B2C·B2B 문제로 풀어 파는 시장은 여전히 크다. wrapper 비즈니스가 취약해 보여도 고객과 최신 기술 사이의 간극은 곧 사업 기회다.",
+    "두 번째 길은 AI for Science다. GPT-Rosalind, GitLab CEO Sid Sijbrandij의 개인화 암 치료, Evo 2 같은 유전체 파운데이션 모델은 생명공학·화학·재료공학이 아직 frontier 사람들에게도 낯선 도메인임을 보여 준다. 개인화 정밀의료는 유전자 시퀀싱과 mRNA 백신, T cell 반응 설계가 연결되는 영역이고, wet lab 직전까지는 상당 부분 software engineering처럼 풀 수 있다는 전망이 나온다.",
+    "마지막 결론은 Attention Business다. AI를 써도 볼 것은 너무 많고, 정보의 양은 줄지 않는다. 그래서 반복 업무는 OpenClaw 같은 에이전트에 위임하되, 어떤 신호를 중요하게 볼지, 생명과학과 메모리 매니지먼트처럼 무엇을 다음 주제로 잡을지 결정하는 취향과 의사결정이 인간의 가치가 된다. 낮게 열린 과실을 따는 사람은 결국 모델 능력과 사람의 판단을 연결하는 사람이다."
+  ],
+  "entities": [
+    {
+      "id": "mythos",
+      "label": "Mythos",
+      "type": "model",
+      "aliases": [
+        "Mythos"
+      ]
+    },
+    {
+      "id": "opus47",
+      "label": "Opus 4.7",
+      "type": "model",
+      "aliases": [
+        "Opus 4.7"
+      ]
+    },
+    {
+      "id": "claude-code",
+      "label": "Claude Code",
+      "type": "model",
+      "aliases": [
+        "Claude Code"
+      ]
+    },
+    {
+      "id": "codex",
+      "label": "Codex",
+      "type": "concept",
+      "aliases": [
+        "Codex"
+      ]
+    },
+    {
+      "id": "claude-design",
+      "label": "Claude Design",
+      "type": "concept",
+      "aliases": [
+        "Claude Design"
+      ]
+    },
+    {
+      "id": "capability-overhang",
+      "label": "capability overhang",
+      "type": "concept",
+      "aliases": [
+        "capability overhang"
+      ]
+    },
+    {
+      "id": "adaptive-thinking",
+      "label": "Adaptive Thinking",
+      "type": "concept",
+      "aliases": [
+        "Adaptive Thinking"
+      ]
+    },
+    {
+      "id": "knowledge-distillation",
+      "label": "Knowledge Distillation",
+      "type": "concept",
+      "aliases": [
+        "Knowledge Distillation",
+        "knowledge distillation"
+      ]
+    },
+    {
+      "id": "managed-agent",
+      "label": "Managed Agent",
+      "type": "concept",
+      "aliases": [
+        "Managed Agent"
+      ]
+    },
+    {
+      "id": "jan-leike",
+      "label": "Jan Leike",
+      "type": "person",
+      "aliases": [
+        "Jan Leike"
+      ]
+    },
+    {
+      "id": "automated-alignment-researcher",
+      "label": "Automated Alignment Researcher",
+      "type": "concept",
+      "aliases": [
+        "Automated Alignment Researcher"
+      ]
+    },
+    {
+      "id": "alien-science",
+      "label": "Alien Science",
+      "type": "concept",
+      "aliases": [
+        "Alien Science"
+      ]
+    },
+    {
+      "id": "chatgpt-unbundling",
+      "label": "ChatGPT unbundling",
+      "type": "concept",
+      "aliases": [
+        "ChatGPT unbundling",
+        "unbundling ChatGPT"
+      ]
+    },
+    {
+      "id": "ai-for-science",
+      "label": "AI for Science",
+      "type": "concept",
+      "aliases": [
+        "AI for Science"
+      ]
+    },
+    {
+      "id": "evo2",
+      "label": "Evo 2",
+      "type": "model",
+      "aliases": [
+        "Evo 2"
+      ]
+    },
+    {
+      "id": "attention-business",
+      "label": "Attention Business",
+      "type": "concept",
+      "aliases": [
+        "Attention Business"
+      ]
+    }
+  ],
+  "notable_quote": {
+    "text": "그 능력을 누가 빨리 잘 꺼내 쓰느냐의 지금 싸움이거든요.",
+    "speaker": "노정석"
+  },
+  "language": "ko",
+  "extractor": "deepseek-pro",
+  "extracted_at": "2026-07-03",
+  "review_status": "draft"
+}

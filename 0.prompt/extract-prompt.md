@@ -27,7 +27,7 @@
   - `type`: `concept` | `person` | `model`.
   - `aliases`: 본문에 나타날 수 있는 표면형을 모두 나열(예: `["DeepSeek-V4","딥시크 V4"]`).
   - 너무 일반적인 단어("AI", "모델", "사람")는 키워드로 만들지 않는다.
-- `notable_quote`: 전사에 인상적인 한 마디가 있으면 `{text, speaker}`, 없으면 `null`.
+- `notable_quote`: 전사에 인상적인 한 마디가 있으면 `{text, speaker}`, 없으면 `null`. `text`는 의미 요약이 아니라 전사에 실제 나온 짧은 직인용으로만 쓴다.
 
 ## 가장 중요한 제약 — 키워드 앵커링
 

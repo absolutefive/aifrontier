@@ -1,0 +1,234 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 91,
+  "slug": "ai-business-2026-q1",
+  "title": "26.1Q 비즈니스 관점에서의 AI",
+  "published_date": "2026-03-21",
+  "hosts": [
+    "노정석",
+    "최승준"
+  ],
+  "category": "AI 사업",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep91",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep91/page.html",
+  "one_line": "2026년 1분기 AI 비즈니스의 핵심은 모든 일을 search problem으로 바꾸고, 개인 에이전트·하네스·AX로 기존 앱과 조직의 중간 마진을 재배치하는 데 있다.",
+  "key_points": [
+    "OpenClaw Seoul 밋업은 개인이 AI 하네스와 가재 가족 같은 메타 레이어를 운영하는 새로운 업무 방식을 보여 줬다.",
+    "RLVR과 CUA는 검증 가능한 보상 환경만 만들 수 있으면 수학·코딩·의료·법무·물리·컴퓨터 조작까지 모델 학습으로 밀어붙일 수 있음을 보여 준다.",
+    "모든 문제는 compute를 투입해 solution space를 탐색하는 search problem으로 수렴하고, non-verifiable을 verifiable로 바꾸는 능력이 해자가 된다.",
+    "OpenClaw와 OMO.BOT 같은 개인 에이전트는 기존 앱과 게이트키퍼를 function call로 밀어내며 disintermediation을 일으킬 수 있다.",
+    "AI 사업은 1/10x 효율화와 10x 신사업이라는 두 축으로 갈라지며, 효율화는 metric이 뚜렷하지만 신사업은 entrepreneur의 의지와 감각이 필요하다.",
+    "AX는 팀을 도와주는 도구 만들기가 아니라 단위 업무를 없애고 사람을 새 역할로 옮기는 조직 재설계 문제다."
+  ],
+  "flow": [
+    {
+      "stage": "밋업",
+      "summary": "OpenClaw Seoul에서 본 젊은 빌더들의 하네스와 Chedex, Ralph loop 경험을 공유한다."
+    },
+    {
+      "stage": "본질",
+      "summary": "RLVR, CUA, capability overhang을 통해 AI 게임을 search problem과 보상 환경으로 정리한다."
+    },
+    {
+      "stage": "하네스",
+      "summary": "Auto Research, Ralph loop, meta cascading으로 회사와 프로젝트가 최적화 루프로 바뀌는 모습을 설명한다."
+    },
+    {
+      "stage": "에이전트",
+      "summary": "OpenClaw와 OMO.BOT이 개인 게이트웨이로 부상하며 기존 앱을 대신 조작하는 레이어가 된다고 본다."
+    },
+    {
+      "stage": "산업",
+      "summary": "bundle-unbundle, disintermediation, 매체력과 UX 마찰의 관점에서 AI 시대의 앱과 플랫폼을 해석한다."
+    },
+    {
+      "stage": "전략",
+      "summary": "1/10x efficiency와 10x new business의 차이, 바닐라 하네스와 entrepreneur의 역할을 나눈다."
+    },
+    {
+      "stage": "조직",
+      "summary": "AX 프로젝트의 함정, AI Native Talent, 업무를 통째로 없애는 조직 재편을 다룬다."
+    },
+    {
+      "stage": "보안",
+      "summary": "Prompt Injection과 credential 리스크 때문에 개인 에이전트는 격리 운영이 필요하다고 정리한다."
+    }
+  ],
+  "body_paragraphs": [
+    "이번 회차는 2026년 3월 21일 시점의 AI 비즈니스 스냅샷이다. 노정석과 최승준은 OpenClaw Seoul 밋업 후기에서 출발해, AI 게임의 본질, 개인 에이전트와 앱 산업의 변화, AX와 조직 재편까지 넓은 범위를 하나의 비즈니스 관점으로 묶는다.",
+    "OpenClaw Seoul 밋업은 새로운 업무 방식의 축소판이었다. Oh-My-Claude-Code와 Oh-My-Codex를 만든 허예찬은 OpenClaw로 가재 가족을 운영하며, 역할 몇 개를 나누는 수준이 아니라 작은 AI 회사처럼 하네스와 메타 레이어를 중첩해 task를 cascade하는 방식을 보여 줬다. 노정석은 이 장면을 보고 자신도 Chedex라는 하네스를 깎으며 업무가 새 회사처럼 돌아간다는 감각을 얻었다.",
+    "Chedex와 Ralph loop의 핵심은 목표 설정과 반복 검증이다. 처음에는 human-in-the-loop로 방향과 목표를 티키타카하며 정하고, 일정 수준에 도달하면 Ralph loop를 여러 번 돌려 혼돈을 깎아낸다. 좋은 하네스는 도구 묶음이 아니라 목표, evaluation metric, 반복 루프를 안정적으로 연결하는 작업 방식이다.",
+    "AI 산업의 본질은 RLVR과 CUA에서 드러난다. Reinforcement Learning by Verifiable Rewards는 수학과 코딩처럼 정답 검증이 쉬운 영역에서 시작했지만, 의료·법무·화학·생물·물리로 확장되고 있다. Computer Use Agent는 macOS나 Windows 같은 컴퓨터 사용 환경 자체를 보상 가능한 훈련장으로 바꾸며, 에이전트가 익숙한 앱을 조작하는 능력을 키운다.",
+    "노정석은 이를 모든 문제가 search problem으로 수렴한다는 문장으로 요약한다. compute를 투입해 사람이 가보지 못한 solution space를 탐색하고, 맞으면 solution으로 표시하며, 그 결과를 다시 모델 지식으로 가져오는 구조다. 여기서 해자는 데이터를 숨기는 능력보다 non-verifiable을 verifiable로 바꿔 보상 신호를 만드는 능력에 가까워진다.",
+    "capability overhang에 대한 인식도 바뀐다. 모델은 이미 우리가 생각하는 것보다 훨씬 똑똑하고, 사람은 그 능력을 꺼내 쓰는 쪽에 가깝다. 회사의 독점 지식조차 모델에 조금 넣어 보면 이미 많은 맥락을 알고 있다는 경험은, 정보를 보호하기보다 frontier 모델에 빨리 제공해 추가 search space를 얻는 쪽이 더 이익일 수 있다는 판단으로 이어진다. Auto Research와 딥러닝의 동형성도 여기서 나온다. 명확한 objective와 evaluation metric이 있으면 .md 파일, 코드 repository, 프로젝트, 회사까지도 최적화 대상으로 바뀐다.",
+    "Ralph loop의 변종과 meta cascading은 회사 조직과 닮아 있다. 목표 명세를 만들고, 검사를 통과할 때까지 다시 돌리고, 상위 레이어는 정제된 리포트만 보는 구조는 대표·임원·팀장·팀원으로 이어지는 조직 계층과 동형이다. 에이전트 시대의 인재 정의도 initiation과 균형 감각으로 이동한다. 모델이 하네스 기능을 흡수해도 더 강한 모델 위에는 다시 새로운 하네스가 생기므로, 이 우로보로스 같은 반복 속에서 시작점과 취향을 넣는 사람이 benefit을 얻는다.",
+    "OpenClaw는 개인 에이전트가 최상단 게이트웨이가 될 수 있다는 상상을 열었다. ChatGPT, Claude, Gemini가 하나의 거대 포털처럼 모든 것을 번들링하는 대신, 사람마다 용도와 취향에 맞는 개인 에이전트가 분화할 수 있다. OMO.BOT처럼 배달, 쇼핑, 택시 호출을 API나 CUA로 대신 수행하는 앱은 기존 앱을 사람이 아니라 에이전트가 조작하는 레이어 아래로 묻는다.",
+    "이 변화는 기존 플랫폼의 disintermediation으로 이어질 수 있다. 네이버, 카카오, 배민, 쿠팡 같은 사업자가 쌓아 온 매체력과 UX flow는 고객 입장에서는 friction이고, 사업자 입장에서는 마진이다. 에이전트가 그 friction을 없애고 function call처럼 기존 서비스를 호출하면, 기존 사업자는 고객의 눈앞 접점을 잃을 수밖에 없다.",
+    "bundle-unbundle 프레임워크는 이 산업 변화를 해석하는 렌즈다. 매체가 바뀔 때마다 기존 bundle은 unbundle되고, 새 지배자가 나타나면 다시 bundling이 일어난다. B2B SaaS가 Oracle unbundling이었다면, AI 시대의 많은 서비스는 ChatGPT unbundling이 될 수 있다. 기존 앱의 UX가 끝나가는 이유는 AI가 distribution layer를 다시 쓰고 있기 때문이다.",
+    "사업 전략은 1/10x efficiency와 10x new business로 갈린다. 전자는 100이 들던 일을 10으로 줄여 90의 이익을 남기는 일이고, 후자는 새로운 900을 만드는 일이다. 효율화는 objective와 metric이 비교적 명확하지만, 10x 신사업은 better, faster, cheaper가 아니라 zero to one에 가까워서 entrepreneur의 비전과 의지가 없으면 잘 일어나지 않는다. 돌고 돌아 바닐라가 답이라는 결론도 여기 붙는다. 데이터 커넥터를 깔끔하게 만들고, 도메인을 잘 이해한 프롬프트를 쓰며, frontier 모델과 Claude Code나 Codex를 붙이는 방식이 가장 강하다는 경험이다.",
+    "AX 프로젝트의 본질은 도구를 얹는 것이 아니라 업무를 통째로 없애는 것이다. 팀을 도와달라는 식으로 요건을 받아 자동화 도구를 만들어 주면, 기존 인센티브 구조 때문에 대개 쓰이지 않는다. 성공하는 AX는 특정 팀의 단위 업무를 제거하고, 사람을 더 생산적인 새 역할로 전환시키는 조직 재설계에서 시작한다. 조직 재편 이후에는 AI Native Talent를 찾아 효율화와 혁신을 나누고, 변화하기 싫어하는 사람들은 AI가 만든 하네스 속으로 들어가는 가능성까지 봐야 한다.",
+    "마지막 리스크는 Prompt Injection과 격리 운영이다. 개인 에이전트가 이메일, 2FA, credential, 금융 정보를 다루기 시작하면 세뇌된 에이전트가 사용자를 위해 위험한 판단을 실행할 수 있다. 그래서 노정석은 OpenClaw를 랩탑에 바로 깔지 않고 VM과 별도 장비에서 최소 데이터만 넣어 테스트한다. 흐름은 피할 수 없지만, 안전한 운영 경계는 아직 핵심 과제다."
+  ],
+  "entities": [
+    {
+      "id": "openclaw",
+      "label": "OpenClaw",
+      "type": "concept",
+      "aliases": [
+        "OpenClaw"
+      ]
+    },
+    {
+      "id": "chedex",
+      "label": "Chedex",
+      "type": "concept",
+      "aliases": [
+        "Chedex"
+      ]
+    },
+    {
+      "id": "ralph-loop",
+      "label": "Ralph loop",
+      "type": "concept",
+      "aliases": [
+        "Ralph loop"
+      ]
+    },
+    {
+      "id": "rlvr",
+      "label": "RLVR",
+      "type": "concept",
+      "aliases": [
+        "RLVR",
+        "Reinforcement Learning by Verifiable Rewards"
+      ]
+    },
+    {
+      "id": "cua",
+      "label": "CUA",
+      "type": "concept",
+      "aliases": [
+        "CUA",
+        "Computer Use Agent"
+      ]
+    },
+    {
+      "id": "search-problem",
+      "label": "search problem",
+      "type": "concept",
+      "aliases": [
+        "search problem"
+      ]
+    },
+    {
+      "id": "capability-overhang",
+      "label": "capability overhang",
+      "type": "concept",
+      "aliases": [
+        "capability overhang"
+      ]
+    },
+    {
+      "id": "auto-research",
+      "label": "auto research",
+      "type": "concept",
+      "aliases": [
+        "Auto Research",
+        "auto research"
+      ]
+    },
+    {
+      "id": "meta-cascading",
+      "label": "meta cascading",
+      "type": "concept",
+      "aliases": [
+        "meta cascading"
+      ]
+    },
+    {
+      "id": "omo-bot",
+      "label": "OMO.BOT",
+      "type": "concept",
+      "aliases": [
+        "OMO.BOT"
+      ]
+    },
+    {
+      "id": "disintermediation",
+      "label": "disintermediation",
+      "type": "concept",
+      "aliases": [
+        "disintermediation"
+      ]
+    },
+    {
+      "id": "bundle-unbundle",
+      "label": "bundle-unbundle",
+      "type": "concept",
+      "aliases": [
+        "bundle, unbundle",
+        "bundle-unbundle"
+      ]
+    },
+    {
+      "id": "chatgpt-unbundling",
+      "label": "ChatGPT unbundling",
+      "type": "concept",
+      "aliases": [
+        "ChatGPT unbundling",
+        "unbundling ChatGPT"
+      ]
+    },
+    {
+      "id": "ax",
+      "label": "AX",
+      "type": "concept",
+      "aliases": [
+        "AX",
+        "AI Transformation"
+      ]
+    },
+    {
+      "id": "ai-native",
+      "label": "AI Native",
+      "type": "concept",
+      "aliases": [
+        "AI Native",
+        "AI native"
+      ]
+    },
+    {
+      "id": "prompt-injection",
+      "label": "Prompt Injection",
+      "type": "concept",
+      "aliases": [
+        "Prompt Injection",
+        "injection"
+      ]
+    },
+    {
+      "id": "codex",
+      "label": "Codex",
+      "type": "concept",
+      "aliases": [
+        "Codex"
+      ]
+    },
+    {
+      "id": "claude-code",
+      "label": "Claude Code",
+      "type": "model",
+      "aliases": [
+        "Claude Code"
+      ]
+    }
+  ],
+  "notable_quote": {
+    "text": "모든 문제를 search problem으로 치환해 버린 겁니다.",
+    "speaker": "노정석"
+  },
+  "language": "ko",
+  "extractor": "deepseek-pro",
+  "extracted_at": "2026-07-03",
+  "review_status": "draft"
+}

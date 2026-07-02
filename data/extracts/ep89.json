@@ -1,0 +1,269 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 89,
+  "slug": "click-and-clunk",
+  "title": "딸깍과 덜컹",
+  "published_date": "2026-03-15",
+  "hosts": [
+    "노정석",
+    "최승준",
+    "김유진"
+  ],
+  "category": "에이전트",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep89",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep89/page.html",
+  "one_line": "GPT-5.4 이후 많은 일은 딸깍으로 가능해졌지만, 진짜 가치는 덜컹거리는 경계에서 문제를 정의하고 검증 루프와 인간 직관을 결합하는 데 있다.",
+  "key_points": [
+    "GPT-5.4와 Claude Code의 신기능은 Computer Use, 프론트엔드 피드백 루프, 3D 데모를 통해 딸깍 생산성이 일상화됐음을 보여 준다.",
+    "Three.js Quake 포팅, Karpathy의 nanochat 자기 개선, Mitchell Hashimoto의 사례는 성공 사례 자체가 다른 사람에게도 될 일이라는 강한 힌트가 되는 시대를 보여 준다.",
+    "하네스 엔지니어링은 에이전트가 실수할 때마다 그 실수를 다시 하지 못하게 만들고, 스스로 검증할 수 있는 도구와 제약을 제공하는 일이다.",
+    "Donald Knuth, Guido van Rossum, Kent Beck 같은 원로 개발자들도 AI를 받아들이며, 기존 스킬의 대부분은 가치가 줄고 남은 도메인 암묵지의 가치는 커진다.",
+    "소프트웨어 엔지니어링은 상향 평준화되고, 사람은 생명공학·물리·화학 같은 더 어려운 도메인으로 문제 정의의 시선을 옮겨야 한다.",
+    "3D 메쉬 실험은 PoC는 쉽게 나오지만 경계 연결처럼 검증이 어려운 덜컹 구간에서는 세이브포인트, 가설, 인간 직관, 스캐폴딩이 필요함을 보여 준다."
+  ],
+  "flow": [
+    {
+      "stage": "딸깍",
+      "summary": "GPT-5.4, Claude Code, Computer Use와 쏟아지는 데모로 딸깍 생산성의 현재를 본다."
+    },
+    {
+      "stage": "하네스",
+      "summary": "Three.js 포팅, Karpathy 자기 개선, Mitchell Hashimoto의 하네스 엔지니어링을 연결한다."
+    },
+    {
+      "stage": "성공 힌트",
+      "summary": "시니어 개발자들의 AI 코딩 사례와 이미 된 일은 될 일이라는 감각을 설명한다."
+    },
+    {
+      "stage": "원로 전향",
+      "summary": "Donald Knuth, Guido van Rossum, Kent Beck의 AI 활용을 통해 남는 스킬의 의미를 짚는다."
+    },
+    {
+      "stage": "도메인 이동",
+      "summary": "소프트웨어 엔지니어링 상향 평준화와 생명공학·과학 도메인으로의 확장을 논의한다."
+    },
+    {
+      "stage": "실험",
+      "summary": "3D 메쉬 알고리즘을 논문과 소스로 딸깍하려는 실험과 PoC의 한계를 살핀다."
+    },
+    {
+      "stage": "덜컹",
+      "summary": "경계 연결 문제에서 모델이 막히는 지점과 가설-실험-직관의 반복을 다룬다."
+    },
+    {
+      "stage": "덕목",
+      "summary": "문제 정의, 끈기, 좋은 가설, 토큰 의존과 브라운아웃을 인간의 새 덕목으로 정리한다."
+    }
+  ],
+  "body_paragraphs": [
+    "이번 회차는 GPT-5.4가 나온 직후의 분위기에서 시작한다. 노정석은 Claude와 OpenAI 쪽에서 신기능이 쏟아지고, 타임라인에는 '딸깍딸깍 나 이거 만들었어'라는 간증이 넘친다고 말한다. 김유진은 AI Frontier 사이트를 소개하며, 유튜브 자막을 에이전트가 읽기 어려운 문제를 Claude와 함께 딸깍해 해결한 사례를 보여 준다.",
+    "GPT-5.4의 데모는 딸깍의 현실감을 키운다. Computer Use Agent, 프론트엔드 UI 피드백 루프, 중간에 방향을 바꾸는 후속 질문, RPG와 심시티류 쇼케이스는 모델이 결과를 보고 고치며 일하는 흐름을 보여 준다. 노정석은 RL 환경 스케일링과 CUA가 pretrain만으로 배운 능력이 아니라, 환경 속 시행착오와 보상 신호를 통해 품질이 올라간 결과라고 본다.",
+    "Three.js를 만든 Ricardo Cabello의 Quake 포팅은 딸깍 생산성의 상징적 장면이다. Claude에게 Quake를 Three.js로 포팅할 수 있느냐고 묻고, 공개 소스와 에셋을 바탕으로 라이브로 돌아가는 수준의 결과를 빠르게 만든다. 중요한 점은 3D 게임 포팅 같은 복잡해 보이는 작업도 이미 코드와 목표가 있으면 매우 짧은 시간에 재현 가능한 영역으로 내려왔다는 것이다.",
+    "Andrej Karpathy의 nanochat 자기 개선 루프도 같은 맥락이다. GPT-2 수준 학습이 8개 H100으로 2시간 안에 끝나고, AI 에이전트가 12시간 동안 110번의 변경을 하며 loss를 낮추는 실험은 post-AGI의 기분을 미리 보여 주는 농담처럼 소개된다. 모델이 직접 개선 루프를 돌며 점수를 낮추는 장면은 평가 가능한 지표가 있을 때 반복 개선 루프가 실제 작업 방식이 될 수 있음을 보여 준다.",
+    "Mitchell Hashimoto가 말한 하네스 엔지니어링은 이 생산성을 통제하는 방법이다. 에이전트가 실수하는 것을 발견할 때마다 다시는 그 실수를 못 하게 프롬프트와 도구를 설계하고, 에이전트가 좋은 일을 하고 있는지 스스로 검증할 수 있게 만드는 일이다. 여기서 하네스는 Claude Code나 Codex 같은 프로그램 덩어리뿐 아니라, 모델을 조이고 검증하는 전체 장치에 가깝다.",
+    "국내 시니어 개발자들의 사례는 성공 사례가 곧 힌트가 되는 시대를 보여 준다. 신정규가 40일간 100만 라인 코드베이스를 다뤘고, 김민태는 AI와 6개월간 25만 라인의 시스템을 만들었으며, 강규영은 Alloy를 활용한 실행 가능한 명세서를 실험한다. 누군가 이미 성공했다면, 모델은 그 결과를 분해해 계획을 세우고 다른 사람도 '나도' 해볼 수 있게 만든다.",
+    "Donald Knuth, Guido van Rossum, Kent Beck 같은 원로들도 AI를 받아들이고 있다. Knuth는 88세에 조합론 난제를 AI 도움으로 풀고, Guido는 Claude 활용 사례를 공유하며, Kent Beck은 자신의 스킬 90%의 가치는 떨어졌지만 남은 10%의 가치는 천 배가 됐다고 말한다. 진행자들은 이 남은 10%를 도메인 암묵지와 문제 정의 능력으로 읽는다.",
+    "하네스와 스캐폴딩의 차이도 중요하다. 하네스가 말의 마구처럼 모델을 조이고 검증하는 장치라면, 스캐폴딩은 학습자가 올라가도록 돕는 비계에 가깝다. 어려운 문제를 그대로 GPT-5에 던지면 안 되지만, 아이디어 제안, 실행, 검증, 병합 에이전트를 두고 워밍업 문제를 풀게 한 뒤 더 어려운 문제에 일반화시키면 새로운 결과가 나올 수 있다.",
+    "소프트웨어 엔지니어링은 상향 평준화되고 있다. Claude Code와 Codex가 할 수 있는 일은 더 이상 특별한 자랑거리가 아니라 아래 레이어로 내려가고, 사람은 다음 레벨의 게임을 찾아야 한다. 노정석은 생명공학, 물리, 화학, 법 같은 도메인이 모델 도움으로 접근 가능해졌다고 보고, 코딩의 발전 기울기는 상수로 두고 AI for Science처럼 더 어려운 문제 쪽으로 시선을 옮겨야 한다고 말한다.",
+    "최승준의 3D 메쉬 알고리즘 실험은 딸깍과 덜컹의 경계를 구체적으로 보여 준다. 과거에 구현하지 못했던 3D 메쉬 생성 알고리즘을 GPT-5.4로 논문 투 딸깍, 소스 투 딸깍 방식으로 시도하자 PoC는 빠르게 나왔다. 아이소서피스나 간단한 3D 모델링 도구는 30분 안팎에 결과가 나오지만, 정작 원하는 품질의 입체 구조는 아직 깍까지 가지 못한다.",
+    "덜컹 구간은 경계 연결 문제에서 나타났다. 인간 눈에는 두 경계 링을 잇는 일이 쉬워 보이지만, vertex merge check는 통과해도 시각 품질은 나쁠 수 있고, 그래픽스 문제는 TDD처럼 검증하기 어렵다. 모델은 convex hull이나 dynamic programming 같은 가설을 제안했고, 최승준은 구면 투영이라는 자기 직관을 밀어붙였지만, 일부 케이스에서는 작동하는 척만 했다.",
+    "이때 필요한 것은 무작정 Ralph loop를 돌리는 것이 아니라 세이브포인트와 스캐폴딩이다. 특정 문제를 저장해 두고, 다양한 가설을 우선 탐색하며, 실패하면 뒤로 돌아가 다른 경로를 찾는 전략이 필요하다. 모델이 시각 정보를 충분히 피드백 루프에 넣지 못하는 구간에서는 인간이 문제를 나누고, 좋은 실험을 설계하고, 직관을 투입해야 한다.",
+    "마지막 결론은 problem이다. 딸깍으로 되는 구간은 이제 많은 사람이 얻을 수 있고, 가치 있는 일은 자기만의 도메인 지식과 결합해 온전히 다른 부가가치를 낼 문제를 포착하는 데 있다. 문제를 잘 정의하고, 잘 돌려 보고, 해결 과정을 잘 가이드하는 능력이 AI 시대에 사람이 가져야 할 덕목으로 남는다.",
+    "동시에 토큰 의존이라는 새로운 취약성도 생긴다. 한 엔지니어가 주간 토큰을 다 쓰는 순간 자신은 한낱 인간으로 돌아와 잠밖에 잘 수 없다고 말한 일화는, GPT와 Claude가 끊기면 사회 전체가 브라운아웃처럼 느려질 수 있다는 감각을 준다. 그래서 AI에게 위임하면서도 끈기, 가설 만들기, 쉬기, 맑은 머리로 문제를 다시 보는 능력은 오히려 강화해야 한다."
+  ],
+  "entities": [
+    {
+      "id": "gpt54",
+      "label": "GPT-5.4",
+      "type": "model",
+      "aliases": [
+        "GPT-5.4",
+        "5.4"
+      ]
+    },
+    {
+      "id": "claude-code",
+      "label": "Claude Code",
+      "type": "model",
+      "aliases": [
+        "Claude Code"
+      ]
+    },
+    {
+      "id": "cua",
+      "label": "CUA",
+      "type": "concept",
+      "aliases": [
+        "CUA",
+        "Computer Use Agent"
+      ]
+    },
+    {
+      "id": "threejs",
+      "label": "Three.js",
+      "type": "concept",
+      "aliases": [
+        "Three.js"
+      ]
+    },
+    {
+      "id": "ricardo-cabello",
+      "label": "Ricardo Cabello",
+      "type": "person",
+      "aliases": [
+        "Ricardo Cabello"
+      ]
+    },
+    {
+      "id": "karpathy",
+      "label": "Andrej Karpathy",
+      "type": "person",
+      "aliases": [
+        "Andrej Karpathy",
+        "Karpathy"
+      ]
+    },
+    {
+      "id": "nanochat",
+      "label": "nanochat",
+      "type": "model",
+      "aliases": [
+        "nanochat"
+      ]
+    },
+    {
+      "id": "ralph-loop",
+      "label": "Ralph loop",
+      "type": "concept",
+      "aliases": [
+        "Ralph loop"
+      ]
+    },
+    {
+      "id": "harness-engineering",
+      "label": "하네스 엔지니어링",
+      "type": "concept",
+      "aliases": [
+        "하네스 엔지니어링"
+      ]
+    },
+    {
+      "id": "mitchell-hashimoto",
+      "label": "Mitchell Hashimoto",
+      "type": "person",
+      "aliases": [
+        "Mitchell Hashimoto"
+      ]
+    },
+    {
+      "id": "codex",
+      "label": "Codex",
+      "type": "concept",
+      "aliases": [
+        "Codex"
+      ]
+    },
+    {
+      "id": "alloy",
+      "label": "Alloy",
+      "type": "concept",
+      "aliases": [
+        "Alloy"
+      ]
+    },
+    {
+      "id": "donald-knuth",
+      "label": "Donald Knuth",
+      "type": "person",
+      "aliases": [
+        "Donald Knuth",
+        "Knuth"
+      ]
+    },
+    {
+      "id": "guido-van-rossum",
+      "label": "Guido van Rossum",
+      "type": "person",
+      "aliases": [
+        "Guido van Rossum",
+        "Guido"
+      ]
+    },
+    {
+      "id": "kent-beck",
+      "label": "Kent Beck",
+      "type": "person",
+      "aliases": [
+        "Kent Beck"
+      ]
+    },
+    {
+      "id": "domain-tacit-knowledge",
+      "label": "도메인 암묵지",
+      "type": "concept",
+      "aliases": [
+        "도메인 암묵지"
+      ]
+    },
+    {
+      "id": "scaffolding",
+      "label": "스캐폴딩",
+      "type": "concept",
+      "aliases": [
+        "스캐폴딩",
+        "scaffolding"
+      ]
+    },
+    {
+      "id": "ai-for-science",
+      "label": "AI for Science",
+      "type": "concept",
+      "aliases": [
+        "AI for Science"
+      ]
+    },
+    {
+      "id": "mesh-algorithm",
+      "label": "3D 메쉬 알고리즘",
+      "type": "concept",
+      "aliases": [
+        "3D 메쉬 알고리즘",
+        "메쉬"
+      ]
+    },
+    {
+      "id": "convex-hull",
+      "label": "convex hull",
+      "type": "concept",
+      "aliases": [
+        "convex hull",
+        "컨벡스 헐"
+      ]
+    },
+    {
+      "id": "problem-definition",
+      "label": "문제 정의",
+      "type": "concept",
+      "aliases": [
+        "문제 정의"
+      ]
+    },
+    {
+      "id": "brownout",
+      "label": "브라운아웃",
+      "type": "concept",
+      "aliases": [
+        "브라운아웃",
+        "brownout"
+      ]
+    }
+  ],
+  "notable_quote": {
+    "text": "모든 일들이 다 GPT와 Claude 옆에 끼고 있잖아요.",
+    "speaker": "노정석"
+  },
+  "language": "ko",
+  "extractor": "deepseek-pro",
+  "extracted_at": "2026-07-03",
+  "review_status": "draft"
+}
