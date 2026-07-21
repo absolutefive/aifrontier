@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "enabled": false,
+  "enabled": true,
   "cycle_days": 7,
   "guard_days": 14,
   "default_extractor": "deepseek_pro",

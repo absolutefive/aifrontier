@@ -10,6 +10,12 @@ STATE="${ROOT}/state/scheduler-state.json"
 LOG_DIR="${ROOT}/logs/scheduler"
 mkdir -p "${LOG_DIR}"
 
+if [ -f "${ROOT}/config/local.env" ]; then
+  set -a
+  source "${ROOT}/config/local.env"
+  set +a
+fi
+
 FORCE=0
 DRY_RUN=1
 for arg in "$@"; do

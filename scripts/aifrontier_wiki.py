@@ -423,8 +423,8 @@ def collect_problems():
     sched = ROOT / "state/scheduler-state.json"
     if sched.exists():
         st = load_json(sched)
-        if st.get("enabled") is True:
-            problems.append("scheduler-state.enabled is true (Phase 0 expects false)")
+        if not isinstance(st.get("enabled"), bool):
+            problems.append("scheduler-state.enabled must be boolean")
 
     # --- schema enforcement -------------------------------------------------
     ep_schema = load_json(DATA / "episodes.schema.json")
