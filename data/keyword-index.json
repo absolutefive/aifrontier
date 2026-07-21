@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-02T16:46:17Z",
+  "generated_at": "2026-07-21T15:51:25Z",
   "keywords": [
     {
       "id": "claude-code",
@@ -104,7 +104,7 @@
       "id": "codex",
       "label": "Codex",
       "type": "concept",
-      "total": 23,
+      "total": 25,
       "eps": [
         {
           "ep_id": 77,
@@ -159,6 +159,16 @@
         {
           "ep_id": 97,
           "count": 8,
+          "first_anchor": "codex-1"
+        },
+        {
+          "ep_id": 102,
+          "count": 1,
+          "first_anchor": "codex-1"
+        },
+        {
+          "ep_id": 103,
+          "count": 1,
           "first_anchor": "codex-1"
         }
       ]
@@ -226,6 +236,54 @@
           "ep_id": 96,
           "count": 2,
           "first_anchor": "moe-1"
+        }
+      ]
+    },
+    {
+      "id": "rlvr",
+      "label": "RLVR",
+      "type": "concept",
+      "total": 18,
+      "eps": [
+        {
+          "ep_id": 80,
+          "count": 1,
+          "first_anchor": "rlvr-1"
+        },
+        {
+          "ep_id": 81,
+          "count": 5,
+          "first_anchor": "rlvr-1"
+        },
+        {
+          "ep_id": 83,
+          "count": 1,
+          "first_anchor": "rlvr-1"
+        },
+        {
+          "ep_id": 85,
+          "count": 1,
+          "first_anchor": "rlvr-1"
+        },
+        {
+          "ep_id": 88,
+          "count": 3,
+          "first_anchor": "rlvr-1"
+        },
+        {
+          "ep_id": 90,
+          "count": 1,
+          "first_anchor": "rlvr-1"
+        },
+        {
+          "ep_id": 91,
+          "count": 2,
+          "first_anchor": "rlvr-1"
+        },
+        {
+          "ep_id": 102,
+          "count": 4,
+          "first_anchor": "rlvr-1"
         }
       ]
     },
@@ -353,49 +411,6 @@
           "ep_id": 91,
           "count": 5,
           "first_anchor": "openclaw-1"
-        }
-      ]
-    },
-    {
-      "id": "rlvr",
-      "label": "RLVR",
-      "type": "concept",
-      "total": 14,
-      "eps": [
-        {
-          "ep_id": 80,
-          "count": 1,
-          "first_anchor": "rlvr-1"
-        },
-        {
-          "ep_id": 81,
-          "count": 5,
-          "first_anchor": "rlvr-1"
-        },
-        {
-          "ep_id": 83,
-          "count": 1,
-          "first_anchor": "rlvr-1"
-        },
-        {
-          "ep_id": 85,
-          "count": 1,
-          "first_anchor": "rlvr-1"
-        },
-        {
-          "ep_id": 88,
-          "count": 3,
-          "first_anchor": "rlvr-1"
-        },
-        {
-          "ep_id": 90,
-          "count": 1,
-          "first_anchor": "rlvr-1"
-        },
-        {
-          "ep_id": 91,
-          "count": 2,
-          "first_anchor": "rlvr-1"
         }
       ]
     },
@@ -602,6 +617,19 @@
           "ep_id": 90,
           "count": 2,
           "first_anchor": "transformer-1"
+        }
+      ]
+    },
+    {
+      "id": "fable",
+      "label": "Fable",
+      "type": "model",
+      "total": 9,
+      "eps": [
+        {
+          "ep_id": 103,
+          "count": 9,
+          "first_anchor": "fable-1"
         }
       ]
     },
@@ -1313,6 +1341,29 @@
       ]
     },
     {
+      "id": "test-time-compute",
+      "label": "test-time compute",
+      "type": "concept",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 1,
+          "first_anchor": "test-time-compute-1"
+        },
+        {
+          "ep_id": 82,
+          "count": 1,
+          "first_anchor": "test-time-compute-1"
+        },
+        {
+          "ep_id": 102,
+          "count": 3,
+          "first_anchor": "test-time-compute-1"
+        }
+      ]
+    },
+    {
       "id": "verifiable-reward",
       "label": "verifiable reward function",
       "type": "concept",
@@ -1466,6 +1517,34 @@
           "ep_id": 85,
           "count": 4,
           "first_anchor": "moltbook-1"
+        }
+      ]
+    },
+    {
+      "id": "noam-brown",
+      "label": "Noam Brown",
+      "type": "person",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "noam-brown-1"
+        },
+        {
+          "ep_id": 82,
+          "count": 1,
+          "first_anchor": "noam-brown-1"
+        },
+        {
+          "ep_id": 90,
+          "count": 1,
+          "first_anchor": "noam-brown-1"
+        },
+        {
+          "ep_id": 102,
+          "count": 1,
+          "first_anchor": "noam-brown-1"
         }
       ]
     },
@@ -1854,29 +1933,6 @@
           "ep_id": 77,
           "count": 3,
           "first_anchor": "nano-banana-pro-1"
-        }
-      ]
-    },
-    {
-      "id": "noam-brown",
-      "label": "Noam Brown",
-      "type": "person",
-      "total": 3,
-      "eps": [
-        {
-          "ep_id": 78,
-          "count": 1,
-          "first_anchor": "noam-brown-1"
-        },
-        {
-          "ep_id": 82,
-          "count": 1,
-          "first_anchor": "noam-brown-1"
-        },
-        {
-          "ep_id": 90,
-          "count": 1,
-          "first_anchor": "noam-brown-1"
         }
       ]
     },
@@ -2623,6 +2679,19 @@
       ]
     },
     {
+      "id": "lmarena",
+      "label": "LMArena",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 103,
+          "count": 2,
+          "first_anchor": "lmarena-1"
+        }
+      ]
+    },
+    {
       "id": "lerobot",
       "label": "LeRobot",
       "type": "concept",
@@ -2632,6 +2701,19 @@
           "ep_id": 84,
           "count": 2,
           "first_anchor": "lerobot-1"
+        }
+      ]
+    },
+    {
+      "id": "llama-4",
+      "label": "Llama 4",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 103,
+          "count": 2,
+          "first_anchor": "llama-4-1"
         }
       ]
     },
@@ -2829,6 +2911,24 @@
           "ep_id": 92,
           "count": 2,
           "first_anchor": "sarah-guo-1"
+        }
+      ]
+    },
+    {
+      "id": "simon-willison",
+      "label": "Simon Willison",
+      "type": "person",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 99,
+          "count": 1,
+          "first_anchor": "simon-willison-1"
+        },
+        {
+          "ep_id": 103,
+          "count": 1,
+          "first_anchor": "simon-willison-1"
         }
       ]
     },
@@ -3040,6 +3140,19 @@
       ]
     },
     {
+      "id": "foundational-approach",
+      "label": "foundational approach",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 102,
+          "count": 2,
+          "first_anchor": "foundational-approach-1"
+        }
+      ]
+    },
+    {
       "id": "vertical-integration",
       "label": "full-stack vertical integration",
       "type": "concept",
@@ -3224,24 +3337,6 @@
       ]
     },
     {
-      "id": "test-time-compute",
-      "label": "test-time compute",
-      "type": "concept",
-      "total": 2,
-      "eps": [
-        {
-          "ep_id": 45,
-          "count": 1,
-          "first_anchor": "test-time-compute-1"
-        },
-        {
-          "ep_id": 82,
-          "count": 1,
-          "first_anchor": "test-time-compute-1"
-        }
-      ]
-    },
-    {
       "id": "thinking-budget",
       "label": "thinking budget",
       "type": "concept",
@@ -3399,6 +3494,32 @@
           "ep_id": 75,
           "count": 2,
           "first_anchor": "quantization-1"
+        }
+      ]
+    },
+    {
+      "id": "cognitive-debt",
+      "label": "인지 부채",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 103,
+          "count": 2,
+          "first_anchor": "cognitive-debt-1"
+        }
+      ]
+    },
+    {
+      "id": "jennifer-doudna",
+      "label": "제니퍼 다우드나",
+      "type": "person",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 102,
+          "count": 2,
+          "first_anchor": "jennifer-doudna-1"
         }
       ]
     },
@@ -3620,6 +3741,19 @@
           "ep_id": 79,
           "count": 1,
           "first_anchor": "andy-jones-1"
+        }
+      ]
+    },
+    {
+      "id": "artificial-analysis",
+      "label": "Artificial Analysis",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 103,
+          "count": 1,
+          "first_anchor": "artificial-analysis-1"
         }
       ]
     },
@@ -3988,6 +4122,19 @@
       ]
     },
     {
+      "id": "explain-diff",
+      "label": "Explain Diff",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 103,
+          "count": 1,
+          "first_anchor": "explain-diff-1"
+        }
+      ]
+    },
+    {
       "id": "fomo",
       "label": "FOMO",
       "type": "concept",
@@ -4075,6 +4222,19 @@
           "ep_id": 77,
           "count": 1,
           "first_anchor": "gpt-51-codex-max-1"
+        }
+      ]
+    },
+    {
+      "id": "gpt-55",
+      "label": "GPT-5.5",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 103,
+          "count": 1,
+          "first_anchor": "gpt-55-1"
         }
       ]
     },
@@ -4192,6 +4352,19 @@
           "ep_id": 78,
           "count": 1,
           "first_anchor": "google-1"
+        }
+      ]
+    },
+    {
+      "id": "haiku",
+      "label": "Haiku",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 103,
+          "count": 1,
+          "first_anchor": "haiku-1"
         }
       ]
     },
@@ -4625,6 +4798,32 @@
       ]
     },
     {
+      "id": "opencrispr",
+      "label": "OpenCRISPR",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 102,
+          "count": 1,
+          "first_anchor": "opencrispr-1"
+        }
+      ]
+    },
+    {
+      "id": "opus-48",
+      "label": "Opus 4.8",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 103,
+          "count": 1,
+          "first_anchor": "opus-48-1"
+        }
+      ]
+    },
+    {
       "id": "oriol-vinyals",
       "label": "Oriol Vinyals",
       "type": "person",
@@ -4859,19 +5058,6 @@
       ]
     },
     {
-      "id": "simon-willison",
-      "label": "Simon Willison",
-      "type": "person",
-      "total": 1,
-      "eps": [
-        {
-          "ep_id": 99,
-          "count": 1,
-          "first_anchor": "simon-willison-1"
-        }
-      ]
-    },
-    {
       "id": "smolvla",
       "label": "SmolVLA",
       "type": "model",
@@ -4907,6 +5093,19 @@
           "ep_id": 75,
           "count": 1,
           "first_anchor": "sonnet-45-1"
+        }
+      ]
+    },
+    {
+      "id": "sonnet-5",
+      "label": "Sonnet 5",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 103,
+          "count": 1,
+          "first_anchor": "sonnet-5-1"
         }
       ]
     },
@@ -5028,6 +5227,19 @@
       ]
     },
     {
+      "id": "thariq-shihipar",
+      "label": "Thariq Shihipar",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 103,
+          "count": 1,
+          "first_anchor": "thariq-shihipar-1"
+        }
+      ]
+    },
+    {
       "id": "the-second-half",
       "label": "The Second Half",
       "type": "concept",
@@ -5115,6 +5327,19 @@
           "ep_id": 84,
           "count": 1,
           "first_anchor": "world-knowledge-1"
+        }
+      ]
+    },
+    {
+      "id": "y-combinator",
+      "label": "Y Combinator",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 102,
+          "count": 1,
+          "first_anchor": "y-combinator-1"
         }
       ]
     },
@@ -5769,6 +5994,19 @@
       ]
     },
     {
+      "id": "jagged-intelligence",
+      "label": "들쭉날쭉한 지능",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 103,
+          "count": 1,
+          "first_anchor": "jagged-intelligence-1"
+        }
+      ]
+    },
+    {
       "id": "design-debt",
       "label": "디자인 부채",
       "type": "concept",
@@ -5951,6 +6189,19 @@
       ]
     },
     {
+      "id": "jungwon-park",
+      "label": "정형원",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 102,
+          "count": 1,
+          "first_anchor": "jungwon-park-1"
+        }
+      ]
+    },
+    {
       "id": "sovereign-ai",
       "label": "주권 AI",
       "type": "concept",
@@ -5960,6 +6211,19 @@
           "ep_id": 100,
           "count": 1,
           "first_anchor": "sovereign-ai-1"
+        }
+      ]
+    },
+    {
+      "id": "map-territory",
+      "label": "지도는 영토가 아니다",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 103,
+          "count": 1,
+          "first_anchor": "map-territory-1"
         }
       ]
     },

@@ -57,7 +57,11 @@ echo "[cycle] live: fetch-pages (incremental; text-hash skips unchanged)"
 ${CLI} fetch-pages --allow-network --refresh --limit 50
 if [ -n "${AIFRONTIER_LLM_BASE_URL:-}" ]; then
   echo "[cycle] live: extract (deepseek)"
-  ${CLI} extract --allow-llm --adapter deepseek --limit 50
+  EXTRACT_RC=0
+  ${CLI} extract --allow-llm --adapter deepseek --limit 50 || EXTRACT_RC=$?
+  if [ "${EXTRACT_RC}" -ne 0 ]; then
+    echo "[cycle] live: extract returned ${EXTRACT_RC}; continuing with successfully written extracts"
+  fi
 else
   echo "[cycle] live: AIFRONTIER_LLM_BASE_URL unset -> skipping extract (set config/local.env to enable)"
 fi
