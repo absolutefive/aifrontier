@@ -29,6 +29,7 @@
             "enum": ["discovered", "fetched", "extracted", "rendered"]
           },
           "content_hash": { "type": ["string", "null"] },
+          "extracted_hash": { "type": ["string", "null"] },
           "last_seen": { "type": ["string", "null"] }
         }
       }

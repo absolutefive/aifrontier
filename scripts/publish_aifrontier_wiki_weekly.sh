@@ -19,8 +19,28 @@ fi
 
 ./scripts/run_aifrontier_wiki_cycle.sh --run
 
-if git diff --quiet -- .    && [ -z "$(git ls-files --others --exclude-standard)" ]; then
-  echo "[publish] no changes to commit"
+# Material = rendered wiki, extracts, keyword index, or episodes.json content.
+# Bookkeeping (state/*, episodes.json last_seen/updated_at) alone is not.
+material_change() {
+  git diff --quiet -- 2.wiki data/extracts data/keyword-index.json || return 0
+  [ -n "$(git ls-files --others --exclude-standard -- 2.wiki data)" ] && return 0
+  python3 - <<'PY'
+import json, subprocess, sys
+def strip(d):
+    d.pop("updated_at", None)
+    for e in d.get("episodes", []):
+        e.pop("last_seen", None)
+    return d
+head = json.loads(subprocess.run(["git", "show", "HEAD:data/episodes.json"],
+                                 capture_output=True, text=True, check=True).stdout)
+work = json.load(open("data/episodes.json", encoding="utf-8"))
+sys.exit(0 if strip(head) != strip(work) else 1)
+PY
+}
+
+if ! material_change; then
+  git checkout -- state data
+  echo "[publish] no material change"
   exit 0
 fi
 

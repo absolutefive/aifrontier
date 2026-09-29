@@ -186,7 +186,20 @@ def build_index(extracts):
             slot["total"] += n
             slot["eps"].append({"ep_id": ex["ep_id"], "count": n, "first_anchor": f"{kid}-1"})
     keywords = sorted(index.values(), key=lambda k: (-k["total"], k["label"]))
-    return {"schema_version": "1.0", "generated_at": now_iso(), "keywords": keywords}
+    return {"schema_version": "1.0", "generated_at": extracts_as_of(extracts), "keywords": keywords}
+
+
+def extracts_as_of(extracts):
+    """Deterministic 'as of' date derived from the data (never wall-clock), so
+    re-rendering unchanged extracts produces byte-identical output."""
+    dates = [ex.get("extracted_at") for ex in extracts if ex.get("extracted_at")]
+    return max(dates) if dates else None
+
+
+def unanchored_entities(ex):
+    """Entity ids that never occur (by label/alias) in body_paragraphs."""
+    _, counts = wrap_body(ex.get("body_paragraphs", []), ex.get("entities", []))
+    return [e.get("id") for e in ex.get("entities", []) if e.get("id") not in counts]
 
 
 def index_signature(index):
@@ -282,7 +295,7 @@ def render_index(extracts, index_keywords):
     eps = sorted(extracts, key=lambda e: e["ep_id"], reverse=True)
     p = []
     p.append('<div class="site-head"><span class="site-title">AI Frontier 위키</span></div>')
-    p.append(f'<p class="muted">aifrontier.kr 한국어 에피소드 엑기스 · 갱신 {today()}</p>')
+    p.append(f'<p class="muted">aifrontier.kr 한국어 에피소드 엑기스 · 갱신 {extracts_as_of(extracts) or "-"}</p>')
     p.append('<div class="stats">')
     p.append(f'<div class="stat"><p class="l">에피소드</p><p class="v">{len(eps)}</p></div>')
     p.append(f'<div class="stat"><p class="l">키워드</p><p class="v">{len(index_keywords)}</p></div>')
@@ -363,13 +376,33 @@ def rendered_ep_ids(out_dir):
     return sorted(ids)
 
 
-def update_state(extracts, index_keywords, run_id):
-    episodes_doc = load_json(DATA / "episodes.json") if (DATA / "episodes.json").exists() else {"episodes": []}
+FETCHED_STATUSES = ("fetched", "extracted", "rendered")
+
+
+def mark_rendered(extracts):
+    """Advance episodes with a rendered extract to status 'rendered'."""
+    path = DATA / "episodes.json"
+    if not path.exists():
+        return {"episodes": []}
+    doc = load_json(path)
+    ids = {ex["ep_id"] for ex in extracts}
+    changed = False
+    for e in doc.get("episodes", []):
+        if e["ep_id"] in ids and e.get("status") != "rendered":
+            e["status"] = "rendered"
+            changed = True
+    if changed:
+        dump_json(path, doc)
+    return doc
+
+
+def update_state(extracts, index_keywords, run_id, episodes_doc):
+    eps = episodes_doc.get("episodes", [])
     cur = load_json(ROOT / "state/current-state.json")
     cur["anchor_date"] = today()
     cur["counts"] = {
-        "episodes_discovered": len(episodes_doc.get("episodes", [])),
-        "episodes_fetched": len(episodes_doc.get("episodes", [])),
+        "episodes_discovered": len(eps),
+        "episodes_fetched": sum(1 for e in eps if e.get("status") in FETCHED_STATUSES),
         "episodes_extracted": len(extracts),
         "episodes_rendered": len(extracts),
         "keywords": len(index_keywords),
@@ -457,6 +490,10 @@ def collect_problems():
         dupes = {i for i in ids if ids.count(i) > 1}
         if dupes:
             problems.append(f"{name}: duplicate entity id(s): {sorted(dupes)}")
+        # every keyword must be anchorable in the body (extract-prompt contract)
+        missing = unanchored_entities(ex)
+        if missing:
+            problems.append(f"{name}: entities not found in body_paragraphs: {missing}")
         # stable (label,type) per keyword id across episodes
         for en in ex.get("entities", []):
             key = en.get("id")
@@ -538,7 +575,8 @@ def cmd_render_wiki(args) -> int:
     index = build_index(extracts)
     dump_json(DATA / "keyword-index.json", index)
     render_to(WIKI, extracts, index["keywords"])
-    update_state(extracts, index["keywords"], run_id=datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ"))
+    episodes_doc = mark_rendered(extracts)
+    update_state(extracts, index["keywords"], datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ"), episodes_doc)
     print(f"render-wiki: {len(extracts)} episode page(s), {len(index['keywords'])} keyword(s) -> 2.wiki/ (state reconciled)")
     return 0
 
@@ -632,7 +670,7 @@ def update_fetch_counts(doc):
     eps = doc.get("episodes", [])
     cur.setdefault("counts", {})
     cur["counts"]["episodes_discovered"] = len(eps)
-    cur["counts"]["episodes_fetched"] = sum(1 for e in eps if e.get("status") in ("fetched", "extracted", "rendered"))
+    cur["counts"]["episodes_fetched"] = sum(1 for e in eps if e.get("status") in FETCHED_STATUSES)
     dump_json(ROOT / "state/current-state.json", cur)
 
 
@@ -726,6 +764,9 @@ def cmd_fetch_pages(args):
         if metap.exists() and not args.force and load_json(metap).get("content_hash") == h:
             unchanged += 1
             e["last_seen"] = today()
+            if e.get("status") not in FETCHED_STATUSES:  # archive exists, index lost track
+                e["status"] = "fetched"
+                e["content_hash"] = h
             print(f"  ep{ep_id}: unchanged")
             time.sleep(FETCH_DELAY)
             continue
@@ -744,7 +785,15 @@ def cmd_fetch_pages(args):
                           "fetched_at": now_iso(), "content_hash": h,
                           "raw_hash": hashlib.sha256(data).hexdigest(), "bytes": len(data),
                           "text_length": len(text), "title": title, "published_date": date})
-        e["status"] = "fetched"
+        # Extracts written outside write_extract (manual Hermes jobs) carry no
+        # extracted_hash: baseline it to the hash they were extracted from so the
+        # change below is detected as stale instead of silently kept.
+        if (EXTRACTS_DIR / f"ep{ep_id}.json").exists() and not e.get("extracted_hash") and e.get("content_hash"):
+            e["extracted_hash"] = e["content_hash"]
+        # Never regress extracted/rendered back to fetched; staleness is tracked
+        # by content_hash != extracted_hash (see needs_reextract).
+        if e.get("status") not in FETCHED_STATUSES:
+            e["status"] = "fetched"
         e["content_hash"] = h
         e["last_seen"] = today()
         if title and not e.get("title"):
@@ -859,7 +908,15 @@ def extract_problems(obj, ep_id):
     dupes = {i for i in ids if ids.count(i) > 1}
     if dupes:
         errs.append(f"duplicate entity id(s): {sorted(dupes)}")
+    missing = unanchored_entities(obj)
+    if missing:
+        errs.append(f"entities not found in body_paragraphs (label/aliases): {missing}")
     return errs
+
+
+def needs_reextract(e):
+    """Source text changed since the existing extract was written."""
+    return bool(e.get("extracted_hash")) and e["extracted_hash"] != e.get("content_hash")
 
 
 def write_extract(obj, ep_id):
@@ -871,6 +928,7 @@ def write_extract(obj, ep_id):
     for e in doc.get("episodes", []):
         if e["ep_id"] == ep_id:
             e["status"] = "extracted"
+            e["extracted_hash"] = e.get("content_hash")
     dump_json(DATA / "episodes.json", doc)
     return []
 
@@ -892,10 +950,10 @@ def extract_targets(args):
         return [e for e in eps if e["ep_id"] == args.episode]
     pending = []
     for e in eps:
-        if e.get("status") not in ("fetched", "extracted", "rendered"):
+        if e.get("status") not in FETCHED_STATUSES:
             continue
         already = (EXTRACTS_DIR / f"ep{e['ep_id']}.json").exists()
-        if already and not args.force:
+        if already and not args.force and not needs_reextract(e):
             continue
         pending.append(e)
     return pending[: max(0, args.limit)]
