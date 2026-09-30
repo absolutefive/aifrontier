@@ -13,3 +13,6 @@ raw/
 
 # demo/preview renders are SAMPLE output, never canonical
 preview/
+
+# python bytecode
+__pycache__/
