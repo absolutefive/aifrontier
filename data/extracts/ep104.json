@@ -1,0 +1,176 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 104,
+  "title": "EP 104: GPT-5.6 공개부터 ICML 현장까지",
+  "published_date": "2026-07-18",
+  "hosts": [
+    "노정석",
+    "최승준",
+    "박종현"
+  ],
+  "category": "AI 사업",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep104",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep104/page.html",
+  "one_line": "GPT-5.6의 전격 공개와 서울 ICML 현장을 오가며, 프론티어 모델 경쟁·재귀적 자기 개선·AI for Science 갈등·인프라 생태계 성숙을 짚는다.",
+  "key_points": [
+    "GPT-5.6이 ICML 주간에 공개됐고, 미리 써본 사용자들은 Fable 5만큼은 아니지만 뛰어난 데일리 드라이버라고 평가했다.",
+    "Codex의 effort가 High·Max·Ultra로 세분화되고 ChatGPT Work와 Chat이 분리되면서 모델 사용의 비용·응답 전략을 사용자가 직접 관리해야 하는 단계가 됐다.",
+    "full duplex GPT-Live로 동시 통역이 시연됐고, OpenAI는 Sol이 Luna를 post-training하는 재귀적 자기 개선 신호를 공개했다.",
+    "AtCoder에서 OpenAI 에이전트가 8,300점으로 인간 참가자 전원을 앞섰고, 순환 이중 덮개 추측을 64개 서브 에이전트로 약 1시간 만에 해결했다는 사례가 나왔다.",
+    "ICML 현장은 AGI-pilled가 주류였고, AI for Science는 스케일주의와 도메인주의가 뚜렷이 충돌했다.",
+    "부스·사이드 이벤트에서는 네오클라우드·inference·전용 가속기·전문가 데이터·world model이 성숙했고, 연구와 산업의 경계가 사라졌다."
+  ],
+  "flow": [
+    {
+      "stage": "GPT-5.6 전격 공개와 초기 반응",
+      "summary": "ICML 주간에 GPT-5.6이 공개됐고, 얼리 유저들은 Fable 5만큼은 아니지만 훌륭한 새 데일리 드라이버로 평가했다."
+    },
+    {
+      "stage": "Codex effort·GPT-Live·ChatGPT Work·자기 개선",
+      "summary": "Sol의 effort 단계가 High·Max·Ultra로 세분화되고, full duplex GPT-Live와 ChatGPT Work 분리가 등장했으며, Sol이 Luna를 post-training하는 재귀적 자기 개선 신호가 나왔다."
+    },
+    {
+      "stage": "가격·구독·GPT-6 관전",
+      "summary": "Opus급 가격과 구독 정책, GPT-6의 Mythos급 rumor, Fable 5의 구독 종료 신호가 겹치며 사용자 이탈 경쟁이 뜨거워졌다."
+    },
+    {
+      "stage": "코딩·수학 벤치마크",
+      "summary": "AtCoder 8,300점과 순환 이중 덮개 추측 1시간 증명 등 코딩·수학 성과가 이어졌다."
+    },
+    {
+      "stage": "ICML 현장 분위기와 AI for Science 갈등",
+      "summary": "AGI-pilled가 주류가 된 가운데 AI for Science는 스케일주의와 도메인주의가 물과 기름처럼 갈렸다."
+    },
+    {
+      "stage": "부스 생태계: 채용·인프라·데이터·world model",
+      "summary": "빅테크부터 네오클라우드, inference, 전용 가속기, 전문가 데이터, General Intuition의 MIRA까지 다양한 부스가 채용과 사업 모델을 중심으로 운영됐다."
+    },
+    {
+      "stage": "사이드 이벤트와 전망",
+      "summary": "Robotics Night, AI Industry Night, 바이오 밋업 등에서 token maxxing과 차세대 모델 베팅, AI for Science가 논의됐고, 중국 오픈소스 모델 ban 가능성도 거론됐다."
+    }
+  ],
+  "body_paragraphs": [
+    "ICML 주간에 맞춰 OpenAI가 GPT-5.6을 전격 공개했다. 출시 전부터 일부 네임드 사용자들은 두 달 가까이 미리 써본 것으로 보였고, 공개 직후 'Fable 5만큼의 큰 모델 향기는 나지 않지만 훌륭한 새 데일리 드라이버'라는 반응이 공통적이었다. 같은 시기 xAI는 Grok 4.5를, Muse는 Spark 1.1을 내세웠고, 여름 공개를 예고했던 Gemini 3.5 Pro는 7월 초까지 나오지 않아 OpenAI의 기습 발표가 시장의 주목을 끌었다. 이는 프론티어 모델 경쟁이 기능 단위가 아니라 출시 타이밍과 여론 선점까지 포함하는 전면전으로 바뀌고 있음을 보여준다.",
+    "GPT-5.6의 가장 체감되는 변화는 Codex의 effort 단계 세분화와 ChatGPT 앱 재편이다. 최상위 모델인 Sol에는 High·Max·Ultra 같은 선택지가 생겼고, 웹 인터페이스는 즉각 응답하는 Chat과 에이전트가 자료 조사 등을 돌리는 ChatGPT Work로 분리되었다. 박종현은 구독을 유지해도 비용 차감이 빠르다고 느꼈고, 노정석은 6단계에 가까운 선택지가 복잡하다고 말했다. OpenAI가 test-time compute에 집중하는 신호로 해석되며, 사용자가 자신의 업무에 맞는 effort를 직접 감각적으로 관리해야 비용 효율이 나오는 단계에 들어섰다는 점이 중요하다.",
+    "기습적으로 등장한 GPT-Live는 full duplex 형태로 나와 대화 중 동시 통역을 시연했다. 발표 라이브에서는 동시 통역 삑사리가 한 번 나오기도 했지만, 최승준은 이전보다 명확히 나아졌다고 평가했다. 같은 기능을 준비하던 스타트업들은 하루 만에 좌절했다는 이야기가 나올 만큼, 프론티어 랩의 기능 출시가 스타트업의 제품 로드맵을 곧바로 덮어버리는 양상도 함께 언급됐다.",
+    "OpenAI는 재귀적 자기 개선 신호도 이어갔다. GPT-5.6 Sol이 가장 작은 모델인 Luna를 post-training하는 장면을 공개했는데, 숫자나 핵심 자산이 드러나는 프롬프트 일부는 가렸지만 실무에 쓸 수 있는 결과물로 소개됐다. 최승준은 이번 발표를 Lilian Weng의 'harness engineering' 개념과 연결해, 가중치 업데이트를 통한 자기 개선과 하네스 개선을 통한 자기 개선이 동시에 진행되고 있다고 정리했다. Anthropic도 한 달 전쯤 AI가 스스로를 만들 때라는 글을 낸 상황이라, 재귀적 자기 개선은 더 이상 실험실 이야기가 아니라 제품 발표의 핵심 축으로 올라온 셈이다.",
+    "가격은 Opus 4.8과 비슷한 수준으로, 입력 100만 토큰에 5달러, 출력은 25달러보다 5달러가량 더 비싼 구간에 형성됐다. 아직 구독 요금제에 포함돼 다행이라는 평가도 나왔지만, 이미 두 달 전부터 일부가 GPT-5.6을 써왔다는 정황과 GPT-6가 Mythos급 대형 모델이 될 것이라는 소문이 겹치면서 관전 포인트는 'GPT-6를 구독에 넣어줄지, 종량제로 돌릴지'로 옮겨가고 있다. Claude의 Fable 5도 구독 요금제 종료 신호를 보였고, 경쟁사 Thibault가 \"I smell fear. 두렵냐?\"고 반응할 정도로 사용자 이탈을 둘러싼 긴장이 높아졌다.",
+    "성능 측면에서는 코딩과 수학에서 상징적 성과가 연이어 나왔다. 7월 9일 AtCoder에서는 OpenAI 에이전트가 8,300점 만점을 풀며 휴리스틱 부문에서 인간 참가자 전원을 앞섰고, 1년 전 saiho의 1등 소식과 Sam Altman의 'Good job, saiho' 반응을 떠올리게 했다. 별도로 순환 이중 덮개 추측으로 불리는 Cycle Double Cover Conjecture를 64개의 서브 에이전트를 활용해 약 1시간 만에 증명했다는 소식도 돌았으며, 이는 정밀 검증 전이지만 수학 추측을 에이전트 워크플로로 빠르게 다루는 흐름을 보여준다. 최승준은 GPT-5.6 Sol로 AI 2040 문서를 한국어로 번역하게 했고, LLM이 도구를 써서 로컬 클론 후 15분 만에 전체 번역을 마쳤다는 사례를 소개했다.",
+    "서울 코엑스 ICML 현장은 대부분 참가자가 AGI-pilled인 분위기였다. 노정석은 모델 알고리즘 자체보다 평가 지표와 evaluation을 어떻게 끌고 갈지에 대한 연구가 많아졌다고 전했고, LLM 연구자들은 대부분 스케일주의자였다. 반면 AI for Science는 스케일주의자와 도메인주의자로 뚜렷이 갈렸다. 전자는 데이터·모델·컴퓨팅 투자로 Bitter Lesson이 계속 지배할 것이라고 보는 반면, 후자는 바이오가 컴퓨터 키보드만 두드려서 풀릴 문제가 아니라고 맞섰다. 이 갈등은 성과가 완전히 검증되기 전까지 물과 기름처럼 유지될 가능성이 크다.",
+    "전시장 부스는 학술 발표보다 채용 시장에 가까웠다. OpenAI, Google, Apple, Meta, Amazon, Microsoft가 lightning talk과 상주 연구자 Q&A를 운영했고, Noam Brown도 모습을 보였다. Meta는 스마트 글라스 체험 세션을 열었고, 한국의 Naver도 로보틱스 연구자를 연결해 주는 방식으로 운영했다. ByteDance는 Seedance를, Alibaba와 Xiaomi는 자사 LLM을 내세웠고, ICML 발표자 중 절반 이상이 중국계 이름일 정도로 중국 연구자 존재감이 컸다. Mistral은 한국 지사 파운딩 멤버를 채용하려는 움직임을 보였다.",
+    "부스를 분류하면 GPU 임대·inference 서빙 업체의 부상이 두드러졌다. RunPod, Together AI, Nebius가 자리했고, 한국계로는 GPU 클러스터를 공급하는 VESSL AI와 inference를 파는 FriendliAI가 있었다. FriendliAI는 서울대 전병곤 교수 연구실에서 시작됐고, vLLM을 만든 권우석 박사가 UC 버클리로 가기 전 같은 랩에서 논문을 쓴 인연이 있다고 설명했다. vLLM의 핵심인 PagedAttention은 오늘날 대부분 inference 서빙이 vLLM 아니면 SGLang으로 이뤄지게 만든 중요한 개념으로, inference 효율·uptime 99.9%·가격 인하가 업체들의 해자로 제시됐다.",
+    "이번 ICML에서는 전용 가속기와 데이터 시장도 성숙한 모습을 보였다. HyperAccel은 전용 가속기 공개를 앞두고 있었고, Nota AI는 Qualcomm NPU 같은 다양한 하드웨어에 맞춰 quantization·메모리 분할·ALU 활용을 최적화하는 역할을 소개했다. OpenAI가 Cerebras에서 GPT를 돌리고 Broadcom과 inference 전용 칩을 설계한다는 정황도 화제였다. 데이터 영역에서는 Scale AI, Voxel51, Toloka에 더해 Handshake AI가 학부생·대학원생 전문가를 모아 데이터를 만들어 프론티어 랩에 파는 사업 모델을 선보였고, 노정석은 Mercor·AfterQuery와 같은 오픈소싱 방식의 전문가 데이터 수집 모델을 설명했다.",
+    "General Intuition은 Medal 게임 플랫폼의 방대한 영상과 함께 게이머의 키 입력 로그를 수집했다는 점에서 주목받았다. 일반 영상 데이터에는 액션에 대응하는 input이 없지만, Medal은 어떤 키 입력이 어떤 화면 변화를 일으켰는지 확보할 수 있어 world model 학습에 유리하다. 이 회사는 5B 파라미터의 MIRA를 공개해 Rocket League를 물리 시뮬레이션처럼 재생하는 데모를 보여줬고, 데이터 규모에 대해 'YouTube scale'이라고 답했다. 투자사들의 관심도 컸지만, 게임·행동 데이터를 프론티어 랩에 판매하지 않고 자체 world model로 제품화하겠다는 점이 인상적이었다.",
+    "사이드 이벤트는 사실상 ICML의 진짜 네트워킹 무대였다. Robotics Night에는 백몇십 명이 모여 로보틱스 연구자들의 밀도가 높았고, Toyota Research Institute와 학계 대학원생이 섞여 RL·도메인 지식 논쟁을 벌였다. 한 스타트업 관계자는 인당 주당 1만 달러의 토큰을 쓴다고 하자 다른 참가자가 자신은 하루 2만 달러어치 토큰을 태운다고 응수하는 장면도 있었다. Flapping Airplanes는 시드 단계에서 15억 달러 valuation을 받은 차세대 모델 패러다임 팀으로, 시장은 트랜스포머 다음 후보에 큰 return을 걸고 있다. SemiAnalysis와 공동 주최한 AI Industry Night에서는 데이터센터 밸류체인의 병목과 한국 기회가 논의됐고, 바이오 밋업에서는 Arc Institute의 Evo 3 개발자와 virtual cell을 둘러싼 입장 차가 드러났다. 노정석은 AI for Science가 Physical AI의 뒤를 이어 가을이나 내년 봄까지 넥스트 트렌드로 자리 잡을 것이라고 내다봤다."
+  ],
+  "entities": [
+    {
+      "id": "gpt56",
+      "label": "GPT-5.6",
+      "type": "model",
+      "aliases": [
+        "GPT-5.6"
+      ]
+    },
+    {
+      "id": "sol",
+      "label": "Sol",
+      "type": "model",
+      "aliases": [
+        "Sol",
+        "GPT-5.6 Sol"
+      ]
+    },
+    {
+      "id": "luna",
+      "label": "Luna",
+      "type": "model",
+      "aliases": [
+        "Luna"
+      ]
+    },
+    {
+      "id": "gpt-live",
+      "label": "GPT-Live",
+      "type": "concept",
+      "aliases": [
+        "GPT-Live"
+      ]
+    },
+    {
+      "id": "rsi",
+      "label": "RSI",
+      "type": "concept",
+      "aliases": [
+        "재귀적 자기 개선"
+      ]
+    },
+    {
+      "id": "gpt6",
+      "label": "GPT-6",
+      "type": "model",
+      "aliases": [
+        "GPT-6"
+      ]
+    },
+    {
+      "id": "ai-for-science",
+      "label": "AI for Science",
+      "type": "concept",
+      "aliases": [
+        "AI for Science"
+      ]
+    },
+    {
+      "id": "vllm",
+      "label": "vLLM·SGLang",
+      "type": "concept",
+      "aliases": [
+        "vLLM"
+      ]
+    },
+    {
+      "id": "pagedattention",
+      "label": "PagedAttention",
+      "type": "concept",
+      "aliases": [
+        "PagedAttention"
+      ]
+    },
+    {
+      "id": "kwon-woosuk",
+      "label": "권우석",
+      "type": "person",
+      "aliases": [
+        "권우석",
+        "권우석 박사"
+      ]
+    },
+    {
+      "id": "mira",
+      "label": "MIRA",
+      "type": "model",
+      "aliases": [
+        "MIRA"
+      ]
+    },
+    {
+      "id": "virtual-cell",
+      "label": "virtual cell",
+      "type": "concept",
+      "aliases": [
+        "virtual cell",
+        "버추얼 셀"
+      ]
+    }
+  ],
+  "notable_quote": {
+    "text": "I smell fear. 두렵냐?",
+    "speaker": "Thibault"
+  },
+  "language": "ko",
+  "extractor": "deepseek-pro",
+  "extracted_at": "2026-07-18",
+  "review_status": "draft"
+}

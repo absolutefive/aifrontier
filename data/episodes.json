@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "language": "ko",
-  "updated_at": "2026-07-21T15:47:41Z",
+  "updated_at": "2026-10-20T15:23:24Z",
   "source": {
     "sitemap": "https://aifrontier.kr/sitemap.xml",
     "llms_txt": "https://aifrontier.kr/llms.txt"
@@ -14,7 +14,7 @@
       "published_date": "2025-03-29",
       "status": "rendered",
       "content_hash": "89de1c1ab5de040644330d5a9bdbe392f17080d84767bca9bccd6eff89a2ba21",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "89de1c1ab5de040644330d5a9bdbe392f17080d84767bca9bccd6eff89a2ba21"
     },
     {
@@ -24,7 +24,7 @@
       "published_date": "2026-01-30",
       "status": "rendered",
       "content_hash": "43afca20ed5b74d51256be201b42d212d5ecfde3ff2b4fa1b7637b5bea716e73",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "43afca20ed5b74d51256be201b42d212d5ecfde3ff2b4fa1b7637b5bea716e73"
     },
     {
@@ -34,7 +34,7 @@
       "published_date": "2026-01-28",
       "status": "rendered",
       "content_hash": "069c74c7063a18b83fee214e9d64865c4c69e82219f6acfa5e86f1e276bbefff",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "069c74c7063a18b83fee214e9d64865c4c69e82219f6acfa5e86f1e276bbefff"
     },
     {
@@ -44,7 +44,7 @@
       "published_date": "2026-01-28",
       "status": "rendered",
       "content_hash": "5141350a0d678434d2f3a2b8b39b242243550168f5fa68b153c523491742c68b",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "5141350a0d678434d2f3a2b8b39b242243550168f5fa68b153c523491742c68b"
     },
     {
@@ -54,7 +54,7 @@
       "published_date": "2026-01-28",
       "status": "rendered",
       "content_hash": "d1a080e1fa4a2e1034af05fac96169c1b64e182f5ed30bfa58048b80e3580ce0",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "d1a080e1fa4a2e1034af05fac96169c1b64e182f5ed30bfa58048b80e3580ce0"
     },
     {
@@ -64,7 +64,7 @@
       "published_date": "2026-01-28",
       "status": "rendered",
       "content_hash": "1213f188a355fb6f34337c05af5e6754321415443f6bc8a69ee1e132a141a834",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "1213f188a355fb6f34337c05af5e6754321415443f6bc8a69ee1e132a141a834"
     },
     {
@@ -74,7 +74,7 @@
       "published_date": "2026-01-28",
       "status": "rendered",
       "content_hash": "69b819e8e8d89607b59532646c0fae18c9a663243ff931a0b7404b27e142c26f",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "69b819e8e8d89607b59532646c0fae18c9a663243ff931a0b7404b27e142c26f"
     },
     {
@@ -84,7 +84,7 @@
       "published_date": "2026-01-28",
       "status": "rendered",
       "content_hash": "8a83abee671ceca38954e4a6ba1d6fab0061aa8de8ddc7152bb1c421bce4aca2",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "8a83abee671ceca38954e4a6ba1d6fab0061aa8de8ddc7152bb1c421bce4aca2"
     },
     {
@@ -94,7 +94,7 @@
       "published_date": "2026-01-28",
       "status": "rendered",
       "content_hash": "87b81d856c2d72623e4258f5a4cf1a636fb08660c86292fec99910bb999ec54d",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "87b81d856c2d72623e4258f5a4cf1a636fb08660c86292fec99910bb999ec54d"
     },
     {
@@ -104,7 +104,7 @@
       "published_date": "2026-01-28",
       "status": "rendered",
       "content_hash": "6e8e29455586f65bc66f7d5ca74f61eb6e43388c85b18b3f97e6ae323f26d35e",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "6e8e29455586f65bc66f7d5ca74f61eb6e43388c85b18b3f97e6ae323f26d35e"
     },
     {
@@ -114,7 +114,7 @@
       "published_date": "2026-02-11",
       "status": "rendered",
       "content_hash": "bf235e8ca092ef3257cc69f2740a78f4c37b5089913da967ab9f532c8f626f7c",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "bf235e8ca092ef3257cc69f2740a78f4c37b5089913da967ab9f532c8f626f7c"
     },
     {
@@ -124,7 +124,7 @@
       "published_date": "2026-02-11",
       "status": "rendered",
       "content_hash": "62a0c428bfa2f753cd7d3d7775fc7fa5bb24a1c3f8d218ba1b0ebbef4c8d6090",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "62a0c428bfa2f753cd7d3d7775fc7fa5bb24a1c3f8d218ba1b0ebbef4c8d6090"
     },
     {
@@ -134,7 +134,7 @@
       "published_date": "2026-02-18",
       "status": "rendered",
       "content_hash": "1a80b953b0117d54d151e58286f1be7ea610f4301d788244170556b66e50b559",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "1a80b953b0117d54d151e58286f1be7ea610f4301d788244170556b66e50b559"
     },
     {
@@ -144,7 +144,7 @@
       "published_date": "2026-02-24",
       "status": "rendered",
       "content_hash": "300cb6620840f2a95f4f788e1cb921a8bcbef7997164a67e90f33c95abf18bf7",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "300cb6620840f2a95f4f788e1cb921a8bcbef7997164a67e90f33c95abf18bf7"
     },
     {
@@ -154,7 +154,7 @@
       "published_date": "2026-03-04",
       "status": "rendered",
       "content_hash": "3c6be95baf8011465815d0d4ce3b07615007f8e14c9718f00177e61b9b1fc017",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "3c6be95baf8011465815d0d4ce3b07615007f8e14c9718f00177e61b9b1fc017"
     },
     {
@@ -164,7 +164,7 @@
       "published_date": "2026-03-15",
       "status": "rendered",
       "content_hash": "ecf78b015eebe4f4d8f95dcf1d92c66d3896ea481003ff54b8e2028f6256ab84",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "ecf78b015eebe4f4d8f95dcf1d92c66d3896ea481003ff54b8e2028f6256ab84"
     },
     {
@@ -174,7 +174,7 @@
       "published_date": "2026-03-15",
       "status": "rendered",
       "content_hash": "2cb8f62168079f70ab8a33197986f078d7810c51fede1fb4f9f466798421a296",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "2cb8f62168079f70ab8a33197986f078d7810c51fede1fb4f9f466798421a296"
     },
     {
@@ -184,7 +184,7 @@
       "published_date": "2026-03-21",
       "status": "rendered",
       "content_hash": "4233a8544f774e6281711c846e95427122ec184d7142312c8cde75dbde663b5f",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "4233a8544f774e6281711c846e95427122ec184d7142312c8cde75dbde663b5f"
     },
     {
@@ -194,7 +194,7 @@
       "published_date": "2026-03-29",
       "status": "rendered",
       "content_hash": "a8473e2e1bd65ad0413320f249452c6d4ca1f7dd99c13b52b5d55a19242bcf0d",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "a8473e2e1bd65ad0413320f249452c6d4ca1f7dd99c13b52b5d55a19242bcf0d"
     },
     {
@@ -204,7 +204,7 @@
       "published_date": "2026-04-07",
       "status": "rendered",
       "content_hash": "7c5cbce78d1a44fa4fc71cddc48942edeb2534d47275c78b921bc5bcc73257b3",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "7c5cbce78d1a44fa4fc71cddc48942edeb2534d47275c78b921bc5bcc73257b3"
     },
     {
@@ -214,7 +214,7 @@
       "published_date": "2026-04-21",
       "status": "rendered",
       "content_hash": "17a566f55e29c9477a4a94c322e82e2126282cf42cf0f60cc2b3731483870364",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "17a566f55e29c9477a4a94c322e82e2126282cf42cf0f60cc2b3731483870364"
     },
     {
@@ -224,7 +224,7 @@
       "published_date": "2026-04-28",
       "status": "rendered",
       "content_hash": "6c8a6d2acac3502e2f91d73fa1a3c86cb073836339268fbeb1c243fc0cb9b0c8",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "6c8a6d2acac3502e2f91d73fa1a3c86cb073836339268fbeb1c243fc0cb9b0c8"
     },
     {
@@ -234,7 +234,7 @@
       "published_date": "2026-05-08",
       "status": "rendered",
       "content_hash": "d84f115738a222c5f3cd912dbd4eef5a8a40788720ae23b940266259ae37c480",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "d84f115738a222c5f3cd912dbd4eef5a8a40788720ae23b940266259ae37c480"
     },
     {
@@ -244,7 +244,7 @@
       "published_date": "2026-05-21",
       "status": "rendered",
       "content_hash": "378cacb63c1c586d3cf10215a2441050d2c8798253fc2657eb3df5279e258681",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "378cacb63c1c586d3cf10215a2441050d2c8798253fc2657eb3df5279e258681"
     },
     {
@@ -254,7 +254,7 @@
       "published_date": "2026-05-26",
       "status": "rendered",
       "content_hash": "e666d4b6b6384e14e1d6c6caacd379c10f840a979f3b897fdf4a4f63d8c11477",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "e666d4b6b6384e14e1d6c6caacd379c10f840a979f3b897fdf4a4f63d8c11477"
     },
     {
@@ -264,7 +264,7 @@
       "published_date": "2026-06-07",
       "status": "rendered",
       "content_hash": "5b1c09b259fa1c0338b80b5c04a2bc010d8665bfeb16ac54cfa6aa9f59f7f3c5",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "5b1c09b259fa1c0338b80b5c04a2bc010d8665bfeb16ac54cfa6aa9f59f7f3c5"
     },
     {
@@ -274,7 +274,7 @@
       "published_date": "2026-06-16",
       "status": "rendered",
       "content_hash": "5473ec927eeab8b494572e6b5d0f27b460e5bf74bfe00d301f81f499ab20ce0c",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "5473ec927eeab8b494572e6b5d0f27b460e5bf74bfe00d301f81f499ab20ce0c"
     },
     {
@@ -284,7 +284,7 @@
       "published_date": "2026-06-29",
       "status": "rendered",
       "content_hash": "0b4f7ed595b280e8b2d16506d8316b58f5aada5cca3c33c28621ed8fc00a0a60",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "0b4f7ed595b280e8b2d16506d8316b58f5aada5cca3c33c28621ed8fc00a0a60"
     },
     {
@@ -294,7 +294,7 @@
       "published_date": "2026-07-05",
       "status": "rendered",
       "content_hash": "da7fe0f57527f9b7074ee05fd0b2be8dad839bf956476d23f248f4230b0e9ef9",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "da7fe0f57527f9b7074ee05fd0b2be8dad839bf956476d23f248f4230b0e9ef9"
     },
     {
@@ -304,7 +304,7 @@
       "published_date": "2026-07-12",
       "status": "rendered",
       "content_hash": "f80c575f93f34890cf6cbe7af5b9340af1badeb0890595172ebf4dc1c0b83931",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-10-20",
       "extracted_hash": "f80c575f93f34890cf6cbe7af5b9340af1badeb0890595172ebf4dc1c0b83931"
     },
     {
@@ -312,9 +312,148 @@
       "url": "https://aifrontier.kr/ko/episodes/ep104",
       "title": "EP 104: GPT-5.6 공개부터 ICML 현장까지",
       "published_date": "2026-07-18",
-      "status": "fetched",
+      "status": "rendered",
       "content_hash": "524309bf63a478942451d311a4e46c0c1e9eb7799eecfc9e66794c0e780a6a3c",
-      "last_seen": "2026-07-21"
+      "last_seen": "2026-10-20",
+      "extracted_hash": "524309bf63a478942451d311a4e46c0c1e9eb7799eecfc9e66794c0e780a6a3c"
+    },
+    {
+      "ep_id": 105,
+      "url": "https://aifrontier.kr/ko/episodes/ep105",
+      "title": null,
+      "published_date": null,
+      "status": "rendered",
+      "content_hash": "b66dd62e29ff58d448c6e6138c06899c8894c443e78523b53fb7e31b60e46c41",
+      "last_seen": "2026-10-20"
+    },
+    {
+      "ep_id": 106,
+      "url": "https://aifrontier.kr/ko/episodes/ep106",
+      "title": "EP 106: 지능 공급 전쟁: Opus 5·Kimi K3·GPT-5.6 Sol, 그리고 전기세",
+      "published_date": "2026-07-26",
+      "status": "rendered",
+      "content_hash": "e09f769198019b83928e178ea5eb70b5808ad0fc6b24d820afc8905f6b153a3d",
+      "last_seen": "2026-10-20"
+    },
+    {
+      "ep_id": 107,
+      "url": "https://aifrontier.kr/ko/episodes/ep107",
+      "title": "EP 107: 미래란 언제나 예측불허: 주가 롤러코스터, Kimi K3 쇼크, 재귀적 자기 개선의 시작",
+      "published_date": "2026-08-02",
+      "status": "rendered",
+      "content_hash": "ef643c69292a0ac5629904165beea21de1d4ed5db980e80b195c9b5b8029fade",
+      "last_seen": "2026-10-20",
+      "extracted_hash": "ef643c69292a0ac5629904165beea21de1d4ed5db980e80b195c9b5b8029fade"
+    },
+    {
+      "ep_id": 108,
+      "url": "https://aifrontier.kr/ko/episodes/ep108",
+      "title": "EP 108: 칩과 칩을 빛으로 연결한다: 실리콘 포토닉스와 AI 데이터센터의 다음 병목",
+      "published_date": "2026-08-08",
+      "status": "rendered",
+      "content_hash": "ee1c59b5a17fb1baa23915cefaefa2a4b66ef4984ae8ac7a0dd4f2368308e15e",
+      "last_seen": "2026-10-20",
+      "extracted_hash": "ee1c59b5a17fb1baa23915cefaefa2a4b66ef4984ae8ac7a0dd4f2368308e15e"
+    },
+    {
+      "ep_id": 109,
+      "url": "https://aifrontier.kr/ko/episodes/ep109",
+      "title": "EP 109: 지금은 인퍼런스의 시대: Sionic 토큰 팩토리와 모델 인퍼런스 이야기",
+      "published_date": "2026-08-16",
+      "status": "rendered",
+      "content_hash": "699b1e4a28093dbfbc390e4756be1704dde156cda928d373f09170b3a257cc1c",
+      "last_seen": "2026-10-20",
+      "extracted_hash": "699b1e4a28093dbfbc390e4756be1704dde156cda928d373f09170b3a257cc1c"
+    },
+    {
+      "ep_id": 110,
+      "url": "https://aifrontier.kr/ko/episodes/ep110",
+      "title": "EP 110: AI와 정렬",
+      "published_date": "2026-08-18",
+      "status": "rendered",
+      "content_hash": "f1fdf052d9439d5c2f5d40cf9d1e3ab4a364a3b145b976659559bf07ec64027e",
+      "last_seen": "2026-10-20",
+      "extracted_hash": "f1fdf052d9439d5c2f5d40cf9d1e3ab4a364a3b145b976659559bf07ec64027e"
+    },
+    {
+      "ep_id": 111,
+      "url": "https://aifrontier.kr/ko/episodes/ep111",
+      "title": "EP 111: 벤치마크 1등이 탈락했다? 독파모 4파전 결과 살펴보기",
+      "published_date": "2026-08-23",
+      "status": "rendered",
+      "content_hash": "cd95071c9dbd066e8b278f1e2b8192d78cf2b0b3c7ca78f87a4cadb8ce578589",
+      "last_seen": "2026-10-20",
+      "extracted_hash": "cd95071c9dbd066e8b278f1e2b8192d78cf2b0b3c7ca78f87a4cadb8ce578589"
+    },
+    {
+      "ep_id": 112,
+      "url": "https://aifrontier.kr/ko/episodes/ep112",
+      "title": "EP 112: AI 반도체 안에서 일어나는 일들: KV Cache부터 Roofline까지",
+      "published_date": "2026-09-01",
+      "status": "rendered",
+      "content_hash": "dfc28ec96441944bf04194cb48f07d372e452f177e2ab3e0a7154a4c2bc99a99",
+      "last_seen": "2026-10-20",
+      "extracted_hash": "dfc28ec96441944bf04194cb48f07d372e452f177e2ab3e0a7154a4c2bc99a99"
+    },
+    {
+      "ep_id": 113,
+      "url": "https://aifrontier.kr/ko/episodes/ep113",
+      "title": "EP 113: GPT-6 Astra 이후, AI의 생각을 어디까지 볼 수 있을까",
+      "published_date": "2026-09-09",
+      "status": "rendered",
+      "content_hash": "0e0f9f38f21ed2542a92762835ff7ddcb6cff0e04aefd089f0a43f979bbfc02b",
+      "last_seen": "2026-10-20",
+      "extracted_hash": "0e0f9f38f21ed2542a92762835ff7ddcb6cff0e04aefd089f0a43f979bbfc02b"
+    },
+    {
+      "ep_id": 114,
+      "url": "https://aifrontier.kr/ko/episodes/ep114",
+      "title": "EP 114: 도망칠 틈이 없다",
+      "published_date": "2026-09-10",
+      "status": "rendered",
+      "content_hash": "876c63a583359c803ccd62aaa12462a8ee2e80586e710525629cdfc51c01d281",
+      "last_seen": "2026-10-20",
+      "extracted_hash": "876c63a583359c803ccd62aaa12462a8ee2e80586e710525629cdfc51c01d281"
+    },
+    {
+      "ep_id": 115,
+      "url": "https://aifrontier.kr/ko/episodes/ep115",
+      "title": "EP 115: 조합적 놀이가 시작됐다",
+      "published_date": "2026-09-21",
+      "status": "rendered",
+      "content_hash": "5a313b808093fb415369f2ca7c16515c077512d01c56d1465b345a50e8193abb",
+      "last_seen": "2026-10-20",
+      "extracted_hash": "5a313b808093fb415369f2ca7c16515c077512d01c56d1465b345a50e8193abb"
+    },
+    {
+      "ep_id": 116,
+      "url": "https://aifrontier.kr/ko/episodes/ep116",
+      "title": "EP 116: 창의성을 배운 AI (Opus 5.5·GPT-6 Sol)",
+      "published_date": "2026-09-28",
+      "status": "rendered",
+      "content_hash": "a8a8c2bc8f42a34f69b4854f89f1dbe95ef65549456d0a980ef47682cb526ff3",
+      "last_seen": "2026-10-20",
+      "extracted_hash": "a8a8c2bc8f42a34f69b4854f89f1dbe95ef65549456d0a980ef47682cb526ff3"
+    },
+    {
+      "ep_id": 117,
+      "url": "https://aifrontier.kr/ko/episodes/ep117",
+      "title": "EP 117: 강북의 IT가 바뀐다: AI 시대의 ERP와 지식 노동 (코스맥스 고종옥 부문장)",
+      "published_date": "2026-10-05",
+      "status": "rendered",
+      "content_hash": "9f24785d0ab43988e2b95d198723a0230df5d93b8145426576967c0c6d08841d",
+      "last_seen": "2026-10-20",
+      "extracted_hash": "9f24785d0ab43988e2b95d198723a0230df5d93b8145426576967c0c6d08841d"
+    },
+    {
+      "ep_id": 118,
+      "url": "https://aifrontier.kr/ko/episodes/ep118",
+      "title": "EP 118: 특이점의 한가운데 살펴보기 | AI 투자 사이클, 수학 쇼크, 샌프란시스코 분위기",
+      "published_date": "2026-10-12",
+      "status": "rendered",
+      "content_hash": "ff4a720b3f1a864eee649f4a817362fdb0872e3b46049cf201f72946ef824103",
+      "last_seen": "2026-10-20",
+      "extracted_hash": "ff4a720b3f1a864eee649f4a817362fdb0872e3b46049cf201f72946ef824103"
     }
   ]
 }

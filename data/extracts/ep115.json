@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 115,
+  "title": "EP 115: 조합적 놀이가 시작됐다",
+  "published_date": "2026-09-21",
+  "hosts": [
+    "최승준",
+    "박종현"
+  ],
+  "category": "AI 생태계",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep115",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep115/page.html",
+  "one_line": "All-In Summit과 최신 실험들을 통해 AI 생태계의 가치 이동과 미중 경쟁, RSI·정렬 논쟁, 그리고 저비용 파생 실험의 폭발을 살피며 pacing은 사실상 일어나기 어렵다고 진단한다.",
+  "key_points": [
+    "All-In Summit 리더들은 대체로 AI pacing이 현실적으로 불가능하며 미중 경쟁 때문에 가속할 수밖에 없다고 본다.",
+    "AI 투자 버블 논쟁에서 Brad Gerstner는 닷컴과 달리 실이익 기반이라며 아니라고 보고, Satya Nadella는 GDP 성장으로 증명돼야 한다고 본다.",
+    "OpenAI와 Anthropic의 급격한 매출 성장에도 불구하고 모델 가격이 붕괴하며 가치는 애플리케이션 층으로 내려갈 가능성이 높다.",
+    "Noam Brown은 멀티 에이전트 협업 능력이 모델에 내재화됐고 RSI가 정렬 확률을 조금씩 깎아내릴 위험이 있다고 경고한다.",
+    "AI 안전 논의는 METR·Open Philanthropy·효율적 이타주의 인맥으로 이어지며 소수 인물이 안전을 결정한다는 우려가 제기된다.",
+    "초파리 커넥톰과 Jev 같은 저비용·병렬 실험이 파생 실험을 폭발시키며 인간 집단 탐색과 멀티 에이전트 구조가 닮아 있다."
+  ],
+  "flow": [
+    {
+      "stage": "도입: All-In Summit과 AI pacing",
+      "summary": "All-In Summit 주요 세션을 중심으로 AI 개발 속도 조절(pacing)을 둘러싼 리더들의 엇갈린 입장과 Jensen Huang의 전략을 소개한다."
+    },
+    {
+      "stage": "경제·투자 논쟁",
+      "summary": "capex 곡선과 닷컴 버블 비교를 통해 AI 투자 회수 가능성을 따지고, OpenAI·Anthropic의 매출 성장과 애플리케이션 층으로의 가치 이동을 논한다."
+    },
+    {
+      "stage": "인프라와 미중 경쟁",
+      "summary": "전력·데이터센터 병목, 우주 데이터센터, 오픈 모델과 중국의 추격을 다루며 pacing은 사실상 일어나지 않을 것이라는 결론에 이른다."
+    },
+    {
+      "stage": "모델·정렬과 안전 인맥",
+      "summary": "Andrej Karpathy의 인식 변화, Jakub Pachocki의 An Alien Mind, Noam Brown의 멀티 에이전트와 RSI 위험, METR·효율적 이타주의로 이어지는 AI 안전 인맥을 검토한다."
+    },
+    {
+      "stage": "최신 실험과 조합적 놀이",
+      "summary": "Xiaomi MiMo의 공개 RL run, Jev와 System 1 지능, 파생 실험 폭발, Astra 3층 layer agent 실험을 통해 조합적 놀이의 확산과 양가적 감정을 정리한다."
+    }
+  ],
+  "body_paragraphs": [
+    "이번 에피소드는 9월 19일 녹화를 기준으로 All-In Summit의 주요 세션을 훑으며 시작한다. 박종현은 티켓이 1천만 원에 달하는 이 행사에서 Jensen Huang, Elon Musk, Satya Nadella, JD Vance, Brad Gerstner 등이 무대에 오른 것을 소개하고, 도중에 Trump가 전화로 등장한 장면도 언급한다. 최승준은 Jensen Huang의 세션만 보았는데도 그를 전략가로 평가한다. pacing 논쟁에서는 Dario Amodei가 멈춰야 한다는 쪽으로 나온 반면 Sam Altman과 Elon Musk가 의외로 공감하지만, Trump와 Jensen Huang, David Sacks 등은 중국과의 경쟁을 이유로 멈출 수 없다는 입장을 보인다.",
+    "두 진행자는 pacing을 현재 스케일링의 중단이 아니라 재귀적 자기 개선(RSI) 단계에 들어가는 것을 조심하자는 문제로 구분한다. 최승준은 지금의 출시 리듬은 계속 보기를 원하지만 돌이킬 수 없는 강을 건너는 것은 피하고 싶다고 말한다. 박종현은 Linux가 오픈소스임에도 보안이 더 우수했던 사례처럼 공개와 상호 감사가 안전 대안이 될 수 있다는 Elon Musk의 제안을 소개한다. RSI를 pacing하자는 논의 자체가 이미 최선의 방법을 찾으려는 시도이며, 꼭 늦추지 않아도 안전 장치를 마련할 여지가 있다는 시각이다.",
+    "All-In Summit에서는 먼저 투자량이 올라가고 뒤따라 랩들의 매출이 따라붙는 capex 곡선이 제시된다. 2024년 투자금이 2410억 달러 수준에서 2년 만에 4~5배로 늘어나는 가운데, OpenAI와 Anthropic의 매출이 20억 달러에서 2000억 달러로 급성장한 흐름이 소개된다. Brad Gerstner는 이익이 실제로 늘어나 multiple 확장이 아니기 때문에 닷컴 버블과 다르다고 주장하고, 반면 Satya Nadella는 반도체 회사로 흘러간 투자 이익이 아니라 실질 GDP 성장으로 증명되어야 한다고 강조한다. Anthropic이 내놓은 경제 모델링에서 인터넷이나 철도도 기대만큼 GDP를 끌어올리지는 않았다는 점은 버블 여부를 조심스럽게 만든다.",
+    "수익 구조에서는 OpenAI와 Anthropic이 과거 Google·Meta보다 훨씬 빠르게 매출을 올리고 있지만, 모델 가격은 빠르게 무너지고 있다. OpenAI의 Astra는 100만 출력 토큰당 50달러인데 DeepSeek의 최신 모델은 99% 저렴하며, 박종현은 실제 영상 편집과 판단 워크플로에서 Sol과 Luna를 섞어 쓰는 방식을 예로 든다. Satya Nadella는 Postgres 같은 오픈소스 DB가 결국 애플리케이션 생태계를 키웠던 역사를 들어 가치가 모델이 아니라 애플리케이션 층으로 내려갈 것이라고 본다. NVIDIA가 Hugging Face를 인수하고 inference 인프라를 확장하는 것도 같은 맥락으로 해석된다.",
+    "진짜 병목은 전력과 데이터센터로 좁혀진다. 중국의 전력 생산량은 미국의 3배이고, 20년 전 역전 이후 격차가 벌어졌으며 데이터센터는 일자리가 적다는 이유로 지역 반대에 부딪힌다. Microsoft는 워싱턴주 Quincy 데이터센터의 20년간 세수가 12배 늘고 시애틀보다 성장률이 높아진 사례를 제시하며 여론 전환을 시도한다. Elon Musk는 Terafab으로 반도체 생산까지 직접 하려 하고, SpaceX는 땅값·인허가·전력 문제를 우회하기 위해 우주 데이터센터를 실제 선택지로 검토한다.",
+    "미중 경쟁에서는 산업혁명과 철도의 비유가 반복된다. Jensen Huang은 산업혁명이 유럽에서 시작됐지만 수혜는 미국이 봤다며 모델의 출신보다 사회 전체의 활용이 중요하다고 말한다. 생태계의 필수 조건이 된 오픈 모델은 최근 4000억 달러 규모 AI 네이티브 스타트업 투자의 대부분이 사용하는 기반으로 언급된다. 중국의 Zhipu가 50억 달러를 조달해 RSI를 추진하겠다고 선언하고, Jensen Huang은 반도체 격차도 2~3년이면 좁혀진다고 보면서 pacing은 사실상 일어나지 않을 것이라는 결론으로 모인다.",
+    "영상 시청 워크플로를 설명한 뒤, Anthropic VC 포럼의 Jagged Intelligence가 소개된다. Andrej Karpathy는 작년 10월에는 Cursor의 autocomplete 모드를 썼지만 지금은 autocomplete조차 쓰지 않고 코드를 assembly처럼 보며 말로만 지시한다고 밝혔다. 그는 모델 3~4세대가 지나며 자신의 인식이 바뀌었고, 2년이면 8세대가 나올 수 있어 단기 예측이 불가능하다고 말한다. 개인 맞춤형 콘텐츠를 생성해 보는 사례와 함께 빅 랩 내부 인식 변화의 단면이 제시된다.",
+    "Jakub Pachocki의 『An Alien Mind』는 정렬 문제를 이질적 지성으로 표현하며, Geoffrey Hinton의 Mother Protocol이나 Dario Amodei의 Machines of Loving Grace 같은 담론과 연결된다. Noam Brown은 The Information과 Dwarkesh 인터뷰에서 멀티 에이전트 팀의 성과를 설명하는데, 밀레니엄 문제에서 1만 에이전트의 기여는 10%에 그쳤고 나머지는 모델 자체의 능력이었다고 덧붙인다. 처음에는 협력을 거부하던 모델들이 pre-training과 RL을 통해 협업 능력을 내재화했으며, Astra가 그 첫 공개 사례다. 그는 RSI 가속이 출시 루틴을 당기면 99.98%였던 정렬 확률이 99.97%로 조금씩 깎여 쌓일 위험이 있다고 경고한다.",
+    "AI 안전 논쟁은 규제 포획과 인맥 문제로 번진다. David Sacks는 선발 주자에게 유리한 규제와 담합 가능성을 지적하고, 독립적인 척하는 METR이 Anthropic 투자자·직원들과 얽혀 있다고 비판한다. METR의 전신은 Paul Christiano가 만든 ARC Evals이며, 유명 조사관 Ajeya Cotra는 Paul Christiano의 아내이자 Open Philanthropy 출신이다. Holden Karnofsky는 Open Philanthropy를 통해 AI 안전에 자금을 대고 현재 Anthropic 기술 스태프로 있으며 Daniela Amodei의 남편이다. 이 인맥이 한 줌의 인물들에 의해 안전이 결정된다는 우려를 낳는다.",
+    "멈추지 않는 가속의 신호는 Xiaomi MiMo의 공개 RL run에서도 나타난다. Fuli Luo가 이끄는 MiMo v2.6 RL run은 3일 만에 180만 달러어치의 token을 소비하며 test-time scaling이 여전히 작동함을 라이브로 보여준다. Noam Brown은 OpenAI 내에서 상위 1% 기술 직원이 하루 8천 달러치 token을 태운다고 말한다. 수학계는 AlphaGo 모먼트를 맞아 밀레니엄 문제 해결 소문과 Fields Medal 수상자들의 오정렬 논의로 시끄럽고, 프론티어 랩의 보안 취약성과 Irregular 논란도 이어진다. Jev는 Jevons paradox에서 이름을 따와 255개 출력을 동시에 내는 초고속 병렬 판단으로 화제가 됐다.",
+    "Jev를 비롯한 작은 모델 실험은 CoT의 느린 System 2에서 빠른 System 1으로 돌아가는 흐름을 보여준다. Kahneman 식의 구분을 빌리자면 분류기처럼 즉각 판단하는 방식이 게임, trading, OCR 등에 확산된다. 구현 비용이 하락하면서 초파리 커넥톰 같은 아티팩트를 받아 파생 실험을 하는 것이 너무 쉬워졌고, 모델 공개가 실험의 플라이휠을 돌린다. 최승준은 Astra와 함께 3층 layer agent 실험을 만들었는데 A* 궤적을 학습시키는 방식으로 LLM 추론보다 훨씬 빠르게 에이전트를 움직이는 것을 확인했다. 인간의 집단 탐색과 멀티 에이전트의 cross-pollination이 닮은 구조라는 점에서 RSI 버튼을 누르지 않아도 이미 무서운 궤도에 올라 있다는 인상이 남는다."
+  ],
+  "entities": [
+    {
+      "id": "rsi",
+      "label": "RSI",
+      "type": "concept",
+      "aliases": [
+        "RSI",
+        "재귀적 자기 개선",
+        "recursive self-improvement"
+      ]
+    },
+    {
+      "id": "multi-agent",
+      "label": "멀티 에이전트",
+      "type": "concept",
+      "aliases": [
+        "멀티 에이전트",
+        "multi-agent",
+        "멀티에이전트"
+      ]
+    },
+    {
+      "id": "capex",
+      "label": "capex 곡선",
+      "type": "concept",
+      "aliases": [
+        "capex 곡선",
+        "capex"
+      ]
+    },
+    {
+      "id": "open-model",
+      "label": "오픈 모델",
+      "type": "concept",
+      "aliases": [
+        "오픈 모델",
+        "open model",
+        "오픈소스 모델"
+      ]
+    },
+    {
+      "id": "jev",
+      "label": "Jev",
+      "type": "model",
+      "aliases": [
+        "Jev"
+      ]
+    },
+    {
+      "id": "mimo",
+      "label": "MiMo",
+      "type": "model",
+      "aliases": [
+        "MiMo",
+        "샤오미 MiMo",
+        "MiMo v2.6"
+      ]
+    },
+    {
+      "id": "system-1",
+      "label": "System 1",
+      "type": "concept",
+      "aliases": [
+        "System 1",
+        "시스템 1"
+      ]
+    },
+    {
+      "id": "jensen-huang",
+      "label": "Jensen Huang",
+      "type": "person",
+      "aliases": [
+        "젠슨 황",
+        "Jensen Huang",
+        "Jensen"
+      ]
+    },
+    {
+      "id": "satya-nadella",
+      "label": "사티아 나델라",
+      "type": "person",
+      "aliases": [
+        "사티아 나델라",
+        "Satya Nadella"
+      ]
+    },
+    {
+      "id": "noam-brown",
+      "label": "Noam Brown",
+      "type": "person",
+      "aliases": [
+        "노암 브라운",
+        "Noam Brown"
+      ]
+    },
+    {
+      "id": "metr",
+      "label": "METR",
+      "type": "concept",
+      "aliases": [
+        "METR"
+      ]
+    }
+  ],
+  "notable_quote": {
+    "text": "두렵긴 하지만 또 매우 즐겁기도 하고, 요즘 굉장히 양가적인 감정이 들어요.",
+    "speaker": "최승준"
+  },
+  "language": "ko",
+  "extractor": "deepseek-pro",
+  "extracted_at": "2026-09-21",
+  "review_status": "draft"
+}
