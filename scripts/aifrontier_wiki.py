@@ -919,7 +919,67 @@ def needs_reextract(e):
     return bool(e.get("extracted_hash")) and e["extracted_hash"] != e.get("content_hash")
 
 
+def normalize_entity_ids(obj):
+    """Coerce LLM-produced entity ids to the schema slug pattern ^[a-z0-9-]+$
+    (e.g. 'gpt-5.6' -> 'gpt-5-6')."""
+    for en in obj.get("entities", []) or []:
+        kid = en.get("id")
+        if isinstance(kid, str):
+            slug = re.sub(r"[^a-z0-9-]+", "-", kid.lower()).strip("-")
+            slug = re.sub(r"-{2,}", "-", slug)
+            if slug:
+                en["id"] = slug
+    return obj
+
+
+def canonical_keyword_identity(exclude_ep=None):
+    """id -> (label, type) as first seen in existing extracts (ascending ep_id)."""
+    canon = {}
+    for ex in load_extracts():
+        if exclude_ep is not None and ex.get("ep_id") == exclude_ep:
+            continue
+        for en in ex.get("entities", []):
+            canon.setdefault(en.get("id"), (en.get("label"), en.get("type")))
+    return canon
+
+
+def canonicalize_entities(obj, canon):
+    """Force each entity's label/type to the canonical one for its id, keeping the
+    model's own label as an alias so body anchoring still works. Returns #changes."""
+    changed = 0
+    for en in obj.get("entities", []) or []:
+        ident = canon.get(en.get("id"))
+        if not ident or (en.get("label"), en.get("type")) == ident:
+            continue
+        old = en.get("label")
+        aliases = list(en.get("aliases") or ([old] if old else []))
+        if old and old not in aliases:
+            aliases.append(old)
+        en["aliases"] = aliases
+        en["label"], en["type"] = ident
+        changed += 1
+    return changed
+
+
+def cmd_normalize_keywords(args) -> int:
+    """Make keyword label/type consistent across all extracts (first-seen wins)."""
+    canon, total = {}, 0
+    for pth in sorted(glob.glob(str(EXTRACTS_DIR / "*.json")), key=lambda x: int(re.search(r"ep(\d+)", x).group(1))):
+        ex = load_json(Path(pth))
+        n = canonicalize_entities(ex, canon)
+        for en in ex.get("entities", []):
+            canon.setdefault(en.get("id"), (en.get("label"), en.get("type")))
+        if n:
+            dump_json(Path(pth), ex)
+            print(f"  {Path(pth).name}: {n} keyword(s) normalized")
+            total += n
+    print(f"normalize-keywords: {total} change(s)")
+    return 0
+
+
 def write_extract(obj, ep_id):
+    normalize_entity_ids(obj)
+    canonicalize_entities(obj, canonical_keyword_identity(exclude_ep=ep_id))
     problems = extract_problems(obj, ep_id)
     if problems:
         return problems
@@ -1040,6 +1100,7 @@ def main(argv=None) -> int:
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("validate", help="Validate files, schemas, invariants, and data/state/render consistency")
     sub.add_parser("build-keyword-index", help="Build data/keyword-index.json from data/extracts/*.json")
+    sub.add_parser("normalize-keywords", help="Make keyword label/type consistent across extracts (first-seen wins)")
     sub.add_parser("selfcheck", help="Render canonical extracts to a temp dir and verify renderer completeness")
     r = sub.add_parser("render-wiki", help="Render canonical 2.wiki/ from extracts (or preview/ with --demo-fixture)")
     r.add_argument("--demo-fixture", action="append", help="Render a fixture into preview/ (SAMPLE; never canonical)")
@@ -1062,6 +1123,7 @@ def main(argv=None) -> int:
     return {
         "validate": cmd_validate,
         "build-keyword-index": cmd_build_keyword_index,
+        "normalize-keywords": cmd_normalize_keywords,
         "selfcheck": cmd_selfcheck,
         "render-wiki": cmd_render_wiki,
         "fetch-index": cmd_fetch_index,

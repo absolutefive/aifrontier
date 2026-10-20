@@ -31,6 +31,10 @@ if [ "${enabled}" != "True" ] && [ "${FORCE}" -ne 1 ]; then
   exit 0
 fi
 
+if [ "${DRY_RUN}" -eq 0 ]; then
+  echo "[cycle] live: normalize-keywords (pre-validate)"
+  ${CLI} normalize-keywords
+fi
 echo "[cycle] validate"
 ${CLI} validate
 
@@ -65,6 +69,7 @@ if [ -n "${AIFRONTIER_LLM_BASE_URL:-}" ]; then
 else
   echo "[cycle] live: AIFRONTIER_LLM_BASE_URL unset -> skipping extract (set config/local.env to enable)"
 fi
+${CLI} normalize-keywords
 ${CLI} build-keyword-index
 ${CLI} render-wiki
 echo "[cycle] live: post-cycle consistency check"
