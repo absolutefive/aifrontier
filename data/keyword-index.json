@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-13",
+  "generated_at": "2026-10-23",
   "keywords": [
     {
       "id": "claude-code",
       "label": "Claude Code",
       "type": "model",
-      "total": 55,
+      "total": 58,
       "eps": [
         {
           "ep_id": 77,
@@ -107,6 +107,11 @@
           "ep_id": 117,
           "count": 2,
           "first_anchor": "claude-code-1"
+        },
+        {
+          "ep_id": 119,
+          "count": 3,
+          "first_anchor": "claude-code-1"
         }
       ]
     },
@@ -114,7 +119,7 @@
       "id": "codex",
       "label": "Codex",
       "type": "concept",
-      "total": 30,
+      "total": 31,
       "eps": [
         {
           "ep_id": 77,
@@ -185,6 +190,11 @@
           "ep_id": 106,
           "count": 5,
           "first_anchor": "codex-1"
+        },
+        {
+          "ep_id": 119,
+          "count": 1,
+          "first_anchor": "codex-1"
         }
       ]
     },
@@ -220,7 +230,7 @@
       "id": "rlvr",
       "label": "RLVR",
       "type": "concept",
-      "total": 24,
+      "total": 25,
       "eps": [
         {
           "ep_id": 80,
@@ -270,6 +280,11 @@
         {
           "ep_id": 114,
           "count": 2,
+          "first_anchor": "rlvr-1"
+        },
+        {
+          "ep_id": 118,
+          "count": 1,
           "first_anchor": "rlvr-1"
         }
       ]
@@ -476,11 +491,16 @@
       "id": "gpt-6-astra",
       "label": "GPT-6 Astra",
       "type": "model",
-      "total": 15,
+      "total": 16,
       "eps": [
         {
           "ep_id": 113,
           "count": 15,
+          "first_anchor": "gpt-6-astra-1"
+        },
+        {
+          "ep_id": 119,
+          "count": 1,
           "first_anchor": "gpt-6-astra-1"
         }
       ]
@@ -810,6 +830,49 @@
       ]
     },
     {
+      "id": "terence-tao",
+      "label": "Terence Tao",
+      "type": "person",
+      "total": 11,
+      "eps": [
+        {
+          "ep_id": 80,
+          "count": 1,
+          "first_anchor": "terence-tao-1"
+        },
+        {
+          "ep_id": 92,
+          "count": 5,
+          "first_anchor": "terence-tao-1"
+        },
+        {
+          "ep_id": 113,
+          "count": 1,
+          "first_anchor": "terence-tao-1"
+        },
+        {
+          "ep_id": 114,
+          "count": 1,
+          "first_anchor": "terence-tao-1"
+        },
+        {
+          "ep_id": 116,
+          "count": 1,
+          "first_anchor": "terence-tao-1"
+        },
+        {
+          "ep_id": 118,
+          "count": 1,
+          "first_anchor": "terence-tao-1"
+        },
+        {
+          "ep_id": 119,
+          "count": 1,
+          "first_anchor": "terence-tao-1"
+        }
+      ]
+    },
+    {
       "id": "mythos",
       "label": "Mythos",
       "type": "model",
@@ -866,44 +929,6 @@
       ]
     },
     {
-      "id": "terence-tao",
-      "label": "Terence Tao",
-      "type": "person",
-      "total": 10,
-      "eps": [
-        {
-          "ep_id": 80,
-          "count": 1,
-          "first_anchor": "terence-tao-1"
-        },
-        {
-          "ep_id": 92,
-          "count": 5,
-          "first_anchor": "terence-tao-1"
-        },
-        {
-          "ep_id": 113,
-          "count": 1,
-          "first_anchor": "terence-tao-1"
-        },
-        {
-          "ep_id": 114,
-          "count": 1,
-          "first_anchor": "terence-tao-1"
-        },
-        {
-          "ep_id": 116,
-          "count": 1,
-          "first_anchor": "terence-tao-1"
-        },
-        {
-          "ep_id": 118,
-          "count": 1,
-          "first_anchor": "terence-tao-1"
-        }
-      ]
-    },
-    {
       "id": "transformer",
       "label": "Transformer",
       "type": "concept",
@@ -956,39 +981,6 @@
           "ep_id": 117,
           "count": 4,
           "first_anchor": "ax-1"
-        }
-      ]
-    },
-    {
-      "id": "deepseek",
-      "label": "DeepSeek",
-      "type": "model",
-      "total": 9,
-      "eps": [
-        {
-          "ep_id": 81,
-          "count": 5,
-          "first_anchor": "deepseek-1"
-        },
-        {
-          "ep_id": 83,
-          "count": 1,
-          "first_anchor": "deepseek-1"
-        },
-        {
-          "ep_id": 105,
-          "count": 1,
-          "first_anchor": "deepseek-1"
-        },
-        {
-          "ep_id": 106,
-          "count": 1,
-          "first_anchor": "deepseek-1"
-        },
-        {
-          "ep_id": 118,
-          "count": 1,
-          "first_anchor": "deepseek-1"
         }
       ]
     },
@@ -1125,6 +1117,34 @@
           "ep_id": 116,
           "count": 2,
           "first_anchor": "astra-1"
+        }
+      ]
+    },
+    {
+      "id": "deepseek",
+      "label": "DeepSeek",
+      "type": "model",
+      "total": 8,
+      "eps": [
+        {
+          "ep_id": 81,
+          "count": 5,
+          "first_anchor": "deepseek-1"
+        },
+        {
+          "ep_id": 83,
+          "count": 1,
+          "first_anchor": "deepseek-1"
+        },
+        {
+          "ep_id": 105,
+          "count": 1,
+          "first_anchor": "deepseek-1"
+        },
+        {
+          "ep_id": 106,
+          "count": 1,
+          "first_anchor": "deepseek-1"
         }
       ]
     },
@@ -2018,6 +2038,19 @@
       ]
     },
     {
+      "id": "manimgx",
+      "label": "ManimGX",
+      "type": "concept",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 119,
+          "count": 5,
+          "first_anchor": "manimgx-1"
+        }
+      ]
+    },
+    {
       "id": "physical-ai",
       "label": "Physical AI",
       "type": "concept",
@@ -2199,6 +2232,24 @@
       ]
     },
     {
+      "id": "3blue1brown",
+      "label": "3Blue1Brown",
+      "type": "concept",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 83,
+          "count": 1,
+          "first_anchor": "3blue1brown-1"
+        },
+        {
+          "ep_id": 119,
+          "count": 3,
+          "first_anchor": "3blue1brown-1"
+        }
+      ]
+    },
+    {
       "id": "aaii",
       "label": "AAII",
       "type": "concept",
@@ -2304,6 +2355,24 @@
           "ep_id": 92,
           "count": 1,
           "first_anchor": "gan-1"
+        }
+      ]
+    },
+    {
+      "id": "grant-sanderson",
+      "label": "Grant Sanderson",
+      "type": "person",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 105,
+          "count": 1,
+          "first_anchor": "grant-sanderson-1"
+        },
+        {
+          "ep_id": 119,
+          "count": 3,
+          "first_anchor": "grant-sanderson-1"
         }
       ]
     },
@@ -2505,6 +2574,19 @@
           "ep_id": 98,
           "count": 4,
           "first_anchor": "vibe-1"
+        }
+      ]
+    },
+    {
+      "id": "generative-misreading",
+      "label": "생성형 오독",
+      "type": "concept",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 119,
+          "count": 4,
+          "first_anchor": "generative-misreading-1"
         }
       ]
     },
@@ -3001,6 +3083,19 @@
       ]
     },
     {
+      "id": "opus-55",
+      "label": "Opus 5.5",
+      "type": "model",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 119,
+          "count": 3,
+          "first_anchor": "opus-55-1"
+        }
+      ]
+    },
+    {
       "id": "rsi-loop",
       "label": "RSI loop",
       "type": "concept",
@@ -3036,6 +3131,19 @@
           "ep_id": 93,
           "count": 3,
           "first_anchor": "sigrid-jin-1"
+        }
+      ]
+    },
+    {
+      "id": "sina",
+      "label": "Sina",
+      "type": "person",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 119,
+          "count": 3,
+          "first_anchor": "sina-1"
         }
       ]
     },
@@ -3102,6 +3210,24 @@
       ]
     },
     {
+      "id": "capex",
+      "label": "capex 곡선",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 115,
+          "count": 1,
+          "first_anchor": "capex-1"
+        },
+        {
+          "ep_id": 118,
+          "count": 2,
+          "first_anchor": "capex-1"
+        }
+      ]
+    },
+    {
       "id": "code-as-harness",
       "label": "code as harness",
       "type": "concept",
@@ -3111,6 +3237,24 @@
           "ep_id": 99,
           "count": 3,
           "first_anchor": "code-as-harness-1"
+        }
+      ]
+    },
+    {
+      "id": "convex-hull",
+      "label": "convex hull",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 89,
+          "count": 1,
+          "first_anchor": "convex-hull-1"
+        },
+        {
+          "ep_id": 118,
+          "count": 2,
+          "first_anchor": "convex-hull-1"
         }
       ]
     },
@@ -3202,6 +3346,42 @@
           "ep_id": 86,
           "count": 3,
           "first_anchor": "sub-agent-1"
+        }
+      ]
+    },
+    {
+      "id": "sudoremove",
+      "label": "sudoremove",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 84,
+          "count": 1,
+          "first_anchor": "sudoremove-1"
+        },
+        {
+          "ep_id": 119,
+          "count": 2,
+          "first_anchor": "sudoremove-1"
+        }
+      ]
+    },
+    {
+      "id": "time-gap",
+      "label": "time gap",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 2,
+          "first_anchor": "time-gap-1"
+        },
+        {
+          "ep_id": 118,
+          "count": 1,
+          "first_anchor": "time-gap-1"
         }
       ]
     },
@@ -3853,6 +4033,19 @@
           "ep_id": 116,
           "count": 2,
           "first_anchor": "gpt6sol-1"
+        }
+      ]
+    },
+    {
+      "id": "gpt-6-1-sol",
+      "label": "GPT-6.1 Sol",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 119,
+          "count": 2,
+          "first_anchor": "gpt-6-1-sol-1"
         }
       ]
     },
@@ -4578,6 +4771,19 @@
       ]
     },
     {
+      "id": "video-as-code",
+      "label": "Video as Code",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 119,
+          "count": 2,
+          "first_anchor": "video-as-code-1"
+        }
+      ]
+    },
+    {
       "id": "vision-transformer",
       "label": "Vision Transformer",
       "type": "model",
@@ -4719,6 +4925,24 @@
           "ep_id": 45,
           "count": 2,
           "first_anchor": "data-flywheel-1"
+        }
+      ]
+    },
+    {
+      "id": "domain-gap",
+      "label": "domain gap",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 1,
+          "first_anchor": "domain-gap-1"
+        },
+        {
+          "ep_id": 118,
+          "count": 1,
+          "first_anchor": "domain-gap-1"
         }
       ]
     },
@@ -4959,19 +5183,6 @@
       ]
     },
     {
-      "id": "time-gap",
-      "label": "time gap",
-      "type": "concept",
-      "total": 2,
-      "eps": [
-        {
-          "ep_id": 77,
-          "count": 2,
-          "first_anchor": "time-gap-1"
-        }
-      ]
-    },
-    {
       "id": "value-function",
       "label": "가치 함수",
       "type": "concept",
@@ -5133,6 +5344,19 @@
       ]
     },
     {
+      "id": "inference-market",
+      "label": "인퍼런스 시장",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 118,
+          "count": 2,
+          "first_anchor": "inference-market-1"
+        }
+      ]
+    },
+    {
       "id": "elon-musk",
       "label": "일론 머스크",
       "type": "person",
@@ -5159,19 +5383,6 @@
       ]
     },
     {
-      "id": "railway-boom",
-      "label": "철도 붐",
-      "type": "concept",
-      "total": 2,
-      "eps": [
-        {
-          "ep_id": 118,
-          "count": 2,
-          "first_anchor": "railway-boom-1"
-        }
-      ]
-    },
-    {
       "id": "centaur",
       "label": "켄타우로스",
       "type": "concept",
@@ -5181,19 +5392,6 @@
           "ep_id": 87,
           "count": 2,
           "first_anchor": "centaur-1"
-        }
-      ]
-    },
-    {
-      "id": "3blue1brown",
-      "label": "3Blue1Brown",
-      "type": "concept",
-      "total": 1,
-      "eps": [
-        {
-          "ep_id": 83,
-          "count": 1,
-          "first_anchor": "3blue1brown-1"
         }
       ]
     },
@@ -5233,6 +5431,19 @@
           "ep_id": 45,
           "count": 1,
           "first_anchor": "agi-infrastructure-1"
+        }
+      ]
+    },
+    {
+      "id": "ahm",
+      "label": "AHM 성명",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 118,
+          "count": 1,
+          "first_anchor": "ahm-1"
         }
       ]
     },
@@ -5601,6 +5812,19 @@
       ]
     },
     {
+      "id": "chatgpt-pro-thinking",
+      "label": "ChatGPT Pro Thinking",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 118,
+          "count": 1,
+          "first_anchor": "chatgpt-pro-thinking-1"
+        }
+      ]
+    },
+    {
       "id": "chris-olah",
       "label": "Chris Olah",
       "type": "person",
@@ -5926,6 +6150,19 @@
       ]
     },
     {
+      "id": "fable-5-5",
+      "label": "Fable 5.5",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 118,
+          "count": 1,
+          "first_anchor": "fable-5-5-1"
+        }
+      ]
+    },
+    {
       "id": "figure-ai",
       "label": "Figure AI",
       "type": "concept",
@@ -6134,6 +6371,19 @@
       ]
     },
     {
+      "id": "gemini-4",
+      "label": "Gemini 4",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 118,
+          "count": 1,
+          "first_anchor": "gemini-4-1"
+        }
+      ]
+    },
+    {
       "id": "generative-ui",
       "label": "Generative UI",
       "type": "concept",
@@ -6195,19 +6445,6 @@
           "ep_id": 78,
           "count": 1,
           "first_anchor": "google-1"
-        }
-      ]
-    },
-    {
-      "id": "grant-sanderson",
-      "label": "Grant Sanderson",
-      "type": "person",
-      "total": 1,
-      "eps": [
-        {
-          "ep_id": 105,
-          "count": 1,
-          "first_anchor": "grant-sanderson-1"
         }
       ]
     },
@@ -6368,19 +6605,6 @@
       ]
     },
     {
-      "id": "kpop-polarization",
-      "label": "K-pop 양극화",
-      "type": "concept",
-      "total": 1,
-      "eps": [
-        {
-          "ep_id": 118,
-          "count": 1,
-          "first_anchor": "kpop-polarization-1"
-        }
-      ]
-    },
-    {
       "id": "kieran-egan",
       "label": "Kieran Egan",
       "type": "person",
@@ -6416,6 +6640,19 @@
           "ep_id": 111,
           "count": 1,
           "first_anchor": "knuth-plass-1"
+        }
+      ]
+    },
+    {
+      "id": "kurzgesagt",
+      "label": "Kurzgesagt",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 119,
+          "count": 1,
+          "first_anchor": "kurzgesagt-1"
         }
       ]
     },
@@ -6602,6 +6839,19 @@
       ]
     },
     {
+      "id": "math-2-0",
+      "label": "Math 2.0",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 118,
+          "count": 1,
+          "first_anchor": "math-2-0-1"
+        }
+      ]
+    },
+    {
       "id": "mathpocalypse",
       "label": "Mathpocalypse",
       "type": "concept",
@@ -6611,6 +6861,19 @@
           "ep_id": 118,
           "count": 1,
           "first_anchor": "mathpocalypse-1"
+        }
+      ]
+    },
+    {
+      "id": "michael-nielsen",
+      "label": "Michael Nielsen",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 118,
+          "count": 1,
+          "first_anchor": "michael-nielsen-1"
         }
       ]
     },
@@ -6979,6 +7242,19 @@
       ]
     },
     {
+      "id": "quasi-frontier-labs",
+      "label": "Quasi Frontier Labs",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 118,
+          "count": 1,
+          "first_anchor": "quasi-frontier-labs-1"
+        }
+      ]
+    },
+    {
       "id": "rl-scaling",
       "label": "RL scaling",
       "type": "concept",
@@ -7226,6 +7502,32 @@
       ]
     },
     {
+      "id": "sudocut",
+      "label": "SudoCut",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 119,
+          "count": 1,
+          "first_anchor": "sudocut-1"
+        }
+      ]
+    },
+    {
+      "id": "suno",
+      "label": "Suno",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 119,
+          "count": 1,
+          "first_anchor": "suno-1"
+        }
+      ]
+    },
+    {
       "id": "syncretism",
       "label": "Syncretism",
       "type": "concept",
@@ -7369,6 +7671,19 @@
       ]
     },
     {
+      "id": "vernor-vinge",
+      "label": "Vernor Vinge",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 118,
+          "count": 1,
+          "first_anchor": "vernor-vinge-1"
+        }
+      ]
+    },
+    {
       "id": "vibetunnel",
       "label": "VibeTunnel",
       "type": "concept",
@@ -7408,6 +7723,19 @@
       ]
     },
     {
+      "id": "viznut",
+      "label": "Viznut",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 119,
+          "count": 1,
+          "first_anchor": "viznut-1"
+        }
+      ]
+    },
+    {
       "id": "world-knowledge",
       "label": "World Knowledge",
       "type": "concept",
@@ -7430,6 +7758,19 @@
           "ep_id": 102,
           "count": 1,
           "first_anchor": "y-combinator-1"
+        }
+      ]
+    },
+    {
+      "id": "yamnet",
+      "label": "YAMNet",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 119,
+          "count": 1,
+          "first_anchor": "yamnet-1"
         }
       ]
     },
@@ -7538,28 +7879,15 @@
       ]
     },
     {
-      "id": "capex-gap",
-      "label": "capex 격차",
+      "id": "bytebeat",
+      "label": "bytebeat",
       "type": "concept",
       "total": 1,
       "eps": [
         {
-          "ep_id": 118,
+          "ep_id": 119,
           "count": 1,
-          "first_anchor": "capex-gap-1"
-        }
-      ]
-    },
-    {
-      "id": "capex",
-      "label": "capex 곡선",
-      "type": "concept",
-      "total": 1,
-      "eps": [
-        {
-          "ep_id": 115,
-          "count": 1,
-          "first_anchor": "capex-1"
+          "first_anchor": "bytebeat-1"
         }
       ]
     },
@@ -7599,19 +7927,6 @@
           "ep_id": 112,
           "count": 1,
           "first_anchor": "continuous-batching-1"
-        }
-      ]
-    },
-    {
-      "id": "convex-hull",
-      "label": "convex hull",
-      "type": "concept",
-      "total": 1,
-      "eps": [
-        {
-          "ep_id": 89,
-          "count": 1,
-          "first_anchor": "convex-hull-1"
         }
       ]
     },
@@ -7664,19 +7979,6 @@
           "ep_id": 91,
           "count": 1,
           "first_anchor": "disintermediation-1"
-        }
-      ]
-    },
-    {
-      "id": "domain-gap",
-      "label": "domain gap",
-      "type": "concept",
-      "total": 1,
-      "eps": [
-        {
-          "ep_id": 77,
-          "count": 1,
-          "first_anchor": "domain-gap-1"
         }
       ]
     },
@@ -7863,6 +8165,19 @@
       ]
     },
     {
+      "id": "neocloud",
+      "label": "neocloud",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 118,
+          "count": 1,
+          "first_anchor": "neocloud-1"
+        }
+      ]
+    },
+    {
       "id": "perplexity",
       "label": "perplexity",
       "type": "concept",
@@ -8019,19 +8334,6 @@
       ]
     },
     {
-      "id": "sudoremove",
-      "label": "sudoremove",
-      "type": "concept",
-      "total": 1,
-      "eps": [
-        {
-          "ep_id": 84,
-          "count": 1,
-          "first_anchor": "sudoremove-1"
-        }
-      ]
-    },
-    {
       "id": "synthetic-data",
       "label": "synthetic data",
       "type": "concept",
@@ -8054,19 +8356,6 @@
           "ep_id": 86,
           "count": 1,
           "first_anchor": "tech-report-1"
-        }
-      ]
-    },
-    {
-      "id": "time-domain-map",
-      "label": "time gap·domain gap 지도",
-      "type": "concept",
-      "total": 1,
-      "eps": [
-        {
-          "ep_id": 118,
-          "count": 1,
-          "first_anchor": "time-domain-map-1"
         }
       ]
     },
@@ -8526,6 +8815,19 @@
       ]
     },
     {
+      "id": "railroad-boom",
+      "label": "철도 붐",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 118,
+          "count": 1,
+          "first_anchor": "railroad-boom-1"
+        }
+      ]
+    },
+    {
       "id": "carl-zeiss",
       "label": "칼 자이스",
       "type": "concept",
@@ -8630,15 +8932,15 @@
       ]
     },
     {
-      "id": "scarce-value",
-      "label": "희소한 곳",
+      "id": "scarcity",
+      "label": "희소성",
       "type": "concept",
       "total": 1,
       "eps": [
         {
           "ep_id": 118,
           "count": 1,
-          "first_anchor": "scarce-value-1"
+          "first_anchor": "scarcity-1"
         }
       ]
     }

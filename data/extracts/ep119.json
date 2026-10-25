@@ -1,0 +1,237 @@
+{
+  "schema_version": "1.0",
+  "ep_id": 119,
+  "title": "EP 119: 코드로 재생하는 AI | Video as Code와 생성형 오독",
+  "published_date": "2026-10-23",
+  "hosts": [
+    "최승준",
+    "박종현"
+  ],
+  "category": "창작·콘텐츠",
+  "source_url": "https://aifrontier.kr/ko/episodes/ep119",
+  "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep119/page.html",
+  "one_line": "LLM이 코드로 비디오를 만들고 편집을 자동화하는 Video as Code 실험과, 의도적 오독을 통해 AI 창의성과 분포 바깥을 탐색한 생성형 오독 퍼포먼스를 함께 살펴본다.",
+  "key_points": [
+    "샌프란시스코에서 Video as Code 이벤트가 열렸고, LLM이 애니메이션 코드를 작성해 비디오를 만드는 접근이 주목받았다.",
+    "Sina는 ManimGX로 만든 설명 영상으로 75만~96만 회 조회수를 기록하며 교육 시각화의 가능성을 보여줬다.",
+    "박종현은 sudoremove 채널 편집의 99%를 AI에 맡기고, 비전문 편집자보다 나은 성과를 확인한 뒤 SudoCut까지 출시했다.",
+    "Opus 5.5, GPT-6.1 Sol, GPT-6 Astra 등 최신 모델은 ManimGX부터 vanilla까지 어떤 도구로도 준수한 모션 그래픽을 생성했다.",
+    "여러 카테고리 채널 실험에서 약 20% 영상이 시청자에게 좋은 반응을 얻었고, 1,000개 이상 댓글 중 “AI로 한 건가요?”라는 질문은 없었다.",
+    "최승준의 퍼포먼스 ‘생성형 오독’은 bytebeat 코드를 소리·이미지·이모지로 반복 오독하며 창의성과 분포 바깥을 탐색했다.",
+    "Terence Tao와 Grant Sanderson의 온도 차이를 통해 수학계의 충격과 explainer, 희소성, 생성 불가 영역을 논의했다."
+  ],
+  "flow": [
+    {
+      "stage": "오프닝과 Video as Code 이벤트",
+      "summary": "샌프란시스코에서 열린 Video as Code 이벤트와 LLM이 코드로 비디오를 만드는 접근을 소개한다."
+    },
+    {
+      "stage": "Sina의 교육용 코드 영상",
+      "summary": "Sina가 ManimGX로 만든 신경망·ray tracing 설명 영상의 조회수 성과와 교육 철학을 다룬다."
+    },
+    {
+      "stage": "AI 편집 실험과 SudoCut",
+      "summary": "sudoremove 채널의 99% AI 편집 전환, 팬 채널 비교 실험, SudoCut 출시와 쇼츠 클리핑·더빙까지의 확장을 정리한다."
+    },
+    {
+      "stage": "Opus 5.5와 모션 그래픽 도구 비교",
+      "summary": "Opus 5.5, GPT-6.1 Sol, GPT-6 Astra와 ManimGX·vanilla 도구를 비교하고 Codex로 Kurzgesagt 스타일을 재현한 과정, slop 논쟁을 시작한다."
+    },
+    {
+      "stage": "채널 검증과 원본 스토리텔링",
+      "summary": "여러 카테고리 채널 실험, 약 20% 호응, 현지 반응, 원본 영상의 가치에 대한 가설을 다룬다."
+    },
+    {
+      "stage": "생성형 오독 퍼포먼스",
+      "summary": "bytebeat 코드를 소리·이미지·이모지로 오독하는 작업과 YAMNet, 진화 알고리즘, verifiability 문제를 소개한다."
+    },
+    {
+      "stage": "창의성과 분포 바깥",
+      "summary": "LLM의 분포 한계, interpolation과 out of distribution, 볼록 껍질, 수학계의 충격과 explainer·희소성 논의로 이어진다."
+    },
+    {
+      "stage": "생성 불가 영역과 디자인 한계",
+      "summary": "유치원 원가 영상의 Suno·Opus 활용, 어린이 그림 생성 금지, Claude Code 디자인, 스타일 평준화와 마무리 소식을 담는다."
+    }
+  ],
+  "body_paragraphs": [
+    "박종현은 샌프란시스코에서의 마지막 밤 녹화에서 현지에서 직접 연 Video as Code 이벤트를 소개했다. 이벤트는 Luma에서 샌프란시스코 피처드로 노출될 만큼 관심을 모았고, 승인 100명 가운데 공간 제약으로 약 40명이 참석했다. Video as Code는 Seedance 같은 픽셀 생성 모델 대신 LLM이 애니메이션 코드나 Blender 앱 사용 코드를 작성해 비디오를 만드는 접근이다. 공동 호스트인 터키 출신 창업자 Sina는 신경망의 동작 원리나 ray tracing 같은 개념을 코드로 생성한 설명 영상을 만들어 올렸고, 일부 영상은 75만~96만 회 조회수를 기록했다.",
+    "Sina는 18개월 전부터 3Blue1Brown 채널을 만든 Grant Sanderson의 Manim 라이브러리를 개량한 ManimGX를 직접 만들어 사용해 왔다. ManimGX는 Manim과 일대일 호환되는 업그레이드 라이브러리로, 어려운 개념을 시각화해 누구나 쉽게 이해하고 공부를 좋아하게 만드는 것을 목표로 한다. 박종현은 3Blue1Brown 영상을 볼 때 이해한 듯하지만 실제로는 겉핥기에 그치는 경우가 많다는 점을 짚었고, Sina는 대부분의 교육 콘텐츠가 조회수를 위한 얕은 설명에 머무르지만 AI가 진짜 이해를 돕는 직관적 시각화를 도울 수 있다고 답했다.",
+    "박종현 자신은 부업 유튜버로서 sudoremove 채널과 다른 채널을 운영하며 편집 부담을 겪었다. 직접 편집하면 한 에피소드에 최소 20시간 이상이 들었기 때문에 AI가 편집을 대신하도록 몇 달간 작업했고, 지금은 sudoremove 채널 영상의 99%를 AI가 편집해 올리고 있다. 초기에는 사람 편집과 반반 섞어 올렸지만 조회수가 비슷하고 구독자들도 AI 편집을 눈치채지 못해 AI 비중을 높였다. 운동선수 인플루언서의 팬 채널 실험에서는 구독자 0명의 새 채널에서도 AI 편집본이 비전문 편집자보다 조회수가 더 잘 나왔고, 원 채널에 올린 후에도 조회수가 눈에 띄게 올랐다. 이후 그는 SudoCut 서비스를 출시하고 쇼츠 클리핑과 영어 자동 더빙, 내용에 맞는 모션 그래픽 생성으로 확장했다.",
+    "결정적 계기는 Opus 5.5였다. 박종현은 Opus 5.5의 medium과 xhigh, GPT-6.1 Sol, GPT-6 Astra를 같은 조건에서 모션 그래픽 생성으로 비교했는데, 모든 모델이 나쁘지 않은 결과를 냈다. 도구 측면에서도 ManimGX를 주거나 Remotion·HyperFrames 같은 라이브러리를 주지 않고 vanilla로 시켜도 준수한 영상이 나왔다. Kurzgesagt 스타일 애니메이션은 공동 창업자 양지호가 유료 강의를 Codex에게 학습시키고 반복 수정을 거쳐 만들었으며, 마음에 안 드는 과정을 Craft Pass라는 별칭으로 정리하기도 했다. 그럴듯한 영상이 나오자 박종현은 이것이 slop이 아니라 진짜 좋은 콘텐츠인지 의문을 갖게 됐다.",
+    "박종현은 이 질문에 답하기 위해 Vtuber, 정치, 팟캐스트, 스포츠, 테크 리뷰 등 여러 카테고리의 유튜브 채널을 만들고 허락받은 원본 영상에 모션 그래픽을 더해 올렸다. 약 한 달간 실험한 결과 약 20% 카테고리에서 시청자들이 실제로 좋아했고, 1,000개 이상의 댓글 중 “이거 AI로 한 건가요?”라는 질문은 없었다. 현지 이벤트 참석자들은 기술적 방법과 fine-tuning 여부, 카테고리별 편집 기준을 주로 궁금해했다. 박종현은 완전 자동 생성보다 원본 영상에 담긴 실제 사람의 스토리텔링이 가장 큰 가치이며, 편집과 모션 그래픽은 그 가치를 보강하는 도구라는 가설을 강조했다.",
+    "최승준은 발표 덱 디자인이 GPT-6.1 Sol로 만들어졌지만 Claude의 흔적이 섞여 있다고 지적하며, GPT 기본 디자인의 좁은 행간과 Claude 특유의 크림색을 근거로 들었다. 이어 그는 동묘의 ‘백남준을 기억하는 집’에서 PROTOROOM, 신승백 작가와 함께 선보인 생성형 오독 퍼포먼스를 소개했다. 이 작업은 Viznut이 발견한 bytebeat 코드, t 곱하기 8에 OR로 t를 오른쪽 8비트 shift하는 식을 음악으로 바꾸는 데서 출발한다. 최승준은 진화 알고리즘으로 연산자 조합을 탐색하고, 작가들이 연주한 샘플을 UMAP으로 살펴보는 ‘잘 읽기’에서 시작해 의도적으로 잘못 읽는 오독으로 나아갔다.",
+    "오독의 첫 단계는 소리를 이미지로 바꾸고, 이미지와 비슷한 이모지를 회귀로 찾아 곰이나 별똥별 같은 별칭을 붙이는 것이었다. 이는 구름에서 얼굴을 보는 pareidolia처럼 관계가 없는데도 억지로 읽는 시도였다. 최승준은 기호학의 기표·기의나 Ursula Le Guin의 『어스시 연대기』에서 이름을 알면 개입할 수 있다는 모티프를 끌어와, 코드가 현상에 개입하는 언어가 되는 지점을 탐색했다. 신승백 작가는 YAMNet 소리 분류기로 해당 소리가 20만 개 오디오 샘플 중 무엇과 비슷한지 실험했고, 최승준은 Little Alchemy의 합성 원리를 차용해 이모지 조합으로 프롬프트를 자동 생성하고 픽셀 아트 게임까지 위임했다. Opus 5.5 수준이면 어떤 프롬프트라도 이야기로 바꿀 수 있다는 점이 실험의 배경이었다.",
+    "창의성 논의에서 박종현은 LLM과 diffusion 모델이 훈련 데이터 분포 안에서 가장 그럴듯한 결과를 내기 때문에 분포 바깥으로 나가기 어렵고, 그 결과 쇠 맛 나는 비슷한 문장과 스타일이 나온다고 짚었다. DALL-E의 우주비행사가 말을 타는 이미지는 분포 안의 구멍을 메운 interpolation 창의성이라면, 오독은 분포 바깥의 무작위 노이즈가 아닌 볼 만한 결과로 가는 단서가 될 수 있다고 보았다. 최승준은 수학의 아이디어 볼록 껍질 개념을 언급하며, 분야 A와 B를 연결해 어려운 문제를 푸는 사례처럼 껍질 안에서도 조합의 창의성이 생길 수 있다고 말했다. 또 가까운 low-hanging fruit를 먼저 따고 탐색 영토가 넓어지면 다음 세대의 낮게 매달린 열매가 생긴다는 심상을 제시했다.",
+    "수학계의 반응도 다뤘다. Terence Tao는 수척해진 표정으로 수학의 낭만적 시절이 지나고 산업혁명 시기로 이동해야 한다고 말하는 반면, Grant Sanderson은 여전히 수학이 탐구할 게 많고 알고 싶어 하는 사람도 많다며 낙관을 얘기했다. 3Blue1Brown의 Grant Sanderson이 낙관론으로 비판받는 것에 대해, 최승준은 실제 수학자들이 겪는 일에 공감이 필요하다는 타임라인 반응을 전했다. explainer가 안전한가라는 질문에 박종현은 설명 플랫폼이 상호작용형으로 진화해도 추천과 문제 정의에서 역할이 남겠지만, 결국 이야기와 큐레이션의 판단은 시장에 맡기고 사후 해석하는 방식을 취한다고 답했다.",
+    "마지막으로 최승준은 유치원 원가 ‘놀이는 어린이의 삶이다’를 예로 들며 생성하면 안 되는 영역을 이야기했다. 악보에서 음악을 추출해 MP3 파일을 얻고, 품질 보완을 위해 Suno를 썼으며, 어린이 그림 위에 Opus가 손글씨 애니메이션을 입혔다. 어린이들이 직접 그린 그림과 글씨는 생성해 버리면 의미가 사라지는 부분이라 대신할 수 없고, 어린이가 직접 그리는 과정이 있어야 하므로 규모를 키울 수 없다고 설명했다.",
+    "최승준은 여름에 완성한 조합형 한글 폰트 1만 1,172자를 공간에 맞춰 배치하는 작업을 디자인에 사용하고 있으며, 최근 영상 편집 프로그램이나 벡터 편집 프로그램을 켜지 않고 Claude Code 앱에서만 레이아웃과 사진 배치를 하고 있다고 밝혔다. 그러나 작업 시간이 줄지 않았는데, 어떤 사진과 문구를 쓸지 결정하는 단계가 남아 있어 직접 디자인하는 것과 비슷한 시간이 걸렸다. 박종현은 알아서 척척 PPT 만들기나 포스터 만들기는 1년 전과 비교해 크게 나아지지 않았다고 지적했고, 그 이유는 정답이 없는 문제라 reward를 주기 어렵기 때문이라고 해석했다.",
+    "두 사람은 AI가 만든 스타일이 평준화되면 희소성이 사라져 슬롭이 된다는 점에 공감했다. AI로 만들어도 내용이 좋으면 가치가 생기지만, 스타일이 중요한 영역에서 모든 모션 그래픽이 비슷해지면 처음의 신선함이 사라지고 과락이 될 가능성이 있다. 뉴스 소식을 미처 다루지는 못했지만, 10월 17일 버전의 DeepSeek Flash와 Muse Wonder가 프론티어를 위협한다는 이야기가 있다며 다음 기회로 미뤘다."
+  ],
+  "entities": [
+    {
+      "id": "video-as-code",
+      "label": "Video as Code",
+      "type": "concept",
+      "aliases": [
+        "Video as Code",
+        "Code as Video"
+      ]
+    },
+    {
+      "id": "manimgx",
+      "label": "ManimGX",
+      "type": "concept",
+      "aliases": [
+        "ManimGX",
+        "Manim"
+      ]
+    },
+    {
+      "id": "sudoremove",
+      "label": "sudoremove",
+      "type": "concept",
+      "aliases": [
+        "sudoremove"
+      ]
+    },
+    {
+      "id": "sudocut",
+      "label": "SudoCut",
+      "type": "concept",
+      "aliases": [
+        "SudoCut"
+      ]
+    },
+    {
+      "id": "bytebeat",
+      "label": "bytebeat",
+      "type": "concept",
+      "aliases": [
+        "bytebeat"
+      ]
+    },
+    {
+      "id": "generative-misreading",
+      "label": "생성형 오독",
+      "type": "concept",
+      "aliases": [
+        "생성형 오독",
+        "오독"
+      ]
+    },
+    {
+      "id": "opus-55",
+      "label": "Opus 5.5",
+      "type": "model",
+      "aliases": [
+        "Opus 5.5"
+      ]
+    },
+    {
+      "id": "gpt-6-1-sol",
+      "label": "GPT-6.1 Sol",
+      "type": "model",
+      "aliases": [
+        "GPT-6.1 Sol"
+      ]
+    },
+    {
+      "id": "gpt-6-astra",
+      "label": "GPT-6 Astra",
+      "type": "model",
+      "aliases": [
+        "GPT-6 Astra"
+      ]
+    },
+    {
+      "id": "codex",
+      "label": "Codex",
+      "type": "concept",
+      "aliases": [
+        "Codex"
+      ]
+    },
+    {
+      "id": "kurzgesagt",
+      "label": "Kurzgesagt",
+      "type": "concept",
+      "aliases": [
+        "Kurzgesagt"
+      ]
+    },
+    {
+      "id": "3blue1brown",
+      "label": "3Blue1Brown",
+      "type": "concept",
+      "aliases": [
+        "3Blue1Brown"
+      ]
+    },
+    {
+      "id": "terence-tao",
+      "label": "Terence Tao",
+      "type": "person",
+      "aliases": [
+        "Terence Tao"
+      ]
+    },
+    {
+      "id": "grant-sanderson",
+      "label": "Grant Sanderson",
+      "type": "person",
+      "aliases": [
+        "Grant Sanderson"
+      ]
+    },
+    {
+      "id": "yamnet",
+      "label": "YAMNet",
+      "type": "concept",
+      "aliases": [
+        "YAMNet"
+      ]
+    },
+    {
+      "id": "suno",
+      "label": "Suno",
+      "type": "model",
+      "aliases": [
+        "Suno"
+      ]
+    },
+    {
+      "id": "claude-code",
+      "label": "Claude Code",
+      "type": "model",
+      "aliases": [
+        "Claude Code",
+        "Claude"
+      ]
+    },
+    {
+      "id": "viznut",
+      "label": "Viznut",
+      "type": "person",
+      "aliases": [
+        "Viznut"
+      ]
+    },
+    {
+      "id": "sina",
+      "label": "Sina",
+      "type": "person",
+      "aliases": [
+        "Sina"
+      ]
+    }
+  ],
+  "notable_quote": {
+    "text": "이게 slop이 아니고 진짜로 좋은 콘텐츠냐",
+    "speaker": "박종현"
+  },
+  "language": "ko",
+  "extractor": "deepseek-pro",
+  "extracted_at": "2026-10-23",
+  "review_status": "draft"
+}
