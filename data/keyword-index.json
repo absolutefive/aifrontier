@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-23",
+  "generated_at": "2026-10-26",
   "keywords": [
     {
       "id": "claude-code",
@@ -110,7 +110,12 @@
         },
         {
           "ep_id": 119,
-          "count": 3,
+          "count": 2,
+          "first_anchor": "claude-code-1"
+        },
+        {
+          "ep_id": 120,
+          "count": 1,
           "first_anchor": "claude-code-1"
         }
       ]
@@ -491,16 +496,11 @@
       "id": "gpt-6-astra",
       "label": "GPT-6 Astra",
       "type": "model",
-      "total": 16,
+      "total": 15,
       "eps": [
         {
           "ep_id": 113,
           "count": 15,
-          "first_anchor": "gpt-6-astra-1"
-        },
-        {
-          "ep_id": 119,
-          "count": 1,
           "first_anchor": "gpt-6-astra-1"
         }
       ]
@@ -1031,6 +1031,34 @@
       ]
     },
     {
+      "id": "nvidia",
+      "label": "NVIDIA",
+      "type": "concept",
+      "total": 9,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 2,
+          "first_anchor": "nvidia-1"
+        },
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "nvidia-1"
+        },
+        {
+          "ep_id": 113,
+          "count": 4,
+          "first_anchor": "nvidia-1"
+        },
+        {
+          "ep_id": 120,
+          "count": 2,
+          "first_anchor": "nvidia-1"
+        }
+      ]
+    },
+    {
       "id": "vizcom",
       "label": "VIZCOM",
       "type": "concept",
@@ -1121,6 +1149,19 @@
       ]
     },
     {
+      "id": "coreweave",
+      "label": "CoreWeave",
+      "type": "concept",
+      "total": 8,
+      "eps": [
+        {
+          "ep_id": 120,
+          "count": 8,
+          "first_anchor": "coreweave-1"
+        }
+      ]
+    },
+    {
       "id": "deepseek",
       "label": "DeepSeek",
       "type": "model",
@@ -1145,6 +1186,19 @@
           "ep_id": 106,
           "count": 1,
           "first_anchor": "deepseek-1"
+        }
+      ]
+    },
+    {
+      "id": "frontier-lab",
+      "label": "Frontier Lab",
+      "type": "concept",
+      "total": 8,
+      "eps": [
+        {
+          "ep_id": 120,
+          "count": 8,
+          "first_anchor": "frontier-lab-1"
         }
       ]
     },
@@ -1199,6 +1253,29 @@
           "ep_id": 90,
           "count": 6,
           "first_anchor": "alphago-1"
+        }
+      ]
+    },
+    {
+      "id": "anthropic",
+      "label": "Anthropic",
+      "type": "model",
+      "total": 7,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "anthropic-1"
+        },
+        {
+          "ep_id": 80,
+          "count": 2,
+          "first_anchor": "anthropic-1"
+        },
+        {
+          "ep_id": 120,
+          "count": 4,
+          "first_anchor": "anthropic-1"
         }
       ]
     },
@@ -1268,29 +1345,6 @@
           "ep_id": 115,
           "count": 5,
           "first_anchor": "jensen-huang-1"
-        }
-      ]
-    },
-    {
-      "id": "nvidia",
-      "label": "NVIDIA",
-      "type": "concept",
-      "total": 7,
-      "eps": [
-        {
-          "ep_id": 45,
-          "count": 2,
-          "first_anchor": "nvidia-1"
-        },
-        {
-          "ep_id": 78,
-          "count": 1,
-          "first_anchor": "nvidia-1"
-        },
-        {
-          "ep_id": 113,
-          "count": 4,
-          "first_anchor": "nvidia-1"
         }
       ]
     },
@@ -2038,19 +2092,6 @@
       ]
     },
     {
-      "id": "manimgx",
-      "label": "ManimGX",
-      "type": "concept",
-      "total": 5,
-      "eps": [
-        {
-          "ep_id": 119,
-          "count": 5,
-          "first_anchor": "manimgx-1"
-        }
-      ]
-    },
-    {
       "id": "physical-ai",
       "label": "Physical AI",
       "type": "concept",
@@ -2152,6 +2193,19 @@
       ]
     },
     {
+      "id": "operation-loop",
+      "label": "operation loop",
+      "type": "concept",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 120,
+          "count": 5,
+          "first_anchor": "operation-loop-1"
+        }
+      ]
+    },
+    {
       "id": "prefill-decode",
       "label": "prefill/decode",
       "type": "concept",
@@ -2228,24 +2282,6 @@
           "ep_id": 107,
           "count": 5,
           "first_anchor": "recursive-self-improvement-1"
-        }
-      ]
-    },
-    {
-      "id": "3blue1brown",
-      "label": "3Blue1Brown",
-      "type": "concept",
-      "total": 4,
-      "eps": [
-        {
-          "ep_id": 83,
-          "count": 1,
-          "first_anchor": "3blue1brown-1"
-        },
-        {
-          "ep_id": 119,
-          "count": 3,
-          "first_anchor": "3blue1brown-1"
         }
       ]
     },
@@ -2359,24 +2395,6 @@
       ]
     },
     {
-      "id": "grant-sanderson",
-      "label": "Grant Sanderson",
-      "type": "person",
-      "total": 4,
-      "eps": [
-        {
-          "ep_id": 105,
-          "count": 1,
-          "first_anchor": "grant-sanderson-1"
-        },
-        {
-          "ep_id": 119,
-          "count": 3,
-          "first_anchor": "grant-sanderson-1"
-        }
-      ]
-    },
-    {
       "id": "imagenet",
       "label": "ImageNet",
       "type": "concept",
@@ -2413,6 +2431,19 @@
       ]
     },
     {
+      "id": "manimgx",
+      "label": "ManimGX",
+      "type": "concept",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 119,
+          "count": 4,
+          "first_anchor": "manimgx-1"
+        }
+      ]
+    },
+    {
       "id": "moltbook",
       "label": "Moltbook",
       "type": "concept",
@@ -2422,6 +2453,19 @@
           "ep_id": 85,
           "count": 4,
           "first_anchor": "moltbook-1"
+        }
+      ]
+    },
+    {
+      "id": "opus-5-5",
+      "label": "Opus 5.5",
+      "type": "model",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 119,
+          "count": 4,
+          "first_anchor": "opus-5-5-1"
         }
       ]
     },
@@ -2521,6 +2565,19 @@
       ]
     },
     {
+      "id": "compute",
+      "label": "compute",
+      "type": "concept",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 120,
+          "count": 4,
+          "first_anchor": "compute-1"
+        }
+      ]
+    },
+    {
       "id": "on-policy",
       "label": "on-policy",
       "type": "concept",
@@ -2574,19 +2631,6 @@
           "ep_id": 98,
           "count": 4,
           "first_anchor": "vibe-1"
-        }
-      ]
-    },
-    {
-      "id": "generative-misreading",
-      "label": "생성형 오독",
-      "type": "concept",
-      "total": 4,
-      "eps": [
-        {
-          "ep_id": 119,
-          "count": 4,
-          "first_anchor": "generative-misreading-1"
         }
       ]
     },
@@ -2666,6 +2710,24 @@
       ]
     },
     {
+      "id": "3blue1brown",
+      "label": "3Blue1Brown",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 83,
+          "count": 1,
+          "first_anchor": "3blue1brown-1"
+        },
+        {
+          "ep_id": 119,
+          "count": 2,
+          "first_anchor": "3blue1brown-1"
+        }
+      ]
+    },
+    {
       "id": "ai-assisted",
       "label": "AI Assisted",
       "type": "concept",
@@ -2706,24 +2768,6 @@
           "ep_id": 82,
           "count": 1,
           "first_anchor": "alphaevolve-1"
-        }
-      ]
-    },
-    {
-      "id": "anthropic",
-      "label": "Anthropic",
-      "type": "model",
-      "total": 3,
-      "eps": [
-        {
-          "ep_id": 79,
-          "count": 1,
-          "first_anchor": "anthropic-1"
-        },
-        {
-          "ep_id": 80,
-          "count": 2,
-          "first_anchor": "anthropic-1"
         }
       ]
     },
@@ -2838,6 +2882,24 @@
           "ep_id": 104,
           "count": 3,
           "first_anchor": "gpt56-1"
+        }
+      ]
+    },
+    {
+      "id": "grant-sanderson",
+      "label": "Grant Sanderson",
+      "type": "person",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 105,
+          "count": 1,
+          "first_anchor": "grant-sanderson-1"
+        },
+        {
+          "ep_id": 119,
+          "count": 2,
+          "first_anchor": "grant-sanderson-1"
         }
       ]
     },
@@ -3083,19 +3145,6 @@
       ]
     },
     {
-      "id": "opus-55",
-      "label": "Opus 5.5",
-      "type": "model",
-      "total": 3,
-      "eps": [
-        {
-          "ep_id": 119,
-          "count": 3,
-          "first_anchor": "opus-55-1"
-        }
-      ]
-    },
-    {
       "id": "rsi-loop",
       "label": "RSI loop",
       "type": "concept",
@@ -3135,19 +3184,6 @@
       ]
     },
     {
-      "id": "sina",
-      "label": "Sina",
-      "type": "person",
-      "total": 3,
-      "eps": [
-        {
-          "ep_id": 119,
-          "count": 3,
-          "first_anchor": "sina-1"
-        }
-      ]
-    },
-    {
       "id": "tesla",
       "label": "Tesla",
       "type": "concept",
@@ -3157,6 +3193,19 @@
           "ep_id": 45,
           "count": 3,
           "first_anchor": "tesla-1"
+        }
+      ]
+    },
+    {
+      "id": "video-as-code",
+      "label": "Video as Code",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 119,
+          "count": 3,
+          "first_anchor": "video-as-code-1"
         }
       ]
     },
@@ -3346,24 +3395,6 @@
           "ep_id": 86,
           "count": 3,
           "first_anchor": "sub-agent-1"
-        }
-      ]
-    },
-    {
-      "id": "sudoremove",
-      "label": "sudoremove",
-      "type": "concept",
-      "total": 3,
-      "eps": [
-        {
-          "ep_id": 84,
-          "count": 1,
-          "first_anchor": "sudoremove-1"
-        },
-        {
-          "ep_id": 119,
-          "count": 2,
-          "first_anchor": "sudoremove-1"
         }
       ]
     },
@@ -3731,6 +3762,19 @@
       ]
     },
     {
+      "id": "cds-spread",
+      "label": "CDS spread",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 120,
+          "count": 2,
+          "first_anchor": "cds-spread-1"
+        }
+      ]
+    },
+    {
       "id": "chatgpt-unbundling",
       "label": "ChatGPT unbundling",
       "type": "concept",
@@ -4024,6 +4068,19 @@
       ]
     },
     {
+      "id": "gpt-6",
+      "label": "GPT-6",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 119,
+          "count": 2,
+          "first_anchor": "gpt-6-1"
+        }
+      ]
+    },
+    {
       "id": "gpt6sol",
       "label": "GPT-6 Sol",
       "type": "model",
@@ -4033,19 +4090,6 @@
           "ep_id": 116,
           "count": 2,
           "first_anchor": "gpt6sol-1"
-        }
-      ]
-    },
-    {
-      "id": "gpt-6-1-sol",
-      "label": "GPT-6.1 Sol",
-      "type": "model",
-      "total": 2,
-      "eps": [
-        {
-          "ep_id": 119,
-          "count": 2,
-          "first_anchor": "gpt-6-1-sol-1"
         }
       ]
     },
@@ -4771,19 +4815,6 @@
       ]
     },
     {
-      "id": "video-as-code",
-      "label": "Video as Code",
-      "type": "concept",
-      "total": 2,
-      "eps": [
-        {
-          "ep_id": 119,
-          "count": 2,
-          "first_anchor": "video-as-code-1"
-        }
-      ]
-    },
-    {
       "id": "vision-transformer",
       "label": "Vision Transformer",
       "type": "model",
@@ -4855,6 +4886,19 @@
           "ep_id": 105,
           "count": 1,
           "first_anchor": "arxiv-1"
+        }
+      ]
+    },
+    {
+      "id": "bytebeat",
+      "label": "bytebeat",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 119,
+          "count": 2,
+          "first_anchor": "bytebeat-1"
         }
       ]
     },
@@ -5035,6 +5079,19 @@
       ]
     },
     {
+      "id": "operation-signal",
+      "label": "operation signal",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 120,
+          "count": 2,
+          "first_anchor": "operation-signal-1"
+        }
+      ]
+    },
+    {
       "id": "optical-io",
       "label": "optical I/O",
       "type": "concept",
@@ -5157,6 +5214,19 @@
       ]
     },
     {
+      "id": "spot-contract",
+      "label": "spot과 contract",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 120,
+          "count": 2,
+          "first_anchor": "spot-contract-1"
+        }
+      ]
+    },
+    {
       "id": "teleoperation",
       "label": "teleoperation",
       "type": "concept",
@@ -5179,6 +5249,19 @@
           "ep_id": 86,
           "count": 2,
           "first_anchor": "thinking-budget-1"
+        }
+      ]
+    },
+    {
+      "id": "value-chain",
+      "label": "value chain",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 120,
+          "count": 2,
+          "first_anchor": "value-chain-1"
         }
       ]
     },
@@ -5288,6 +5371,19 @@
           "ep_id": 93,
           "count": 2,
           "first_anchor": "meta-harness-1"
+        }
+      ]
+    },
+    {
+      "id": "baek-nam-jun",
+      "label": "백남준",
+      "type": "person",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 119,
+          "count": 2,
+          "first_anchor": "baek-nam-jun-1"
         }
       ]
     },
@@ -5942,6 +6038,19 @@
       ]
     },
     {
+      "id": "dall-e-2",
+      "label": "DALL-E 2",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 119,
+          "count": 1,
+          "first_anchor": "dall-e-2-1"
+        }
+      ]
+    },
+    {
       "id": "dhh",
       "label": "DHH",
       "type": "person",
@@ -5990,6 +6099,19 @@
           "ep_id": 109,
           "count": 1,
           "first_anchor": "deepseek-v4-flash-1"
+        }
+      ]
+    },
+    {
+      "id": "deepseek-v41-flash",
+      "label": "DeepSeek V4.1 Flash",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 120,
+          "count": 1,
+          "first_anchor": "deepseek-v41-flash-1"
         }
       ]
     },
@@ -6592,6 +6714,19 @@
       ]
     },
     {
+      "id": "john-cage",
+      "label": "John Cage",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 119,
+          "count": 1,
+          "first_anchor": "john-cage-1"
+        }
+      ]
+    },
+    {
       "id": "k-exaone",
       "label": "K-EXAONE",
       "type": "model",
@@ -6614,6 +6749,19 @@
           "ep_id": 76,
           "count": 1,
           "first_anchor": "kieran-egan-1"
+        }
+      ]
+    },
+    {
+      "id": "kimi-k31",
+      "label": "Kimi K3.1",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 120,
+          "count": 1,
+          "first_anchor": "kimi-k31-1"
         }
       ]
     },
@@ -6718,6 +6866,19 @@
           "ep_id": 95,
           "count": 1,
           "first_anchor": "lightning-indexer-1"
+        }
+      ]
+    },
+    {
+      "id": "little-alchemy",
+      "label": "Little Alchemy",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 119,
+          "count": 1,
+          "first_anchor": "little-alchemy-1"
         }
       ]
     },
@@ -7030,6 +7191,19 @@
           "ep_id": 101,
           "count": 1,
           "first_anchor": "nat-friedman-1"
+        }
+      ]
+    },
+    {
+      "id": "near-frontier-lab",
+      "label": "Near Frontier Lab",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 120,
+          "count": 1,
+          "first_anchor": "near-frontier-lab-1"
         }
       ]
     },
@@ -7764,7 +7938,7 @@
     {
       "id": "yamnet",
       "label": "YAMNet",
-      "type": "concept",
+      "type": "model",
       "total": 1,
       "eps": [
         {
@@ -7879,15 +8053,15 @@
       ]
     },
     {
-      "id": "bytebeat",
-      "label": "bytebeat",
+      "id": "buyable-data",
+      "label": "buyable data",
       "type": "concept",
       "total": 1,
       "eps": [
         {
-          "ep_id": 119,
+          "ep_id": 120,
           "count": 1,
-          "first_anchor": "bytebeat-1"
+          "first_anchor": "buyable-data-1"
         }
       ]
     },
@@ -8334,6 +8508,19 @@
       ]
     },
     {
+      "id": "sudoremove",
+      "label": "sudoremove",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 84,
+          "count": 1,
+          "first_anchor": "sudoremove-1"
+        }
+      ]
+    },
+    {
       "id": "synthetic-data",
       "label": "synthetic data",
       "type": "concept",
@@ -8356,6 +8543,19 @@
           "ep_id": 86,
           "count": 1,
           "first_anchor": "tech-report-1"
+        }
+      ]
+    },
+    {
+      "id": "unbuyable-data",
+      "label": "unbuyable data",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 120,
+          "count": 1,
+          "first_anchor": "unbuyable-data-1"
         }
       ]
     },
@@ -8642,6 +8842,19 @@
           "ep_id": 106,
           "count": 1,
           "first_anchor": "sam-altman-1"
+        }
+      ]
+    },
+    {
+      "id": "generative-misreading",
+      "label": "생성형 오독",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 119,
+          "count": 1,
+          "first_anchor": "generative-misreading-1"
         }
       ]
     },

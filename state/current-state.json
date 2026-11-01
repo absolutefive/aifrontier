@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0",
-  "anchor_date": "2026-10-25",
+  "anchor_date": "2026-11-01",
   "language": "ko",
   "counts": {
-    "episodes_discovered": 46,
-    "episodes_fetched": 46,
-    "episodes_extracted": 46,
-    "episodes_rendered": 46,
-    "keywords": 594
+    "episodes_discovered": 47,
+    "episodes_fetched": 47,
+    "episodes_extracted": 47,
+    "episodes_rendered": 47,
+    "keywords": 610
   },
   "report_paths": {
     "wiki_index": "2.wiki/index.html",
     "keyword_index": "2.wiki/keywords/index.html"
   },
-  "last_run_id": "20261025T190539Z"
+  "last_run_id": "20261101T190528Z"
 }
