@@ -10,73 +10,65 @@
   "category": "AI 사업",
   "source_url": "https://aifrontier.kr/ko/episodes/ep120",
   "raw_path": "06_Artifacts/aifrontier-wiki/raw/ep120/page.html",
-  "one_line": "2026년 10월의 AI 시장 조정은 금융 환경이 만든 일시적 충격이며, 가치는 범용화되는 모델보다 새지 않는 operation loop를 소유한 사업으로 이동한다.",
+  "one_line": "AI 시장 조정은 거품 붕괴가 아니라 금융 환경이 만든 과도기적 충격이며, 가치는 새지 않는 희소성, 특히 Frontier Lab이 가져가지 못하는 operation loop를 소유한 사업으로 이동한다.",
   "key_points": [
-    "한국 메모리 반도체 급락과 CoreWeave 채권·CDS 급등은 수요 둔화보다 금리·공매도·만기 불일치 등 금융 환경이 만든 일시적 조정이다.",
-    "가치는 value chain에서 새지 않는 희소성으로 이동하며, 모델은 Near Frontier Lab 추격으로 범용재가 되어 가격 인상이 어렵다.",
-    "Anthropic의 2026년 1분기 매출이 2025년 전체를 넘었지만 지식 노동자 15억 명 유입의 시차로 성장 기대가 꺾였다.",
-    "Frontier Lab이 가져갈 수 없는 operation loop를 소유한 사업자가 AI 시대 가치를 포착할 핵심 위치다.",
-    "CoreWeave는 15년 임대·3년 계약·5년 채권의 만기 mismatch로 국채 10년물 6% 이상 시 붕괴 위험이 있고 CDS spread 1,100bp가 위험을 반영한다.",
-    "AI 시장 타이밍은 spot과 contract spread, GPU 회수 기간, 오픈웨이트-프론티어 격차, RSI 등 일곱 지표로 가늠한다."
+    "한국 메모리 반도체 주가가 고점 대비 40% 넘게 빠지고 CoreWeave 채권 금리와 CDS 스프레드가 치솟았지만, 이는 수요 붕괴보다 금리·공매도·계약 만기 불일치 등 금융 요인이 만든 일시적 조정이다.",
+    "가치 사슬에서 가치 포착은 새지 않는 희소성으로 가며, Near Frontier Lab들의 추격으로 모델은 범용재화되고 Frontier Lab이 가격을 올리지 못한다.",
+    "인프라 과투자 이후에는 애플리케이션 시대가 오고, Anthropic은 Claude Code를 앞세워 2026년 1분기에 2025년 전체 매출을 넘겼지만 지식 노동자 유입의 시차로 성장률이 꺾였다.",
+    "CoreWeave는 데이터센터 15년, 고객 계약 3년, 채권 5년의 만기 불일치와 높은 공매도 잔고로 위험에 노출됐지만 실제 GPU 수요는 여전히 견실하다.",
+    "데이터와 인재는 새지만 compute는 희소하며, lab은 buyable data로 '사' 자 직업을 자동화하고 규제·특허·틈새 등 unbuyable data 영역은 피한다.",
+    "모델이 범용화되면서 가치는 operation loop를 소유한 사업으로 이동하며, weight 소유는 감가되고 signal 소유는 복리된다."
   ],
   "flow": [
     {
-      "stage": "도입",
-      "summary": "반도체 급락과 공매도로 촉발된 조정을 수요가 아닌 금융 사이클의 일부로 해석한다."
+      "stage": "도입: 시장 조정과 비관론",
+      "summary": "한국 메모리 반도체 급락과 CoreWeave 관련 금융 지표 악화로 AI 거품론이 재점화됐지만, 노정석은 build-out이 끝나지 않았으며 공매도가 지배하는 과도한 비관 국면이라고 해석한다."
     },
     {
-      "stage": "가치 이동의 렌즈",
-      "summary": "value chain에서 희소성이 수익을 결정하며 모델 가격이 오르지 않는 이유를 Near Frontier Lab 추격으로 설명한다."
+      "stage": "희소성 렌즈와 모델의 범용화",
+      "summary": "가치 사슬에서 margin은 희소성에 달려 있고, Near Frontier Lab들의 추격으로 모델 가격은 오르지 못하고 있다. Frontier Lab이 못 가져가는 곳으로 operation loop 소유가 부각된다."
     },
     {
-      "stage": "애플리케이션 시대의 전야",
-      "summary": "인프라 과투자와 조정 뒤 애플리케이션 시대가 오며 Anthropic 매출 지표와 지식 노동자 확산 시차를 점검한다."
+      "stage": "인프라 과투자와 애플리케이션 시대",
+      "summary": "철도 붐처럼 인프라 buildout 후 애플리케이션 시대가 온다. Anthropic은 Claude Code로 급성장했지만 지식 노동자 유입 시차로 성장률이 기대에 미치지 못한다."
     },
     {
-      "stage": "CoreWeave 금융 위험",
-      "summary": "SPV 기반 데이터센터 금융 구조와 채권·CDS·공매도가 만든 위험을 분석한다."
+      "stage": "CoreWeave의 금융 구조와 위기",
+      "summary": "데이터센터 15년, 고객 3년, 채권 5년의 만기 mismatch와 SPV 구조, 채권 금리 15.78%, CDS 1,100bp, 공매도 23.7%가 하락을 낳았지만 수요는 견실하다."
     },
     {
-      "stage": "Lab의 공격 경로와 operation loop",
-      "summary": "buyable/unbuyable data와 talent 유출 속에서 operation loop 소유가 유일한 비유출 희소성이다."
+      "stage": "compute 희소성과 data·talent의 누수",
+      "summary": "compute는 1GW 단위로 희소하게 거래되지만 data와 talent는 새는 자원이다. scaling law 아래 lab들의 compute 무한 경쟁은 지속된다."
     },
     {
-      "stage": "시나리오와 투자 지표",
-      "summary": "Toyota/Ferrari 네 가지 시나리오와 가치 이동, 일곱 가지 타이밍 지표를 제시한다."
+      "stage": "lab의 domain 공격 경로",
+      "summary": "buyable data는 '사' 자 직업을 자동화하고, lab은 데이터 구매·wet lab 설립·vertical 침투로 domain을 정복한다. 규제·틈새·특허가 남은 moat다."
+    },
+    {
+      "stage": "operation loop로의 가치 이동과 시나리오",
+      "summary": "모델이 commodity가 되면 가치는 위의 operation loop 소유자로 이동한다. 2X2 시나리오에서 gap 닫힘과 전환점 이후 S1이 유력하며, 일곱 지표로 타이밍을 추적한다."
     }
   ],
   "body_paragraphs": [
-    "2026년 10월 하순, 한국 메모리 반도체 주가는 고점 대비 40% 넘게 빠졌고 CoreWeave의 채권 수익률과 CDS spread가 동시에 치솟으면서 AI 거품론이 재점화됐다. 노정석은 이를 수요 붕괴보다는 금리 상승, 공매도, 계약 기간 불일치 같은 금융 환경이 만든 일시적 충격으로 본다. 실제로 CoreWeave와 Nebius에는 유통 주식의 23.7%에 달하는 공매도 잔고가 쌓였고, 공매도 계좌의 평가이익만 약 60억 달러에 이른다. 모든 자본이 이미 시장에 들어와 추가 수요가 제한된 상황에서 비관론이 겹치며 조정이 과도하게 나타났다는 해석이다.",
-    "이번 조정을 해석할 때 노정석은 과거 철도·통신·인터넷 붐과 달리 지금은 assembler부터 Python 수준까지 모든 layer가 동시에 바뀌는 AI 대전환기라고 강조한다. 인프라 buildout이 끝나지 않았고, video modality가 아직 오지 않았다는 점에서 대항해시대의 신대륙 발견과 같은 수요 창출이 남아 있다는 것이다. 인터넷 초기 남는 bandwidth가 Netflix와 YouTube를 만들었듯, 아직 text·image 중심인 모델이 video output으로 확장되면 수요가 한 차원 커질 수 있다. 이 관점에서 현재의 주가 조정은 구조적 붕괴가 아니라 사이클 내 재채기에 가깝다.",
-    "가치가 어디로 가는지는 value chain에서의 희소성으로 설명할 수 있다. 노정석은 공급자가 많으면 경쟁으로 가격이 내려가 commodity가 되고, 반대로 새지 않는 scarcity가 있는 곳이 높은 마진을 가져간다고 말한다. 그런데 frontier model은 더 이상 희소하지 않다. Kimi K3.1이 Opus 5.5의 Terminal-Bench에 근접하고 DeepSeek V4.1 Flash가 효율을 높이면서, 미국·중국의 Near Frontier Lab들이 Frontier Lab과의 격차를 급격히 좁히고 있다. GPU 가격이 오르는데도 token당 가격이 계속 떨어지는 이유가 여기에 있다.",
-    "Anthropic의 지표는 이런 기대와 현실의 시차를 보여준다. 2026년 1분기 매출이 2025년 전체 매출을 넘었고, 그 중심에는 Claude Code가 있었다. 전 세계 코더 약 3천만 명은 사실상 모두 유입된 반면, Andreessen Horowitz가 추정하는 15억 명의 지식 노동자는 아직 들어오지 않았다. Q2와 Q3 사이 45% 성장도 절대적으로는 크지만, 2조 달러에 달하는 Anthropic valuation이 요구하는 성장률에는 못 미치면서 시장의 기대가 꺾였다. 이 때문에 Q4 실적과 상장 시점이 중요한 시험대가 될 것으로 보인다.",
-    "CoreWeave 사태는 수요가 아니라 금융 구조가 인프라 사업을 흔드는 사례다. CoreWeave는 SPV 박스마다 15년 데이터센터 임대, 3년 고객 계약, 5년 채권을 담는 구조로 설계됐다. 올해 초 9.75%로 발행한 2031년 만기 채권의 시장 수익률은 15.78%까지 치솟았고, 같은 채권의 CDS spread는 1,100bp를 넘어 부도 보험료가 연 11%에 달했다. 이는 GPU 수요가 견실하다는 전망과 별개로, 금리가 오르고 다음 채권 조달이 막힐 경우 CoreWeave의 만기 mismatch가 부실로 이어질 수 있다는 시장의 경고다.",
-    "AI value chain에서 compute는 여전히 희소하지만, data와 talent는 새는 자원이다. talent는 이직과 네트워크로 퍼지고, data는 판매 회사가 여러 lab에 재판매하며 퍼진다. Frontier Lab의 attention은 시장이 크고 verify가 쉬운 domain부터 향하는데, 그 순서에는 회계사·변호사·의사 같은 '사' 자 직업이 몰려 있다. buyable data는 dataset 회사가 전문가를 고용해 문제와 답으로 coverage를 만들어 lab에 판매하고, unbuyable data는 규제·특허·규모가 작아 lab의 공격이 닿기 어려운 영역이다. 결국 lab은 데이터 구매, wet lab 설립, vertical 진입이라는 세 가지 공격 경로로 domain을 정복해 나간다.",
-    "그렇다면 새지 않는 scarcity가 남는 곳은 operation loop를 소유한 사업이다. 폐쇄형 서비스 안에서 고객 사용 데이터와 intent, domain 지식이 다시 학습 재료로 돌아가는 loop는 Frontier Lab이 쉽게 가져갈 수 없다. 반대로 오픈웨이트 모델은 이 loop가 끊겨 있어 발전 속도가 늦어지는 경향이 있다. 노정석은 Frontier Lab이 domain을 직접 털러 오는 곳에는 맞서지 말고, lab이 오기 어려운 operation 영역에 loop를 구축해야 한다고 본다. 이 loop는 반드시 자체 모델을 필요로 하지 않으며, near-frontier 오픈웨이트 모델에 compute를 꽂는 것만으로도 작동하는 경우가 많다.",
-    "GPU 수요는 spot과 contract의 상대 가격으로 가늠할 수 있다. 현재 spot 가격이 3년 contract보다 훨씬 높아 빌리려 해도 GPU가 없는 상황이며, xAI는 자체 데이터센터의 compute를 spot으로 판다. CoreWeave와 Nebius는 3년 contract로 묶어 낮은 가격에 판매하는 대신 매출을 보장받는데, 국채 10년물이 6%를 넘으면 CoreWeave 사업이 무너질 수 있다는 분석이 나온다. 데이터센터 위험 지도에서 Google·Amazon·Microsoft는 자체 현금흐름으로 짓고, Meta는 Blue Owl 같은 사모펀드가 80%를 대는 구조, Oracle은 신디케이트 대출이 막히는 단계, CoreWeave·Nebius는 고금리 junk bond 단계로 분류된다.",
-    "자동차 산업이 Toyota 아니면 Ferrari만 남듯, AI 사업도 대중적 인프라 지배자(Frontier Lab)와 도메인 특화 operation loop 소유자로 갈린다. 노정석은 frontier gap이 닫히는지 여부와 매출이 감가상각·이자를 넘는 전환점이 언제 오는지를 축으로 네 가지 시나리오를 그린다. gap이 닫히고 transition이 오는 S1 확률이 가장 높고, 현재처럼 투자가 매출을 압도하는 S2까지 합치면 약 80%로 본다. 이 경우 모델은 commodity가 되어 가치가 lab에 쌓이지 않고, Nvidia 같은 인프라나 상위 operation loop로 흐른다. 특히 전 세계가 inference 칩을 대체하려 달려들면서 Nvidia의 마진도 점차 이전될 가능성이 있다.",
-    "모델 가치의 향방을 압축한 문장이 'weight의 소유는 감가, signal의 소유는 복리'다. model work의 가치는 data와 talent에 있다고 여겨지지만, 이들은 compute로 치환 가능한 감가 자산에 가깝다. 반면 operation signal은 매출 하락 원인 진단, 고객 반응, 수정 행동 같은 질문과 답이 반복되며 압축된 지혜의 덩어리로, 시간이 지날수록 복리로 쌓인다. 성숙 산업에서 시장 점유율이 높은 회사일수록 내부 transaction과 operation signal이 많고, 이를 AI와 결합해 loop를 잘 지으면 Frontier Lab도 쉽게 침범하지 못한다. 이 signal은 모델에 심어야 할 정도의 대규모 dataset은 아니지만 사업의 방어력과 진화를 결정한다.",
-    "다음 전쟁터는 B2B와 B2C의 workflow 재설계다. B2B에서는 기존 지식 노동자의 업무를 단순히 AI로 대체하는 수준을 넘어 회사 전체 workflow를 AI에 맞춰 다시 설계하는 사업자가 필요하다. Palantir, EightyNinety, OpenAI와 Anthropic의 FDE 조직이 이 자리를 노리고 있다. B2C에서는 Muse Spark, Gemini Spark, Grokbot 같은 소비자용 에이전트가 소비자 눈앞을 차지하기 위해 경쟁한다. 이때 승패는 coverage(얼마나 다양한 일을 처리하는가)와 comprehensiveness(각 일을 얼마나 비범하게 수행하는가)의 곱으로 결정된다는 구글 프로덕트 매니저 출신의 관점이 제시된다.",
-    "투자 관점에서 Frontier Lab 주식은 timing을 모르는 사람에게 보험 같은 자산이다. OpenAI, Anthropic, SpaceX 같은 lab이 과점 체제를 만들 가능성은 낮지만, 상장한다면 이들은 지능 인프라로 인플레이션을 방어하는 자산이 될 수 있다. 반대로 창업과 운영은 lab이 가지 않는 operation loop를 소유한 곳으로 가야 한다. 노정석은 시장 타이밍을 읽기 위해 spot과 contract spread, GPU 하드웨어 payback period, 오픈웨이트-프론티어 gap, coding 밖 domain 성장, FDE 프로젝트의 token 비용 대비 margin 비율, RSI 최초 관측 시점 등 일곱 가지 지표를 추적한다. 이 중 RSI가 관측되면 scaling law의 기울기가 스스로 바뀌는 시대가 열리므로 판 자체가 달라질 수 있다.",
-    "이번 조정은 AI 시장의 방향이 아니라 속도와 주인을 다시 가르는 과정이라는 결론으로 마무리된다. 인프라 과투자로 투자자와 채권자가 손해를 보는 것은 과거 사이클의 국룰이지만, 그 위에 올라탄 애플리케이션 사업자가 더 큰 부가가치를 가져가거나 편익이 사회 전체로 확산된다. 결국 지금 중요한 것은 Frontier Lab이 무엇을 하는지, 그들이 못 하는 곳이 어디인지, 그 사이에서 타이밍이 어떻게 바뀌는지를 지켜보는 것이다. AI 시대 교육에 대한 이야기로 자연스럽게 마무리되지만, 에피소드의 핵심은 '가치는 새지 않는 희소성, 특히 operation loop로 간다'는 명제다."
+    "2026년 10월 24일 녹화 시점 기준 지난 2주 동안 한국 메모리 반도체 회사들은 고점 대비 40% 넘게 하락했고, AI 인프라 대표주인 CoreWeave와 Nebius의 채권 금리와 CDS spread가 급등하며 'AI 거품론'이 다시 불거졌다. 노정석은 이 장세를 수요 붕괴가 아니라 build-out이 아직 끝나지 않았는데도 수요가 부풀려지고 중복 투자됐다는 불안 심리와, 추가로 들어올 자본이 고갈된 상태에서 공매도가 지배하는 금융 사이클로 해석한다. 그는 \"이건 거품이 터지는 과정이라기보다는 그냥 재채기, hiccup 정도\"라며 비관론이 너무 빨리 왔다고 강조한다.",
+    "가치 사슬 분석에서 핵심 렌즈는 '가치 포착은 새지 않는 희소성으로 간다'는 것이다. 원료에서 소비자까지 이어지는 공급망에서 margin율은 그 value chain에서 얼마나 희소하냐에 달렸고, 희소한 자원이 곧 IP·moat·전략적 우위다. 이 렌즈로 보면 모델 가격이 오르지 않는 이유는 분명하다. Kimi K3.1이 Opus 5.5의 Terminal-Bench 성적에 근접하고 DeepSeek V4.1 Flash가 토큰이 줄지 않을 만큼 효율을 높이면서 Near Frontier Lab과 Frontier Lab의 gap이 급격히 좁아졌기 때문이다. 노정석은 model layer가 commodity가 되어 frontier lab이 가격을 올리지 못하는 구조를 domain gap과 time gap으로 설명한다.",
+    "인프라 과투자와 조정의 역사적 패턴은 철도 붐과 유사하다. a16z가 내놓는 data point처럼 모든 cycle에는 infrastructure buildout period가 있었고, 그 뒤에 애플리케이션 시대가 꽃을 피웠다. 지금 AI는 인프라 buildout 끄트머리에서 과투자와 투자자 손실을 겪는 구간이다. 실제로 Anthropic은 2026년 1분기 매출이 2025년 전체 매출보다 커졌고, 그 중심에 Claude Code가 있었다. 전 세계 coder 약 3천만 명은 거의 다 유입됐지만, a16z가 추산하는 15억 명의 지식 노동자는 아직 관점조차 형성하지 못해 유입 시차가 생겼다. Q2에서 Q3 사이 45% 성장이라는 절대 숫자도 크지만, 기대가 워낙 커서 Anthropic valuation 2T가 정당화되려면 성장률 유지가 필수다.",
+    "CoreWeave의 데이터센터 금융 구조는 한 박스에 15년 데이터센터 계약, GPU 장비, 3년 고객 contract를 담고 5년 만기 채권으로 조달해 SPV별로 분리하는 형태다. hyperscaler 세 곳이 전체 계약량의 약 70%를 차지하며, Anthropic 같은 고객이 일부 채권에 구매 보증을 서 조달 금리를 낮춘다. 그런데 지난주 CoreWeave 채권의 만기 수익률은 15.78%까지 치솟았고 CDS spread는 1,100bp를 넘나들었다. 이는 100원짜리 채권을 약 80원에 살 수 있다는 뜻이며, 보험료가 연 11%라는 의미다. 많은 사람이 국채 10년물이 6%를 넘으면 CoreWeave가 무너질 것이라고 보지만, 노정석은 이 위기가 demand 부족이 아니라 금리 상승과 만기 mismatch에서 온 것이라고 본다.",
+    "공매도가 하락을 증폭시켰다. CoreWeave와 Nebius의 유통 가능 주식 중 약 23.7%가 공매도 포지션이고, 공매도 계좌 평가이익만 약 6B달러에 달한다. fundamentals 악화라기보다 금융 시장 심리가 만든 하락이며, 실제 GPU 수요는 여전히 견실하다. xAI는 3GW 규모 compute를 spot으로 팔고, CoreWeave·Nebius는 3년 계약으로 묶어 낮은 고정가에 파는데, 지금은 spot이 contract보다 훨씬 비싸서 GPU를 빌리기조차 어렵다. 만약 이 spread가 뒤집히면 실제 수요 수축의 신호로 볼 수 있다는 점에서 중요한 분기점으로 꼽힌다.",
+    "compute는 여전히 희소하다. 1GW는 Blackwell GPU 약 40만~50만 개, 금액으로 500억~800억 달러 수준이며, lab들은 데이터센터가 가동될 때마다 가격 불문하고 compute를 사러 온다. 반면 data와 talent는 새는 자원이다. 데이터 판매 업체들은 한 lab에 판 데이터를 Near Frontier Lab에도 팔고, talent는 샌프란시스코에서 맥주 한 잔이면 방향성이 퍼진다. Anthropic과 OpenAI의 경쟁은 이제 연구자 천재성보다 compute 투입으로 옮겨갔고, scaling law가 지배하는 한 compute 무한 경쟁은 멈추지 않는다. 노정석은 Ilya Sutskever조차 잘못 베팅했다고 평가한다.",
+    "lab의 attention은 시장 크기 ÷ 데이터 구매 난이도가 큰 영역부터 향한다. buyable data는 dataset 회사가 전문가를 고용해 문제와 답을 만들면 그 순간 verifiable해지고, 회계사·변호사·의사·보험설계사 같은 '사' 자 직업 영역은 data만 사면 자동화된다. 반대로 unbuyable data, 규제가 있거나 너무 작거나 특허로 보호된 틈새는 lab이 오기 어렵다. lab의 공격 경로는 데이터 구매, biology·제약처럼 wet lab 설립, 그리고 Midjourney 같은 vertical 침투로 나뉘지만, frontier recipe는 더 이상 희소재가 아닐 만큼 퍼졌고 중국의 Kimi와 DeepSeek은 한두 번만 더 앞구르기하면 Frontier Lab과 함께 불러야 할 수준에 가깝다.",
+    "모델이 범용재가 되면 가치 포착의 방향이 달라진다. 아래로는 Nvidia와 전력 등 여전히 희소한 인프라가 margin을 가져가고, 위로는 돈을 내는 고객 가까이에서 operation loop를 소유한 사업자가 더 높은 가치를 capture한다. operation loop는 반드시 자체 모델을 가져야 하는 것은 아니며, near-frontier 오픈웨이트 모델에 compute만 꽂아도 돌아가는 경우가 많다. 여기서 중요한 구분이 'weight의 소유는 감가, signal의 소유는 복리'라는 명제다. operation signal은 사업에서 매일 발생하는 질문-답, 고객 반응, 수정 행동이 쌓여 압축된 규칙, 즉 지혜의 압축체이며, model에 심을 정도의 크기는 아니어도 사업의 moat가 된다.",
+    "2X2 시나리오로 보면 X축은 frontier gap이 닫히는지 열리는지, Y축은 매출이 감가상각비와 이자를 넘어서는 전환점이 언제 오는지다. OpenAI와 Anthropic이 원하는 S3는 gap을 유지한 채 독점적 지능 인프라가 되는 시나리오이지만, 노정석은 gap이 닫히면서 여러 lab이 best practice에 도달하고 marginal builder는 흡수되는 S1이 될 확률이 가장 높다고 본다. 현재처럼 투자만 많고 수익은 없는 S2 국면을 지나 산업이 S1으로 정리되며, S1+S2를 합친 확률은 약 80%로 추정한다. superintelligence가 0원이 되는 시대가 올 수도 있지만, gap이 열린 독점은 일어나기 어렵다.",
+    "투자와 사업 전략은 Frontier Lab 주식을 보험으로 보유하면서, lab이 가지 않는 operation loop를 소유한 회사를 만들거나 그런 회사에 B2B workflow 재설계를 공급하는 것이다. B2B는 enterprise AX 수요가 아직 미성숙해 기존 지식 노동자를 조금 빠르게 하는 수준이며, 이제 workflow 자체를 AI에 맞춰 다시 짜야 하는 시기다. B2C에서는 Muse Spark·Gemini Spark·Grokbot 등이 소비자 눈알을 잡는 경쟁을 벌이고, 승자는 coverage와 comprehensiveness의 곱으로 갈린다. 시장 타이밍을 읽기 위해 노정석은 spot/contract spread, GPU 하드웨어 payback period, open-weight frontier gap, coding 밖 에이전트 도메인 등장, 토큰 비용 대비 FDE consulting margin 비율, 그리고 RSI의 최초 관측을 일곱 가지 지표로 추적한다. RSI가 관측되면 scaling law의 기울기를 모델이 스스로 바꾸는 진짜 변곡점이 될 수 있다.",
+    "결국 핵심은 Frontier Lab의 attention이 닿지 않는 operation loop를 가진 사업으로 가치가 이동한다는 점이다. 이미 transaction이 많은 성숙 산업의 선두 기업은 안에 operation signal이 많아 AI와 결합하면 frontier lab도 못 건드리는 효율 이득을 얻을 수 있고, 그렇지 못하면 밖에서 그 렌즈로 무장한 스타트업이 공격한다. 개인과 기업은 모델을 만드는 일보다 loop를 소유하는 일에 집중해야 하며, AI 시대 교육의 단초로 한미유치원 같은 시도까지 언급하며 에피소드가 마무리된다."
   ],
   "entities": [
-    {
-      "id": "coreweave",
-      "label": "CoreWeave",
-      "type": "concept",
-      "aliases": [
-        "CoreWeave",
-        "코어위브"
-      ]
-    },
     {
       "id": "operation-loop",
       "label": "operation loop",
       "type": "concept",
       "aliases": [
         "operation loop",
-        "운영 루프",
         "오퍼레이션 루프"
       ]
     },
@@ -86,18 +78,16 @@
       "type": "concept",
       "aliases": [
         "Near Frontier Lab",
-        "준 프론티어 랩",
-        "Quasi Frontier Lab"
+        "near-frontier",
+        "준 프론티어 랩"
       ]
     },
     {
-      "id": "value-chain",
-      "label": "value chain",
+      "id": "coreweave",
+      "label": "CoreWeave",
       "type": "concept",
       "aliases": [
-        "value chain",
-        "밸류체인",
-        "가치 사슬"
+        "CoreWeave"
       ]
     },
     {
@@ -106,8 +96,7 @@
       "type": "concept",
       "aliases": [
         "CDS spread",
-        "CDS 스프레드",
-        "credit default swap"
+        "CDS 스프레드"
       ]
     },
     {
@@ -115,8 +104,7 @@
       "label": "Anthropic",
       "type": "model",
       "aliases": [
-        "Anthropic",
-        "앤트로픽"
+        "Anthropic"
       ]
     },
     {
@@ -124,8 +112,7 @@
       "label": "Claude Code",
       "type": "model",
       "aliases": [
-        "Claude Code",
-        "클로드 코드"
+        "Claude Code"
       ]
     },
     {
@@ -143,16 +130,26 @@
       "type": "model",
       "aliases": [
         "DeepSeek V4.1 Flash",
-        "딥시크 V4.1 Flash"
+        "DeepSeek V4.1",
+        "DeepSeek"
       ]
     },
     {
-      "id": "nvidia",
-      "label": "NVIDIA",
+      "id": "scaling-law",
+      "label": "scaling law",
       "type": "concept",
       "aliases": [
-        "Nvidia",
-        "엔비디아"
+        "scaling law",
+        "스케일링 로"
+      ]
+    },
+    {
+      "id": "rsi",
+      "label": "RSI",
+      "type": "concept",
+      "aliases": [
+        "RSI",
+        "recursive self-improvement"
       ]
     },
     {
@@ -161,59 +158,12 @@
       "type": "concept",
       "aliases": [
         "operation signal",
-        "운영 신호"
-      ]
-    },
-    {
-      "id": "buyable-data",
-      "label": "buyable data",
-      "type": "concept",
-      "aliases": [
-        "buyable data",
-        "구매 가능한 데이터"
-      ]
-    },
-    {
-      "id": "unbuyable-data",
-      "label": "unbuyable data",
-      "type": "concept",
-      "aliases": [
-        "unbuyable data",
-        "구매 불가능한 데이터"
-      ]
-    },
-    {
-      "id": "frontier-lab",
-      "label": "Frontier Lab",
-      "type": "concept",
-      "aliases": [
-        "Frontier Lab",
-        "프론티어 랩",
-        "프론티어랩"
-      ]
-    },
-    {
-      "id": "spot-contract",
-      "label": "spot과 contract",
-      "type": "concept",
-      "aliases": [
-        "spot과 contract",
-        "spot price",
-        "contract 가격"
-      ]
-    },
-    {
-      "id": "compute",
-      "label": "compute",
-      "type": "concept",
-      "aliases": [
-        "compute",
-        "컴퓨트"
+        "오퍼레이션 시그널"
       ]
     }
   ],
   "notable_quote": {
-    "text": "weight의 소유는 감가, signal의 소유는 복리.",
+    "text": "weight의 소유는 감가, signal의 소유는 복리",
     "speaker": "노정석"
   },
   "language": "ko",

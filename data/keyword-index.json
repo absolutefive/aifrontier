@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-26",
+  "generated_at": "2026-11-08",
   "keywords": [
     {
       "id": "claude-code",
@@ -470,6 +470,44 @@
       ]
     },
     {
+      "id": "rsi",
+      "label": "RSI",
+      "type": "concept",
+      "total": 17,
+      "eps": [
+        {
+          "ep_id": 100,
+          "count": 3,
+          "first_anchor": "rsi-1"
+        },
+        {
+          "ep_id": 104,
+          "count": 2,
+          "first_anchor": "rsi-1"
+        },
+        {
+          "ep_id": 110,
+          "count": 3,
+          "first_anchor": "rsi-1"
+        },
+        {
+          "ep_id": 115,
+          "count": 6,
+          "first_anchor": "rsi-1"
+        },
+        {
+          "ep_id": 120,
+          "count": 2,
+          "first_anchor": "rsi-1"
+        },
+        {
+          "ep_id": 122,
+          "count": 1,
+          "first_anchor": "rsi-1"
+        }
+      ]
+    },
+    {
       "id": "dsv4",
       "label": "DeepSeek-V4",
       "type": "model",
@@ -552,6 +590,39 @@
       ]
     },
     {
+      "id": "openai",
+      "label": "OpenAI",
+      "type": "model",
+      "total": 14,
+      "eps": [
+        {
+          "ep_id": 77,
+          "count": 3,
+          "first_anchor": "openai-1"
+        },
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "openai-1"
+        },
+        {
+          "ep_id": 79,
+          "count": 2,
+          "first_anchor": "openai-1"
+        },
+        {
+          "ep_id": 80,
+          "count": 4,
+          "first_anchor": "openai-1"
+        },
+        {
+          "ep_id": 122,
+          "count": 4,
+          "first_anchor": "openai-1"
+        }
+      ]
+    },
+    {
       "id": "openclaw",
       "label": "OpenClaw",
       "type": "concept",
@@ -566,34 +637,6 @@
           "ep_id": 91,
           "count": 5,
           "first_anchor": "openclaw-1"
-        }
-      ]
-    },
-    {
-      "id": "rsi",
-      "label": "RSI",
-      "type": "concept",
-      "total": 14,
-      "eps": [
-        {
-          "ep_id": 100,
-          "count": 3,
-          "first_anchor": "rsi-1"
-        },
-        {
-          "ep_id": 104,
-          "count": 2,
-          "first_anchor": "rsi-1"
-        },
-        {
-          "ep_id": 110,
-          "count": 3,
-          "first_anchor": "rsi-1"
-        },
-        {
-          "ep_id": 115,
-          "count": 6,
-          "first_anchor": "rsi-1"
         }
       ]
     },
@@ -769,6 +812,34 @@
       ]
     },
     {
+      "id": "anthropic",
+      "label": "Anthropic",
+      "type": "model",
+      "total": 11,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "anthropic-1"
+        },
+        {
+          "ep_id": 80,
+          "count": 2,
+          "first_anchor": "anthropic-1"
+        },
+        {
+          "ep_id": 120,
+          "count": 5,
+          "first_anchor": "anthropic-1"
+        },
+        {
+          "ep_id": 122,
+          "count": 3,
+          "first_anchor": "anthropic-1"
+        }
+      ]
+    },
+    {
       "id": "motif",
       "label": "Motif",
       "type": "model",
@@ -901,34 +972,6 @@
       ]
     },
     {
-      "id": "openai",
-      "label": "OpenAI",
-      "type": "model",
-      "total": 10,
-      "eps": [
-        {
-          "ep_id": 77,
-          "count": 3,
-          "first_anchor": "openai-1"
-        },
-        {
-          "ep_id": 78,
-          "count": 1,
-          "first_anchor": "openai-1"
-        },
-        {
-          "ep_id": 79,
-          "count": 2,
-          "first_anchor": "openai-1"
-        },
-        {
-          "ep_id": 80,
-          "count": 4,
-          "first_anchor": "openai-1"
-        }
-      ]
-    },
-    {
       "id": "transformer",
       "label": "Transformer",
       "type": "concept",
@@ -1031,34 +1074,6 @@
       ]
     },
     {
-      "id": "nvidia",
-      "label": "NVIDIA",
-      "type": "concept",
-      "total": 9,
-      "eps": [
-        {
-          "ep_id": 45,
-          "count": 2,
-          "first_anchor": "nvidia-1"
-        },
-        {
-          "ep_id": 78,
-          "count": 1,
-          "first_anchor": "nvidia-1"
-        },
-        {
-          "ep_id": 113,
-          "count": 4,
-          "first_anchor": "nvidia-1"
-        },
-        {
-          "ep_id": 120,
-          "count": 2,
-          "first_anchor": "nvidia-1"
-        }
-      ]
-    },
-    {
       "id": "vizcom",
       "label": "VIZCOM",
       "type": "concept",
@@ -1149,15 +1164,30 @@
       ]
     },
     {
-      "id": "coreweave",
-      "label": "CoreWeave",
-      "type": "concept",
+      "id": "claude",
+      "label": "Claude",
+      "type": "model",
       "total": 8,
       "eps": [
         {
-          "ep_id": 120,
-          "count": 8,
-          "first_anchor": "coreweave-1"
+          "ep_id": 76,
+          "count": 1,
+          "first_anchor": "claude-1"
+        },
+        {
+          "ep_id": 79,
+          "count": 2,
+          "first_anchor": "claude-1"
+        },
+        {
+          "ep_id": 110,
+          "count": 2,
+          "first_anchor": "claude-1"
+        },
+        {
+          "ep_id": 121,
+          "count": 3,
+          "first_anchor": "claude-1"
         }
       ]
     },
@@ -1186,19 +1216,6 @@
           "ep_id": 106,
           "count": 1,
           "first_anchor": "deepseek-1"
-        }
-      ]
-    },
-    {
-      "id": "frontier-lab",
-      "label": "Frontier Lab",
-      "type": "concept",
-      "total": 8,
-      "eps": [
-        {
-          "ep_id": 120,
-          "count": 8,
-          "first_anchor": "frontier-lab-1"
         }
       ]
     },
@@ -1253,29 +1270,6 @@
           "ep_id": 90,
           "count": 6,
           "first_anchor": "alphago-1"
-        }
-      ]
-    },
-    {
-      "id": "anthropic",
-      "label": "Anthropic",
-      "type": "model",
-      "total": 7,
-      "eps": [
-        {
-          "ep_id": 79,
-          "count": 1,
-          "first_anchor": "anthropic-1"
-        },
-        {
-          "ep_id": 80,
-          "count": 2,
-          "first_anchor": "anthropic-1"
-        },
-        {
-          "ep_id": 120,
-          "count": 4,
-          "first_anchor": "anthropic-1"
         }
       ]
     },
@@ -1345,6 +1339,62 @@
           "ep_id": 115,
           "count": 5,
           "first_anchor": "jensen-huang-1"
+        }
+      ]
+    },
+    {
+      "id": "metr",
+      "label": "METR",
+      "type": "concept",
+      "total": 7,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 1,
+          "first_anchor": "metr-1"
+        },
+        {
+          "ep_id": 82,
+          "count": 1,
+          "first_anchor": "metr-1"
+        },
+        {
+          "ep_id": 87,
+          "count": 1,
+          "first_anchor": "metr-1"
+        },
+        {
+          "ep_id": 115,
+          "count": 2,
+          "first_anchor": "metr-1"
+        },
+        {
+          "ep_id": 122,
+          "count": 2,
+          "first_anchor": "metr-1"
+        }
+      ]
+    },
+    {
+      "id": "nvidia",
+      "label": "NVIDIA",
+      "type": "concept",
+      "total": 7,
+      "eps": [
+        {
+          "ep_id": 45,
+          "count": 2,
+          "first_anchor": "nvidia-1"
+        },
+        {
+          "ep_id": 78,
+          "count": 1,
+          "first_anchor": "nvidia-1"
+        },
+        {
+          "ep_id": 113,
+          "count": 4,
+          "first_anchor": "nvidia-1"
         }
       ]
     },
@@ -1428,6 +1478,19 @@
           "ep_id": 75,
           "count": 6,
           "first_anchor": "cot-1"
+        }
+      ]
+    },
+    {
+      "id": "coreweave",
+      "label": "CoreWeave",
+      "type": "concept",
+      "total": 6,
+      "eps": [
+        {
+          "ep_id": 120,
+          "count": 6,
+          "first_anchor": "coreweave-1"
         }
       ]
     },
@@ -1884,25 +1947,20 @@
       ]
     },
     {
-      "id": "claude",
-      "label": "Claude",
+      "id": "opus55",
+      "label": "Claude Opus 5.5",
       "type": "model",
       "total": 5,
       "eps": [
         {
-          "ep_id": 76,
+          "ep_id": 116,
+          "count": 4,
+          "first_anchor": "opus55-1"
+        },
+        {
+          "ep_id": 121,
           "count": 1,
-          "first_anchor": "claude-1"
-        },
-        {
-          "ep_id": 79,
-          "count": 2,
-          "first_anchor": "claude-1"
-        },
-        {
-          "ep_id": 110,
-          "count": 2,
-          "first_anchor": "claude-1"
+          "first_anchor": "opus55-1"
         }
       ]
     },
@@ -2041,6 +2099,24 @@
       ]
     },
     {
+      "id": "kimi",
+      "label": "Kimi",
+      "type": "model",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 81,
+          "count": 2,
+          "first_anchor": "kimi-1"
+        },
+        {
+          "ep_id": 121,
+          "count": 3,
+          "first_anchor": "kimi-1"
+        }
+      ]
+    },
+    {
       "id": "lablup",
       "label": "Lablup",
       "type": "concept",
@@ -2060,34 +2136,6 @@
           "ep_id": 97,
           "count": 1,
           "first_anchor": "lablup-1"
-        }
-      ]
-    },
-    {
-      "id": "metr",
-      "label": "METR",
-      "type": "concept",
-      "total": 5,
-      "eps": [
-        {
-          "ep_id": 79,
-          "count": 1,
-          "first_anchor": "metr-1"
-        },
-        {
-          "ep_id": 82,
-          "count": 1,
-          "first_anchor": "metr-1"
-        },
-        {
-          "ep_id": 87,
-          "count": 1,
-          "first_anchor": "metr-1"
-        },
-        {
-          "ep_id": 115,
-          "count": 2,
-          "first_anchor": "metr-1"
         }
       ]
     },
@@ -2149,6 +2197,24 @@
       ]
     },
     {
+      "id": "qwen",
+      "label": "Qwen",
+      "type": "model",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 106,
+          "count": 2,
+          "first_anchor": "qwen-1"
+        },
+        {
+          "ep_id": 122,
+          "count": 3,
+          "first_anchor": "qwen-1"
+        }
+      ]
+    },
+    {
       "id": "richard-sutton",
       "label": "Richard Sutton",
       "type": "person",
@@ -2189,19 +2255,6 @@
           "ep_id": 108,
           "count": 5,
           "first_anchor": "cpo-1"
-        }
-      ]
-    },
-    {
-      "id": "operation-loop",
-      "label": "operation loop",
-      "type": "concept",
-      "total": 5,
-      "eps": [
-        {
-          "ep_id": 120,
-          "count": 5,
-          "first_anchor": "operation-loop-1"
         }
       ]
     },
@@ -2286,6 +2339,19 @@
       ]
     },
     {
+      "id": "compute",
+      "label": "컴퓨트",
+      "type": "concept",
+      "total": 5,
+      "eps": [
+        {
+          "ep_id": 121,
+          "count": 5,
+          "first_anchor": "compute-1"
+        }
+      ]
+    },
+    {
       "id": "aaii",
       "label": "AAII",
       "type": "concept",
@@ -2364,19 +2430,6 @@
       ]
     },
     {
-      "id": "opus55",
-      "label": "Claude Opus 5.5",
-      "type": "model",
-      "total": 4,
-      "eps": [
-        {
-          "ep_id": 116,
-          "count": 4,
-          "first_anchor": "opus55-1"
-        }
-      ]
-    },
-    {
       "id": "gan",
       "label": "GAN",
       "type": "concept",
@@ -2391,6 +2444,24 @@
           "ep_id": 92,
           "count": 1,
           "first_anchor": "gan-1"
+        }
+      ]
+    },
+    {
+      "id": "gdpval",
+      "label": "GDPVal",
+      "type": "concept",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 79,
+          "count": 3,
+          "first_anchor": "gdpval-1"
+        },
+        {
+          "ep_id": 121,
+          "count": 1,
+          "first_anchor": "gdpval-1"
         }
       ]
     },
@@ -2565,19 +2636,6 @@
       ]
     },
     {
-      "id": "compute",
-      "label": "compute",
-      "type": "concept",
-      "total": 4,
-      "eps": [
-        {
-          "ep_id": 120,
-          "count": 4,
-          "first_anchor": "compute-1"
-        }
-      ]
-    },
-    {
       "id": "on-policy",
       "label": "on-policy",
       "type": "concept",
@@ -2587,6 +2645,19 @@
           "ep_id": 75,
           "count": 4,
           "first_anchor": "on-policy-1"
+        }
+      ]
+    },
+    {
+      "id": "operation-loop",
+      "label": "operation loop",
+      "type": "concept",
+      "total": 4,
+      "eps": [
+        {
+          "ep_id": 120,
+          "count": 4,
+          "first_anchor": "operation-loop-1"
         }
       ]
     },
@@ -2772,6 +2843,19 @@
       ]
     },
     {
+      "id": "anthropic-s1",
+      "label": "Anthropic S-1",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 121,
+          "count": 3,
+          "first_anchor": "anthropic-s1-1"
+        }
+      ]
+    },
+    {
       "id": "backend-ai",
       "label": "Backend.AI",
       "type": "concept",
@@ -2834,15 +2918,20 @@
       ]
     },
     {
-      "id": "gdpval",
-      "label": "GDPVal",
-      "type": "concept",
+      "id": "fable-5-5",
+      "label": "Fable 5.5",
+      "type": "model",
       "total": 3,
       "eps": [
         {
-          "ep_id": 79,
-          "count": 3,
-          "first_anchor": "gdpval-1"
+          "ep_id": 118,
+          "count": 1,
+          "first_anchor": "fable-5-5-1"
+        },
+        {
+          "ep_id": 122,
+          "count": 2,
+          "first_anchor": "fable-5-5-1"
         }
       ]
     },
@@ -3071,6 +3160,19 @@
           "ep_id": 114,
           "count": 3,
           "first_anchor": "navier-stokes-1"
+        }
+      ]
+    },
+    {
+      "id": "near-frontier-lab",
+      "label": "Near Frontier Lab",
+      "type": "concept",
+      "total": 3,
+      "eps": [
+        {
+          "ep_id": 120,
+          "count": 3,
+          "first_anchor": "near-frontier-lab-1"
         }
       ]
     },
@@ -3666,6 +3768,19 @@
       ]
     },
     {
+      "id": "alpha-go",
+      "label": "AlphaGo",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 121,
+          "count": 2,
+          "first_anchor": "alpha-go-1"
+        }
+      ]
+    },
+    {
       "id": "amanda-askell",
       "label": "Amanda Askell",
       "type": "person",
@@ -3745,6 +3860,19 @@
           "ep_id": 90,
           "count": 2,
           "first_anchor": "bitter-lesson-1"
+        }
+      ]
+    },
+    {
+      "id": "bogdanov-takens",
+      "label": "Bogdanov–Takens 분기",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 121,
+          "count": 2,
+          "first_anchor": "bogdanov-takens-1"
         }
       ]
     },
@@ -3928,6 +4056,19 @@
       ]
     },
     {
+      "id": "deepseek-v41-flash",
+      "label": "DeepSeek V4.1 Flash",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 120,
+          "count": 2,
+          "first_anchor": "deepseek-v41-flash-1"
+        }
+      ]
+    },
+    {
       "id": "diffusion-transformer",
       "label": "Diffusion Transformer",
       "type": "model",
@@ -4107,6 +4248,19 @@
       ]
     },
     {
+      "id": "carbon",
+      "label": "Gemini 4 Carbon",
+      "type": "model",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 121,
+          "count": 2,
+          "first_anchor": "carbon-1"
+        }
+      ]
+    },
+    {
       "id": "genie",
       "label": "Genie",
       "type": "model",
@@ -4263,15 +4417,15 @@
       ]
     },
     {
-      "id": "kimi",
-      "label": "Kimi",
+      "id": "kimi-k31",
+      "label": "Kimi K3.1",
       "type": "model",
       "total": 2,
       "eps": [
         {
-          "ep_id": 81,
+          "ep_id": 120,
           "count": 2,
-          "first_anchor": "kimi-1"
+          "first_anchor": "kimi-k31-1"
         }
       ]
     },
@@ -4489,6 +4643,19 @@
       ]
     },
     {
+      "id": "pickle",
+      "label": "Pickle",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 122,
+          "count": 2,
+          "first_anchor": "pickle-1"
+        }
+      ]
+    },
+    {
       "id": "qkv",
       "label": "QKV",
       "type": "concept",
@@ -4503,19 +4670,6 @@
           "ep_id": 83,
           "count": 1,
           "first_anchor": "qkv-1"
-        }
-      ]
-    },
-    {
-      "id": "qwen",
-      "label": "Qwen",
-      "type": "model",
-      "total": 2,
-      "eps": [
-        {
-          "ep_id": 106,
-          "count": 2,
-          "first_anchor": "qwen-1"
         }
       ]
     },
@@ -4710,6 +4864,19 @@
           "ep_id": 114,
           "count": 1,
           "first_anchor": "sebastien-bubeck-1"
+        }
+      ]
+    },
+    {
+      "id": "tescreal",
+      "label": "TESCREAL",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 121,
+          "count": 2,
+          "first_anchor": "tescreal-1"
         }
       ]
     },
@@ -5144,6 +5311,19 @@
       ]
     },
     {
+      "id": "scaling-law",
+      "label": "scaling law",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 120,
+          "count": 2,
+          "first_anchor": "scaling-law-1"
+        }
+      ]
+    },
+    {
       "id": "self-play",
       "label": "self-play",
       "type": "concept",
@@ -5214,19 +5394,6 @@
       ]
     },
     {
-      "id": "spot-contract",
-      "label": "spot과 contract",
-      "type": "concept",
-      "total": 2,
-      "eps": [
-        {
-          "ep_id": 120,
-          "count": 2,
-          "first_anchor": "spot-contract-1"
-        }
-      ]
-    },
-    {
       "id": "teleoperation",
       "label": "teleoperation",
       "type": "concept",
@@ -5249,19 +5416,6 @@
           "ep_id": 86,
           "count": 2,
           "first_anchor": "thinking-budget-1"
-        }
-      ]
-    },
-    {
-      "id": "value-chain",
-      "label": "value chain",
-      "type": "concept",
-      "total": 2,
-      "eps": [
-        {
-          "ep_id": 120,
-          "count": 2,
-          "first_anchor": "value-chain-1"
         }
       ]
     },
@@ -5492,6 +5646,19 @@
       ]
     },
     {
+      "id": "frontier-lab",
+      "label": "프론티어 랩",
+      "type": "concept",
+      "total": 2,
+      "eps": [
+        {
+          "ep_id": 121,
+          "count": 2,
+          "first_anchor": "frontier-lab-1"
+        }
+      ]
+    },
+    {
       "id": "ax-k2",
       "label": "A.X K2",
       "type": "model",
@@ -5700,6 +5867,19 @@
       ]
     },
     {
+      "id": "agent-market",
+      "label": "Agent Market",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 122,
+          "count": 1,
+          "first_anchor": "agent-market-1"
+        }
+      ]
+    },
+    {
       "id": "agent-teams",
       "label": "Agent Teams",
       "type": "concept",
@@ -5891,6 +6071,19 @@
           "ep_id": 97,
           "count": 1,
           "first_anchor": "cat-wu-1"
+        }
+      ]
+    },
+    {
+      "id": "character-ai",
+      "label": "Character.AI",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 121,
+          "count": 1,
+          "first_anchor": "character-ai-1"
         }
       ]
     },
@@ -6090,6 +6283,19 @@
       ]
     },
     {
+      "id": "daniel-kokotajlo",
+      "label": "Daniel Kokotajlo",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 122,
+          "count": 1,
+          "first_anchor": "daniel-kokotajlo-1"
+        }
+      ]
+    },
+    {
       "id": "deepseek-v4-flash",
       "label": "DeepSeek V4 Flash",
       "type": "model",
@@ -6099,19 +6305,6 @@
           "ep_id": 109,
           "count": 1,
           "first_anchor": "deepseek-v4-flash-1"
-        }
-      ]
-    },
-    {
-      "id": "deepseek-v41-flash",
-      "label": "DeepSeek V4.1 Flash",
-      "type": "model",
-      "total": 1,
-      "eps": [
-        {
-          "ep_id": 120,
-          "count": 1,
-          "first_anchor": "deepseek-v41-flash-1"
         }
       ]
     },
@@ -6272,19 +6465,6 @@
       ]
     },
     {
-      "id": "fable-5-5",
-      "label": "Fable 5.5",
-      "type": "model",
-      "total": 1,
-      "eps": [
-        {
-          "ep_id": 118,
-          "count": 1,
-          "first_anchor": "fable-5-5-1"
-        }
-      ]
-    },
-    {
       "id": "figure-ai",
       "label": "Figure AI",
       "type": "concept",
@@ -6398,6 +6578,32 @@
           "ep_id": 105,
           "count": 1,
           "first_anchor": "gpt-5-6-1"
+        }
+      ]
+    },
+    {
+      "id": "terra",
+      "label": "GPT-6.1 Terra",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 121,
+          "count": 1,
+          "first_anchor": "terra-1"
+        }
+      ]
+    },
+    {
+      "id": "gpt-6-2",
+      "label": "GPT-6.2",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 122,
+          "count": 1,
+          "first_anchor": "gpt-6-2-1"
         }
       ]
     },
@@ -6649,6 +6855,19 @@
       ]
     },
     {
+      "id": "inkling-2-small",
+      "label": "Inkling 2 Small",
+      "type": "model",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 122,
+          "count": 1,
+          "first_anchor": "inkling-2-small-1"
+        }
+      ]
+    },
+    {
       "id": "jalapeno",
       "label": "Jalapeño",
       "type": "concept",
@@ -6714,6 +6933,19 @@
       ]
     },
     {
+      "id": "jevons",
+      "label": "Jevons Paradox",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 121,
+          "count": 1,
+          "first_anchor": "jevons-1"
+        }
+      ]
+    },
+    {
       "id": "john-cage",
       "label": "John Cage",
       "type": "person",
@@ -6749,19 +6981,6 @@
           "ep_id": 76,
           "count": 1,
           "first_anchor": "kieran-egan-1"
-        }
-      ]
-    },
-    {
-      "id": "kimi-k31",
-      "label": "Kimi K3.1",
-      "type": "model",
-      "total": 1,
-      "eps": [
-        {
-          "ep_id": 120,
-          "count": 1,
-          "first_anchor": "kimi-k31-1"
         }
       ]
     },
@@ -7195,19 +7414,6 @@
       ]
     },
     {
-      "id": "near-frontier-lab",
-      "label": "Near Frontier Lab",
-      "type": "concept",
-      "total": 1,
-      "eps": [
-        {
-          "ep_id": 120,
-          "count": 1,
-          "first_anchor": "near-frontier-lab-1"
-        }
-      ]
-    },
-    {
       "id": "network-state",
       "label": "Network State",
       "type": "concept",
@@ -7429,6 +7635,19 @@
       ]
     },
     {
+      "id": "qwenputer",
+      "label": "Qwenputer",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 122,
+          "count": 1,
+          "first_anchor": "qwenputer-1"
+        }
+      ]
+    },
+    {
       "id": "rl-scaling",
       "label": "RL scaling",
       "type": "concept",
@@ -7490,6 +7709,19 @@
           "ep_id": 83,
           "count": 1,
           "first_anchor": "rope-1"
+        }
+      ]
+    },
+    {
+      "id": "robinhood",
+      "label": "Robinhood",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 122,
+          "count": 1,
+          "first_anchor": "robinhood-1"
         }
       ]
     },
@@ -7581,6 +7813,19 @@
           "ep_id": 84,
           "count": 1,
           "first_anchor": "sharpa-craftnet-1"
+        }
+      ]
+    },
+    {
+      "id": "simile",
+      "label": "Simile",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 122,
+          "count": 1,
+          "first_anchor": "simile-1"
         }
       ]
     },
@@ -7819,6 +8064,19 @@
       ]
     },
     {
+      "id": "thomas-wolf",
+      "label": "Thomas Wolf",
+      "type": "person",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 122,
+          "count": 1,
+          "first_anchor": "thomas-wolf-1"
+        }
+      ]
+    },
+    {
       "id": "trello",
       "label": "Trello",
       "type": "concept",
@@ -8049,19 +8307,6 @@
           "ep_id": 91,
           "count": 1,
           "first_anchor": "bundle-unbundle-1"
-        }
-      ]
-    },
-    {
-      "id": "buyable-data",
-      "label": "buyable data",
-      "type": "concept",
-      "total": 1,
-      "eps": [
-        {
-          "ep_id": 120,
-          "count": 1,
-          "first_anchor": "buyable-data-1"
         }
       ]
     },
@@ -8547,19 +8792,6 @@
       ]
     },
     {
-      "id": "unbuyable-data",
-      "label": "unbuyable data",
-      "type": "concept",
-      "total": 1,
-      "eps": [
-        {
-          "ep_id": 120,
-          "count": 1,
-          "first_anchor": "unbuyable-data-1"
-        }
-      ]
-    },
-    {
       "id": "unlearning",
       "label": "unlearning",
       "type": "concept",
@@ -8608,6 +8840,19 @@
           "ep_id": 104,
           "count": 1,
           "first_anchor": "virtual-cell-1"
+        }
+      ]
+    },
+    {
+      "id": "weight-space-programming",
+      "label": "weight-space programming",
+      "type": "concept",
+      "total": 1,
+      "eps": [
+        {
+          "ep_id": 122,
+          "count": 1,
+          "first_anchor": "weight-space-programming-1"
         }
       ]
     },
